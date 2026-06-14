@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+/*
+  Design System — Section 5 of PORTFOLIO_PROJECT_BRIEF.md
+  Tailwind v4 reads these @theme tokens to generate utilities, e.g.
+  --color-navy  -> bg-navy / text-navy / border-navy
+  --font-heading -> font-heading
+*/
+@theme {
+  /* Color palette (exact hex values from the brief) */
+  --color-navy: #1b2a4a; /* Primary text, headings */
+  --color-blue: #2e6fd9; /* Accent, links, CTAs */
+  --color-dark: #1a1a1a; /* Body text */
+  --color-mid: #444444; /* Secondary text */
+  --color-gray: #666666; /* Metadata, captions */
+  --color-bg: #0d0d0d; /* Page background (dark theme) */
+  --color-surface: #161616; /* Cards, sections */
+  --color-border: #222222; /* Card borders, dividers */
+  --color-white: #ffffff; /* Primary text on dark bg */
+
+  /* Typography — wired to the next/font variables set in layout.tsx */
+  --font-heading: var(--font-syne); /* Headings */
+  --font-sans: var(--font-inter); /* Body */
+  --font-mono: var(--font-jetbrains); /* Labels / tags */
+}
+
+/* Dark theme only — white text on near-black background */
+html {
+  background-color: var(--color-bg);
+  color-scheme: dark; /* dark form controls + scrollbars, no white flash */
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-white);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
