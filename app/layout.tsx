@@ -24,8 +24,10 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "500"],
 });
 
-// Update NEXT_PUBLIC_SITE_URL (or this fallback) to the final domain after deploy.
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+// Set NEXT_PUBLIC_SITE_URL to override (e.g. a custom domain); otherwise the
+// live Vercel URL is used for absolute OG / canonical metadata.
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://vaugn-portfolio.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
