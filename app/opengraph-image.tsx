@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
-// Default social-share card for every page (Phase 5: Meta tags and OG image).
-export const alt = "Vaugn Almeida — Brand & Web Designer";
+// Social-share card — matches the 2026 light/orange brand.
+export const alt = "Vaugn Almeida — Brand & Marketing Designer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -15,35 +15,35 @@ export default function OpengraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          backgroundColor: "#0D0D0D",
+          backgroundColor: "#ECEAE6",
           padding: "80px",
         }}
       >
         <div
           style={{
-            color: "#2E6FD9",
+            color: "#E85D1F",
             fontSize: 26,
-            fontWeight: 600,
+            fontWeight: 700,
             letterSpacing: 6,
             textTransform: "uppercase",
           }}
         >
-          Brand &amp; Web Designer
+          Brand &amp; Marketing Designer
         </div>
         <div
           style={{
-            color: "#FFFFFF",
-            fontSize: 76,
-            fontWeight: 700,
+            color: "#15140F",
+            fontSize: 72,
+            fontWeight: 800,
             lineHeight: 1.05,
-            maxWidth: 960,
-            letterSpacing: -1,
+            maxWidth: 980,
+            letterSpacing: -1.5,
           }}
         >
-          Visual systems that build credibility and convert.
+          Design that makes small brands look like the ones people trust.
         </div>
-        <div style={{ color: "#888888", fontSize: 30 }}>
-          Vaugn Almeida · Agency-trained · Healthcare-fluent
+        <div style={{ color: "#56524A", fontSize: 29 }}>
+          Vaugn Almeida · Agency-trained · AI-enhanced · Remote
         </div>
       </div>
     ),

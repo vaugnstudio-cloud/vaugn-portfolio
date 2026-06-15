@@ -29,27 +29,40 @@ const jetbrainsMono = JetBrains_Mono({
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://vaugn-portfolio.vercel.app";
 
+const titleDefault = "Vaugn Almeida — Brand & Marketing Designer";
+const description =
+  "Brand, web & marketing designer. Agency-trained, AI-enhanced graphic design, branding, and advertising creative across healthcare, hospitality, and 20+ agency accounts. Remote.";
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Vaugn Almeida — Brand & Web Designer",
+    default: titleDefault,
     template: "%s · Vaugn Almeida",
   },
-  description:
-    "Agency-trained, healthcare-fluent Brand & Web Designer. Visual systems that build credibility and convert.",
+  description,
+  keywords: [
+    "graphic designer",
+    "brand designer",
+    "marketing designer",
+    "creative designer",
+    "branding",
+    "logo design",
+    "social media design",
+    "advertising design",
+    "remote designer",
+    "Philippines designer",
+  ],
   openGraph: {
-    title: "Vaugn Almeida — Brand & Web Designer",
-    description:
-      "Agency-trained, healthcare-fluent Brand & Web Designer. Visual systems that build credibility and convert.",
+    title: titleDefault,
+    description,
     url: siteUrl,
     siteName: "Vaugn Almeida",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vaugn Almeida — Brand & Web Designer",
-    description:
-      "Agency-trained, healthcare-fluent Brand & Web Designer. Visual systems that build credibility and convert.",
+    title: titleDefault,
+    description,
   },
 };
 

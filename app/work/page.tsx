@@ -9,26 +9,29 @@ export const metadata: Metadata = {
     "Brand systems, websites, and marketing creative across healthcare, hospitality, and agency scale.",
 };
 
+const eyebrow = { fontFamily: "Georgia, 'Times New Roman', serif" };
+
 export default function WorkPage() {
   return (
-    <section className="mx-auto max-w-6xl px-6 pt-24 pb-24 sm:pt-32">
+    <section className="mx-auto max-w-6xl px-6 pb-28 pt-16 sm:pt-24">
       <FadeIn>
-        <p className="font-mono text-[11px] font-medium uppercase tracking-widest text-blue">
-          ▪ Work
+        <p className="text-base italic text-accent" style={eyebrow}>
+          (selected work)
         </p>
-        <h1 className="mt-4 font-heading text-4xl font-bold text-white sm:text-5xl">
-          Every project. Full picture.
+        <h1 className="mt-3 font-heading text-5xl font-extrabold leading-[1.05] tracking-tight text-ink sm:text-7xl">
+          Every project.
+          <br />
+          Full picture.
         </h1>
-        <p className="mt-6 max-w-2xl text-lg text-white/70">
+        <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink2">
           Brand systems, websites, and marketing creative across healthcare,
           hospitality, and agency scale.
         </p>
       </FadeIn>
 
-      {/* All 6 projects — 2-column grid on desktop, 1-column on mobile (Section 6). */}
-      <div className="mt-12 grid gap-8 sm:grid-cols-2">
+      <div className="mt-14 grid gap-8 sm:grid-cols-2">
         {projects.map((project, index) => (
-          <FadeIn key={project.id} delay={(index % 2) * 0.1} className="h-full">
+          <FadeIn key={project.id} delay={(index % 2) * 0.08} className="h-full">
             <ProjectCard project={project} />
           </FadeIn>
         ))}
