@@ -4,6 +4,15 @@ export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://vaugn-portfolio.vercel.app";
 
 export const EMAIL = "vaugn.studio@gmail.com";
+
+// Email links open Gmail compose in the browser (address pre-filled) instead
+// of the visitor's default mail app. Use with target="_blank".
+export function gmailCompose(subject = "", body = ""): string {
+  const params = new URLSearchParams({ view: "cm", fs: "1", to: EMAIL });
+  if (subject) params.set("su", subject);
+  if (body) params.set("body", body);
+  return `https://mail.google.com/mail/?${params.toString()}`;
+}
 export const LINKEDIN_URL = "https://linkedin.com/in/vaugn-almeida";
 export const LINKEDIN_LABEL = "linkedin.com/in/vaugn-almeida";
 

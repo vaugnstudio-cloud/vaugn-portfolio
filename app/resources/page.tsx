@@ -3,7 +3,7 @@ import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import CTABand from "@/components/CTABand";
 import { products } from "@/data/products";
-import { EMAIL } from "@/data/site";
+import { gmailCompose } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Resources & Digital Products",
@@ -91,7 +91,9 @@ export default function ResourcesPage() {
             </p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
               <a
-                href={`mailto:${EMAIL}?subject=Resources%20launch%20list`}
+                href={gmailCompose("Resources launch list")}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-ink transition-transform hover:scale-[1.02]"
               >
                 Join the launch list

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import FadeIn from "@/components/FadeIn";
 import ContactForm from "@/components/ContactForm";
-import { EMAIL, LINKEDIN_URL, LINKEDIN_LABEL, CAL_LINK, RESPONSE_PROMISE } from "@/data/site";
+import { EMAIL, gmailCompose, LINKEDIN_URL, LINKEDIN_LABEL, CAL_LINK, RESPONSE_PROMISE } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -63,7 +63,9 @@ export default function ContactPage() {
             <div className="rounded-2xl border border-line bg-surface p-8">
               <p className="eyebrow">Direct</p>
               <a
-                href={`mailto:${EMAIL}`}
+                href={gmailCompose("Project enquiry")}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-3 block font-display text-xl text-ink transition-colors hover:text-accent"
               >
                 {EMAIL}

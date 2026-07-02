@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { EMAIL, RESPONSE_PROMISE } from "@/data/site";
+import { EMAIL, gmailCompose, RESPONSE_PROMISE } from "@/data/site";
 
 // Final conversion band — one calm ask, used at the end of every page.
 export default function CTABand({
@@ -25,7 +25,9 @@ export default function CTABand({
             Start a project
           </Link>
           <a
-            href={`mailto:${EMAIL}`}
+            href={gmailCompose("Project enquiry")}
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-full border border-line px-7 py-3.5 text-ink2 transition-colors hover:border-ink2 hover:text-ink"
           >
             {EMAIL}

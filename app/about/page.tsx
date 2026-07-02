@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import FadeIn from "@/components/FadeIn";
 import Portrait from "@/components/Portrait";
 import CTABand from "@/components/CTABand";
-import { EMAIL, LINKEDIN_URL, LINKEDIN_LABEL, INTRO_VIDEO_SRC } from "@/data/site";
+import { EMAIL, gmailCompose, LINKEDIN_URL, LINKEDIN_LABEL, INTRO_VIDEO_SRC } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "About",
@@ -158,7 +158,12 @@ export default function AboutPage() {
         {/* Quiet links — CV demoted here per freelance-only positioning */}
         <FadeIn className="mt-16">
           <div className="flex flex-wrap gap-6 text-sm text-dim">
-            <a href={`mailto:${EMAIL}`} className="transition-colors hover:text-ink">
+            <a
+              href={gmailCompose()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-ink"
+            >
               {EMAIL}
             </a>
             <a

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { EMAIL, FORMSPREE_ID } from "@/data/site";
+import { EMAIL, gmailCompose, FORMSPREE_ID } from "@/data/site";
 
 const NEED_OPTIONS = [
   "Brand + Website",
@@ -21,9 +21,9 @@ export default function ContactForm() {
     const form = e.currentTarget;
     const data = new FormData(form);
 
-    // No Formspree yet → the form still works: it opens the visitor's email
-    // client with everything pre-filled. Swaps to real submissions the moment
-    // NEXT_PUBLIC_FORMSPREE_ID is set.
+    // No Formspree configured → the form still works: it opens Gmail compose
+    // pre-filled with everything typed. Swaps to real in-page submissions the
+    // moment a Formspree id is set.
     if (!FORMSPREE_ID) {
       const subject = `Project enquiry — ${data.get("need") ?? "new project"}`;
       const body = [
@@ -35,9 +35,7 @@ export default function ContactForm() {
         "",
         `${data.get("message") ?? ""}`,
       ].join("\n");
-      window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(
-        subject
-      )}&body=${encodeURIComponent(body)}`;
+      window.open(gmailCompose(subject, body), "_blank", "noopener");
       setStatus("done");
       return;
     }
@@ -65,7 +63,7 @@ export default function ContactForm() {
         <p className="mt-3 text-ink2">
           {FORMSPREE_ID
             ? "I'll reply within 24–48 hours with honest thoughts and a clear next step."
-            : `Your mail app just opened with everything pre-filled — hit send and I'll reply within 24–48 hours. (Nothing opened? Email me directly at ${EMAIL}.)`}
+            : `Gmail just opened in a new tab with everything pre-filled — hit send and I'll reply within 24–48 hours. (Nothing opened? Email me directly at ${EMAIL}.)`}
         </p>
       </div>
     );
@@ -149,7 +147,12 @@ export default function ContactForm() {
             ? "Something went wrong — please try again, or "
             : "The form isn't connected yet — "}
           email me directly at{" "}
-          <a href={`mailto:${EMAIL}`} className="text-accent underline">
+          <a
+            href={gmailCompose("Project enquiry")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent underline"
+          >
             {EMAIL}
           </a>
           .

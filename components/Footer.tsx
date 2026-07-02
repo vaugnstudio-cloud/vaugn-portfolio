@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { EMAIL, LINKEDIN_URL, LINKEDIN_LABEL, FORMSPREE_ID } from "@/data/site";
+import { EMAIL, gmailCompose, LINKEDIN_URL, LINKEDIN_LABEL, FORMSPREE_ID } from "@/data/site";
 import EmailCapture from "@/components/EmailCapture";
 
 const NAV = [
@@ -50,7 +50,12 @@ export default function Footer() {
 
           <div className="flex flex-col gap-2 text-sm">
             <p className="eyebrow mb-2">Contact</p>
-            <a href={`mailto:${EMAIL}`} className="text-ink2 transition-colors hover:text-ink">
+            <a
+              href={gmailCompose()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-ink2 transition-colors hover:text-ink"
+            >
               {EMAIL}
             </a>
             <a
