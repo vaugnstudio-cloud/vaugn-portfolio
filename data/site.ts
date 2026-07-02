@@ -7,8 +7,8 @@ export const EMAIL = "vaugn.studio@gmail.com";
 export const LINKEDIN_URL = "https://linkedin.com/in/vaugn-almeida";
 export const LINKEDIN_LABEL = "linkedin.com/in/vaugn-almeida";
 
-// Formspree form id (e.g. "mabcdxyz"). Form shows a mailto fallback until set.
-export const FORMSPREE_ID = process.env.NEXT_PUBLIC_FORMSPREE_ID ?? "";
+// Formspree form id — contact form + footer email capture (env var overrides).
+export const FORMSPREE_ID = process.env.NEXT_PUBLIC_FORMSPREE_ID ?? "meebpqde";
 
 // Cal.com booking link — the path after cal.com/ (env var overrides).
 export const CAL_LINK =
