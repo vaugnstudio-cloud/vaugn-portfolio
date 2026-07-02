@@ -10,8 +10,9 @@ export const LINKEDIN_LABEL = "linkedin.com/in/vaugn-almeida";
 // Formspree form id (e.g. "mabcdxyz"). Form shows a mailto fallback until set.
 export const FORMSPREE_ID = process.env.NEXT_PUBLIC_FORMSPREE_ID ?? "";
 
-// Cal.com booking link (e.g. "vaugn/intro"). Booking card hides until set.
-export const CAL_LINK = process.env.NEXT_PUBLIC_CAL_LINK ?? "";
+// Cal.com booking link — the path after cal.com/ (env var overrides).
+export const CAL_LINK =
+  process.env.NEXT_PUBLIC_CAL_LINK ?? "vaugn-almeida-wavcgv";
 
 // About-page intro video. Leave undefined — the video section stays hidden
 // until a real file is added (must pass the "no client would suspect AI" bar).
