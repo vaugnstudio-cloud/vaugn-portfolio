@@ -1,39 +1,45 @@
 @import "tailwindcss";
 
 /*
-  Agero-inspired light theme (2026 redesign).
-  Accent is a single switchable token — change --color-accent to re-skin.
+  2026 redesign — "Dark editorial" direction.
+  Near-black warm canvas, bone text, editorial serif display (Fraunces),
+  one electric-citrus accent used sparingly. All tokens live here.
 */
 @theme {
-  --color-bg: #eceae6; /* warm neutral canvas */
-  --color-cream: #f5f3ed; /* raised surfaces */
-  --color-ink: #15140f; /* primary text */
-  --color-ink2: #56524a; /* secondary text */
-  --color-dim: #928d81; /* labels / meta */
-  --color-line: #dbd8cf; /* hairlines */
-  --color-dark: #141310; /* dark panels */
-
-  --color-accent: #e85d1f; /* ← switchable accent (warm orange) */
+  --color-bg: #0d0d0b; /* near-black warm canvas */
+  --color-surface: #151513; /* raised panels */
+  --color-raised: #1c1c19; /* cards / hover surfaces */
+  --color-ink: #f2efe7; /* primary text (warm bone) */
+  --color-ink2: #b3afa4; /* secondary text */
+  --color-dim: #7b776e; /* labels / meta */
+  --color-line: #262622; /* hairlines */
+  --color-accent: #f0662a; /* ← switchable accent (warm orange) */
   --color-accent-ink: #ffffff; /* text on accent */
 
-  --font-heading: var(--font-syne);
+  --font-display: var(--font-fraunces);
   --font-sans: var(--font-inter);
   --font-mono: var(--font-jetbrains);
-
-  --animate-marquee: marquee 28s linear infinite;
 }
 
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+/* Light theme — toggled via <html data-theme="light"> (ThemeToggle). */
+:root[data-theme="light"] {
+  --color-bg: #f2efe8;
+  --color-surface: #faf8f2;
+  --color-raised: #eae6dc;
+  --color-ink: #17160f;
+  --color-ink2: #57524a;
+  --color-dim: #8b8679;
+  --color-line: #dedacf;
+  --color-accent: #e85d1f;
+  --color-accent-ink: #ffffff;
 }
 
 html {
   background-color: var(--color-bg);
+  color-scheme: dark;
+}
+
+html[data-theme="light"] {
   color-scheme: light;
 }
 
@@ -49,14 +55,47 @@ body {
   color: var(--color-accent-ink);
 }
 
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Editorial display headline helper — serif with tight leading */
+.display {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+}
+
+.display em,
+.display .accent-word {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-accent);
+}
+
+/* Mono eyebrow label */
+.eyebrow {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-dim);
+}
+
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
   }
 }
 
+/* Reduced motion: reveal content immediately — never gate it on scroll.
+   Overrides framer-motion's inline initial styles. */
 @media (prefers-reduced-motion: reduce) {
-  .animate-marquee {
-    animation: none !important;
+  [data-fadein] {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }

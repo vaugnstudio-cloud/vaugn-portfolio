@@ -1,288 +1,245 @@
-import Image from "next/image";
 import Link from "next/link";
-import { projects } from "@/data/projects";
 import FadeIn from "@/components/FadeIn";
-import Marquee from "@/components/Marquee";
-
-const EMAIL = "vaugn.studio@gmail.com";
-const eyebrow = { fontFamily: "Georgia, 'Times New Roman', serif" };
-
-function Lozenge({ src, alt }: { src: string; alt: string }) {
-  return (
-    <span className="relative mx-2 inline-block h-[0.9em] w-[1.7em] -translate-y-[0.06em] overflow-hidden rounded-full border-[3px] border-cream align-middle shadow-[0_5px_18px_rgba(0,0,0,0.18)]">
-      <Image src={src} alt={alt} fill sizes="110px" className="object-cover" />
-    </span>
-  );
-}
-
-function Meta({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="mb-5">
-      <div className="font-mono text-[11px] uppercase tracking-wider text-dim">{label}</div>
-      <div className="mt-1.5 whitespace-pre-line font-heading text-sm font-semibold text-[#f3f1ea]">
-        {value}
-      </div>
-    </div>
-  );
-}
+import Portrait from "@/components/Portrait";
+import ProjectCard from "@/components/ProjectCard";
+import ServiceCard from "@/components/ServiceCard";
+import ProcessSteps from "@/components/ProcessSteps";
+import Testimonials from "@/components/Testimonials";
+import CTABand from "@/components/CTABand";
+import { featuredProjects, featuredBranding } from "@/data/projects";
+import { services } from "@/data/services";
+import { STATS } from "@/data/site";
 
 export default function Home() {
-  const featured = projects.filter((p) => p.featured);
+  const homeServices = services.filter((s) => s.onHomepage);
 
   return (
     <>
-      {/* Availability pill */}
-      <div className="flex justify-center pt-8">
-        <span className="inline-flex items-center gap-2 rounded-full bg-ink px-4 py-2 font-mono text-[11px] uppercase tracking-wider text-cream">
-          <span className="h-2 w-2 rounded-full bg-emerald-400" /> Available for new projects
-        </span>
-      </div>
-
-      {/* HERO */}
-      <section className="mx-auto max-w-3xl px-6 pb-20 pt-12 text-center sm:pt-16">
+      {/* 1 · Hero — position + qualify in five seconds */}
+      <section className="mx-auto max-w-6xl px-6 pb-20 pt-24 sm:pt-32">
         <FadeIn>
-          <div className="mb-8 flex items-center justify-center gap-3">
-            <div className="flex">
-              {[
-                ["M", "#2E6FD9"],
-                ["O", "#1B7F6B"],
-                ["Y", "#CC8A22"],
-              ].map(([l, c], i) => (
-                <span
-                  key={l}
-                  style={{ background: c, marginLeft: i ? -10 : 0 }}
-                  className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-bg font-heading text-[11px] font-bold text-white"
-                >
-                  {l}
-                </span>
-              ))}
-            </div>
-            <span className="text-sm text-ink2">Trusted by founders &amp; teams.</span>
-          </div>
-
-          <h1 className="font-heading text-4xl font-extrabold leading-[1.08] tracking-tight text-ink sm:text-6xl">
-            Brand design
-            <Lozenge src="/images/medsync-cover.jpg" alt="MedSync website" />
-            that makes small teams
-            <Lozenge src="/images/ozmax-cover.png" alt="Ozmax Care brand" />
-            look like leaders.
+          <span className="inline-flex items-center gap-2 rounded-full border border-line px-4 py-1.5 font-mono text-xs uppercase tracking-wider text-ink2">
+            <span className="h-2 w-2 rounded-full bg-accent" />
+            Available for new projects
+          </span>
+        </FadeIn>
+        <FadeIn delay={0.08}>
+          <h1 className="display mt-8 max-w-4xl text-5xl text-ink sm:text-6xl lg:text-7xl">
+            Brand &amp; web design that makes people <em>trust</em> you at
+            first glance.
           </h1>
-
-          <p className="mx-auto mt-8 max-w-md text-lg leading-relaxed text-ink2">
-            Brand, web &amp; marketing creative for businesses that want to look
-            like the ones people already trust.
+        </FadeIn>
+        <FadeIn delay={0.16}>
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink2">
+            Brand identity, websites, and marketing systems for healthcare,
+            hospitality, and growth businesses — designed and built end to end.
           </p>
-
-          <div className="mt-10 flex flex-col items-center gap-4">
+        </FadeIn>
+        <FadeIn delay={0.24}>
+          <div className="mt-10 flex flex-wrap gap-4">
+            <Link
+              href="/contact"
+              className="rounded-full bg-accent px-7 py-3.5 font-medium text-accent-ink transition-transform hover:scale-[1.03]"
+            >
+              Start a project
+            </Link>
             <Link
               href="/work"
-              className="inline-flex items-center gap-2 rounded-full bg-accent px-7 py-4 text-sm font-medium text-white transition-transform hover:scale-[1.03]"
+              className="rounded-full border border-line px-7 py-3.5 text-ink2 transition-colors hover:border-ink2 hover:text-ink"
             >
-              View work →
+              View work
             </Link>
-            <a
-              href="/cv.pdf"
-              className="font-mono text-[11px] uppercase tracking-wider text-dim transition-colors hover:text-ink"
+          </div>
+        </FadeIn>
+      </section>
+
+      {/* 2 · Proof strip — real numbers only */}
+      <section className="border-y border-line bg-surface">
+        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-px lg:grid-cols-4">
+          {STATS.map((s) => (
+            <div key={s.label} className="px-6 py-10">
+              <p className="font-display text-4xl text-ink">{s.value}</p>
+              <p className="mt-2 font-mono text-[11px] uppercase tracking-wider text-dim">
+                {s.label}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 3 · Selected work — show, don't tell */}
+      <section className="mx-auto max-w-6xl px-6 py-24">
+        <FadeIn>
+          <div className="flex items-end justify-between">
+            <div>
+              <p className="eyebrow">Selected work</p>
+              <h2 className="display mt-3 text-4xl text-ink sm:text-5xl">
+                The work does the <em>talking</em>.
+              </h2>
+            </div>
+            <Link
+              href="/work"
+              className="hidden font-mono text-xs uppercase tracking-wider text-ink2 transition-colors hover:text-accent sm:block"
             >
-              or download CV ↓
-            </a>
+              All work →
+            </Link>
           </div>
         </FadeIn>
-      </section>
-
-      {/* WORK PREVIEW STRIP */}
-      <section className="mx-auto max-w-6xl px-6">
-        <FadeIn>
-          <div className="grid grid-cols-3 gap-4 rounded-[28px] bg-dark p-4">
-            {featured.map((p) => (
-              <div key={p.id} className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-                <Image
-                  src={p.coverImage}
-                  alt={p.title}
-                  fill
-                  sizes="(max-width: 768px) 33vw, 360px"
-                  className="object-cover"
-                />
-              </div>
-            ))}
-          </div>
-        </FadeIn>
-      </section>
-
-      <Marquee />
-
-      {/* INTRO */}
-      <section className="mx-auto max-w-2xl px-6 py-16 text-center sm:py-24">
-        <FadeIn>
-          <p className="text-base italic text-accent" style={eyebrow}>
-            (hello)
-          </p>
-          <h2 className="mx-auto mt-5 max-w-xl font-heading text-2xl font-bold leading-snug text-ink sm:text-3xl">
-            I help brands launch sharper —{" "}
-            <span className="text-ink2">with clarity, speed, and no drama.</span>
-          </h2>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            {["Branding", "Logo", "Website", "Social", "Strategy"].map((s) => (
-              <span
-                key={s}
-                className="rounded-full border border-line bg-cream px-4 py-2 text-sm text-ink2"
-              >
-                {s}
-              </span>
-            ))}
-          </div>
-        </FadeIn>
-      </section>
-
-      {/* STATS */}
-      <section className="mx-auto max-w-6xl px-6 pb-20 sm:pb-28">
-        <FadeIn>
-          <div className="flex flex-col items-center justify-around gap-8 rounded-[28px] bg-dark px-8 py-12 sm:flex-row">
-            {[
-              ["20+", "Agency accounts"],
-              ["4+", "Years"],
-              ["3", "Industries"],
-            ].map(([n, l]) => (
-              <div key={l} className="text-center">
-                <div className="font-heading text-5xl font-extrabold text-white">{n}</div>
-                <div className="mt-3 font-mono text-[11px] uppercase tracking-wider text-dim">
-                  {l}
-                </div>
-              </div>
-            ))}
-          </div>
-        </FadeIn>
-      </section>
-
-      {/* FEATURED WORK — one per panel */}
-      <section className="mx-auto max-w-6xl px-6 pb-12">
-        <FadeIn>
-          <p className="text-center text-base italic text-accent" style={eyebrow}>
-            (selected work)
-          </p>
-          <h2 className="mt-2 text-center font-heading text-5xl font-extrabold text-line sm:text-7xl">
-            Recent work
-          </h2>
-        </FadeIn>
-        <div className="mt-6 space-y-8">
-          {featured.map((p, i) => (
-            <FadeIn key={p.id}>
-              <article className="overflow-hidden rounded-[28px] bg-dark p-6 sm:p-10">
-                <div className="flex flex-col gap-8 sm:flex-row sm:items-center">
-                  <div className="flex-1">
-                    <div className="font-mono text-[11px] uppercase tracking-wider text-dim">
-                      {String(i + 1).padStart(2, "0")} / {String(featured.length).padStart(2, "0")}
-                    </div>
-                    <div className="relative my-5 aspect-[16/10] w-full overflow-hidden rounded-2xl">
-                      <Image
-                        src={p.coverImage}
-                        alt={p.title}
-                        fill
-                        sizes="(max-width: 768px) 100vw, 640px"
-                        className="object-cover"
-                      />
-                    </div>
-                    <h3 className="font-heading text-3xl font-extrabold text-white sm:text-4xl">
-                      {p.title}
-                    </h3>
-                    <p className="mt-3 max-w-md text-sm leading-relaxed text-[#b8b3a8]">
-                      {p.headline}
-                    </p>
-                    {p.url && (
-                      <a
-                        href={p.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mt-4 inline-block font-mono text-[11px] uppercase tracking-wider text-accent"
-                      >
-                        Visit live site ↗
-                      </a>
-                    )}
-                  </div>
-                  <div className="w-full shrink-0 sm:w-44">
-                    <Meta label="Year" value={p.year} />
-                    <Meta label="Role" value={p.category.slice(0, 2).join(" · ")} />
-                    <Meta label="Services" value={p.deliverables.slice(0, 3).join("\n")} />
-                  </div>
-                </div>
-              </article>
+        <div className="mt-12 grid gap-6 md:grid-cols-2">
+          {featuredProjects.map((p, i) => (
+            <FadeIn key={p.id} delay={i * 0.06}>
+              <ProjectCard project={p} />
             </FadeIn>
           ))}
         </div>
-        <div className="mt-10 text-center">
-          <Link
-            href="/work"
-            className="inline-flex items-center gap-2 rounded-full border border-line bg-cream px-6 py-3 text-sm font-medium text-ink transition-colors hover:border-ink/30"
-          >
-            All projects →
-          </Link>
+        <Link
+          href="/work"
+          className="mt-10 block text-center font-mono text-xs uppercase tracking-wider text-ink2 transition-colors hover:text-accent sm:hidden"
+        >
+          All work →
+        </Link>
+      </section>
+
+      {/* 4 · Branding — niche concept series (scaffolds until designed) */}
+      <section className="border-t border-line">
+        <div className="mx-auto max-w-6xl px-6 py-24">
+          <FadeIn>
+            <div className="flex items-end justify-between">
+              <div>
+                <p className="eyebrow">Branding design</p>
+                <h2 className="display mt-3 max-w-2xl text-4xl text-ink sm:text-5xl">
+                  Brands built <em>niche by niche</em>.
+                </h2>
+                <p className="mt-4 max-w-xl text-ink2">
+                  Concept identities for the industries I serve — coffee,
+                  stays, craft beverage, and wellness — designed as complete
+                  systems, not just logos.
+                </p>
+              </div>
+              <Link
+                href="/work"
+                className="hidden font-mono text-xs uppercase tracking-wider text-ink2 transition-colors hover:text-accent sm:block"
+              >
+                All branding →
+              </Link>
+            </div>
+          </FadeIn>
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            {featuredBranding.map((p, i) => (
+              <FadeIn key={p.id} delay={i * 0.06}>
+                <ProjectCard project={p} />
+              </FadeIn>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* SERVICES */}
-      <section className="mx-auto max-w-4xl px-6 py-20 text-center sm:py-28">
-        <FadeIn>
-          <p className="text-base italic text-accent" style={eyebrow}>
-            (services)
-          </p>
-          <h2 className="mt-3 font-heading text-4xl font-extrabold text-ink sm:text-6xl">
-            What I do
-          </h2>
-          <div className="mx-auto mt-10 grid max-w-3xl gap-px overflow-hidden rounded-[24px] border border-line bg-line sm:grid-cols-3">
-            {[
-              ["Brand & Identity", "Systems that make a business recognizable and trusted fast."],
-              ["Marketing & Social", "Ad creative, campaigns, and social systems that convert."],
-              ["Web & Landing", "Figma → Framer sites, mobile-first, built to convert."],
-            ].map(([t, d]) => (
-              <div key={t} className="bg-cream p-8 text-left">
-                <div className="font-heading text-lg font-bold text-ink">{t}</div>
-                <p className="mt-3 text-sm leading-relaxed text-ink2">{d}</p>
-              </div>
+      {/* 5 · Services snapshot — route buyers to the right offer */}
+      <section className="border-t border-line bg-surface">
+        <div className="mx-auto max-w-6xl px-6 py-24">
+          <FadeIn>
+            <p className="eyebrow">Services</p>
+            <h2 className="display mt-3 max-w-2xl text-4xl text-ink sm:text-5xl">
+              Not just design — a <em>system</em> that launches.
+            </h2>
+          </FadeIn>
+          <div className="mt-12 grid gap-6 lg:grid-cols-3">
+            {homeServices.map((s, i) => (
+              <FadeIn key={s.id} delay={i * 0.06}>
+                <ServiceCard service={s} />
+              </FadeIn>
             ))}
           </div>
-        </FadeIn>
+          <FadeIn>
+            <p className="mt-8 text-sm text-dim">
+              Also:{" "}
+              <Link
+                href="/services"
+                className="text-ink2 underline decoration-line underline-offset-4 transition-colors hover:text-accent"
+              >
+                Framer landing pages, monthly retainers, and the full service
+                breakdown →
+              </Link>
+            </p>
+          </FadeIn>
+        </div>
       </section>
 
-      {/* TESTIMONIAL */}
-      <section className="mx-auto max-w-6xl px-6 pb-20 sm:pb-28">
+      {/* 6 · Process — de-risk hiring a solo designer */}
+      <section className="mx-auto max-w-6xl px-6 py-24">
         <FadeIn>
-          <div className="rounded-[28px] bg-dark p-8 sm:p-12">
-            <p className="font-mono text-[11px] uppercase tracking-wider text-accent">
-              (why clients work with me)
-            </p>
-            <p className="mt-6 max-w-2xl font-heading text-xl font-semibold leading-relaxed text-white sm:text-2xl">
-              &ldquo;Vaugn turns a messy brief into on-brand work fast — and it
-              always ships looking premium.&rdquo;
-            </p>
-            <p className="mt-6 font-mono text-[11px] uppercase tracking-wider text-[#c9c3b6]">
-              — Your testimonial · name + role
-            </p>
-          </div>
-        </FadeIn>
-      </section>
-
-      {/* CONTACT */}
-      <section className="mx-auto max-w-2xl px-6 pb-28 text-center">
-        <FadeIn>
-          <h2 className="mx-auto max-w-md font-heading text-4xl font-extrabold text-ink sm:text-5xl">
-            Have a brand worth getting right?
+          <p className="eyebrow">How it works</p>
+          <h2 className="display mt-3 max-w-2xl text-4xl text-ink sm:text-5xl">
+            One person. No handoff loss. <em>No drama.</em>
           </h2>
-          <p className="mx-auto mt-5 max-w-sm text-ink2">
-            Open to full-time roles and select freelance projects. Remote · GMT+8.
-          </p>
-          <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <a
-              href={`mailto:${EMAIL}`}
-              className="inline-flex items-center gap-2 rounded-full bg-accent px-7 py-4 text-sm font-medium text-white transition-transform hover:scale-[1.03]"
+        </FadeIn>
+        <div className="mt-12">
+          <ProcessSteps />
+        </div>
+      </section>
+
+      {/* 7 · About teaser — human trust */}
+      <section className="border-t border-line bg-surface">
+        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 lg:grid-cols-2 lg:items-center">
+          <FadeIn>
+            <Portrait className="mx-auto max-w-sm" />
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <p className="eyebrow">Behind the work</p>
+            <h2 className="display mt-3 text-4xl text-ink sm:text-5xl">
+              Agency-trained. <em>Healthcare-fluent.</em>
+            </h2>
+            <p className="mt-6 leading-relaxed text-ink2">
+              I&apos;m Vaugn Jasper Almeida — an independent brand &amp; web
+              designer with 5+ years across Australian, US, and European
+              clients, creative direction on 20+ concurrent agency accounts,
+              and real healthcare-industry experience, from mental-health
+              platforms to US medical billing.
+            </p>
+            <Link
+              href="/about"
+              className="mt-8 inline-block font-mono text-xs uppercase tracking-wider text-accent transition-opacity hover:opacity-70"
             >
-              Start a conversation →
-            </a>
-            <a href={`mailto:${EMAIL}`} className="text-sm text-ink2 hover:text-ink">
-              {EMAIL}
-            </a>
+              More about me →
+            </Link>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* 8 · Resources teaser — quiet, service positioning stays primary */}
+      <section className="mx-auto max-w-6xl px-6 py-24">
+        <FadeIn>
+          <div className="rounded-2xl border border-line bg-surface p-10 sm:p-14">
+            <div className="grid items-center gap-8 lg:grid-cols-[3fr_2fr]">
+              <div>
+                <p className="eyebrow">Coming soon</p>
+                <h2 className="display mt-3 text-4xl text-ink sm:text-5xl">
+                  Tools &amp; templates — <em>the systems, packaged.</em>
+                </h2>
+                <p className="mt-5 max-w-lg leading-relaxed text-ink2">
+                  Framer templates, restaurant marketing packs, and healthcare
+                  checklists — built from the same systems I use on client
+                  work. Launching soon.
+                </p>
+              </div>
+              <div className="flex lg:justify-end">
+                <Link
+                  href="/resources"
+                  className="rounded-full border border-line px-7 py-3.5 text-ink2 transition-colors hover:border-accent hover:text-accent"
+                >
+                  Preview the resources →
+                </Link>
+              </div>
+            </div>
           </div>
         </FadeIn>
       </section>
+
+      {/* 9 · Testimonials — renders only client-approved quotes */}
+      <Testimonials />
+
+      {/* 10 · Final CTA — one calm ask */}
+      <CTABand />
     </>
   );
 }

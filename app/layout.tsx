@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
-import { Syne, Inter, JetBrains_Mono } from "next/font/google";
+import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import { SITE_URL, EMAIL } from "@/data/site";
 
-// Headings — geometric, modern (Design System, Section 5)
-const syne = Syne({
-  variable: "--font-syne",
+// Display — editorial serif with true italics (2026 dark-editorial direction)
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  style: ["normal", "italic"],
 });
 
 // Body — clean, readable, professional
@@ -17,45 +18,38 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-// Monospace — labels / tags
+// Monospace — eyebrow labels / tags
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains",
   subsets: ["latin"],
   weight: ["400", "500"],
 });
 
-// Set NEXT_PUBLIC_SITE_URL to override (e.g. a custom domain); otherwise the
-// live Vercel URL is used for absolute OG / canonical metadata.
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://vaugn-portfolio.vercel.app";
-
-const titleDefault = "Vaugn Almeida — Brand & Marketing Designer";
+const titleDefault = "Vaugn Almeida — Brand & Web Designer";
 const description =
-  "Brand, web & marketing designer. Agency-trained, AI-enhanced graphic design, branding, and advertising creative across healthcare, hospitality, and 20+ agency accounts. Remote.";
+  "Independent brand & web designer for healthcare, hospitality, and growth businesses. Identity, websites, and marketing systems — designed and built end to end.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: titleDefault,
     template: "%s · Vaugn Almeida",
   },
   description,
   keywords: [
-    "graphic designer",
     "brand designer",
-    "marketing designer",
-    "creative designer",
-    "branding",
-    "logo design",
-    "social media design",
-    "advertising design",
-    "remote designer",
-    "Philippines designer",
+    "web designer",
+    "healthcare web designer",
+    "hospitality branding",
+    "restaurant marketing design",
+    "Framer designer",
+    "brand identity",
+    "freelance designer",
   ],
   openGraph: {
     title: titleDefault,
     description,
-    url: siteUrl,
+    url: SITE_URL,
     siteName: "Vaugn Almeida",
     type: "website",
   },
@@ -66,6 +60,24 @@ export const metadata: Metadata = {
   },
 };
 
+// JSON-LD: sitewide Person schema
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Vaugn Jasper Almeida",
+  jobTitle: "Brand & Web Designer",
+  email: `mailto:${EMAIL}`,
+  url: SITE_URL,
+  knowsAbout: [
+    "Brand identity design",
+    "Web design",
+    "Healthcare marketing",
+    "Hospitality marketing",
+    "Framer",
+    "Figma",
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -74,9 +86,21 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${syne.variable} ${inter.variable} ${jetbrainsMono.variable}`}
+      data-scroll-behavior="smooth"
+      className={`${fraunces.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="min-h-screen flex flex-col">
+      <body className="flex min-h-screen flex-col">
+        {/* Theme init before paint — dark is default, light persists via localStorage */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              'try{if(localStorage.getItem("theme")==="light")document.documentElement.dataset.theme="light"}catch(e){}',
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
         <Nav />
         <main className="flex-1">{children}</main>
         <Footer />

@@ -1,109 +1,93 @@
 import type { Metadata } from "next";
 import FadeIn from "@/components/FadeIn";
+import ContactForm from "@/components/ContactForm";
+import { EMAIL, LINKEDIN_URL, LINKEDIN_LABEL, CAL_LINK, RESPONSE_PROMISE } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Open to full-time roles and select freelance projects. Remote, GMT+8, async-friendly. Get in touch with Vaugn Almeida.",
+    "Start a project with Vaugn Almeida — brand & web design for healthcare, hospitality, and growth businesses. Replies within 24–48 hours.",
 };
-
-const EMAIL = "vaugn.studio@gmail.com";
-const LINKEDIN_URL = "https://linkedin.com/in/vaugn-almeida";
-const eyebrow = { fontFamily: "Georgia, 'Times New Roman', serif" };
 
 export default function ContactPage() {
   return (
-    <section className="mx-auto max-w-6xl px-6 pb-32 pt-16 sm:pt-24">
+    <section className="mx-auto max-w-6xl px-6 pb-28 pt-16 sm:pt-24">
       <FadeIn>
-        <p className="text-base italic text-accent" style={eyebrow}>
-          (contact)
-        </p>
-        <h1 className="mt-3 max-w-3xl font-heading text-5xl font-extrabold leading-[1.05] tracking-tight text-ink sm:text-7xl">
-          Let&apos;s build something worth showing.
+        <p className="eyebrow">Contact</p>
+        <h1 className="display mt-3 max-w-3xl text-5xl text-ink sm:text-6xl">
+          Tell me what you&apos;re <em>building</em>.
         </h1>
-        <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink2">
-          Open to full-time roles and select freelance projects. The fastest way
-          to reach me is email — I reply within 24 hours.
+        <p className="mt-6 max-w-xl text-lg text-ink2">
+          A few honest details are enough — I&apos;ll reply with real thoughts
+          and a clear next step. {RESPONSE_PROMISE}.
         </p>
       </FadeIn>
 
-      <div className="mt-14 grid gap-10 sm:grid-cols-[1.2fr_1fr]">
+      <div className="mt-16 grid gap-12 lg:grid-cols-[3fr_2fr]">
         <FadeIn>
-          <div className="space-y-4">
-            <a
-              href={`mailto:${EMAIL}`}
-              className="flex items-center justify-between rounded-[20px] border border-line bg-cream px-7 py-6 transition-colors hover:border-ink/30"
-            >
-              <span>
-                <span className="block font-mono text-[11px] uppercase tracking-wider text-dim">
-                  Email
-                </span>
-                <span className="mt-1 block font-heading text-lg font-bold text-ink">
-                  {EMAIL}
-                </span>
-              </span>
-              <span className="text-accent">→</span>
-            </a>
-            <a
-              href={LINKEDIN_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-between rounded-[20px] border border-line bg-cream px-7 py-6 transition-colors hover:border-ink/30"
-            >
-              <span>
-                <span className="block font-mono text-[11px] uppercase tracking-wider text-dim">
-                  LinkedIn
-                </span>
-                <span className="mt-1 block font-heading text-lg font-bold text-ink">
-                  in/vaugn-almeida
-                </span>
-              </span>
-              <span className="text-accent">↗</span>
-            </a>
-            <a
-              href="/cv.pdf"
-              className="flex items-center justify-between rounded-[20px] border border-line bg-cream px-7 py-6 transition-colors hover:border-ink/30"
-            >
-              <span>
-                <span className="block font-mono text-[11px] uppercase tracking-wider text-dim">
-                  Résumé
-                </span>
-                <span className="mt-1 block font-heading text-lg font-bold text-ink">
-                  Download CV (PDF)
-                </span>
-              </span>
-              <span className="text-accent">↓</span>
-            </a>
-          </div>
+          <ContactForm />
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <div className="rounded-[24px] bg-dark p-8 text-cream">
-            <p className="font-mono text-[11px] uppercase tracking-wider text-accent">
-              Availability
-            </p>
-            <p className="mt-5 inline-flex items-center gap-2 font-heading text-lg font-bold text-white">
-              <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
-              Available for work
-            </p>
-            <dl className="mt-8 space-y-5 text-sm">
-              <div>
-                <dt className="font-mono text-[11px] uppercase tracking-wider text-dim">Open to</dt>
-                <dd className="mt-1 text-[#cfc9bd]">Full-time roles · Freelance projects</dd>
+          <div className="flex flex-col gap-6">
+            {/* Booking — appears once a Cal.com link is configured */}
+            {CAL_LINK ? (
+              <div className="rounded-2xl border border-line bg-surface p-8">
+                <p className="eyebrow">Prefer to talk?</p>
+                <h2 className="mt-3 font-display text-2xl text-ink">
+                  Book a 15-minute intro call
+                </h2>
+                <p className="mt-3 text-sm leading-relaxed text-ink2">
+                  No pitch, no pressure — just a quick conversation about what
+                  you need and whether I&apos;m the right fit.
+                </p>
+                <a
+                  href={`https://cal.com/${CAL_LINK}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-6 inline-block rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-ink transition-transform hover:scale-[1.02]"
+                >
+                  Pick a time ↗
+                </a>
               </div>
-              <div>
-                <dt className="font-mono text-[11px] uppercase tracking-wider text-dim">Based</dt>
-                <dd className="mt-1 text-[#cfc9bd]">Laguna, Philippines · Remote</dd>
+            ) : (
+              <div className="rounded-2xl border border-dashed border-line bg-surface p-8">
+                <p className="eyebrow">Booking — coming soon</p>
+                <p className="mt-3 text-sm leading-relaxed text-ink2">
+                  A 15-minute intro-call scheduler is on its way. Until then,
+                  the form or email works just as fast.
+                </p>
               </div>
-              <div>
-                <dt className="font-mono text-[11px] uppercase tracking-wider text-dim">Timezone</dt>
-                <dd className="mt-1 text-[#cfc9bd]">GMT+8 · async-friendly</dd>
-              </div>
-              <div>
-                <dt className="font-mono text-[11px] uppercase tracking-wider text-dim">Response</dt>
-                <dd className="mt-1 text-[#cfc9bd]">Within 24 hours</dd>
-              </div>
-            </dl>
+            )}
+
+            <div className="rounded-2xl border border-line bg-surface p-8">
+              <p className="eyebrow">Direct</p>
+              <a
+                href={`mailto:${EMAIL}`}
+                className="mt-3 block font-display text-xl text-ink transition-colors hover:text-accent"
+              >
+                {EMAIL}
+              </a>
+              <a
+                href={LINKEDIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 block text-sm text-ink2 transition-colors hover:text-ink"
+              >
+                {LINKEDIN_LABEL}
+              </a>
+            </div>
+
+            <div className="rounded-2xl border border-line bg-surface p-8">
+              <p className="eyebrow">Right now</p>
+              <p className="mt-3 flex items-center gap-2 text-sm text-ink2">
+                <span className="h-2 w-2 rounded-full bg-accent" />
+                Available for new projects
+              </p>
+              <p className="mt-2 text-sm text-ink2">
+                Working remotely with clients in Australia, the US, and Europe.
+              </p>
+            </div>
           </div>
         </FadeIn>
       </div>

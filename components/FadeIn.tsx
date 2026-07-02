@@ -3,8 +3,11 @@
 import { motion, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
 
-// Subtle scroll reveal — fade up only (Section 12 / Phase 5: keep subtle).
+// Subtle scroll reveal — fade up only.
 // Respects prefers-reduced-motion: content appears instantly, no movement.
+// The initial style must be identical on server and client (the server can't
+// know the motion preference), so only the transition varies — this avoids
+// hydration mismatches for reduced-motion users.
 export default function FadeIn({
   children,
   delay = 0,
@@ -18,11 +21,16 @@ export default function FadeIn({
 
   return (
     <motion.div
+      data-fadein
       className={className}
-      initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.6, delay, ease: "easeOut" }}
+      transition={
+        shouldReduceMotion
+          ? { duration: 0 }
+          : { duration: 0.6, delay, ease: "easeOut" }
+      }
     >
       {children}
     </motion.div>
