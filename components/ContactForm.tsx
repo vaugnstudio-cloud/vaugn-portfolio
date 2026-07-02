@@ -15,58 +15,38 @@ const BUDGET_OPTIONS = ["Under $2k", "$2–5k", "$5–10k", "$10k+"] as const;
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
-  const [copied, setCopied] = useState(false);
-
-  // Until Formspree is configured, show a clean email-first contact instead
-  // of a form that can't submit.
-  if (!FORMSPREE_ID) {
-    return (
-      <div className="rounded-2xl border border-line bg-surface p-10">
-        <p className="eyebrow">The fastest way to reach me</p>
-        <h2 className="mt-4 font-display text-3xl text-ink">
-          Email me your project details
-        </h2>
-        <p className="mt-4 max-w-md leading-relaxed text-ink2">
-          Tell me what you&apos;re building, who it&apos;s for, and when you
-          want it live. I&apos;ll reply within 24–48 hours with honest thoughts
-          and a clear next step.
-        </p>
-        <div className="mt-8 flex flex-wrap items-center gap-4">
-          <a
-            href={`mailto:${EMAIL}?subject=Project%20enquiry`}
-            className="rounded-full bg-accent px-7 py-3.5 font-medium text-accent-ink transition-transform hover:scale-[1.02]"
-          >
-            Email {EMAIL}
-          </a>
-          <button
-            type="button"
-            onClick={() => {
-              navigator.clipboard
-                .writeText(EMAIL)
-                .then(() => setCopied(true))
-                .catch(() => {});
-            }}
-            className="rounded-full border border-line px-6 py-3.5 text-sm text-ink2 transition-colors hover:border-ink2 hover:text-ink"
-          >
-            {copied ? "Copied ✓" : "Copy address"}
-          </button>
-        </div>
-      </div>
-    );
-  }
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    // No Formspree yet → the form still works: it opens the visitor's email
+    // client with everything pre-filled. Swaps to real submissions the moment
+    // NEXT_PUBLIC_FORMSPREE_ID is set.
     if (!FORMSPREE_ID) {
-      setStatus("error");
+      const subject = `Project enquiry — ${data.get("need") ?? "new project"}`;
+      const body = [
+        `Name: ${data.get("name") ?? ""}`,
+        `Email: ${data.get("email") ?? ""}`,
+        `Company/practice: ${data.get("company") ?? ""}`,
+        `Need: ${data.get("need") ?? ""}`,
+        `Budget: ${data.get("budget") ?? "—"}`,
+        "",
+        `${data.get("message") ?? ""}`,
+      ].join("\n");
+      window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(
+        subject
+      )}&body=${encodeURIComponent(body)}`;
+      setStatus("done");
       return;
     }
+
     setStatus("sending");
-    const form = e.currentTarget;
     try {
       const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
         method: "POST",
-        body: new FormData(form),
+        body: data,
         headers: { Accept: "application/json" },
       });
       setStatus(res.ok ? "done" : "error");
@@ -79,10 +59,13 @@ export default function ContactForm() {
   if (status === "done") {
     return (
       <div className="rounded-2xl border border-line bg-surface p-10 text-center">
-        <p className="font-display text-2xl text-ink">Got it — thank you.</p>
+        <p className="font-display text-2xl text-ink">
+          {FORMSPREE_ID ? "Got it — thank you." : "Your email is ready."}
+        </p>
         <p className="mt-3 text-ink2">
-          I&apos;ll reply within 24–48 hours with honest thoughts and a clear
-          next step.
+          {FORMSPREE_ID
+            ? "I'll reply within 24–48 hours with honest thoughts and a clear next step."
+            : `Your mail app just opened with everything pre-filled — hit send and I'll reply within 24–48 hours. (Nothing opened? Email me directly at ${EMAIL}.)`}
         </p>
       </div>
     );

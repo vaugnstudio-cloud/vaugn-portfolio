@@ -17,10 +17,8 @@ export const CAL_LINK = process.env.NEXT_PUBLIC_CAL_LINK ?? "";
 // until a real file is added (must pass the "no client would suspect AI" bar).
 export const INTRO_VIDEO_SRC: string | undefined = undefined;
 
-// Portrait photo. Set to "/images/vaugn-photo.jpg" once the file is dropped
-// into /public/images — undefined shows the designed placeholder with no
-// failed image requests.
-export const PORTRAIT_SRC: string | undefined = undefined;
+// Portrait photo (undefined → designed placeholder, no failed requests).
+export const PORTRAIT_SRC: string | undefined = "/images/vaugn-photo.jpg";
 
 // Real numbers only — no invented metrics.
 export const STATS = [
