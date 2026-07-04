@@ -134,6 +134,7 @@ export const projects: Project[] = [
     ],
     coverImage: "/images/ozmax-cover.png",
     featured: true,
+    url: "https://ozmaxcare.com.au/",
     caseStudy: {
       problem:
         "Families choosing an NDIS provider are making one of the most personal decisions there is — and comparing providers whose websites often look interchangeable. Ozmax Care needed an identity that felt warm and human without losing the dependability signals that carers and plan managers look for.",
@@ -163,7 +164,8 @@ export const projects: Project[] = [
         },
       ],
       outcome: {
-        body: "Brand identity and homepage design delivered. Created in collaboration with Your SocialChef.",
+        body: "Delivered and launched — the brand and site are live. Created in collaboration with Your SocialChef.",
+        liveUrl: "https://ozmaxcare.com.au/",
       },
     },
   },
@@ -571,13 +573,14 @@ export const projects: Project[] = [
     category: ["HEALTHCARE", "BRAND DESIGN", "WEB DESIGN"],
     headline: "Brand and website for a therapy practice, built to reassure.",
     description:
-      "Brand identity and full website for InBloom Therapy — warm, calming visual language designed for a mental-health audience and built for conversion. Final staging in progress.",
+      "Brand identity and full website for InBloom Therapy — warm, calming visual language designed for a mental-health audience and built for conversion. Live.",
     deliverables: ["Brand identity", "Website design", "Web build", "Responsive layout"],
     coverImage: "/images/inbloom-cover.jpg",
     featured: false,
+    url: "https://www.inbloomtherapy.com.au/",
     gallery: {
       context:
-        "A warm, calming identity and full website for a therapy practice — designed to reassure a mental-health audience from the first scroll. Final staging in progress; live URL to follow at launch.",
+        "A warm, calming identity and full website for a therapy practice — designed to reassure a mental-health audience from the first scroll. Live and serving clients.",
       tools: ["Figma", "Illustrator", "Photoshop"],
       images: [
         { label: "Homepage — desktop", aspect: "tall" },
