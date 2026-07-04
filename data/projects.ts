@@ -309,13 +309,14 @@ export const projects: Project[] = [
     description:
       "A complete concept identity for a specialty coffee brand — logo system, cups and bags, signage, menus, and a social presence that carries the neighbourhood story hyper-local café branding demands.",
     deliverables: ["Identity system", "Packaging", "Signage & menus", "Social system"],
+    coverImage: "/images/branding/specialty-coffee-cover.jpg",
     featured: true,
     gallery: {
       context:
         "Concept branding for the specialty coffee niche — designed to show how a café brand should work as one system: identity, packaging, environment, and content. Full concept in production.",
       tools: ["Illustrator", "Photoshop", "Figma"],
       images: [
-        { label: "Brand board", aspect: "wide" },
+        { src: "/images/branding/specialty-coffee-cover.jpg", label: "Brand board", aspect: "wide" },
         { label: "Logo construction", aspect: "square" },
         { label: "Palette & typography", aspect: "square" },
         { label: "Cups & packaging", aspect: "tall" },
@@ -335,13 +336,14 @@ export const projects: Project[] = [
     description:
       "Concept identity for a boutique accommodation brand — wordmark, collateral, wayfinding, and the quiet, experience-led visual language 2026 hospitality branding is moving toward.",
     deliverables: ["Identity system", "Collateral", "Wayfinding", "Digital presence"],
+    coverImage: "/images/branding/boutique-hotel-cover.jpg",
     featured: true,
     gallery: {
       context:
         "Concept branding for the boutique hotel niche — an experience-led identity across print, wayfinding, and digital touchpoints. Full concept in production.",
       tools: ["Illustrator", "InDesign", "Figma"],
       images: [
-        { label: "Brand board", aspect: "wide" },
+        { src: "/images/branding/boutique-hotel-cover.jpg", label: "Brand board", aspect: "wide" },
         { label: "Wordmark & monogram", aspect: "square" },
         { label: "Palette & typography", aspect: "square" },
         { label: "Print collateral", aspect: "tall" },
@@ -361,13 +363,14 @@ export const projects: Project[] = [
     description:
       "Concept identity for a craft beverage label — can and bottle design, brand character, and the merch-ready visual world that makes beverage brands portfolio-defining work.",
     deliverables: ["Identity system", "Can & label design", "Merch", "Launch creative"],
+    coverImage: "/images/branding/craft-beverage-cover.jpg",
     featured: true,
     gallery: {
       context:
         "Concept branding for the craft beverage niche — identity built packaging-first, where the can is the billboard. Full concept in production.",
       tools: ["Illustrator", "Photoshop", "Dimension"],
       images: [
-        { label: "Brand board", aspect: "wide" },
+        { src: "/images/branding/craft-beverage-cover.jpg", label: "Brand board", aspect: "wide" },
         { label: "Logo & character", aspect: "square" },
         { label: "Palette & typography", aspect: "square" },
         { label: "Can lineup", aspect: "tall" },
@@ -387,13 +390,14 @@ export const projects: Project[] = [
     description:
       "Concept identity for a wellness and med-spa brand — the exact intersection of my two niches: healthcare credibility with a hospitality-grade sensory brand world.",
     deliverables: ["Identity system", "Interior cues", "Treatment menus", "Digital presence"],
+    coverImage: "/images/branding/wellness-medspa-cover.jpg",
     featured: true,
     gallery: {
       context:
         "Concept branding for the wellness & med-spa niche — clinical trust signals wrapped in warmth, from treatment menus to the booking experience. Full concept in production.",
       tools: ["Illustrator", "Figma", "InDesign"],
       images: [
-        { label: "Brand board", aspect: "wide" },
+        { src: "/images/branding/wellness-medspa-cover.jpg", label: "Brand board", aspect: "wide" },
         { label: "Logo & mark", aspect: "square" },
         { label: "Palette & typography", aspect: "square" },
         { label: "Treatment menu & print", aspect: "tall" },
@@ -413,13 +417,14 @@ export const projects: Project[] = [
     description:
       "Concept identity for a dental and specialist clinic — modern, calm, and credibility-first, extending my healthcare branding beyond mental health and disability care.",
     deliverables: ["Identity system", "Patient collateral", "Signage", "Digital presence"],
+    coverImage: "/images/branding/dental-clinic-cover.jpg",
     featured: false,
     gallery: {
       context:
         "Concept branding for the dental & specialist clinic niche — trust-first identity across patient touchpoints. Full concept in production.",
       tools: ["Illustrator", "Figma"],
       images: [
-        { label: "Brand board", aspect: "wide" },
+        { src: "/images/branding/dental-clinic-cover.jpg", label: "Brand board", aspect: "wide" },
         { label: "Logo & mark", aspect: "square" },
         { label: "Palette & typography", aspect: "square" },
         { label: "Patient collateral", aspect: "tall" },
@@ -439,13 +444,14 @@ export const projects: Project[] = [
     description:
       "Concept identity for a boutique fitness studio — bold identity, class collateral, and the social content system that fitness brands live or die by.",
     deliverables: ["Identity system", "Class collateral", "Merch", "Social system"],
+    coverImage: "/images/branding/fitness-studio-cover.jpg",
     featured: false,
     gallery: {
       context:
         "Concept branding for the fitness studio niche — energy on the walls and on the feed, built as a system. Full concept in production.",
       tools: ["Illustrator", "Photoshop", "Figma"],
       images: [
-        { label: "Brand board", aspect: "wide" },
+        { src: "/images/branding/fitness-studio-cover.jpg", label: "Brand board", aspect: "wide" },
         { label: "Logo & mark", aspect: "square" },
         { label: "Palette & typography", aspect: "square" },
         { label: "Class posters & merch", aspect: "tall" },
