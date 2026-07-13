@@ -212,14 +212,14 @@ export default function Home() {
           <div className="rounded-2xl border border-line bg-surface p-10 sm:p-14">
             <div className="grid items-center gap-8 lg:grid-cols-[3fr_2fr]">
               <div>
-                <p className="eyebrow">Coming soon</p>
+                <p className="eyebrow">Now available</p>
                 <h2 className="display mt-3 text-4xl text-ink sm:text-5xl">
                   Tools &amp; templates — <em>the systems, packaged.</em>
                 </h2>
                 <p className="mt-5 max-w-lg leading-relaxed text-ink2">
-                  Framer templates, restaurant marketing packs, and healthcare
-                  checklists — built from the same systems I use on client
-                  work. Launching soon.
+                  The Denial Defense System — a complete medical-billing SOP
+                  toolkit — is live now, with Framer templates and marketing
+                  packs in production. All built from real client work.
                 </p>
               </div>
               <div className="flex lg:justify-end">
@@ -227,7 +227,7 @@ export default function Home() {
                   href="/resources"
                   className="rounded-full border border-line px-7 py-3.5 text-ink2 transition-colors hover:border-accent hover:text-accent"
                 >
-                  Preview the resources →
+                  Browse the resources →
                 </Link>
               </div>
             </div>

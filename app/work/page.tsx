@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 import { caseStudies, branding, graphicDesign, moreProjects } from "@/data/projects";
+import { products } from "@/data/products";
 import ProjectCard from "@/components/ProjectCard";
 import FadeIn from "@/components/FadeIn";
 import CTABand from "@/components/CTABand";
@@ -94,7 +97,58 @@ export default function WorkPage() {
           </div>
         </div>
 
-        {/* §4 More projects — gallery pages with live links */}
+        {/* §4 Tools & templates — shipped products as work */}
+        <div className="mt-24 border-t border-line pt-20">
+          <FadeIn>
+            <div className="flex items-baseline gap-4">
+              <h2 className="font-display text-3xl text-ink">Tools &amp; templates</h2>
+              <span className="font-mono text-xs text-dim">
+                0{products.filter((p) => p.status === "available").length}
+              </span>
+            </div>
+            <p className="mt-2 max-w-lg text-sm text-ink2">
+              Product design is portfolio work too — systems built, packaged,
+              and sold. First one is live.
+            </p>
+          </FadeIn>
+          <div className="mt-10">
+            {products
+              .filter((p) => p.status === "available" && p.image)
+              .map((p) => (
+                <FadeIn key={p.id}>
+                  <Link
+                    href="/resources"
+                    className="group grid gap-0 overflow-hidden rounded-2xl border border-line bg-surface transition-colors hover:border-accent md:grid-cols-[3fr_2fr]"
+                  >
+                    <div className="relative aspect-video w-full">
+                      <Image
+                        src={p.image!}
+                        alt={`${p.name} — product design`}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 680px"
+                        className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                      />
+                    </div>
+                    <div className="flex flex-col p-8">
+                      <p className="font-mono text-[11px] font-medium uppercase tracking-wider text-accent">
+                        {p.category.toUpperCase()} · LIVE PRODUCT
+                      </p>
+                      <h3 className="mt-3 font-display text-2xl text-ink">{p.name}</h3>
+                      <p className="mt-1 text-sm text-dim">{p.forWho}</p>
+                      <p className="mt-3 text-sm leading-relaxed text-ink2">
+                        {p.description}
+                      </p>
+                      <span className="mt-auto pt-5 font-mono text-[11px] font-medium uppercase tracking-wider text-accent">
+                        See it on Resources →
+                      </span>
+                    </div>
+                  </Link>
+                </FadeIn>
+              ))}
+          </div>
+        </div>
+
+        {/* §5 More projects — gallery pages with live links */}
         <div className="mt-24 border-t border-line pt-20">
           <FadeIn>
             <div className="flex items-baseline gap-4">

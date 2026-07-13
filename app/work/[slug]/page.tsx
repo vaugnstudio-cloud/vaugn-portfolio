@@ -244,17 +244,39 @@ function GalleryView({ project }: { project: Project }) {
         </FadeIn>
       )}
 
-      <div className="mt-14 grid gap-4 sm:grid-cols-2">
-        {g.images.map((img, i) => (
-          <FadeIn
-            key={img.label}
-            delay={(i % 2) * 0.05}
-            className={img.aspect === "wide" ? "sm:col-span-2" : ""}
-          >
-            <ImageSlot asset={img} />
-          </FadeIn>
-        ))}
-      </div>
+      {g.chapters ? (
+        /* Story-chapter layout — branding concepts */
+        <div className="mt-6">
+          {g.chapters.map((ch) => (
+            <FadeIn key={ch.kicker} className="mt-20 border-t border-line pt-16">
+              <p className="font-mono text-xs uppercase tracking-[0.18em] text-accent">
+                {ch.kicker}
+              </p>
+              <h2 className="mt-4 max-w-2xl font-display text-3xl text-ink sm:text-4xl">
+                {ch.heading}
+              </h2>
+              <p className="mt-5 max-w-[65ch] text-lg leading-relaxed text-ink2">
+                {ch.body}
+              </p>
+              {ch.images && <ImageGrid images={ch.images} />}
+            </FadeIn>
+          ))}
+        </div>
+      ) : (
+        g.images && (
+          <div className="mt-14 grid gap-4 sm:grid-cols-2">
+            {g.images.map((img, i) => (
+              <FadeIn
+                key={img.label}
+                delay={(i % 2) * 0.05}
+                className={img.aspect === "wide" ? "sm:col-span-2" : ""}
+              >
+                <ImageSlot asset={img} />
+              </FadeIn>
+            ))}
+          </div>
+        )
+      )}
     </article>
   );
 }

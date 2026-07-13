@@ -16,9 +16,28 @@ export interface Product {
   status: ProductStatus;
   url?: string; // checkout / marketplace link at launch
   free?: boolean; // lead magnets
+  image?: string; // product artwork (rendered via scripts/product-posters.mjs)
+  demoUrl?: string; // live demo, where one exists
 }
 
+// Storefront — everything lives here
+export const STORE_URL = "https://vaugnstudio.gumroad.com";
+export const STORE_BANNER = "/images/products/gumroad-storefront.png";
+
 export const products: Product[] = [
+  {
+    id: "denial-defense-system",
+    name: "Denial Defense System",
+    category: "SOP toolkit",
+    forWho: "Private medical practices & billing teams",
+    description:
+      "The complete medical-billing SOP toolkit — 25 step-by-step revenue-cycle SOPs, an interactive offline dashboard, denial & A/R trackers, and 5 appeal letter templates. Built by an RCM insider.",
+    price: "$67",
+    status: "available",
+    url: "https://vaugnstudio.gumroad.com/l/qymrx",
+    demoUrl: "https://denial-defense-demo.netlify.app",
+    image: "/images/products/denial-defense-card.png",
+  },
   {
     id: "healthcare-trust-checklist",
     name: "Healthcare Website Trust Checklist",

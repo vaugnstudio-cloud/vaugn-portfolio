@@ -75,6 +75,18 @@ body {
   color: var(--color-accent);
 }
 
+/* Typography discipline — no orphans/widows */
+h1,
+h2,
+h3,
+.display {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
 /* Mono eyebrow label */
 .eyebrow {
   font-family: var(--font-mono), monospace;

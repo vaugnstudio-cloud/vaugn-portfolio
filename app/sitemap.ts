@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { detailProjects } from "@/data/projects";
+import { insights } from "@/data/insights";
 import { SITE_URL } from "@/data/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -12,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/healthcare",
     "/hospitality",
     "/resources",
+    "/insights",
   ].map((path) => ({
     url: `${SITE_URL}${path}`,
     lastModified: new Date(),
@@ -26,5 +28,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...projectRoutes];
+  const insightRoutes = insights.map((i) => ({
+    url: `${SITE_URL}/insights/${i.slug}`,
+    lastModified: new Date(i.date),
+    changeFrequency: "yearly" as const,
+    priority: 0.5,
+  }));
+
+  return [...staticRoutes, ...projectRoutes, ...insightRoutes];
 }

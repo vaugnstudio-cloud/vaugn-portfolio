@@ -13,6 +13,7 @@ const NICHES = [
   { href: "/healthcare", label: "For healthcare" },
   { href: "/hospitality", label: "For hospitality" },
   { href: "/resources", label: "Resources" },
+  { href: "/insights", label: "Insights" },
 ] as const;
 
 export default function Footer() {

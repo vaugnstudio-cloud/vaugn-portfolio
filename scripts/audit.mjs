@@ -5,7 +5,10 @@ import { chromium } from "playwright";
 const BASE = "http://localhost:3000";
 const ROUTES = [
   "/", "/work", "/services", "/about", "/contact", "/healthcare",
-  "/hospitality", "/resources",
+  "/hospitality", "/resources", "/insights",
+  "/insights/what-makes-patients-trust-a-clinic-website",
+  "/insights/a-restaurant-brand-is-a-system-not-a-logo",
+  "/insights/how-i-use-ai-without-letting-it-design",
   "/work/medsync", "/work/ozmax-care", "/work/junk-sunshine-coast",
   "/work/your-socialchef", "/work/specialty-coffee-branding",
   "/work/boutique-hotel-branding", "/work/craft-beverage-branding",
@@ -20,8 +23,13 @@ const ROUTES = [
 const browser = await chromium.launch();
 const issues = [];
 
-// 1) Route status + console errors + mobile overflow
-for (const viewport of [{ width: 1280, height: 800, name: "desktop" }, { width: 375, height: 812, name: "mobile" }]) {
+// 1) Route status + console errors + horizontal overflow — 4 viewports
+for (const viewport of [
+  { width: 375, height: 812, name: "mobile" },
+  { width: 768, height: 1024, name: "tablet" },
+  { width: 1280, height: 800, name: "desktop" },
+  { width: 1536, height: 960, name: "wide" },
+]) {
   const page = await browser.newPage({ viewport, reducedMotion: "reduce" });
   const errors = [];
   page.on("console", (m) => { if (m.type() === "error") errors.push(m.text()); });

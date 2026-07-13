@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import CTABand from "@/components/CTABand";
-import { products } from "@/data/products";
+import { products, STORE_URL, STORE_BANNER } from "@/data/products";
 import { gmailCompose } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Resources & Digital Products",
   description:
-    "Templates, checklists, and marketing systems — the systems I use for client work, packaged. Launching soon.",
+    "Toolkits, templates, and marketing systems built from real client work — starting with the Denial Defense System for medical practices.",
 };
 
 export default function ResourcesPage() {
@@ -26,7 +27,7 @@ export default function ResourcesPage() {
           </p>
           <span className="mt-8 inline-flex items-center gap-2 rounded-full border border-line px-4 py-1.5 font-mono text-xs uppercase tracking-wider text-ink2">
             <span className="h-2 w-2 rounded-full bg-accent" />
-            First products launching soon
+            First product is live — more in production
           </span>
         </FadeIn>
 
@@ -47,28 +48,51 @@ export default function ResourcesPage() {
                   </span>
                 </div>
 
-                {/* Product artwork slot — drop a cover at launch */}
-                <div className="mt-6 flex aspect-[16/9] w-full flex-col items-center justify-center gap-2 rounded-xl border border-dashed border-line bg-raised">
-                  <span className="font-display text-xl italic text-ink2">{p.name}</span>
-                  <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-dim/70">
-                    artwork — coming
-                  </span>
-                </div>
+                {p.image ? (
+                  <div className="relative mt-6 aspect-[16/9] w-full overflow-hidden rounded-xl border border-line">
+                    <Image
+                      src={p.image}
+                      alt={`${p.name} — product artwork`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 560px"
+                      className="object-cover"
+                    />
+                  </div>
+                ) : (
+                  <div className="mt-6 flex aspect-[16/9] w-full flex-col items-center justify-center gap-2 rounded-xl border border-dashed border-line bg-raised">
+                    <span className="font-display text-xl italic text-ink2">{p.name}</span>
+                    <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-dim/70">
+                      in production
+                    </span>
+                  </div>
+                )}
 
                 <h2 className="mt-6 font-display text-2xl text-ink">{p.name}</h2>
                 <p className="mt-1 text-sm text-dim">{p.forWho}</p>
                 <p className="mt-3 text-sm leading-relaxed text-ink2">{p.description}</p>
 
-                <div className="mt-auto pt-6">
+                <div className="mt-auto flex flex-wrap gap-3 pt-6">
                   {p.status === "available" && p.url ? (
-                    <a
-                      href={p.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-accent-ink transition-transform hover:scale-[1.02]"
-                    >
-                      Get it →
-                    </a>
+                    <>
+                      <a
+                        href={p.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-accent-ink transition-transform hover:scale-[1.02]"
+                      >
+                        Get it — {p.price} →
+                      </a>
+                      {p.demoUrl && (
+                        <a
+                          href={p.demoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-block rounded-full border border-line px-5 py-2.5 text-sm text-ink2 transition-colors hover:border-ink2 hover:text-ink"
+                        >
+                          Try the live demo
+                        </a>
+                      )}
+                    </>
                   ) : (
                     <span className="inline-block cursor-default rounded-full border border-line px-5 py-2.5 text-sm text-dim">
                       {p.free ? "Available at launch" : "Coming soon"}
@@ -80,10 +104,30 @@ export default function ResourcesPage() {
           ))}
         </div>
 
+        {/* Storefront card — everything lives on Gumroad */}
+        <FadeIn className="mt-16">
+          <a
+            href={STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group block overflow-hidden rounded-2xl border border-line transition-colors hover:border-accent"
+          >
+            <div className="relative aspect-video w-full">
+              <Image
+                src={STORE_BANNER}
+                alt="Vaugn Studio on Gumroad — the systems I use for clients, packaged"
+                fill
+                sizes="(max-width: 1152px) 100vw, 1152px"
+                className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+              />
+            </div>
+          </a>
+        </FadeIn>
+
         <FadeIn className="mt-16">
           <div className="rounded-2xl border border-line bg-surface p-10 text-center">
             <h2 className="font-display text-2xl text-ink">
-              Want to know when these launch?
+              Want to know when the next ones launch?
             </h2>
             <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-ink2">
               Email me &ldquo;resources&rdquo; and you&apos;ll be first to know —

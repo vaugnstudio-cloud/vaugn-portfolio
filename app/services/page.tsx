@@ -9,7 +9,7 @@ import { services, faqs } from "@/data/services";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Brand + web launch packages, healthcare and hospitality specialties, Framer landing pages, and monthly retainers — with transparent from-pricing.",
+    "Brand + web launch packages, healthcare and hospitality specialties, Framer landing pages, and monthly retainers — custom-quoted, fixed-price engagements.",
 };
 
 export default function ServicesPage() {
@@ -19,12 +19,12 @@ export default function ServicesPage() {
         <FadeIn>
           <p className="eyebrow">Services</p>
           <h1 className="display mt-3 max-w-3xl text-5xl text-ink sm:text-6xl">
-            Clear packages. <em>Honest pricing.</em> One accountable person.
+            Clear packages. <em>Considered scope.</em> One accountable person.
           </h1>
           <p className="mt-6 max-w-xl text-lg text-ink2">
-            Every engagement is scoped and fixed-price before it starts.
-            &ldquo;From&rdquo; prices are the smallest sensible version of each
-            package — your exact quote never changes mid-project.
+            Every engagement is custom-quoted and fixed before it starts — one
+            proposal, tailored to your scope and market, that never changes
+            mid-project.
           </p>
         </FadeIn>
 
