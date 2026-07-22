@@ -599,23 +599,47 @@ export const projects: Project[] = [
     id: "social-media-systems",
     type: "graphic-design",
     title: "Social Media Systems",
-    client: "Studio template systems",
+    client: "Studio design system",
     year: "2023–Present",
-    category: ["SOCIAL MEDIA", "TEMPLATE SYSTEMS", "CONTENT DESIGN"],
-    headline: "Template systems that keep brands consistent at posting speed.",
+    category: ["SOCIAL MEDIA", "DESIGN SYSTEMS", "CONTENT DESIGN"],
+    headline: "One architecture, twenty brands, zero drift — the system behind daily posting.",
     description:
-      "The framework craft behind managing 20+ agency accounts, distilled into reusable template systems — shown here as the studio's own framework sets.",
-    deliverables: ["Feed grid frameworks", "Carousel systems", "Quote & offer templates", "Content architecture"],
-    coverImage: "/images/gd/social-system-grid.png",
+      "The design system distilled from running social for 20+ concurrent agency accounts: a nine-slot content architecture, an annotated conversion carousel, and the brand-skin matrix that lets one template serve wildly different voices.",
+    deliverables: ["Nine-slot content architecture", "Conversion carousel system", "Brand-skin matrix", "Voice & tone application"],
+    coverImage: "/images/gd/sms-feed-sundry.png",
     featured: false,
     gallery: {
       context:
-        "Consistency at posting speed is a system problem, not a talent problem. These are the studio's template frameworks — the nine-slot grid architecture, carousel structures, and tile systems that let a brand publish daily without drifting off-model. Every client system starts from bones like these.",
-      tools: ["Figma", "Photoshop", "Illustrator"],
-      images: [
-        { src: "/images/gd/social-system-grid.png", label: "Feed grid framework — nine-slot system", aspect: "wide" },
-        { src: "/images/gd/social-quote-template.png", label: "Quote template", aspect: "square" },
-        { src: "/images/gd/social-carousel-template.png", label: "Carousel frames", aspect: "square" },
+        "Consistency at posting speed is a system problem, not a talent problem. This is the studio's social architecture shown three ways: the bones (the framework itself), the skin (one concept brand wearing it, end to end), and the scale (four brands on the same skeleton, none of them sounding alike). Concept application — photography is AI-assisted and art-directed in-studio.",
+      tools: ["Figma", "Photoshop", "Illustrator", "Art direction"],
+      chapters: [
+        {
+          kicker: "01 — The Bones",
+          heading: "Nine slots. Every post has a job.",
+          body: "A feed isn't nine pretty squares — it's nine jobs: hook, proof, value, offer, engagement, and one CTA per cycle, never more. The framework decides what each post is for before anyone opens a design tool, which is why it survives contact with real deadlines.",
+          images: [
+            { src: "/images/gd/social-system-grid.png", label: "The nine-slot architecture — every tile has a job", aspect: "wide" },
+          ],
+        },
+        {
+          kicker: "02 — The Skin",
+          heading: "The same system, wearing Sundry.",
+          body: "Bones don't sell coffee — voice does. Here the architecture is dressed in Sundry Coffee Co.: terracotta and bone, Fraunces italics, copy that sounds like the corner that remembers your order. Same nine jobs, now with a pulse. The carousel below shows the conversion arc slide by slide — with the reasoning annotated, because the thinking is the deliverable.",
+          images: [
+            { src: "/images/gd/sms-feed-sundry.png", label: "Sundry feed — the system with a voice", aspect: "wide" },
+            { src: "/images/gd/sms-carousel-anatomy.png", label: "Carousel anatomy — hook to CTA, annotated", aspect: "wide" },
+          ],
+        },
+        {
+          kicker: "03 — The Scale",
+          heading: "Four brands. Same bones. Different soul.",
+          body: "This is the test of a real system: swap the type, palette, and voice — never the architecture — and a coffee roaster, a brewery, a med-spa, and a gym can all post daily without drifting off-model. That's what made 20+ concurrent accounts survivable.",
+          images: [
+            { src: "/images/gd/sms-brand-matrix.png", label: "The brand-skin matrix — one template, four voices", aspect: "wide" },
+            { src: "/images/gd/social-quote-template.png", label: "Quote template — the reshare layout", aspect: "square" },
+            { src: "/images/gd/social-carousel-template.png", label: "Carousel frames — the swipe skeleton", aspect: "square" },
+          ],
+        },
       ],
     },
   },
@@ -623,24 +647,46 @@ export const projects: Project[] = [
     id: "hospitality-social-content",
     type: "graphic-design",
     title: "Hospitality Social Content",
-    client: "Studio template systems · F&B",
+    client: "Studio design system · F&B",
     year: "2023–Present",
-    category: ["SOCIAL MEDIA", "F&B", "TEMPLATE SYSTEMS"],
-    headline: "The content engine that keeps a venue fed, weekly.",
+    category: ["SOCIAL MEDIA", "F&B", "CAMPAIGN DESIGN"],
+    headline: "Appetite first, always — the content engine that fills tables.",
     description:
-      "Menu drops, event promos, specials, and a seven-day content calendar — the F&B template engine refined across live Australian venues, shown as the studio's framework set.",
-    deliverables: ["Menu drop templates", "Event promos", "Specials system", "Content calendar"],
+      "The F&B content engine refined across live Australian venues: appetite-led menu drops with real photography, a three-story campaign arc that turns one dish into a weekly ritual, and the seven-day calendar that keeps a venue fed without a designer on call.",
+    deliverables: ["Menu-drop system", "Campaign arc — tease, drop, service", "Weekly specials system", "Seven-day content calendar"],
     coverImage: "/images/gd/hosp-menu-drop.png",
     featured: false,
     gallery: {
       context:
-        "Restaurants don't need a designer on call — they need an engine. This is the studio's F&B content framework, the same architecture running behind venues like Junk Sunshine Coast: drop-in templates for menu launches, events, and specials, sequenced on a seven-slot weekly calendar.",
-      tools: ["Photoshop", "Figma", "Lightroom"],
-      images: [
-        { src: "/images/gd/hosp-menu-drop.png", label: "Menu drop template — three formats", aspect: "wide" },
-        { src: "/images/gd/hosp-event-story.png", label: "Event promo · 9:16", aspect: "tall" },
-        { src: "/images/gd/hosp-special-story.png", label: "Weekly special · 9:16", aspect: "tall" },
-        { src: "/images/gd/hosp-calendar.png", label: "Seven-day content calendar", aspect: "wide" },
+        "Nobody ever booked a table because of a layout — they booked because the food looked like that. The photography leads, the type serves, and every post has one job: get someone through the door this week. Concept application built on the studio's live-venue engine — photography is AI-assisted and art-directed in-studio; campaign shown for a concept venue.",
+      tools: ["Photoshop", "Figma", "Lightroom", "Art direction"],
+      chapters: [
+        {
+          kicker: "01 — Appetite First",
+          heading: "The photo does the selling. The type gets out of the way.",
+          body: "The menu-drop system is built around one rule: nothing competes with the dish. Real photography sits full-bleed, the price is typographic jewellery, and the drop lands in three formats — feed, story, print — from one layout. Swap the dish, the date, and the shot; the drama is built in.",
+          images: [
+            { src: "/images/gd/hosp-menu-drop.png", label: "Menu drop — feed, story & print from one system", aspect: "wide" },
+            { src: "/images/gd/hosp-special-story.png", label: "Weekly special · 9:16 — photo leads", aspect: "tall" },
+            { src: "/images/gd/hosp-event-story.png", label: "Event promo · 9:16 — the loud one", aspect: "tall" },
+          ],
+        },
+        {
+          kicker: "02 — One Launch, One Arc",
+          heading: "Birria Tuesday: tease, drop, last tables.",
+          body: "A dish launch isn't a post — it's a three-act story. The night before: anticipation. Drop day: one dish, one price, one rule. During service: scarcity you didn't have to invent, posted live from the pass. This is the arc that turns a Tuesday special into the reason Tuesday exists.",
+          images: [
+            { src: "/images/gd/hsc-launch-set.png", label: "The campaign arc — tease · drop · service", aspect: "wide" },
+          ],
+        },
+        {
+          kicker: "03 — The Weekly Engine",
+          heading: "Seven slots, so the kitchen never wonders what to post.",
+          body: "Rituals beat randomness. The calendar gives every day a job — menu hero Monday, the special midweek, events into the weekend — so the venue posts daily at service speed, and the feed reads like a place with a heartbeat instead of a brand doing homework.",
+          images: [
+            { src: "/images/gd/hosp-calendar.png", label: "The seven-day engine", aspect: "wide" },
+          ],
+        },
       ],
     },
   },

@@ -159,25 +159,38 @@ const boards = {
     <div style="position:absolute; bottom:52px; right:52px; opacity:.35; transform:rotate(14deg);">${svg(b.mark, b.bg, 96)}</div>
     <p class="mono" style="position:absolute; top:66px; right:64px; font-size:14px; color:${b.bg}; opacity:.75;">HOUSE MENU — NO. 47</p>
     <p class="mono" style="position:absolute; bottom:70px; left:64px; font-size:14px; color:${b.bg}; opacity:.75;">SUNDRY COFFEE CO.</p>
-    <div style="width:880px; height:1000px; background:${b.bg}; background-image:${noise(0.06)}; border-radius:10px; padding:58px 66px; color:${b.ink}; box-shadow:0 44px 90px rgba(30,15,5,.4); transform:rotate(-1.2deg); display:flex; flex-direction:column;">
+    <div style="width:880px; height:1000px; background:${b.bg}; background-image:${noise(0.06)}; border-radius:10px; padding:52px 66px 44px; color:${b.ink}; box-shadow:0 44px 90px rgba(30,15,5,.4); transform:rotate(-1.2deg); display:flex; flex-direction:column;">
       <div style="display:flex; align-items:center; justify-content:center; gap:26px;">
         <span style="flex:1; height:2px; background:${b.ink}33;"></span>
-        ${svg(b.mark, b.accent, 88)}
+        ${svg(b.mark, b.accent, 76)}
         <span style="flex:1; height:2px; background:${b.ink}33;"></span>
       </div>
-      <p style="font-family:'Fraunces'; font-weight:600; font-size:66px; text-align:center; letter-spacing:.08em; margin-top:10px;">SUNDRY</p>
-      <p class="mono" style="font-size:14px; text-align:center; letter-spacing:.5em; margin-top:8px; opacity:.6;">ROASTED TUESDAYS</p>
-      <div style="flex:1; display:flex; flex-direction:column; justify-content:center; border-top:4px solid ${b.ink}; margin-top:34px;">
+      <p style="font-family:'Fraunces'; font-weight:600; font-size:58px; text-align:center; letter-spacing:.08em; margin-top:8px;">SUNDRY</p>
+      <p class="mono" style="font-size:13px; text-align:center; letter-spacing:.5em; margin-top:6px; opacity:.6;">ROASTED TUESDAYS</p>
+      <p class="mono" style="font-size:13px; letter-spacing:.34em; color:${b.accent}; border-top:4px solid ${b.ink}; margin-top:26px; padding-top:18px;">THE BEANS</p>
+      <div style="display:flex; flex-direction:column;">
         ${[["Single origin — Huila", "Washed · honey &amp; stone fruit", "6.5"], ["House blend — Corner", "Comfort first · chocolate &amp; malt", "5.0"], ["Seasonal — Kayanza", "Bright · currant &amp; black tea", "7.0"]].map(([a, d, p]) => `
-          <div style="display:flex; justify-content:space-between; align-items:baseline; padding:26px 4px; border-bottom:2px solid ${b.ink}22;">
+          <div style="display:flex; justify-content:space-between; align-items:baseline; padding:17px 4px; border-bottom:2px solid ${b.ink}22;">
             <div>
-              <p style="font-family:'Karla'; font-weight:700; font-size:31px;">${a}</p>
-              <p style="font-family:'Karla'; font-size:21px; opacity:.65; margin-top:7px;">${d}</p>
+              <p style="font-family:'Karla'; font-weight:700; font-size:28px;">${a}</p>
+              <p style="font-family:'Karla'; font-size:19px; opacity:.65; margin-top:5px;">${d}</p>
             </div>
-            <p style="font-family:'Fraunces'; font-style:italic; font-size:38px; color:${b.accent};">${p}</p>
+            <p style="font-family:'Fraunces'; font-style:italic; font-size:34px; color:${b.accent};">${p}</p>
           </div>`).join("")}
       </div>
-      <p class="mono" style="font-size:13px; text-align:center; margin-top:30px; letter-spacing:.4em; opacity:.55;">250G · WHOLE BEAN · BATCH 47</p>
+      <p class="mono" style="font-size:13px; letter-spacing:.34em; color:${b.accent}; margin-top:24px;">AT THE COUNTER</p>
+      <div style="display:flex; flex-direction:column;">
+        ${[["Espresso · Long black", "Your usual, started already", "4.0"], ["Flat white · Batch filter", "Slow mornings encouraged", "4.5"], ["Sundry toastie", "Sourdough · aged cheddar &amp; pickle", "8.0"]].map(([a, d, p]) => `
+          <div style="display:flex; justify-content:space-between; align-items:baseline; padding:17px 4px; border-bottom:2px solid ${b.ink}22;">
+            <div>
+              <p style="font-family:'Karla'; font-weight:700; font-size:28px;">${a}</p>
+              <p style="font-family:'Karla'; font-size:19px; opacity:.65; margin-top:5px;">${d}</p>
+            </div>
+            <p style="font-family:'Fraunces'; font-style:italic; font-size:34px; color:${b.accent};">${p}</p>
+          </div>`).join("")}
+      </div>
+      <div style="flex:1;"></div>
+      <p class="mono" style="font-size:13px; text-align:center; letter-spacing:.4em; opacity:.55;">250G · WHOLE BEAN · BATCH 47 · KEEP YOUR CUP</p>
     </div>`),
 
   /* ASTER — brass engraving on olive + stationery spec */
@@ -369,7 +382,10 @@ async function render(html, w, h, path) {
   console.log(`rendered ${path.split("/").pop()}`);
 }
 
+// Optional CLI filter: `node scripts/brand-boards.mjs sundry` renders one brand.
+const only = process.argv[2];
 for (const [key, b] of Object.entries(B)) {
+  if (only && key !== only) continue;
   await render(lockups[key](b), 1200, 1200, `${OUT}/${b.slug}-lockup.png`);
   await render(boards[`${key}-identity`](b), 1200, 1200, `${OUT}/${b.slug}-identity.png`);
   await render(boards[`${key}-application`](b), 1200, 1200, `${OUT}/${b.slug}-application-v2.png`);
