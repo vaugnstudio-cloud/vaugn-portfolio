@@ -876,6 +876,7 @@ export const projects: Project[] = [
       "Two themes · design tokens",
     ],
     coverImage: "/images/products/averis-d-hero.jpg",
+    url: "https://averis-rcm-demo.netlify.app",
     featured: true,
     gallery: {
       context:
@@ -929,6 +930,7 @@ export const projects: Project[] = [
       "Light + dark themes",
     ],
     coverImage: "/images/products/lumiere-d-hero.jpg",
+    url: "https://lumiere-medspa-kit-demo.netlify.app",
     featured: true,
     gallery: {
       context:
@@ -982,6 +984,7 @@ export const projects: Project[] = [
       "CRM integration playbook",
     ],
     coverImage: "/images/products/eclat-d-hero.jpg",
+    url: "https://eclat-dental-kit-demo.netlify.app",
     featured: false,
     gallery: {
       context:
@@ -1034,6 +1037,7 @@ export const projects: Project[] = [
       "Two themes · CRM playbook",
     ],
     coverImage: "/images/products/maison-d-hero.jpg",
+    url: "https://maison-realty-kit-demo.netlify.app",
     featured: false,
     gallery: {
       context:
@@ -1086,6 +1090,7 @@ export const projects: Project[] = [
       "Dark-first + light themes",
     ],
     coverImage: "/images/products/esprit-d-hero.jpg",
+    url: "https://esprit-ai-kit-demo.netlify.app",
     featured: false,
     gallery: {
       context:
