@@ -26,9 +26,9 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "500"],
 });
 
-const titleDefault = "Vaugn Almeida — Brand & Web Designer";
+const titleDefault = "Vaugn Almeida — Senior Brand & Web Designer";
 const description =
-  "Independent brand & web designer for healthcare, hospitality, and growth businesses. Identity, websites, and marketing systems — designed and built end to end.";
+  "Senior brand & web designer for healthcare and hospitality. 5+ years, 20+ agency accounts, 7 live client sites — plus self-built products from design system to shipped PWA. Open to senior roles and select client projects.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -38,8 +38,13 @@ export const metadata: Metadata = {
   },
   description,
   keywords: [
+    "senior brand designer",
+    "senior web designer",
     "brand designer",
     "web designer",
+    "product designer",
+    "design systems",
+    "design portfolio",
     "healthcare web designer",
     "hospitality branding",
     "restaurant marketing design",
@@ -66,12 +71,14 @@ const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Vaugn Jasper Almeida",
-  jobTitle: "Brand & Web Designer",
+  jobTitle: "Senior Brand & Web Designer",
   email: `mailto:${EMAIL}`,
   url: SITE_URL,
   knowsAbout: [
     "Brand identity design",
     "Web design",
+    "Product design",
+    "Design systems",
     "Healthcare marketing",
     "Hospitality marketing",
     "Framer",

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { EMAIL, gmailCompose, FORMSPREE_ID } from "@/data/site";
 
 const NEED_OPTIONS = [
+  "Hiring / role opportunity",
   "Brand + Website",
   "Website only",
   "Landing page",
@@ -11,7 +12,13 @@ const NEED_OPTIONS = [
   "Other",
 ] as const;
 
-const BUDGET_OPTIONS = ["Under $2k", "$2–5k", "$5–10k", "$10k+"] as const;
+const BUDGET_OPTIONS = [
+  "Not sure yet / N-A",
+  "Under $2k",
+  "$2–5k",
+  "$5–10k",
+  "$10k+",
+] as const;
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
@@ -25,13 +32,13 @@ export default function ContactForm() {
     // pre-filled with everything typed. Swaps to real in-page submissions the
     // moment a Formspree id is set.
     if (!FORMSPREE_ID) {
-      const subject = `Project enquiry — ${data.get("need") ?? "new project"}`;
+      const subject = `Enquiry — ${data.get("need") ?? "new conversation"}`;
       const body = [
         `Name: ${data.get("name") ?? ""}`,
         `Email: ${data.get("email") ?? ""}`,
         `Company/practice: ${data.get("company") ?? ""}`,
         `Need: ${data.get("need") ?? ""}`,
-        `Budget: ${data.get("budget") ?? "—"}`,
+        `Budget (client projects): ${data.get("budget") ?? "—"}`,
         "",
         `${data.get("message") ?? ""}`,
       ].join("\n");
@@ -111,7 +118,7 @@ export default function ContactForm() {
           </select>
         </div>
         <div>
-          <label htmlFor="cf-budget" className="eyebrow">Budget range</label>
+          <label htmlFor="cf-budget" className="eyebrow">Budget (client projects)</label>
           <select id="cf-budget" name="budget" defaultValue="" className={`mt-2 ${field}`}>
             <option value="" disabled>Select one (optional)</option>
             {BUDGET_OPTIONS.map((o) => (
@@ -122,13 +129,13 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="cf-message" className="eyebrow">Tell me about the project</label>
+        <label htmlFor="cf-message" className="eyebrow">Tell me about it</label>
         <textarea
           id="cf-message"
           name="message"
           required
           rows={5}
-          placeholder="What are you building, who is it for, and when do you want it live?"
+          placeholder="Hiring? Tell me about the role. Building? What is it, who's it for, and when do you want it live?"
           className={`mt-2 ${field}`}
         />
       </div>

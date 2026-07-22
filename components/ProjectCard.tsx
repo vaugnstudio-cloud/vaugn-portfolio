@@ -35,6 +35,7 @@ function Cover({ project }: { project: Project }) {
 
 const BADGE: Record<Project["type"], string> = {
   "case-study": "View case study",
+  product: "View product",
   branding: "View branding",
   "graphic-design": "View work",
   project: "View project",

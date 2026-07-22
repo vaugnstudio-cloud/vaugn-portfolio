@@ -2,7 +2,7 @@
 // overflow, sitemap/robots content, 404 behaviour, OG image.
 import { chromium } from "playwright";
 
-const BASE = "http://localhost:3000";
+const BASE = process.env.AUDIT_BASE ?? "http://localhost:3000";
 const ROUTES = [
   "/", "/work", "/services", "/about", "/contact", "/healthcare",
   "/hospitality", "/resources", "/insights",
@@ -18,6 +18,9 @@ const ROUTES = [
   "/work/logo-identity", "/work/inbloom-therapy", "/work/acef-enterprises",
   "/work/mekong-merchant", "/work/yassas", "/work/feedme-group",
   "/work/plumbyourway",
+  "/work/averis-rcm-kit", "/work/lumiere-kit", "/work/eclat-kit",
+  "/work/maison-kit", "/work/esprit-kit", "/work/sop-quest",
+  "/work/studio-os", "/work/outreach-cockpit",
 ];
 
 const browser = await chromium.launch();

@@ -1,5 +1,13 @@
 import Link from "next/link";
-import { EMAIL, gmailCompose, LINKEDIN_URL, LINKEDIN_LABEL, FORMSPREE_ID } from "@/data/site";
+import {
+  EMAIL,
+  gmailCompose,
+  LINKEDIN_URL,
+  LINKEDIN_LABEL,
+  FORMSPREE_ID,
+  CV_URL,
+  AVAILABILITY,
+} from "@/data/site";
 import EmailCapture from "@/components/EmailCapture";
 
 const NAV = [
@@ -26,12 +34,13 @@ export default function Footer() {
               Vaugn<span className="text-accent">.</span>
             </p>
             <p className="mt-2 max-w-xs text-sm leading-relaxed text-ink2">
-              Independent brand &amp; web designer for healthcare, hospitality,
-              and growth businesses.
+              Senior brand &amp; web designer — healthcare &amp; hospitality. I
+              design, build, and ship: client sites, brand systems, and my own
+              products.
             </p>
             <span className="mt-4 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-dim">
               <span className="h-2 w-2 rounded-full bg-accent" />
-              Available for new projects
+              {AVAILABILITY}
             </span>
           </div>
 
@@ -66,6 +75,13 @@ export default function Footer() {
               className="text-ink2 transition-colors hover:text-ink"
             >
               {LINKEDIN_LABEL}
+            </a>
+            <a
+              href={CV_URL}
+              download
+              className="text-ink2 transition-colors hover:text-ink"
+            >
+              CV (PDF)
             </a>
             {FORMSPREE_ID && <EmailCapture />}
           </div>

@@ -1,7 +1,10 @@
 // All project data lives here. No CMS — edit this file to update case studies.
 //
-// Four tiers (2026 strategy) — every project is clickable:
+// Five tiers (v2 hire-first strategy) — every project is clickable:
 //   "case-study"     → full narrative detail page at /work/[slug]
+//   "product"        → self-initiated shipped products (kits + apps); story
+//                      gallery or full case study — always labelled
+//                      "Self-initiated product", never presented as client work
 //   "branding"       → niche branding showcase (gallery page); scaffolds until
 //                      Vaugn designs each concept brand — clearly labelled
 //                      "concept series", never presented as client work
@@ -13,7 +16,12 @@
 // Grid alignment rule: within each image set, keep aspects in balanced rows —
 // "wide" spans both columns; pair "square" with "square", "tall" with "tall".
 
-export type ProjectType = "case-study" | "branding" | "graphic-design" | "project";
+export type ProjectType =
+  | "case-study"
+  | "product"
+  | "branding"
+  | "graphic-design"
+  | "project";
 
 export interface ImageAsset {
   src?: string; // omit → renders a labeled placeholder slot
@@ -846,10 +854,430 @@ export const projects: Project[] = [
       ],
     },
   },
+
+  // ══ TIER — PRODUCTS & SYSTEMS (self-initiated, designed + built + shipped) ══
+  // Honesty rule: every entry is labelled a self-initiated product. Demo
+  // content is demo content. No client is implied, no metric is invented.
+  {
+    id: "averis-rcm-kit",
+    type: "product",
+    title: "Averis — RCM Website Kit",
+    client: "Vaugn Studio · Self-initiated product",
+    year: "2026",
+    category: ["HEALTHCARE", "PRODUCT DESIGN", "WEB KIT"],
+    headline:
+      "A revenue-cycle website system with a leakage calculator and a 14-slide pitch deck — designed, built, packaged.",
+    description:
+      "A complete website kit for medical-billing and RCM companies — five pages, an interactive revenue-leakage calculator as the lead-gen hook, and a matching 14-slide pitch deck in HTML and native PowerPoint. Two full themes, no framework, no build step.",
+    deliverables: [
+      "5-page website system",
+      "Revenue-leakage calculator",
+      "14-slide pitch deck (HTML + PPTX)",
+      "Two themes · design tokens",
+    ],
+    coverImage: "/images/products/averis-d-hero.jpg",
+    featured: true,
+    gallery: {
+      context:
+        "Self-initiated product — demo content shown, not client work. Built from real revenue-cycle experience: I've worked inside RCM operations, so the kit speaks the industry's language instead of guessing at it.",
+      tools: ["HTML/CSS/JS", "Design tokens", "SVG illustration", "PowerPoint"],
+      chapters: [
+        {
+          kicker: "01 — The Insight",
+          heading: "Billing firms sell trust to sceptical clinics.",
+          body: "Medical-billing companies pitch physician practices that have been burned before — so the website has to read established, precise, and financially literate at first glance. Generic agency templates can't do that. Averis is designed around the one number a practice owner cares about: revenue they're leaking right now.",
+          images: [
+            { src: "/images/products/averis-d-hero.jpg", label: "Home — Ledger Cream theme", aspect: "wide" },
+          ],
+        },
+        {
+          kicker: "02 — The System",
+          heading: "A calculator that opens conversations, and a deck that closes them.",
+          body: "The interactive revenue-leakage calculator turns anonymous visitors into qualified conversations. Behind it: services, results, and contact pages built on one token system in two full themes, plus a 14-slide pitch deck shipped in both HTML and editable PowerPoint — the whole sales motion, not just a website.",
+          images: [
+            { src: "/images/products/averis-d-calc.jpg", label: "Revenue-leakage calculator", aspect: "wide" },
+            { src: "/images/products/averis-d-deck.jpg", label: "Pitch deck — slide system", aspect: "wide" },
+          ],
+        },
+        {
+          kicker: "03 — What Ships",
+          heading: "Hand-drawn visuals, zero stock photos, zero dependencies.",
+          body: "Every visual is CSS and SVG drawn for the kit — nothing stock, nothing generated-looking. Pure HTML/CSS/JS with design tokens at the top of one stylesheet, so a buyer can rebrand the entire system in minutes and deploy it anywhere static files run.",
+          images: [
+            { src: "/images/products/averis-m-hero.jpg", label: "Mobile — first screen", aspect: "tall" },
+            { src: "/images/products/averis-m-services.jpg", label: "Mobile — services", aspect: "tall" },
+          ],
+        },
+      ],
+    },
+  },
+  {
+    id: "lumiere-kit",
+    type: "product",
+    title: "Lumière — Med-Spa Lead-Gen Kit",
+    client: "Vaugn Studio · Self-initiated product",
+    year: "2026",
+    category: ["HEALTHCARE", "WEB KIT", "DESIGN SYSTEM"],
+    headline:
+      "A 13-page med-spa lead-gen system in two themes — every page engineered to book consultations.",
+    description:
+      "A complete website system for med spas and aesthetic clinics: landing page, four treatment deep-dives, results gallery with before/afters, pricing and memberships, a six-post blog, and the full supporting cast — in light and dark 'Quiet Luxe' themes.",
+    deliverables: [
+      "13-page website system",
+      "4 treatment deep-dive templates",
+      "Before/after results gallery",
+      "Light + dark themes",
+    ],
+    coverImage: "/images/products/lumiere-d-hero.jpg",
+    featured: true,
+    gallery: {
+      context:
+        "Self-initiated product — demo content shown, not client work. Designed for the aesthetics category, where the brand has to feel as premium as the treatment menu.",
+      tools: ["HTML/CSS/JS", "Design tokens", "Art direction"],
+      chapters: [
+        {
+          kicker: "01 — The Insight",
+          heading: "Aesthetics clients buy the feeling before the treatment.",
+          body: "A med spa's website is the first treatment — if it doesn't feel calm, expensive, and safe, the consultation never gets booked. Lumière is built on restraint: generous space, quiet typography, photography-first layouts that let results speak.",
+          images: [
+            { src: "/images/products/lumiere-d-hero.jpg", label: "Landing — light theme", aspect: "wide" },
+          ],
+        },
+        {
+          kicker: "02 — The System",
+          heading: "Thirteen pages, one design language, two moods.",
+          body: "Landing, services, four treatment deep-dives, results, pricing and memberships, blog, about, contact — every page shares one token system that flips between a daylight theme and the dark 'Quiet Luxe' variant without touching a layout.",
+          images: [
+            { src: "/images/products/lumiere-d-mid.jpg", label: "Treatments — system pages", aspect: "wide" },
+            { src: "/images/products/lumiere-d-dark.jpg", label: "Quiet Luxe — dark theme", aspect: "wide" },
+          ],
+        },
+        {
+          kicker: "03 — What Ships",
+          heading: "Lead-gen wiring, ready for a real clinic.",
+          body: "Consultation CTAs on every page, a before/after gallery structure that handles real patient photography, and mobile layouts treated as the primary surface — because that's where aesthetics clients actually browse.",
+          images: [
+            { src: "/images/products/lumiere-m-hero.jpg", label: "Mobile — first screen", aspect: "tall" },
+            { src: "/images/products/lumiere-m-mid.jpg", label: "Mobile — treatments", aspect: "tall" },
+          ],
+        },
+      ],
+    },
+  },
+  {
+    id: "eclat-kit",
+    type: "product",
+    title: "Éclat — Dental Clinic Kit",
+    client: "Vaugn Studio · Self-initiated product",
+    year: "2026",
+    category: ["HEALTHCARE", "WEB KIT", "SEO"],
+    headline:
+      "A dental-clinic website system with structured data, sitemap, and CRM playbooks built in.",
+    description:
+      "A 13-page dental practice website system — general, cosmetic, aligner, and implant service deep-dives, a smile gallery with before/after sliders, pricing, and blog — shipped with JSON-LD Dentist schema, sitemap, robots, and CRM integration guides.",
+    deliverables: [
+      "13-page website system",
+      "Smile gallery — before/after sliders",
+      "JSON-LD schema · sitemap · robots",
+      "CRM integration playbook",
+    ],
+    coverImage: "/images/products/eclat-d-hero.jpg",
+    featured: false,
+    gallery: {
+      context:
+        "Self-initiated product — demo content shown, not client work. Built to the standard a real dental group would audit it against: structured data, UTM-tracked forms, and CRM-ready lead capture out of the box.",
+      tools: ["HTML/CSS/JS", "JSON-LD", "Design tokens"],
+      chapters: [
+        {
+          kicker: "01 — The Insight",
+          heading: "Dental is won on credibility and found on Google.",
+          body: "Patients cross-shop dentists the way they cross-shop hotels — reviews, photos, prices. Éclat pairs a trust-first design language ('Porcelain Day' light, 'Midnight Studio' dark) with the technical SEO layer most clinic sites skip entirely.",
+          images: [
+            { src: "/images/products/eclat-d-hero.jpg", label: "Home — Porcelain Day theme", aspect: "wide" },
+          ],
+        },
+        {
+          kicker: "02 — The System",
+          heading: "Four service lines, one conversion architecture.",
+          body: "General & preventive, cosmetic, aligners, implants — each deep-dive follows the same evidence-first structure: what it is, what it costs, what the results look like, how to book. The smile gallery's before/after sliders do the persuading.",
+          images: [
+            { src: "/images/products/eclat-d-mid.jpg", label: "Service deep-dive", aspect: "wide" },
+          ],
+        },
+        {
+          kicker: "03 — What Ships",
+          heading: "The unglamorous parts, done properly.",
+          body: "JSON-LD Dentist schema, sitemap.xml, robots.txt, UTM-tagged forms, and a written CRM integration guide — the kit ships the infrastructure a practice manager needs, not just the pixels.",
+          images: [
+            { src: "/images/products/eclat-m-hero.jpg", label: "Mobile — first screen", aspect: "tall" },
+            { src: "/images/products/eclat-m-mid.jpg", label: "Mobile — smile gallery", aspect: "tall" },
+          ],
+        },
+      ],
+    },
+  },
+  {
+    id: "maison-kit",
+    type: "product",
+    title: "Maison — Real Estate Kit",
+    client: "Vaugn Studio · Self-initiated product",
+    year: "2026",
+    category: ["REAL ESTATE", "WEB KIT", "BRAND SYSTEM"],
+    headline:
+      "A property-agency site system — listings, sell/buy funnels, and a brand that reads established.",
+    description:
+      "A website system for real-estate agents and brokerages: home with featured listings, a seller lead-gen funnel, listings and sold galleries, buyer journey, and blog — in 'Estate Ivory' and 'Estate Noir' themes, with CRM integration docs included.",
+    deliverables: [
+      "10-page website system",
+      "Seller valuation lead funnel",
+      "Listings · sold · staged galleries",
+      "Two themes · CRM playbook",
+    ],
+    coverImage: "/images/products/maison-d-hero.jpg",
+    featured: false,
+    gallery: {
+      context:
+        "Self-initiated product — demo content shown, not client work. Real estate is a trust-and-taste category: Maison is designed so a two-person agency presents like an established firm.",
+      tools: ["HTML/CSS/JS", "Design tokens", "Art direction"],
+      chapters: [
+        {
+          kicker: "01 — The Insight",
+          heading: "Sellers choose the agent whose brand looks like their price bracket.",
+          body: "A homeowner picking an agent is really asking: will this firm make my property look worth more? Maison answers with editorial listing layouts, a staged-to-sell gallery, and typography that borrows from property marketing at the top of the market.",
+          images: [
+            { src: "/images/products/maison-d-hero.jpg", label: "Home — Estate Ivory theme", aspect: "wide" },
+          ],
+        },
+        {
+          kicker: "02 — The System",
+          heading: "Two funnels — sellers in, buyers through.",
+          body: "The seller valuation funnel is the money page: a low-friction 'what's my home worth' path that feeds the CRM. Around it, listings, sold results, and a buyer journey keep the site useful between campaigns.",
+          images: [
+            { src: "/images/products/maison-d-mid.jpg", label: "Listings — gallery system", aspect: "wide" },
+          ],
+        },
+        {
+          kicker: "03 — What Ships",
+          heading: "Ready to rebrand, ready to deploy.",
+          body: "One token system, two full themes ('Estate Ivory' / 'Estate Noir'), sitemap and robots included, CRM integration documented. Static files — deployable anywhere in an afternoon.",
+          images: [
+            { src: "/images/products/maison-m-hero.jpg", label: "Mobile — first screen", aspect: "tall" },
+            { src: "/images/products/maison-m-mid.jpg", label: "Mobile — listings", aspect: "tall" },
+          ],
+        },
+      ],
+    },
+  },
+  {
+    id: "esprit-kit",
+    type: "product",
+    title: "Esprit — AI Agency Kit",
+    client: "Vaugn Studio · Self-initiated product",
+    year: "2026",
+    category: ["AI / SAAS", "WEB KIT", "DARK UI"],
+    headline:
+      "A dark-first landing system for AI agencies — audit funnel included.",
+    description:
+      "A conversion landing system for AI agencies and productized-service studios: hero, services, metric case-study cards with industry filters, team, pricing, FAQ — and an 'AI Audit' lead-magnet funnel. Dark-first 'Circuit Night' theme with a full light variant.",
+    deliverables: [
+      "8-page landing system",
+      "AI-audit lead funnel",
+      "Case-study card system with filters",
+      "Dark-first + light themes",
+    ],
+    coverImage: "/images/products/esprit-d-hero.jpg",
+    featured: false,
+    gallery: {
+      context:
+        "Self-initiated product — demo content shown, not client work. Built for the AI-services category, where dark UI is the convention and credibility is proven with numbers, not adjectives.",
+      tools: ["HTML/CSS/JS", "Design tokens", "Dark UI"],
+      chapters: [
+        {
+          kicker: "01 — The Insight",
+          heading: "AI agencies sell certainty in a hype market.",
+          body: "Every AI agency claims transformation; buyers have stopped listening. Esprit leads with the category's visual convention — precise, dark, engineered — and backs it with metric-first case-study cards and a concrete first step: the AI audit.",
+          images: [
+            { src: "/images/products/esprit-d-hero.jpg", label: "Landing — Circuit Night theme", aspect: "wide" },
+          ],
+        },
+        {
+          kicker: "02 — The System",
+          heading: "An audit funnel, not a contact form.",
+          body: "The lead magnet is productized: 'The AI Audit' has its own page, its own promise, and its own form — turning a vague 'get in touch' into a defined offer a founder can say yes to.",
+          images: [
+            { src: "/images/products/esprit-d-mid.jpg", label: "AI-audit funnel page", aspect: "wide" },
+          ],
+        },
+        {
+          kicker: "03 — What Ships",
+          heading: "Filterable proof, themeable everything.",
+          body: "Case-study cards filter by industry, pricing is transparent, and the whole system runs on tokens — 'Circuit Night' dark by default with a complete 'Circuit Day' light variant for studios that want to break convention.",
+          images: [
+            { src: "/images/products/esprit-m-hero.jpg", label: "Mobile — first screen", aspect: "tall" },
+            { src: "/images/products/esprit-m-mid.jpg", label: "Mobile — case studies", aspect: "tall" },
+          ],
+        },
+      ],
+    },
+  },
+  {
+    id: "sop-quest",
+    type: "product",
+    title: "SOP Quest",
+    client: "Vaugn Studio · Self-initiated product",
+    year: "2026",
+    category: ["PRODUCT DESIGN", "PWA", "UX"],
+    headline:
+      "SOPs turned into a game — a gamified quest tracker, live as an installable PWA.",
+    description:
+      "'The System' — a gamified SOP and task tracker. Import a standard-operating-procedure document and it becomes quests with XP, hunter ranks, level-up moments, streaks, and a calendar Gate Map. Designed, built, and shipped as an installable offline-first PWA.",
+    deliverables: [
+      "Product concept & UX",
+      "Game-system design (XP · ranks · streaks)",
+      "Full UI design system",
+      "PWA build — offline, installable",
+    ],
+    coverImage: "/images/products/sop-quest-d-hero.jpg",
+    featured: true,
+    url: "https://the-system-vaugn.netlify.app",
+    gallery: {
+      context:
+        "Self-initiated product, live and installable today. The design problem: SOPs are the most important documents in a business and the least likely to be followed. The answer: make following them feel like progress.",
+      tools: ["UX design", "UI system", "Vanilla JS", "PWA"],
+      chapters: [
+        {
+          kicker: "01 — The Insight",
+          heading: "Nobody follows the SOP. Everybody finishes the quest.",
+          body: "Checklists die of boredom. SOP Quest borrows the mechanics that keep games compelling — visible XP, ranks that mean something, streaks you don't want to break — and attaches them to real operational work. The document becomes a quest log.",
+          images: [
+            { src: "/images/products/sop-quest-d-hero.jpg", label: "The System — quest log", aspect: "wide" },
+          ],
+        },
+        {
+          kicker: "02 — The System",
+          heading: "Import a document, get a game.",
+          body: "A markdown SOP parses into quests automatically. Completing steps earns XP; XP moves you through hunter ranks E to S; the Gate Map turns your calendar into territory. Level-ups get a cinematic moment — because finishing real work should feel like one.",
+          images: [
+            { src: "/images/products/sop-quest-d-mid.jpg", label: "Progression — ranks & gates", aspect: "wide" },
+          ],
+        },
+        {
+          kicker: "03 — What Ships",
+          heading: "A real product, running in production.",
+          body: "Offline-first PWA with strict CSP, installable on any device, data stored locally. Designed, built, and deployed solo — visit the live app and install it.",
+          images: [
+            { src: "/images/products/sop-quest-m-hero.jpg", label: "Mobile — installed PWA", aspect: "tall" },
+            { src: "/images/products/sop-quest-m-mid.jpg", label: "Mobile — quest detail", aspect: "tall" },
+          ],
+        },
+      ],
+    },
+  },
+  {
+    id: "studio-os",
+    type: "product",
+    title: "Studio OS",
+    client: "Vaugn Studio · Self-initiated product",
+    year: "2026",
+    category: ["PRODUCT DESIGN", "DASHBOARD", "CRM"],
+    headline:
+      "A freelancer's business OS — 19-metric dashboard, full CRM, and a reports engine, no backend.",
+    description:
+      "A complete business operating system for freelancers: a 19-metric dashboard across finance, business, content, and health; a sales-pipeline CRM with 8 stages; and a reports engine with hand-rolled charts and a rule-based insights advisor. Local-first, three themes, white-label ready.",
+    deliverables: [
+      "Product design — dashboard · CRM · reports",
+      "Hand-rolled SVG chart system",
+      "Rule-based insights engine",
+      "PWA · white-label theming",
+    ],
+    coverImage: "/images/products/studio-os-d-hero.jpg",
+    featured: true,
+    gallery: {
+      context:
+        "Self-initiated product. I run my own business on the same engine every day — Studio OS is that personal dashboard, productized: guided tours, help center, sample-data mode, and Google Sheets sync included.",
+      tools: ["Product design", "Data visualization", "Vanilla JS", "PWA"],
+      chapters: [
+        {
+          kicker: "01 — The Insight",
+          heading: "Freelancers fly blind between invoices.",
+          body: "Most independents track money in one app, leads in another, and everything else nowhere. Studio OS puts the whole business on one dark-premium surface — the 19 numbers that actually describe how the month is going.",
+          images: [
+            { src: "/images/products/studio-os-d-hero.jpg", label: "Dashboard — 19 metrics", aspect: "wide" },
+          ],
+        },
+        {
+          kicker: "02 — The System",
+          heading: "Dashboard, pipeline, reports — one design language.",
+          body: "A 19-field CRM moves leads through 8 stages; the reports engine draws its charts in hand-rolled SVG and reads the data back to you through a rule-based insights advisor. No backend, no accounts — everything lives in the browser.",
+          images: [
+            { src: "/images/products/studio-os-d-crm.jpg", label: "Pipeline CRM", aspect: "wide" },
+            { src: "/images/products/studio-os-d-reports.jpg", label: "Reports & insights engine", aspect: "wide" },
+          ],
+        },
+        {
+          kicker: "03 — What Ships",
+          heading: "Built to sell, built to rebrand.",
+          body: "White-label theming, guided onboarding tours, a help center, sample-data sandbox, and optional Google Sheets sync via a bundled Apps Script. Designed and engineered as a sellable product from the first commit.",
+        },
+      ],
+    },
+  },
+  {
+    id: "outreach-cockpit",
+    type: "product",
+    title: "Outreach Cockpit",
+    client: "Vaugn Studio · Self-initiated product",
+    year: "2026",
+    category: ["PRODUCT DESIGN", "CRM", "PWA"],
+    headline:
+      "A local-first cold-outreach CRM — pipeline, insights engine, Sheets sync — designed and shipped solo.",
+    description:
+      "An internal tool I designed and built for my own client outreach: a multi-industry cold-outreach CRM with editable leads, one-tap Gmail and Instagram actions, a five-stage pipeline, follow-up scheduling, KPI tiles, and a rule-based insights advisor. In daily use.",
+    deliverables: [
+      "Product & UX design",
+      "Pipeline + follow-up system",
+      "Rule-based insights advisor",
+      "PWA · Google Sheets sync",
+    ],
+    coverImage: "/images/products/outreach-cockpit-d-hero.jpg",
+    featured: true,
+    caseStudy: {
+      problem:
+        "Cold outreach dies in spreadsheets. Rows don't tell you who to contact next, follow-ups slip, and every send means re-typing the same message into Gmail. I needed a tool that made the next action obvious and instant — and no off-the-shelf CRM was worth its overhead for a one-person studio.",
+      role: [
+        "Product strategy & UX — solo",
+        "UI design system — solo",
+        "Build & ship (vanilla JS PWA) — solo",
+      ],
+      strategy:
+        "Design for the next five minutes, not the quarterly report. Every screen answers one question: who do I contact right now? Leads carry pre-filled Gmail and Instagram action links, the Due view surfaces slipping follow-ups, and a rule-based insights advisor reads the pipeline and says what to fix. Local-first by principle — outreach data is sensitive, so it never leaves the browser unless you sync it to your own Google Sheet.",
+      designSystem: {
+        body: "The same dark-premium design language as Studio OS — KPI tiles, stage chips, and an editable lead drawer — tuned for speed: everything is one tap from the pipeline. Shown here with sample data; the real pipeline stays private.",
+        images: [
+          { src: "/images/products/outreach-cockpit-d-hero.jpg", label: "Cockpit — insights & KPIs (sample data)", aspect: "wide" },
+        ],
+      },
+      execution: [
+        {
+          heading: "The insights advisor",
+          body: "A rule engine watches the numbers — reply rates by industry, follow-up debt, stage bottlenecks — and turns them into plain-language advice. It's the difference between a database and a cockpit: the tool tells you where to point the plane.",
+          images: [
+            { src: "/images/products/outreach-cockpit-d-insights.jpg", label: "Pipeline — lead cards (sample data)", aspect: "wide" },
+            { src: "/images/products/outreach-cockpit-m-hero.jpg", label: "Mobile — pipeline", aspect: "tall" },
+            { src: "/images/products/outreach-cockpit-m-mid.jpg", label: "Mobile — lead actions", aspect: "tall" },
+          ],
+        },
+      ],
+      outcome: {
+        body: "Shipped and in daily use running my own client outreach. This one stays private — it's shown here with sample data as proof of product thinking, not as something to buy.",
+      },
+    },
+  },
 ];
 
 // ── Helpers ─────────────────────────────────────────────────
 export const caseStudies = projects.filter((p) => p.type === "case-study");
+export const productWork = projects.filter((p) => p.type === "product");
 export const branding = projects.filter((p) => p.type === "branding");
 export const graphicDesign = projects.filter((p) => p.type === "graphic-design");
 export const moreProjects = projects.filter((p) => p.type === "project");

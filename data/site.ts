@@ -30,11 +30,20 @@ export const INTRO_VIDEO_SRC: string | undefined = undefined;
 // Portrait photo (undefined → designed placeholder, no failed requests).
 export const PORTRAIT_SRC: string | undefined = "/images/vaugn-photo.jpg";
 
+// Downloadable CV — source of truth is the 2026 one-page résumé
+// (1. Projects/Resume Archive/Vaugn Almeida Resume 2026), copied to public/.
+export const CV_URL = "/cv.pdf";
+
+// Hire-first availability line — hero badge, footer, contact.
+export const AVAILABILITY = "Open to senior roles · select client projects";
+
 // Real numbers only — no invented metrics.
+// "9" products = Denial Defense + 5 website kits (Averis, Lumière, Éclat,
+// Maison, Esprit) + SOP Quest + Studio OS + Outreach Cockpit — all built.
 export const STATS = [
   { value: "5+", label: "Years in design" },
   { value: "20+", label: "Agency accounts managed" },
-  { value: "3", label: "Markets · AU / US / EU" },
+  { value: "9", label: "Products designed & built" },
   { value: "7", label: "Live sites you can visit" },
 ] as const;
 

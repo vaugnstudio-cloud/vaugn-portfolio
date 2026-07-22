@@ -1,3 +1,7 @@
+// RETIRED 2026-07: public/cv.pdf now comes from the 2026 résumé build in
+// "1. Projects/Resume Archive/Vaugn Almeida Resume 2026" (master variant).
+// Keep this script for future regeneration only — DO NOT RUN, it would
+// overwrite the current CV with the old layout.
 // Generate a clean one-page CV PDF into public/cv.pdf (Playwright print-to-PDF).
 import { chromium } from "playwright";
 import path from "node:path";

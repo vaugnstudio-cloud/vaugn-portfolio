@@ -39,6 +39,66 @@ export const products: Product[] = [
     image: "/images/products/denial-defense-card.png",
   },
   {
+    id: "averis-rcm-kit",
+    name: "Averis — RCM Website Kit",
+    category: "Website kit",
+    forWho: "Medical-billing & RCM companies",
+    description:
+      "A five-page website system for revenue-cycle firms — interactive revenue-leakage calculator, matching 14-slide pitch deck (HTML + PPTX), two themes, no build step.",
+    status: "coming-soon",
+    image: "/images/products/averis-d-hero.jpg",
+  },
+  {
+    id: "lumiere-kit",
+    name: "Lumière — Med-Spa Kit",
+    category: "Website kit",
+    forWho: "Med spas & aesthetic clinics",
+    description:
+      "A 13-page lead-gen website system for aesthetics — treatment deep-dives, before/after gallery, pricing & memberships, light and dark themes.",
+    status: "coming-soon",
+    image: "/images/products/lumiere-d-hero.jpg",
+  },
+  {
+    id: "eclat-kit",
+    name: "Éclat — Dental Clinic Kit",
+    category: "Website kit",
+    forWho: "Dental & cosmetic dentistry practices",
+    description:
+      "A 13-page dental website system — smile gallery with before/after sliders, JSON-LD schema, sitemap, and CRM integration playbook included.",
+    status: "coming-soon",
+    image: "/images/products/eclat-d-hero.jpg",
+  },
+  {
+    id: "maison-kit",
+    name: "Maison — Real Estate Kit",
+    category: "Website kit",
+    forWho: "Real-estate agents & brokerages",
+    description:
+      "A property-agency website system — seller valuation funnel, listings and sold galleries, two themes, CRM docs included.",
+    status: "coming-soon",
+    image: "/images/products/maison-d-hero.jpg",
+  },
+  {
+    id: "esprit-kit",
+    name: "Esprit — AI Agency Kit",
+    category: "Website kit",
+    forWho: "AI agencies & productized-service studios",
+    description:
+      "A dark-first landing system for AI services — audit-funnel lead magnet, metric case-study cards with filters, full light variant.",
+    status: "coming-soon",
+    image: "/images/products/esprit-d-hero.jpg",
+  },
+  {
+    id: "studio-os",
+    name: "Studio OS",
+    category: "Business dashboard",
+    forWho: "Freelancers & independent studios",
+    description:
+      "The freelancer's business operating system — 19-metric dashboard, sales-pipeline CRM, and a reports engine with an insights advisor. Local-first, white-label ready.",
+    status: "coming-soon",
+    image: "/images/products/studio-os-d-hero.jpg",
+  },
+  {
     id: "healthcare-trust-checklist",
     name: "Healthcare Website Trust Checklist",
     category: "Free resource",

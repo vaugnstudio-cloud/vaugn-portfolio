@@ -292,7 +292,7 @@ export default async function ProjectPage({
 
   return (
     <>
-      {project.type === "case-study" ? (
+      {project.caseStudy ? (
         <CaseStudyView project={project} />
       ) : (
         <GalleryView project={project} />
@@ -302,9 +302,11 @@ export default async function ProjectPage({
       </div>
       <CTABand
         heading={
-          project.type === "case-study"
-            ? "Want something like this for your business?"
-            : "Need this kind of craft on your brand?"
+          project.type === "product"
+            ? "Want a designer who ships product, not just mockups?"
+            : project.type === "case-study"
+              ? "Want something like this for your business?"
+              : "Need this kind of craft on your brand?"
         }
       />
     </>

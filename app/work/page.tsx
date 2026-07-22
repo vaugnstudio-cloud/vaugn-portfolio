@@ -1,16 +1,21 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
-import { caseStudies, branding, graphicDesign, moreProjects } from "@/data/projects";
-import { products } from "@/data/products";
+import {
+  caseStudies,
+  productWork,
+  branding,
+  graphicDesign,
+  moreProjects,
+} from "@/data/projects";
 import ProjectCard from "@/components/ProjectCard";
 import FadeIn from "@/components/FadeIn";
 import CTABand from "@/components/CTABand";
+import MotionSection from "@/components/MotionSection";
 
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "Case studies and graphic design across healthcare, hospitality, and agency scale — most with live sites you can visit.",
+    "Client case studies, shipped products and working apps, branding, and graphic design across healthcare and hospitality — most with live sites you can visit.",
 };
 
 export default function WorkPage() {
@@ -23,7 +28,7 @@ export default function WorkPage() {
             Every project. <em>Full picture.</em>
           </h1>
           <p className="mt-6 max-w-xl text-lg text-ink2">
-            Deep case studies, graphic design, and shipped websites — most with
+            Deep case studies, shipped products, and graphic design — most with
             live links, so you can see the work in the wild.
           </p>
         </FadeIn>
@@ -51,7 +56,44 @@ export default function WorkPage() {
           </div>
         </div>
 
-        {/* §2 Branding — niche concept series */}
+        {/* §2 Products & Systems — self-initiated, designed + built + shipped */}
+        <div className="mt-24 border-t border-line pt-20">
+          <FadeIn>
+            <div className="flex items-baseline gap-4">
+              <h2 className="font-display text-3xl text-ink">
+                Products &amp; systems
+              </h2>
+              <span className="font-mono text-xs text-dim">
+                0{productWork.length}
+              </span>
+            </div>
+            <p className="mt-2 max-w-lg text-sm text-ink2">
+              Not just client work — products I designed, built, and shipped
+              myself: website systems for the niches I know, and full working
+              apps. Every one of them is real, running software.
+            </p>
+          </FadeIn>
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            {productWork.map((p, i) => (
+              <FadeIn key={p.id} delay={i * 0.04}>
+                <ProjectCard project={p} />
+              </FadeIn>
+            ))}
+          </div>
+          <FadeIn>
+            <p className="mt-8 text-sm text-ink2">
+              The kits and tools are also packaged for sale —{" "}
+              <Link
+                href="/resources"
+                className="font-mono text-[11px] font-medium uppercase tracking-wider text-accent hover:underline"
+              >
+                see Resources →
+              </Link>
+            </p>
+          </FadeIn>
+        </div>
+
+        {/* §3 Branding — niche concept series */}
         <div className="mt-24 border-t border-line pt-20">
           <FadeIn>
             <div className="flex items-baseline gap-4">
@@ -74,7 +116,7 @@ export default function WorkPage() {
           </div>
         </div>
 
-        {/* §3 Graphic design — visual showcases */}
+        {/* §4 Graphic design — visual showcases */}
         <div className="mt-24 border-t border-line pt-20">
           <FadeIn>
             <div className="flex items-baseline gap-4">
@@ -97,58 +139,29 @@ export default function WorkPage() {
           </div>
         </div>
 
-        {/* §4 Tools & templates — shipped products as work */}
-        <div className="mt-24 border-t border-line pt-20">
+        {/* §5 Motion & video — in production, placeholder slots until real */}
+        <div id="motion" className="mt-24 scroll-mt-24 border-t border-line pt-20">
           <FadeIn>
             <div className="flex items-baseline gap-4">
-              <h2 className="font-display text-3xl text-ink">Tools &amp; templates</h2>
-              <span className="font-mono text-xs text-dim">
-                0{products.filter((p) => p.status === "available").length}
+              <h2 className="font-display text-3xl text-ink">
+                Motion &amp; video
+              </h2>
+              <span className="rounded-full border border-line px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-dim">
+                In production
               </span>
             </div>
             <p className="mt-2 max-w-lg text-sm text-ink2">
-              Product design is portfolio work too — systems built, packaged,
-              and sold. First one is live.
+              The next chapter — motion pieces for the brands and products
+              above. First pieces are in the edit now; slots go live as each
+              one passes the bar.
             </p>
           </FadeIn>
           <div className="mt-10">
-            {products
-              .filter((p) => p.status === "available" && p.image)
-              .map((p) => (
-                <FadeIn key={p.id}>
-                  <Link
-                    href="/resources"
-                    className="group grid gap-0 overflow-hidden rounded-2xl border border-line bg-surface transition-colors hover:border-accent md:grid-cols-[3fr_2fr]"
-                  >
-                    <div className="relative aspect-video w-full">
-                      <Image
-                        src={p.image!}
-                        alt={`${p.name} — product design`}
-                        fill
-                        sizes="(max-width: 768px) 100vw, 680px"
-                        className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                      />
-                    </div>
-                    <div className="flex flex-col p-8">
-                      <p className="font-mono text-[11px] font-medium uppercase tracking-wider text-accent">
-                        {p.category.toUpperCase()} · LIVE PRODUCT
-                      </p>
-                      <h3 className="mt-3 font-display text-2xl text-ink">{p.name}</h3>
-                      <p className="mt-1 text-sm text-dim">{p.forWho}</p>
-                      <p className="mt-3 text-sm leading-relaxed text-ink2">
-                        {p.description}
-                      </p>
-                      <span className="mt-auto pt-5 font-mono text-[11px] font-medium uppercase tracking-wider text-accent">
-                        See it on Resources →
-                      </span>
-                    </div>
-                  </Link>
-                </FadeIn>
-              ))}
+            <MotionSection />
           </div>
         </div>
 
-        {/* §5 More projects — gallery pages with live links */}
+        {/* §6 More projects — gallery pages with live links */}
         <div className="mt-24 border-t border-line pt-20">
           <FadeIn>
             <div className="flex items-baseline gap-4">
@@ -172,7 +185,7 @@ export default function WorkPage() {
         </div>
       </section>
 
-      <CTABand heading="Want work like this for your business?" />
+      <CTABand heading="Want a designer who ships like this on your team?" />
     </>
   );
 }

@@ -2,12 +2,19 @@ import type { Metadata } from "next";
 import FadeIn from "@/components/FadeIn";
 import Portrait from "@/components/Portrait";
 import CTABand from "@/components/CTABand";
-import { EMAIL, gmailCompose, LINKEDIN_URL, LINKEDIN_LABEL, INTRO_VIDEO_SRC } from "@/data/site";
+import {
+  EMAIL,
+  gmailCompose,
+  LINKEDIN_URL,
+  LINKEDIN_LABEL,
+  INTRO_VIDEO_SRC,
+  CV_URL,
+} from "@/data/site";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Independent brand & web designer — agency-trained, healthcare-fluent. 5+ years across Australian, US, and European clients.",
+    "Senior brand & web designer — agency-trained, healthcare-fluent, ships own products. 5+ years across Australian, US, and European clients.",
 };
 
 const TOOLS = {
@@ -34,6 +41,11 @@ const TOOLS = {
 
 const EXPERIENCE = [
   {
+    period: "2025 — Present",
+    title: "Vaugn Studio — Products",
+    body: "Designed, built, and shipped a product line of my own: niche website kits (Averis, Lumière, Éclat, Maison, Esprit) and working apps (Studio OS, SOP Quest, Outreach Cockpit) — design system to production PWA, solo.",
+  },
+  {
     period: "2024 — Present",
     title: "Independent — Brand & Web Designer",
     body: "Direct client work across healthcare, hospitality, and growth businesses: MedSync, InBloom Therapy, FeedMe Group, and more. Strategy to shipped site, end to end.",
@@ -54,6 +66,25 @@ export default function AboutPage() {
           <h1 className="display mt-3 max-w-3xl text-5xl text-ink sm:text-6xl">
             Design that earns trust isn&apos;t an accident. <em>It&apos;s a practice.</em>
           </h1>
+        </FadeIn>
+        <FadeIn delay={0.08}>
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            <a
+              href={CV_URL}
+              download
+              className="rounded-full bg-accent px-7 py-3.5 font-medium text-accent-ink transition-transform hover:scale-[1.03]"
+            >
+              Download CV (PDF)
+            </a>
+            <a
+              href={LINKEDIN_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-line px-7 py-3.5 text-ink2 transition-colors hover:border-ink2 hover:text-ink"
+            >
+              LinkedIn
+            </a>
+          </div>
         </FadeIn>
 
         <div className="mt-16 grid gap-12 lg:grid-cols-[2fr_3fr]">
@@ -82,6 +113,11 @@ export default function AboutPage() {
                 site — identity, web design, and the build itself in Framer or
                 Webflow. AI-assisted production keeps the repetitive work fast;
                 the thinking, direction, and craft stay human.
+              </p>
+              <p>
+                Since 2025 I&apos;ve also shipped my own product line — website
+                kits and working apps, designed and built end to end — proof I
+                can carry a design from strategy to running code.
               </p>
             </div>
           </FadeIn>
@@ -155,7 +191,7 @@ export default function AboutPage() {
           </FadeIn>
         </div>
 
-        {/* Quiet links — CV demoted here per freelance-only positioning */}
+        {/* Quiet links */}
         <FadeIn className="mt-16">
           <div className="flex flex-wrap gap-6 text-sm text-dim">
             <a
@@ -174,7 +210,7 @@ export default function AboutPage() {
             >
               {LINKEDIN_LABEL}
             </a>
-            <a href="/cv.pdf" className="transition-colors hover:text-ink">
+            <a href={CV_URL} className="transition-colors hover:text-ink">
               CV (PDF)
             </a>
           </div>

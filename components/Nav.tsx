@@ -4,11 +4,13 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import ThemeToggle from "@/components/ThemeToggle";
+import { CV_URL } from "@/data/site";
 
 const LINKS = [
   { href: "/work", label: "Work" },
-  { href: "/services", label: "Services" },
   { href: "/about", label: "About" },
+  { href: "/services", label: "Services" },
+  { href: "/contact", label: "Contact" },
 ] as const;
 
 export default function Nav() {
@@ -42,13 +44,14 @@ export default function Nav() {
 
         <div className="flex items-center gap-3">
           <ThemeToggle />
-          <Link
-            href="/contact"
+          <a
+            href={CV_URL}
+            download
             className="rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-accent-ink transition-transform hover:scale-[1.03]"
             onClick={() => setOpen(false)}
           >
-            Start a project
-          </Link>
+            Download CV
+          </a>
           <button
             type="button"
             aria-label={open ? "Close menu" : "Open menu"}

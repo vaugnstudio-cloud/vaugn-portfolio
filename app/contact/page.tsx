@@ -1,12 +1,21 @@
 import type { Metadata } from "next";
 import FadeIn from "@/components/FadeIn";
 import ContactForm from "@/components/ContactForm";
-import { EMAIL, gmailCompose, LINKEDIN_URL, LINKEDIN_LABEL, CAL_LINK, RESPONSE_PROMISE } from "@/data/site";
+import {
+  EMAIL,
+  gmailCompose,
+  LINKEDIN_URL,
+  LINKEDIN_LABEL,
+  CAL_LINK,
+  RESPONSE_PROMISE,
+  CV_URL,
+  AVAILABILITY,
+} from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Start a project with Vaugn Almeida — brand & web design for healthcare, hospitality, and growth businesses. Replies within 24–48 hours.",
+    "Hiring a senior brand & web designer, or starting a project? Contact Vaugn Almeida — replies within 24–48 hours.",
 };
 
 export default function ContactPage() {
@@ -15,11 +24,11 @@ export default function ContactPage() {
       <FadeIn>
         <p className="eyebrow">Contact</p>
         <h1 className="display mt-3 max-w-3xl text-5xl text-ink sm:text-6xl">
-          Tell me what you&apos;re <em>building</em>.
+          Hiring, or <em>building something</em>?
         </h1>
         <p className="mt-6 max-w-xl text-lg text-ink2">
-          A few honest details are enough — I&apos;ll reply with real thoughts
-          and a clear next step. {RESPONSE_PROMISE}.
+          Either way, a few honest details are enough — I&apos;ll reply with
+          real thoughts and a clear next step. {RESPONSE_PROMISE}.
         </p>
       </FadeIn>
 
@@ -30,6 +39,35 @@ export default function ContactPage() {
 
         <FadeIn delay={0.1}>
           <div className="flex flex-col gap-6">
+            {/* Hiring — the fast path for recruiters & agencies */}
+            <div className="rounded-2xl border border-accent/40 bg-surface p-8">
+              <p className="eyebrow">Hiring?</p>
+              <h2 className="mt-3 font-display text-2xl text-ink">
+                The short version, ready to send on
+              </h2>
+              <p className="mt-3 text-sm leading-relaxed text-ink2">
+                One-page CV, the portfolio you&apos;re on, and a calendar —
+                everything a hiring decision needs.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <a
+                  href={CV_URL}
+                  download
+                  className="inline-block rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-ink transition-transform hover:scale-[1.02]"
+                >
+                  Download CV
+                </a>
+                <a
+                  href={LINKEDIN_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block rounded-full border border-line px-6 py-3 text-sm text-ink2 transition-colors hover:border-ink2 hover:text-ink"
+                >
+                  LinkedIn ↗
+                </a>
+              </div>
+            </div>
+
             {/* Booking — appears once a Cal.com link is configured */}
             {CAL_LINK ? (
               <div className="rounded-2xl border border-line bg-surface p-8">
@@ -84,7 +122,7 @@ export default function ContactPage() {
               <p className="eyebrow">Right now</p>
               <p className="mt-3 flex items-center gap-2 text-sm text-ink2">
                 <span className="h-2 w-2 rounded-full bg-accent" />
-                Available for new projects
+                {AVAILABILITY}
               </p>
               <p className="mt-2 text-sm text-ink2">
                 Working remotely with clients in Australia, the US, and Europe.
