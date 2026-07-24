@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { motionItems, type MotionItem } from "@/data/motion";
 import FadeIn from "@/components/FadeIn";
 
@@ -6,12 +5,13 @@ const ASPECTS: Record<NonNullable<MotionItem["aspect"]>, string> = {
   wide: "aspect-[16/10]",
   square: "aspect-square",
   tall: "aspect-[4/5]",
+  reel: "aspect-[9/16]",
 };
 
 // A motion slot: real <video> when `src` exists, otherwise a designed
 // placeholder matching ImageSlot's visual language (dashed border, mono type).
-function MotionSlot({ item, forceWide }: { item: MotionItem; forceWide?: boolean }) {
-  const aspect = forceWide ? ASPECTS.wide : ASPECTS[item.aspect ?? "wide"];
+function MotionSlot({ item }: { item: MotionItem }) {
+  const aspect = ASPECTS[item.aspect ?? "wide"];
 
   if (item.src) {
     return (
@@ -20,10 +20,16 @@ function MotionSlot({ item, forceWide }: { item: MotionItem; forceWide?: boolean
           src={item.src}
           poster={item.poster}
           controls
+          muted
+          loop
           playsInline
           preload="metadata"
+          aria-label={`${item.title} — ${item.kind}`}
           className="h-full w-full object-cover"
         />
+        <figcaption className="pointer-events-none absolute left-3 top-3 rounded-full bg-bg/80 px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-ink backdrop-blur">
+          {item.title}
+        </figcaption>
       </figure>
     );
   }
@@ -52,37 +58,20 @@ function MotionSlot({ item, forceWide }: { item: MotionItem; forceWide?: boolean
   );
 }
 
-// Motion & Video section. `teaser` renders the compact homepage row;
-// the full variant lives on /work#motion.
+// Motion & Video section. `teaser` renders the compact homepage row (first 3);
+// the full grid lives on /work#motion.
 export default function MotionSection({ teaser = false }: { teaser?: boolean }) {
-  if (teaser) {
-    return (
-      <div>
-        <div className="grid gap-5 sm:grid-cols-3">
-          {motionItems.slice(0, 3).map((item) => (
-            <FadeIn key={item.id}>
-              <MotionSlot item={item} forceWide />
-            </FadeIn>
-          ))}
-        </div>
-        <FadeIn>
-          <p className="mt-6">
-            <Link
-              href="/work#motion"
-              className="font-mono text-[11px] font-medium uppercase tracking-wider text-accent hover:underline"
-            >
-              Motion work →
-            </Link>
-          </p>
-        </FadeIn>
-      </div>
-    );
-  }
-
+  const items = teaser ? motionItems.slice(0, 3) : motionItems;
   return (
-    <div className="grid gap-5 sm:grid-cols-2">
-      {motionItems.map((item) => (
-        <FadeIn key={item.id} className={item.aspect === "wide" || !item.aspect ? "sm:col-span-2" : ""}>
+    <div
+      className={
+        teaser
+          ? "grid gap-5 sm:grid-cols-3"
+          : "grid grid-cols-2 gap-5 lg:grid-cols-4"
+      }
+    >
+      {items.map((item, i) => (
+        <FadeIn key={item.id} delay={i * 0.05}>
           <MotionSlot item={item} />
         </FadeIn>
       ))}

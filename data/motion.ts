@@ -1,37 +1,43 @@
-// Motion & video work — gated like INTRO_VIDEO_SRC in data/site.ts.
-// Items without `src` render as designed placeholder slots ("in production").
-// Drop a real file into /public/videos/ and set `src` (+ optional `poster`)
-// to make a slot go live. Honesty rule: nothing fake ships — slots stay
-// placeholders until a piece passes the quality bar.
+// Motion & video work. Items without `src` render as designed placeholder
+// slots; items with `src` play inline. Honesty rule: AI-assisted pieces are
+// labelled as such — art direction, prompting, and edit selection are mine.
 
 export interface MotionItem {
   id: string;
   title: string;
-  kind: string; // e.g. "REEL" | "BRAND ANIMATION" | "UI MOTION"
-  aspect?: "wide" | "square" | "tall"; // default "wide"
+  kind: string; // e.g. "F&B REEL" | "BRAND ANIMATION" | "UI MOTION"
+  aspect?: "wide" | "square" | "tall" | "reel"; // reel = 9:16
   src?: string; // undefined → designed placeholder slot
   poster?: string;
 }
 
-export const MOTION_STATUS = "in-production" as const;
-
 export const motionItems: MotionItem[] = [
   {
-    id: "studio-reel",
-    title: "Vaugn Studio — project reel",
-    kind: "REEL",
-    aspect: "wide",
+    id: "reel-steak",
+    title: "Cast-iron ribeye",
+    kind: "F&B appetite reel · AI-assisted",
+    aspect: "reel",
+    src: "/videos/reel-steak.mp4",
   },
   {
-    id: "brand-motion",
-    title: "Brand reveal — identity in motion",
-    kind: "BRAND ANIMATION",
-    aspect: "square",
+    id: "reel-burger",
+    title: "Smash burger",
+    kind: "F&B appetite reel · AI-assisted",
+    aspect: "reel",
+    src: "/videos/reel-burger.mp4",
   },
   {
-    id: "ui-motion",
-    title: "Product UI — interaction studies",
-    kind: "UI MOTION",
-    aspect: "square",
+    id: "reel-ramen",
+    title: "Tonkotsu ramen",
+    kind: "F&B appetite reel · AI-assisted",
+    aspect: "reel",
+    src: "/videos/reel-ramen.mp4",
+  },
+  {
+    id: "reel-coldbrew",
+    title: "Cold brew",
+    kind: "F&B appetite reel · AI-assisted",
+    aspect: "reel",
+    src: "/videos/reel-coldbrew.mp4",
   },
 ];

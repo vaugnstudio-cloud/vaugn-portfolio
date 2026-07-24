@@ -149,8 +149,43 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5 · Branding — niche concept series (scaffolds until designed) */}
+      {/* 5 · Motion & video — F&B appetite reels */}
       <section className="border-t border-line">
+        <div className="mx-auto max-w-6xl px-6 py-24">
+          <FadeIn>
+            <div className="flex items-baseline gap-4">
+              <p className="eyebrow">Motion &amp; video</p>
+              <span className="rounded-full border border-line px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-dim">
+                AI-assisted · art-directed
+              </span>
+            </div>
+            <h2 className="display mt-3 max-w-2xl text-4xl text-ink sm:text-5xl">
+              Appetite, <em>in motion</em>.
+            </h2>
+            <p className="mt-4 max-w-xl text-ink2">
+              Short-form food reels for hospitality feeds — generated with AI
+              tooling, art-directed and edit-selected in-studio, built to the
+              same appetite-first standard as the poster work.
+            </p>
+          </FadeIn>
+          <div className="mt-12">
+            <MotionSection teaser />
+          </div>
+          <FadeIn>
+            <p className="mt-6">
+              <Link
+                href="/work#motion"
+                className="font-mono text-[11px] font-medium uppercase tracking-wider text-accent hover:underline"
+              >
+                All motion work →
+              </Link>
+            </p>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* 6 · Branding — niche concept series */}
+      <section className="border-t border-line bg-surface">
         <div className="mx-auto max-w-6xl px-6 py-24">
           <FadeIn>
             <div className="flex items-end justify-between">
@@ -179,30 +214,6 @@ export default function Home() {
                 <ProjectCard project={p} />
               </FadeIn>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 6 · Motion & video — in production, honest placeholders */}
-      <section className="border-t border-line bg-surface">
-        <div className="mx-auto max-w-6xl px-6 py-24">
-          <FadeIn>
-            <div className="flex items-baseline gap-4">
-              <p className="eyebrow">Motion &amp; video</p>
-              <span className="rounded-full border border-line px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-dim">
-                In production
-              </span>
-            </div>
-            <h2 className="display mt-3 max-w-2xl text-4xl text-ink sm:text-5xl">
-              The next chapter is <em>moving</em>.
-            </h2>
-            <p className="mt-4 max-w-xl text-ink2">
-              Motion pieces for the brands and products above are in the edit
-              now — these slots go live as each one passes the bar.
-            </p>
-          </FadeIn>
-          <div className="mt-12">
-            <MotionSection teaser />
           </div>
         </div>
       </section>

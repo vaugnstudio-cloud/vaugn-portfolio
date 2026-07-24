@@ -87,7 +87,7 @@ export const projects: Project[] = [
     type: "case-study",
     title: "MedSync",
     client: "Psychiatry Clinic · California, US",
-    year: "2025",
+    year: "2025–Present",
     category: ["HEALTHCARE", "BRAND DESIGN", "WEB DESIGN", "FRAMER"],
     headline: "A psychiatry clinic's first impression, rebuilt around patient trust.",
     description:
@@ -129,7 +129,7 @@ export const projects: Project[] = [
         },
       ],
       outcome: {
-        body: "Delivered, launched, and live. The site is in production and serving patients today.",
+        body: "Delivered, launched, and live — and the relationship is ongoing: the clinic can update content through the CMS, and MedSync still comes back to me for site updates and new side projects.",
         liveUrl: "https://medsyncmentalhealth.com/",
       },
     },
@@ -146,6 +146,7 @@ export const projects: Project[] = [
     description:
       "Full brand identity for Ozmax Care, a Melbourne NDIS and disability-support provider — logo, colour palette, and typography — plus homepage website design built around its warm, trust-first “Empowering Every Ability” message.",
     deliverables: [
+      "Brand guidelines document",
       "Logo & identity",
       "Colour palette",
       "Typography system",
@@ -178,6 +179,8 @@ export const projects: Project[] = [
             { src: "/images/live/ozmax-m-hero.jpg", label: "Mobile — first screen", aspect: "tall" },
             { src: "/images/live/ozmax-m-mid.jpg", label: "Mobile — supports", aspect: "tall" },
             { src: "/images/live/ozmax-d-mid.jpg", label: "Desktop — services", aspect: "wide" },
+            { src: "/images/ysc/ozmax-vehicle.jpg", label: "Identity in the world — fleet vehicle", aspect: "square" },
+            { src: "/images/ysc/ozmax-banner.jpg", label: "Identity in the world — street signage", aspect: "square" },
           ],
         },
       ],
@@ -239,6 +242,8 @@ export const projects: Project[] = [
           body: "Figma website design carrying the same energy to the web, plus in-venue posters and promotional print that tie the physical spaces to the feed.",
           images: [
             { src: "/images/live/junk-d-mid.jpg", label: "Desktop — menus & promos", aspect: "wide" },
+            { src: "/images/ysc/junk-bring-dad.jpg", label: "Father's Day campaign — bring Dad, we'll cover his meal", aspect: "tall" },
+            { src: "/images/ysc/junk-maroochydore.jpg", label: "Maroochydore opening — Easter weekend push", aspect: "tall" },
           ],
         },
       ],
@@ -275,7 +280,7 @@ export const projects: Project[] = [
         "Brand designer, in-house — 2023 to present",
         "Sole designer on most accounts; strategy and scheduling in collaboration with the agency team",
         "Social media systems & template libraries — built and maintained by me",
-        "Web design in Figma, handed to development partners as build-ready specs",
+        "Web design in Figma, handed to the agency's team as build-ready specs",
         "Campaign creative & short-form video",
       ],
       strategy:
@@ -295,8 +300,25 @@ export const projects: Project[] = [
           ],
         },
         {
+          heading: "Client creative, across the roster",
+          body: "Real deliverables from the account roster — pizza chains, Italian restaurants, Greek venues, a tea brand, a spread brand, an NDIS provider, a publisher. Different voices, one standard, weekly deadlines. A sample:",
+          images: [
+            { src: "/images/ysc/evoke-stylescape.jpg", label: "Evoke Impact — stylescape, brand direction", aspect: "wide" },
+            { src: "/images/ysc/augellos-valentines.jpg", label: "Augello's — Valentine's Day campaign", aspect: "tall" },
+            { src: "/images/ysc/cn-benedict.jpg", label: "Caffè Notte — breakfast menu promo", aspect: "tall" },
+            { src: "/images/ysc/gabbys-early-bird.jpg", label: "Gabby's Pizza — Early Bird (campaign system)", aspect: "square" },
+            { src: "/images/ysc/gabbys-summer-frenzy.jpg", label: "Gabby's Pizza — Summer Frenzy (same system)", aspect: "square" },
+            { src: "/images/ysc/truly-assam-fuel.jpg", label: "Truly Assam — concept ad, brewed to power you", aspect: "tall" },
+            { src: "/images/ysc/twiddles-imessage.jpg", label: "Twiddles — social concept", aspect: "tall" },
+            { src: "/images/ysc/dantes-pizza-week.jpg", label: "Dante's Pizza — a pizza for every day", aspect: "square" },
+            { src: "/images/ysc/ysc-pizza-type.jpg", label: "YSC workshop — typographic poster", aspect: "square" },
+            { src: "/images/ysc/kitsch-qr.jpg", label: "Kitsch — QR ordering poster", aspect: "tall" },
+            { src: "/images/ysc/mothers-day-statue.jpg", label: "Mother's Day — art-direction study", aspect: "tall" },
+          ],
+        },
+        {
           heading: "Agency accounts, live",
-          body: "A sample of accounts delivered through the agency, live today — websites designed in Figma to build-ready specs, developed with the agency's build partners, alongside the agency's own site.",
+          body: "A sample of accounts delivered through the agency, live today — websites designed in Figma to build-ready specs, developed with the agency's team, alongside the agency's own site.",
           images: [
             { src: "/images/live/junk-d-hero.jpg", label: "Junk Sunshine Coast — live (agency account)", aspect: "wide" },
             { src: "/images/live/yassas-d-hero.jpg", label: "Yassas — live (agency account)", aspect: "wide" },
@@ -865,6 +887,8 @@ export const projects: Project[] = [
         { src: "/images/live/yassas-d-hero.jpg", label: "Live site — home", aspect: "wide" },
         { src: "/images/live/yassas-m-hero.jpg", label: "Mobile — first screen", aspect: "tall" },
         { src: "/images/live/yassas-m-mid.jpg", label: "Mobile — menu", aspect: "tall" },
+        { src: "/images/ysc/yassas-zorba.jpg", label: "Zorba Night — A1 event poster", aspect: "tall" },
+        { src: "/images/ysc/yassas-greek-mothers.jpg", label: "Mother's Day — the Greek way", aspect: "tall" },
       ],
     },
   },
