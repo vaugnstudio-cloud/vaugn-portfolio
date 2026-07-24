@@ -10,7 +10,9 @@ const ASPECTS: Record<NonNullable<MotionItem["aspect"]>, string> = {
 
 // A motion slot: real <video> when `src` exists, otherwise a designed
 // placeholder matching ImageSlot's visual language (dashed border, mono type).
-function MotionSlot({ item }: { item: MotionItem }) {
+// `showreel` plays muted loops automatically (homepage band); the default
+// renders a normal player with controls (/work#motion).
+function MotionSlot({ item, showreel = false }: { item: MotionItem; showreel?: boolean }) {
   const aspect = ASPECTS[item.aspect ?? "wide"];
 
   if (item.src) {
@@ -19,11 +21,12 @@ function MotionSlot({ item }: { item: MotionItem }) {
         <video
           src={item.src}
           poster={item.poster}
-          controls
+          controls={!showreel}
+          autoPlay={showreel}
           muted
           loop
           playsInline
-          preload="metadata"
+          preload={showreel ? "auto" : "metadata"}
           aria-label={`${item.title} — ${item.kind}`}
           className="h-full w-full object-cover"
         />
@@ -72,7 +75,7 @@ export default function MotionSection({ teaser = false }: { teaser?: boolean }) 
     >
       {items.map((item, i) => (
         <FadeIn key={item.id} delay={i * 0.05}>
-          <MotionSlot item={item} />
+          <MotionSlot item={item} showreel={teaser} />
         </FadeIn>
       ))}
     </div>

@@ -82,7 +82,42 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3 · Selected work — show, don't tell */}
+      {/* 3 · Motion & video — the reel, up top */}
+      <section className="border-t border-line">
+        <div className="mx-auto max-w-6xl px-6 py-24">
+          <FadeIn>
+            <div className="flex items-baseline gap-4">
+              <p className="eyebrow">Motion &amp; video</p>
+              <span className="rounded-full border border-line px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-dim">
+                Short-form · F&amp;B
+              </span>
+            </div>
+            <h2 className="display mt-3 max-w-2xl text-4xl text-ink sm:text-5xl">
+              Appetite, <em>in motion</em>.
+            </h2>
+            <p className="mt-4 max-w-xl text-ink2">
+              Short-form appetite reels for hospitality feeds — art-directed
+              in-studio with AI-assisted production, built to the same
+              appetite-first standard as the poster work.
+            </p>
+          </FadeIn>
+          <div className="mt-12">
+            <MotionSection teaser />
+          </div>
+          <FadeIn>
+            <p className="mt-6">
+              <Link
+                href="/work#motion"
+                className="font-mono text-[11px] font-medium uppercase tracking-wider text-accent hover:underline"
+              >
+                All motion work →
+              </Link>
+            </p>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* 4 · Selected work — show, don't tell */}
       <section className="mx-auto max-w-6xl px-6 py-24">
         <FadeIn>
           <div className="flex items-end justify-between">
@@ -115,7 +150,7 @@ export default function Home() {
         </Link>
       </section>
 
-      {/* 4 · Products & systems — the senior differentiator */}
+      {/* 5 · Products & systems — the senior differentiator */}
       <section className="border-t border-line bg-surface">
         <div className="mx-auto max-w-6xl px-6 py-24">
           <FadeIn>
@@ -146,41 +181,6 @@ export default function Home() {
               </FadeIn>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* 5 · Motion & video — F&B appetite reels */}
-      <section className="border-t border-line">
-        <div className="mx-auto max-w-6xl px-6 py-24">
-          <FadeIn>
-            <div className="flex items-baseline gap-4">
-              <p className="eyebrow">Motion &amp; video</p>
-              <span className="rounded-full border border-line px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-dim">
-                Short-form · F&amp;B
-              </span>
-            </div>
-            <h2 className="display mt-3 max-w-2xl text-4xl text-ink sm:text-5xl">
-              Appetite, <em>in motion</em>.
-            </h2>
-            <p className="mt-4 max-w-xl text-ink2">
-              Short-form appetite reels for hospitality feeds — art-directed
-              in-studio with AI-assisted production, built to the same
-              appetite-first standard as the poster work.
-            </p>
-          </FadeIn>
-          <div className="mt-12">
-            <MotionSection teaser />
-          </div>
-          <FadeIn>
-            <p className="mt-6">
-              <Link
-                href="/work#motion"
-                className="font-mono text-[11px] font-medium uppercase tracking-wider text-accent hover:underline"
-              >
-                All motion work →
-              </Link>
-            </p>
-          </FadeIn>
         </div>
       </section>
 
