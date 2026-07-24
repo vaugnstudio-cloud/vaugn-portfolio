@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Hiring a senior brand & web designer, or starting a project? Contact Vaugn Almeida — replies within 24–48 hours.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {
@@ -125,7 +126,8 @@ export default function ContactPage() {
                 {AVAILABILITY}
               </p>
               <p className="mt-2 text-sm text-ink2">
-                Working remotely with clients in Australia, the US, and Europe.
+                Working remotely with international clients — currently across
+                Australia and the US.
               </p>
             </div>
           </div>

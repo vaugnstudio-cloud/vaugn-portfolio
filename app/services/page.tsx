@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Services",
   description:
     "Select client engagements — brand + web launch packages, healthcare and hospitality specialties, Framer landing pages, and monthly retainers. Custom-quoted, fixed-price.",
+  alternates: { canonical: "/services" },
 };
 
 export default function ServicesPage() {

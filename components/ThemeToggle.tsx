@@ -1,37 +1,32 @@
 "use client";
 
-import { useEffect, useState } from "react";
-
-type Theme = "dark" | "light";
-
 // Dark is the default; choice persists in localStorage ("theme").
 // layout.tsx runs an inline script before paint to avoid a flash.
+// Stateless: the current theme is read from the DOM at click time, and the
+// visible glyph is CSS-gated on html[data-theme] so server and client always
+// match. The accessible name stays stable — screen readers hear one control.
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme | null>(null);
-
-  useEffect(() => {
-    const current =
-      document.documentElement.dataset.theme === "light" ? "light" : "dark";
-    setTheme(current);
-  }, []);
-
   function toggle() {
-    const next: Theme = theme === "light" ? "dark" : "light";
-    document.documentElement.dataset.theme = next;
+    const next =
+      document.documentElement.dataset.theme === "light" ? "dark" : "light";
+    if (next === "light") {
+      document.documentElement.dataset.theme = "light";
+    } else {
+      delete document.documentElement.dataset.theme;
+    }
     try {
       localStorage.setItem("theme", next);
     } catch {
       // storage unavailable (private mode) — theme still switches for the session
     }
-    setTheme(next);
   }
 
   return (
     <button
       type="button"
       onClick={toggle}
-      aria-label={theme === "light" ? "Switch to dark theme" : "Switch to light theme"}
-      title={theme === "light" ? "Dark theme" : "Light theme"}
+      aria-label="Toggle light or dark theme"
+      title="Toggle theme"
       className="flex h-10 w-10 items-center justify-center rounded-full border border-line text-ink2 transition-colors hover:border-ink2 hover:text-ink"
     >
       {/* Render both glyphs, CSS-gated, so server and client markup match */}

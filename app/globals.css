@@ -103,11 +103,21 @@ p {
   }
 }
 
-/* Reduced motion: reveal content immediately — never gate it on scroll.
-   Overrides framer-motion's inline initial styles. */
-@media (prefers-reduced-motion: reduce) {
-  [data-fadein] {
-    opacity: 1 !important;
-    transform: none !important;
+/* Scroll reveal — enhancement only. Content is visible by default; the
+   hidden state exists ONLY when JS is confirmed running (html.js, set by the
+   inline observer script in layout.tsx) and motion is allowed. Elements
+   already in the viewport get `.in` on the observer's first tick, so the
+   hero animates immediately instead of waiting for hydration. */
+@media (prefers-reduced-motion: no-preference) {
+  html.js [data-fadein] {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  html.js [data-fadein].in {
+    opacity: 1;
+    transform: none;
+    transition:
+      opacity 0.55s ease-out var(--fd, 0s),
+      transform 0.55s ease-out var(--fd, 0s);
   }
 }

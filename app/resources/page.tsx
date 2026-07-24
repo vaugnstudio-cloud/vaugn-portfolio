@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Resources & Digital Products",
   description:
     "Toolkits, templates, and marketing systems built from real client work — starting with the Denial Defense System for medical practices.",
+  alternates: { canonical: "/resources" },
 };
 
 export default function ResourcesPage() {

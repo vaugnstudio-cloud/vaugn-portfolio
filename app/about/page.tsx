@@ -14,7 +14,8 @@ import {
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Senior brand & web designer — agency-trained, healthcare-fluent, ships own products. 5+ years across Australian, US, and European clients.",
+    "Brand & web designer — 5+ years in design including 3+ years in an Australian agency, healthcare fluency from inside US revenue-cycle operations, and a shipped product line.",
+  alternates: { canonical: "/about" },
 };
 
 const TOOLS = {
@@ -52,8 +53,8 @@ const EXPERIENCE = [
   },
   {
     period: "2023 — Present",
-    title: "Your SocialChef — In-house Creative",
-    body: "Creative direction across 20+ concurrent client accounts spanning healthcare, hospitality, retail, and professional services. Brand campaigns, social systems, web mockups, short-form video.",
+    title: "Your SocialChef — Brand Designer",
+    body: "Brand and web creative across 20+ concurrent client accounts spanning healthcare, hospitality, retail, and professional services. Campaigns, social template systems, Figma web design to build-ready specs, short-form video.",
   },
 ] as const;
 
@@ -95,29 +96,38 @@ export default function AboutPage() {
           <FadeIn delay={0.1}>
             <div className="flex flex-col gap-5 text-lg leading-relaxed text-ink2">
               <p>
-                I&apos;m Vaugn Jasper Almeida — an independent brand &amp; web
-                designer working with clients across Australia, the US, and
-                Europe.
+                I&apos;m Vaugn Jasper Almeida — a brand &amp; web designer
+                working remotely with international clients across healthcare,
+                hospitality, and growth-focused businesses.
               </p>
               <p>
-                My background is uncommon for a designer: years inside the
-                healthcare industry — including US medical billing and revenue
-                cycle management — before and alongside agency work managing
-                creative for 20+ concurrent client accounts. That mix means I
-                design for the things regulated and trust-critical businesses
-                actually worry about: credibility, compliance-aware
-                communication, and patients or customers who decide in seconds.
+                My path into design is uncommon: I worked inside US healthcare
+                revenue-cycle operations — claims, denials, payer follow-up —
+                before and alongside design work. That experience is
+                commercially useful in a way portfolios rarely are: I already
+                speak the language of clinics, billing firms, and
+                compliance-aware marketing, so healthcare clients skip the
+                months of onboarding most designers need.
+              </p>
+              <p>
+                Since 2023 I&apos;ve been the brand designer at Your
+                SocialChef, an Australian agency, handling creative across 20+
+                concurrent client accounts — which taught me the unglamorous
+                senior skills: prioritising, systematising, and keeping twenty
+                visual languages distinct under weekly deadlines.
               </p>
               <p>
                 I work as one accountable person from strategy to shipped
                 site — identity, web design, and the build itself in Framer or
-                Webflow. AI-assisted production keeps the repetitive work fast;
+                Webflow, with clean handoff and a CMS the client can run
+                without me. AI-assisted production keeps repetitive work fast;
                 the thinking, direction, and craft stay human.
               </p>
               <p>
                 Since 2025 I&apos;ve also shipped my own product line — website
-                kits and working apps, designed and built end to end — proof I
-                can carry a design from strategy to running code.
+                kits and working apps, designed and built end to end. I&apos;m
+                open to senior remote roles in brand and web design, and I take
+                a small number of client projects alongside.
               </p>
             </div>
           </FadeIn>

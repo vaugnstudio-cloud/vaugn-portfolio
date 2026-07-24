@@ -7,6 +7,7 @@ const niche = getNiche("healthcare")!;
 export const metadata: Metadata = {
   title: niche.metaTitle,
   description: niche.metaDescription,
+  alternates: { canonical: "/healthcare" },
 };
 
 export default function HealthcarePage() {

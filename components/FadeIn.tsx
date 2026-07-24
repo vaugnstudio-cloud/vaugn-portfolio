@@ -1,13 +1,11 @@
-"use client";
+import type { CSSProperties, ReactNode } from "react";
 
-import { motion, useReducedMotion } from "framer-motion";
-import type { ReactNode } from "react";
-
-// Subtle scroll reveal — fade up only.
-// Respects prefers-reduced-motion: content appears instantly, no movement.
-// The initial style must be identical on server and client (the server can't
-// know the motion preference), so only the transition varies — this avoids
-// hydration mismatches for reduced-motion users.
+// Scroll reveal — progressive enhancement only.
+// The server renders content fully visible (no-JS, crawlers, and pre-hydration
+// all see everything). A tiny inline script in layout.tsx adds `js` to <html>
+// and drives an IntersectionObserver that toggles `.in`; the animation styles
+// in globals.css apply only under `html.js`, so JS enhances the entrance but
+// never controls visibility. Reduced-motion users get no movement at all.
 export default function FadeIn({
   children,
   delay = 0,
@@ -17,22 +15,15 @@ export default function FadeIn({
   delay?: number;
   className?: string;
 }) {
-  const shouldReduceMotion = useReducedMotion();
-
   return (
-    <motion.div
+    <div
       data-fadein
       className={className}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={
-        shouldReduceMotion
-          ? { duration: 0 }
-          : { duration: 0.6, delay, ease: "easeOut" }
+      style={
+        delay ? ({ "--fd": `${delay}s` } as CSSProperties) : undefined
       }
     >
       {children}
-    </motion.div>
+    </div>
   );
 }

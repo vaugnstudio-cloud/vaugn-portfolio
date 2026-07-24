@@ -65,6 +65,10 @@ export interface Project {
   title: string;
   client: string;
   year: string;
+  /** Honest provenance label shown on cards. Defaults by type (see
+   *  PROVENANCE in ProjectCard); set explicitly where the default is wrong —
+   *  e.g. agency-affiliated client work. */
+  provenance?: "Client work" | "Agency work" | "Self-initiated product" | "Concept study" | "Studio system";
   category: string[];
   headline: string;
   description: string;
@@ -82,12 +86,12 @@ export const projects: Project[] = [
     id: "medsync",
     type: "case-study",
     title: "MedSync",
-    client: "Mental Health Service · Australia",
-    year: "2026",
+    client: "Psychiatry Clinic · California, US",
+    year: "2025",
     category: ["HEALTHCARE", "BRAND DESIGN", "WEB DESIGN", "FRAMER"],
-    headline: "A mental-health platform, designed and built to earn trust.",
+    headline: "A psychiatry clinic's first impression, rebuilt around patient trust.",
     description:
-      "End-to-end work for MedSync, an Australian mental health service — brand identity through to a conversion-focused website designed and built in Framer.",
+      "End-to-end work for MedSync, a California psychiatry clinic — brand identity through to a conversion-focused website designed and built in Framer, serving patients in person and via telehealth.",
     deliverables: [
       "Brand identity",
       "Website design",
@@ -99,11 +103,11 @@ export const projects: Project[] = [
     url: "https://medsyncmentalhealth.com/",
     caseStudy: {
       problem:
-        "MedSync was launching into a space where trust is the entire product. People looking for mental-health support are cautious, often anxious, and quick to leave a website that feels corporate, clinical in the cold sense, or template-made. The service needed to look established and safe from its very first day — without a legacy brand or existing audience to lean on.",
+        "MedSync was launching into a space where trust is the entire product. People looking for psychiatric care are cautious, often anxious, and quick to leave a website that feels corporate, clinical in the cold sense, or template-made. The clinic needed to look established and safe from day one — without a legacy brand to lean on, and with the added constraints of a clinical setting: sensitive service content, a crisis pathway that must never be hard to find, and appointment booking for both in-person and telehealth patients.",
       role: [
         "Brand strategy & identity — solo",
         "Website design — solo",
-        "Framer build & responsive layout — solo",
+        "Framer build, responsive layout & content structure — solo, working directly with the clinic's stakeholders",
       ],
       strategy:
         "Calm first, credibility close behind. Every decision — palette, type, pacing of the page — was made to lower the temperature for an anxious visitor while still signalling clinical competence. The site reads like a reassuring first conversation, not a brochure: what you'll get, who's behind it, and what happens next.",
@@ -116,7 +120,7 @@ export const projects: Project[] = [
       execution: [
         {
           heading: "Website & Framer build",
-          body: "Designed and built end to end in Framer: a conversion-focused structure that answers a visitor's real questions in order — is this for me, can I trust them, how do I start. Fully responsive, fast, and easy for the MedSync team to update themselves. These are captures of the site as it runs today.",
+          body: "Designed and built end to end in Framer: clinical service pages for medication management, ADHD, and depression; crisis-protocol information kept one step from every page; and a booking flow that serves both in-person and telehealth patients. The structure answers a visitor's real questions in order — is this for me, can I trust them, how do I start — and the Framer CMS lets the clinic team update services and content without a designer. These are captures of the site as it runs today.",
           images: [
             { src: "/images/live/medsync-m-hero.jpg", label: "Mobile — first screen", aspect: "tall" },
             { src: "/images/live/medsync-m-mid.jpg", label: "Mobile — services", aspect: "tall" },
@@ -133,6 +137,7 @@ export const projects: Project[] = [
   {
     id: "ozmax-care",
     type: "case-study",
+    provenance: "Agency work",
     title: "Ozmax Care",
     client: "NDIS & Disability Support · Australia",
     year: "2026",
@@ -185,6 +190,7 @@ export const projects: Project[] = [
   {
     id: "junk-sunshine-coast",
     type: "case-study",
+    provenance: "Agency work",
     title: "Junk Sunshine Coast",
     client: "Restaurant · Australia",
     year: "2023–Present",
@@ -245,11 +251,12 @@ export const projects: Project[] = [
   {
     id: "your-socialchef",
     type: "case-study",
+    provenance: "Agency work",
     title: "Your SocialChef",
     client: "Marketing Agency · Australia",
     year: "2023–Present",
     category: ["AGENCY", "BRAND DESIGN", "WEB DESIGN"],
-    headline: "Creative direction across 20+ client accounts.",
+    headline: "Brand and web creative across 20+ concurrent accounts.",
     description:
       "In-house creative for Your SocialChef — brand campaigns, social media systems, Figma web mockups, and short-form video across 20+ concurrent client accounts spanning healthcare, hospitality, retail, and professional services.",
     deliverables: [
@@ -265,33 +272,41 @@ export const projects: Project[] = [
       problem:
         "An agency serving 20+ concurrent accounts lives or dies on throughput without quality drift. Every client — a clinic, a restaurant, a retailer — needs work that looks like it came from a dedicated designer, delivered on an agency calendar.",
       role: [
-        "In-house creative, 2023 to present",
-        "Brand campaign creative across healthcare, hospitality, retail, professional services",
-        "Social media systems & template libraries",
-        "Figma web mockups & agency website contribution",
-        "Short-form video creative",
+        "Brand designer, in-house — 2023 to present",
+        "Sole designer on most accounts; strategy and scheduling in collaboration with the agency team",
+        "Social media systems & template libraries — built and maintained by me",
+        "Web design in Figma, handed to development partners as build-ready specs",
+        "Campaign creative & short-form video",
       ],
       strategy:
-        "Systems over heroics. Reusable template architectures, per-client visual rulebooks, and an AI-assisted production workflow that compresses the repetitive work — so the creative hours go where they matter. It's the same systems thinking I now bring to individual clients.",
+        "Systems over heroics. Each account gets a visual rulebook — palette, type, layout skeletons, voice notes — and shares one underlying template architecture, so weekly batches ship without any account drifting off-model. Production is batched by format, not by client; AI-assisted tooling compresses the resizing-and-versioning work so creative hours go to the thinking.",
       designSystem: {
-        body: "Not one design system — twenty. The craft here is building and holding parallel visual languages without cross-contamination, at volume.",
+        body: "Not one design system — twenty in parallel. The senior craft here isn't a single beautiful identity; it's holding twenty distinct visual languages apart, at weekly volume, without cross-contamination. The template architecture below is the actual machinery.",
         images: [
-          { src: "/images/live/ysc-d-hero.jpg", label: "The agency's live site", aspect: "wide" },
+          { src: "/images/gd/social-system-grid.png", label: "The nine-slot template architecture — one skeleton, every account", aspect: "wide" },
         ],
       },
       execution: [
         {
-          heading: "Agency-scale delivery",
-          body: "Weekly output across 20+ accounts: campaign creative, social systems, web mockups, and short-form video — every account held to one consistent standard since 2023. The agency's own site, captured live below, carries this creative direction.",
+          heading: "The system that scales",
+          body: "One template architecture skinned per brand: swap type, palette, and voice — never the bones. This is what let a coffee brand, a clinic, and a gym all post daily through one designer without their feeds converging.",
           images: [
-            { src: "/images/live/ysc-m-hero.jpg", label: "Mobile — first screen", aspect: "tall" },
-            { src: "/images/live/ysc-m-mid.jpg", label: "Mobile — services", aspect: "tall" },
-            { src: "/images/live/ysc-d-mid.jpg", label: "Desktop — client results", aspect: "wide" },
+            { src: "/images/gd/sms-brand-matrix.png", label: "One template, four visual languages", aspect: "wide" },
+          ],
+        },
+        {
+          heading: "Agency accounts, live",
+          body: "A sample of accounts delivered through the agency, live today — websites designed in Figma to build-ready specs, developed with the agency's build partners, alongside the agency's own site.",
+          images: [
+            { src: "/images/live/junk-d-hero.jpg", label: "Junk Sunshine Coast — live (agency account)", aspect: "wide" },
+            { src: "/images/live/yassas-d-hero.jpg", label: "Yassas — live (agency account)", aspect: "wide" },
+            { src: "/images/live/ysc-m-hero.jpg", label: "The agency's own site — mobile", aspect: "tall" },
+            { src: "/images/live/ysc-m-mid.jpg", label: "The agency's own site — services", aspect: "tall" },
           ],
         },
       ],
       outcome: {
-        body: "Ongoing since 2023. The agency's client work — and its own site — carry this creative direction today.",
+        body: "Ongoing since 2023 — more than three years inside the same agency, with client accounts and the agency's own site carrying this work today. The template systems built here are documented in the Social Media Systems study.",
         liveUrl: "https://yoursocialchef.com/",
       },
     },
@@ -693,6 +708,7 @@ export const projects: Project[] = [
   {
     id: "print-collateral",
     type: "graphic-design",
+    provenance: "Client work",
     title: "Print & Collateral",
     client: "Children's publishing",
     year: "2025–2026",
@@ -802,6 +818,7 @@ export const projects: Project[] = [
   {
     id: "mekong-merchant",
     type: "project",
+    provenance: "Agency work",
     title: "Mekong Merchant of Taste",
     client: "Restaurant · Australia",
     year: "2026",
@@ -828,6 +845,7 @@ export const projects: Project[] = [
   {
     id: "yassas",
     type: "project",
+    provenance: "Agency work",
     title: "Yassas",
     client: "Hospitality · Australia",
     year: "2025–2026",
@@ -878,6 +896,7 @@ export const projects: Project[] = [
   {
     id: "plumbyourway",
     type: "project",
+    provenance: "Agency work",
     title: "PlumbYourWay",
     client: "Trades · Australia",
     year: "2026",

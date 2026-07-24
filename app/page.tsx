@@ -21,41 +21,48 @@ export default function Home() {
             {AVAILABILITY}
           </span>
         </FadeIn>
-        <FadeIn delay={0.08}>
-          <h1 className="display mt-8 max-w-4xl text-5xl text-ink sm:text-6xl lg:text-7xl">
-            A senior brand &amp; web designer who <em>ships</em> — identity
-            systems, live websites, and products of my own.
+        <FadeIn delay={0.06}>
+          <p className="mt-8 font-mono text-xs font-medium uppercase tracking-[0.2em] text-accent">
+            Senior Brand &amp; Web Designer — Remote
+          </p>
+        </FadeIn>
+        <FadeIn delay={0.1}>
+          <h1 className="display mt-4 max-w-4xl text-5xl text-ink sm:text-6xl lg:text-7xl">
+            Identity systems and websites for brands that live on{" "}
+            <em>trust</em>.
           </h1>
         </FadeIn>
         <FadeIn delay={0.16}>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink2">
-            5+ years across healthcare and hospitality — creative direction on
-            20+ agency accounts, 7 live client sites, and a product line I
-            designed and built myself. One person, strategy to production.
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink2">
+            I design and build for healthcare, hospitality, and other
+            trust-critical businesses — 20+ concurrent agency accounts, live
+            client sites in Framer and Webflow, and healthcare fluency from
+            inside US revenue-cycle operations. One accountable designer,
+            brand to build.
           </p>
         </FadeIn>
         <FadeIn delay={0.24}>
           <div className="mt-10 flex flex-wrap items-center gap-4">
+            <Link
+              href="/work"
+              className="rounded-full bg-accent px-7 py-3.5 font-medium text-accent-ink transition-transform hover:scale-[1.03]"
+            >
+              View selected work
+            </Link>
             <a
               href={CV_URL}
               download
-              className="rounded-full bg-accent px-7 py-3.5 font-medium text-accent-ink transition-transform hover:scale-[1.03]"
+              className="rounded-full border border-line px-7 py-3.5 text-ink2 transition-colors hover:border-ink2 hover:text-ink"
             >
               Download CV
             </a>
-            <Link
-              href="/work"
-              className="rounded-full border border-line px-7 py-3.5 text-ink2 transition-colors hover:border-ink2 hover:text-ink"
-            >
-              View work
-            </Link>
             <a
               href={`https://cal.com/${CAL_LINK}`}
               target="_blank"
               rel="noopener noreferrer"
               className="font-mono text-xs uppercase tracking-wider text-ink2 transition-colors hover:text-accent"
             >
-              Prefer to talk? Book 15 minutes →
+              Book a short intro →
             </a>
           </div>
         </FadeIn>
@@ -212,11 +219,11 @@ export default function Home() {
               Agency-trained. Healthcare-fluent. <em>Ships own products.</em>
             </h2>
             <p className="mt-6 leading-relaxed text-ink2">
-              I&apos;m Vaugn Jasper Almeida — a senior brand &amp; web designer
-              with 5+ years across Australian, US, and European clients,
-              creative direction on 20+ concurrent agency accounts, real
-              healthcare-industry experience from mental-health platforms to
-              US medical billing — and a shipped product line of my own.
+              I&apos;m Vaugn Jasper Almeida — a brand &amp; web designer with
+              5+ years in design, including 3+ years handling 20+ concurrent
+              accounts at an Australian agency, real healthcare experience
+              from inside US medical billing — and a shipped product line of
+              my own.
             </p>
             <div className="mt-8 flex flex-wrap gap-6">
               <Link

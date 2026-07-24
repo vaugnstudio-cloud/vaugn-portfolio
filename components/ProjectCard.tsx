@@ -41,6 +41,15 @@ const BADGE: Record<Project["type"], string> = {
   project: "View project",
 };
 
+// Honest provenance defaults by type — overridable per project.
+const PROVENANCE: Record<Project["type"], string> = {
+  "case-study": "Client work",
+  project: "Client work",
+  product: "Self-initiated product",
+  branding: "Concept study",
+  "graphic-design": "Studio system",
+};
+
 export default function ProjectCard({ project }: { project: Project }) {
   return (
     <Link href={`/work/${project.id}`} className="block h-full">
@@ -51,6 +60,9 @@ export default function ProjectCard({ project }: { project: Project }) {
       >
         <div className="relative aspect-[16/10] w-full overflow-hidden bg-raised">
           <Cover project={project} />
+          <span className="absolute left-4 top-4 rounded-full bg-bg/80 px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-dim backdrop-blur">
+            {project.provenance ?? PROVENANCE[project.type]}
+          </span>
           <span className="absolute right-4 top-4 rounded-full bg-bg/80 px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-ink backdrop-blur transition-colors group-hover:bg-accent group-hover:text-accent-ink">
             {BADGE[project.type]} →
           </span>

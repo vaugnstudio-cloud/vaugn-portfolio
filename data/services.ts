@@ -114,7 +114,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "Where are you based, and does timezone matter?",
-    a: "I work remotely with clients across Australia, the US, and Europe, and structure handoffs so timezone differences work for you — you often wake up to finished work.",
+    a: "I work remotely with international clients — currently across Australia and the US — and structure handoffs so timezone differences work for you: you often wake up to finished work.",
   },
   {
     q: "How does pricing work?",

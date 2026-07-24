@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Insights",
   description:
     "Short, honest notes from real practice — on healthcare trust, hospitality brand systems, and AI-assisted design workflows.",
+  alternates: { canonical: "/insights" },
 };
 
 const dateFmt = new Intl.DateTimeFormat("en-AU", {

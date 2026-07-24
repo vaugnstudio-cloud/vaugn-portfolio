@@ -63,7 +63,7 @@ export default function ContactForm() {
 
   if (status === "done") {
     return (
-      <div className="rounded-2xl border border-line bg-surface p-10 text-center">
+      <div role="status" className="rounded-2xl border border-line bg-surface p-10 text-center">
         <p className="font-display text-2xl text-ink">
           {FORMSPREE_ID ? "Got it — thank you." : "Your email is ready."}
         </p>
@@ -149,7 +149,7 @@ export default function ContactForm() {
       </button>
 
       {status === "error" && (
-        <p className="text-sm text-ink2">
+        <p role="alert" className="text-sm text-ink2">
           {FORMSPREE_ID
             ? "Something went wrong — please try again, or "
             : "The form isn't connected yet — "}

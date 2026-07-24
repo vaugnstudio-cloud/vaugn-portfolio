@@ -7,6 +7,7 @@ const niche = getNiche("hospitality")!;
 export const metadata: Metadata = {
   title: niche.metaTitle,
   description: niche.metaDescription,
+  alternates: { canonical: "/hospitality" },
 };
 
 export default function HospitalityPage() {
