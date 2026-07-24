@@ -156,16 +156,16 @@ export default function Home() {
             <div className="flex items-baseline gap-4">
               <p className="eyebrow">Motion &amp; video</p>
               <span className="rounded-full border border-line px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-dim">
-                AI-assisted · art-directed
+                Short-form · F&amp;B
               </span>
             </div>
             <h2 className="display mt-3 max-w-2xl text-4xl text-ink sm:text-5xl">
               Appetite, <em>in motion</em>.
             </h2>
             <p className="mt-4 max-w-xl text-ink2">
-              Short-form food reels for hospitality feeds — generated with AI
-              tooling, art-directed and edit-selected in-studio, built to the
-              same appetite-first standard as the poster work.
+              Short-form appetite reels for hospitality feeds — art-directed
+              in-studio with AI-assisted production, built to the same
+              appetite-first standard as the poster work.
             </p>
           </FadeIn>
           <div className="mt-12">

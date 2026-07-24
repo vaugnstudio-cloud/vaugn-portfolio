@@ -229,12 +229,12 @@ export default function WorkPage() {
                   Motion &amp; video
                 </h3>
                 <span className="rounded-full border border-line px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-dim">
-                  AI-assisted · art-directed
+                  Short-form · F&amp;B
                 </span>
               </div>
               <p className="mt-2 max-w-lg text-sm text-ink2">
-                Short-form F&amp;B appetite reels — generated with AI tooling,
-                art-directed and edit-selected in-studio for hospitality feeds.
+                Short-form appetite reels for hospitality feeds —
+                art-directed in-studio with AI-assisted production.
               </p>
             </FadeIn>
             <div className="mt-8">
