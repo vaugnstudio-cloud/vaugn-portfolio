@@ -121,18 +121,21 @@ export default function RootLayout({
         </main>
         <Footer />
         {/* Scroll-reveal driver — vanilla, runs without waiting for React
-            hydration. Content stays visible if this never runs. */}
+            hydration. Content stays visible if this never runs. The
+            MutationObserver re-scans after client-side route changes, so
+            pages reached via <Link> navigation reveal too — not only full
+            page loads. */}
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{
 if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
 if(!('IntersectionObserver' in window))return;
 document.documentElement.classList.add('js');
-var init=function(){
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -6% 0px'});
-  document.querySelectorAll('[data-fadein]').forEach(function(el){io.observe(el);});
-};
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -6% 0px'});
+var seen=typeof WeakSet==='function'?new WeakSet():null;
+var scan=function(){document.querySelectorAll('[data-fadein]').forEach(function(el){if(el.classList.contains('in'))return;if(seen){if(seen.has(el))return;seen.add(el);}io.observe(el);});};
+var boot=function(){scan();new MutationObserver(function(){scan();}).observe(document.body,{childList:true,subtree:true});};
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
 }catch(e){document.documentElement.classList.remove('js');}})();`,
           }}
         />
