@@ -146,7 +146,7 @@ export const projects: Project[] = [
     description:
       "Full brand identity for Ozmax Care, a Melbourne NDIS and disability-support provider — logo, colour palette, and typography — plus homepage website design built around its warm, trust-first “Empowering Every Ability” message.",
     deliverables: [
-      "Brand guidelines document",
+      "Brand guide one-sheet",
       "Logo & identity",
       "Colour palette",
       "Typography system",
@@ -179,6 +179,8 @@ export const projects: Project[] = [
             { src: "/images/live/ozmax-m-hero.jpg", label: "Mobile — first screen", aspect: "tall" },
             { src: "/images/live/ozmax-m-mid.jpg", label: "Mobile — supports", aspect: "tall" },
             { src: "/images/live/ozmax-d-mid.jpg", label: "Desktop — services", aspect: "wide" },
+            { src: "/images/ysc/ozmax-guide-logos.jpg", label: "Brand guide — logo variations", aspect: "wide" },
+            { src: "/images/ysc/ozmax-guide-system.jpg", label: "Brand guide — palette & typography", aspect: "wide" },
             { src: "/images/ysc/ozmax-vehicle.jpg", label: "Identity in the world — fleet vehicle", aspect: "square" },
             { src: "/images/ysc/ozmax-banner.jpg", label: "Identity in the world — street signage", aspect: "square" },
           ],
