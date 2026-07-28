@@ -8,6 +8,7 @@ const ASPECTS: Record<NonNullable<ImageAsset["aspect"]>, string> = {
   wide: "aspect-[16/10]",
   square: "aspect-square",
   tall: "aspect-[4/5]",
+  pano: "", // panoramas keep natural aspect inside a horizontal scroller
 };
 
 // Placeholder-aware image: renders the real asset when `src` exists,
@@ -15,6 +16,29 @@ const ASPECTS: Record<NonNullable<ImageAsset["aspect"]>, string> = {
 export default function ImageSlot({ asset }: { asset: ImageAsset }) {
   const [imageOk, setImageOk] = useState(true);
   const aspect = ASPECTS[asset.aspect ?? "wide"];
+
+  // Panorama (stylescapes): full resolution at natural aspect — the viewer
+  // scrolls horizontally instead of the image being cropped or squeezed.
+  if (asset.aspect === "pano" && asset.src && imageOk) {
+    return (
+      <figure className="relative w-full overflow-hidden rounded-2xl bg-raised">
+        <div className="overflow-x-auto overscroll-x-contain [scrollbar-width:thin]">
+          <Image
+            src={asset.src}
+            alt={asset.label}
+            width={4000}
+            height={1000}
+            sizes="1700px"
+            className="h-[280px] w-auto max-w-none sm:h-[400px]"
+            onError={() => setImageOk(false)}
+          />
+        </div>
+        <span className="pointer-events-none absolute bottom-3 right-3 rounded-full bg-bg/80 px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-ink backdrop-blur">
+          scroll →
+        </span>
+      </figure>
+    );
+  }
 
   if (asset.src && imageOk) {
     return (

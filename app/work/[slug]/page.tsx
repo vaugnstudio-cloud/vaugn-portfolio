@@ -40,7 +40,7 @@ function ImageGrid({ images }: { images: ImageAsset[] }) {
   return (
     <div className="mt-8 grid gap-4 sm:grid-cols-2">
       {images.map((img) => (
-        <div key={img.label} className={img.aspect === "wide" ? "sm:col-span-2" : ""}>
+        <div key={img.label} className={`min-w-0 ${img.aspect === "wide" || img.aspect === "pano" ? "sm:col-span-2" : ""}`}>
           <ImageSlot asset={img} />
         </div>
       ))}
@@ -269,7 +269,7 @@ function GalleryView({ project }: { project: Project }) {
               <FadeIn
                 key={img.label}
                 delay={(i % 2) * 0.05}
-                className={img.aspect === "wide" ? "sm:col-span-2" : ""}
+                className={`min-w-0 ${img.aspect === "wide" || img.aspect === "pano" ? "sm:col-span-2" : ""}`}
               >
                 <ImageSlot asset={img} />
               </FadeIn>

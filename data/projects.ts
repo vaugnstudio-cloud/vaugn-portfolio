@@ -26,7 +26,9 @@ export type ProjectType =
 export interface ImageAsset {
   src?: string; // omit → renders a labeled placeholder slot
   label: string;
-  aspect?: "wide" | "square" | "tall"; // default "wide"
+  // default "wide" · "pano" = full-width horizontal-scroll panorama
+  // (stylescapes, wide boards) shown at natural aspect, never cropped
+  aspect?: "wide" | "square" | "tall" | "pano";
 }
 
 export interface CaseStudySection {
@@ -305,7 +307,7 @@ export const projects: Project[] = [
           heading: "Client creative, across the roster",
           body: "Real deliverables from the account roster — pizza chains, Italian restaurants, Greek venues, a tea brand, a spread brand, an NDIS provider, a publisher. Different voices, one standard, weekly deadlines. A sample:",
           images: [
-            { src: "/images/ysc/evoke-stylescape.jpg", label: "Evoke Impact — stylescape, brand direction", aspect: "wide" },
+            { src: "/images/ysc/evoke-stylescape.jpg", label: "Evoke Impact — stylescape, brand direction (scroll to explore)", aspect: "pano" },
             { src: "/images/ysc/augellos-valentines.jpg", label: "Augello's — Valentine's Day campaign", aspect: "tall" },
             { src: "/images/ysc/cn-benedict.jpg", label: "Caffè Notte — breakfast menu promo", aspect: "tall" },
             { src: "/images/ysc/gabbys-early-bird.jpg", label: "Gabby's Pizza — Early Bird (campaign system)", aspect: "square" },
