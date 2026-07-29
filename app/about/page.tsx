@@ -48,7 +48,7 @@ const EXPERIENCE = [
   },
   {
     period: "2023 — Present",
-    title: "Your SocialChef — Brand Designer",
+    title: "Your SocialChef — Brand & Web Designer",
     body: "Brand and web creative across 20+ concurrent client accounts spanning healthcare, hospitality, retail, and professional services. Campaigns, social template systems, Figma web design to build-ready specs, short-form video.",
   },
   {
@@ -110,7 +110,7 @@ export default function AboutPage() {
                 months of onboarding most designers need.
               </p>
               <p>
-                Since 2023 I&apos;ve been the brand designer at Your
+                Since 2023 I&apos;ve been the brand &amp; web designer at Your
                 SocialChef, an Australian agency, handling creative across 20+
                 concurrent client accounts — which taught me the unglamorous
                 senior skills: prioritising, systematising, and keeping twenty

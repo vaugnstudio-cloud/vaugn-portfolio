@@ -126,8 +126,8 @@ export default function ContactPage() {
                 {AVAILABILITY}
               </p>
               <p className="mt-2 text-sm text-ink2">
-                Working remotely with international clients — currently across
-                Australia and the US.
+                Working remotely with international clients across Australia,
+                the US, and Europe.
               </p>
             </div>
           </div>
