@@ -89,7 +89,7 @@ export const projects: Project[] = [
     type: "case-study",
     title: "MedSync",
     client: "Psychiatry Clinic · California, US",
-    year: "2025–Present",
+    year: "2025",
     category: ["HEALTHCARE", "BRAND DESIGN", "WEB DESIGN", "FRAMER"],
     headline: "A psychiatry clinic's first impression, rebuilt around patient trust.",
     description:
@@ -1369,6 +1369,38 @@ export const projects: Project[] = [
       outcome: {
         body: "Shipped and in daily use running my own client outreach. This one stays private — it's shown here with sample data as proof of product thinking, not as something to buy.",
       },
+    },
+  },
+
+  {
+    id: "denial-defense",
+    type: "product",
+    title: "Denial Defense System",
+    client: "Vaugn Studio · Self-initiated product",
+    year: "2025",
+    category: ["HEALTHCARE", "PRODUCT DESIGN", "SOP TOOLKIT"],
+    headline:
+      "The first product I shipped — a medical-billing SOP toolkit, live and selling.",
+    description:
+      "A complete medical-billing SOP toolkit built from real revenue-cycle experience: 25 step-by-step SOPs, an interactive offline dashboard, denial and A/R trackers, and appeal letter templates. Designed, built, packaged, and sold — with a live public demo.",
+    deliverables: [
+      "25 revenue-cycle SOPs",
+      "Interactive offline dashboard",
+      "Denial & A/R trackers",
+      "Appeal letter templates",
+    ],
+    coverImage: "/images/products/denial-defense-card.png",
+    featured: false,
+    url: "https://denial-defense-demo.netlify.app",
+    gallery: {
+      context:
+        "Self-initiated product, live and for sale. Built from 2.5 years inside US revenue-cycle operations — the SOPs are the playbook I ran, productized for billing teams that need process without hiring consultants.",
+      tools: ["Product design", "HTML/CSS/JS", "Information design"],
+      images: [
+        { src: "/images/products/denial-defense-card.png", label: "The toolkit — product overview", aspect: "wide" },
+        { src: "/images/products/dd-demo-home.png", label: "Dashboard — live demo", aspect: "wide" },
+        { src: "/images/products/dd-demo-sops.png", label: "SOP library — live demo", aspect: "wide" },
+      ],
     },
   },
 ];

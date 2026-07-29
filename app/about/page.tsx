@@ -31,30 +31,30 @@ const TOOLS = {
     "Lightroom",
   ],
   "AI workflow": [
-    "Claude",
-    "ChatGPT",
     "Adobe Firefly",
     "Photoshop Generative AI",
     "Magnific AI",
     "Higgsfield AI",
+    "ChatGPT",
+    "Claude",
   ],
 } as const;
 
 const EXPERIENCE = [
   {
-    period: "2025 — Present",
+    period: "2026 — Present",
     title: "Vaugn Studio — Products",
-    body: "Designed, built, and shipped a product line of my own: niche website kits (Averis, Lumière, Éclat, Maison, Esprit) and working apps (Studio OS, SOP Quest, Outreach Cockpit) — design system to production PWA, solo.",
-  },
-  {
-    period: "2024 — Present",
-    title: "Independent — Brand & Web Designer",
-    body: "Direct client work across healthcare, hospitality, and growth businesses: MedSync, InBloom Therapy, FeedMe Group, and more. Strategy to shipped site, end to end.",
+    body: "Designed, built, and shipped a product line of my own: niche website kits (Averis, Lumière, Éclat, Maison, Esprit) and working apps (Studio OS, SOP Quest, Outreach Cockpit) — design system to production PWA, solo. With the Denial Defense System (2025), that's nine shipped products.",
   },
   {
     period: "2023 — Present",
     title: "Your SocialChef — Brand Designer",
     body: "Brand and web creative across 20+ concurrent client accounts spanning healthcare, hospitality, retail, and professional services. Campaigns, social template systems, Figma web design to build-ready specs, short-form video.",
+  },
+  {
+    period: "2022 — Present",
+    title: "Vaugn Studio — Independent Brand & Web Designer",
+    body: "Direct client work across healthcare, hospitality, and growth businesses since March 2022: MedSync, InBloom Therapy, FeedMe Group, and more — plus the Denial Defense System (2025), my first shipped product. Strategy to shipped site, end to end.",
   },
 ] as const;
 
@@ -124,7 +124,7 @@ export default function AboutPage() {
                 the thinking, direction, and craft stay human.
               </p>
               <p>
-                Since 2025 I&apos;ve also shipped my own product line — website
+                In 2026 I also shipped a full product line — website
                 kits and working apps, designed and built end to end. I&apos;m
                 open to senior remote roles in brand and web design, and I take
                 a small number of client projects alongside.

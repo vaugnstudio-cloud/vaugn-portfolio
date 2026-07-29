@@ -20,7 +20,7 @@ const ROUTES = [
   "/work/plumbyourway",
   "/work/averis-rcm-kit", "/work/lumiere-kit", "/work/eclat-kit",
   "/work/maison-kit", "/work/esprit-kit", "/work/sop-quest",
-  "/work/studio-os", "/work/outreach-cockpit",
+  "/work/studio-os", "/work/outreach-cockpit", "/work/denial-defense",
 ];
 
 const browser = await chromium.launch();
