@@ -154,44 +154,43 @@ const boards = {
         <p class="mono" style="font-size:15px; opacity:.5;">EST. CORNER OF 5TH</p>
       </div>
     </div>`),
-  "sundry-application": (b) => shell(`background:${b.accent}; background-image:${noise(0.08)}; width:1200px; height:1200px; display:flex; align-items:center; justify-content:center; position:relative;`, `
-    <div style="position:absolute; top:52px; left:52px; opacity:.35;">${svg(b.mark, b.bg, 120)}</div>
-    <div style="position:absolute; bottom:52px; right:52px; opacity:.35; transform:rotate(14deg);">${svg(b.mark, b.bg, 96)}</div>
-    <p class="mono" style="position:absolute; top:66px; right:64px; font-size:14px; color:${b.bg}; opacity:.75;">HOUSE MENU — NO. 47</p>
-    <p class="mono" style="position:absolute; bottom:70px; left:64px; font-size:14px; color:${b.bg}; opacity:.75;">SUNDRY COFFEE CO.</p>
-    <div style="width:880px; height:1000px; background:${b.bg}; background-image:${noise(0.06)}; border-radius:10px; padding:52px 66px 44px; color:${b.ink}; box-shadow:0 44px 90px rgba(30,15,5,.4); transform:rotate(-1.2deg); display:flex; flex-direction:column;">
-      <div style="display:flex; align-items:center; justify-content:center; gap:26px;">
-        <span style="flex:1; height:2px; background:${b.ink}33;"></span>
-        ${svg(b.mark, b.accent, 76)}
-        <span style="flex:1; height:2px; background:${b.ink}33;"></span>
+  // House menu, printed full-bleed on the house stock — no orange frame,
+  // no floating card. Margins do the work so nothing crowds the trim.
+  "sundry-application": (b) => {
+    const row = ([a, d, p], last) => `
+      <div style="display:flex; justify-content:space-between; align-items:baseline; gap:40px; padding:13px 0; ${last ? "" : `border-bottom:1px solid ${b.ink}1f;`}">
+        <div style="min-width:0;">
+          <p style="font-family:'Karla'; font-weight:700; font-size:27px; line-height:1.2;">${a}</p>
+          <p style="font-family:'Karla'; font-size:18px; opacity:.62; margin-top:6px; line-height:1.3;">${d}</p>
+        </div>
+        <p style="font-family:'Fraunces'; font-style:italic; font-size:32px; color:${b.accent}; flex:none;">${p}</p>
+      </div>`;
+    const section = (label, items) => `
+      <p class="mono" style="font-size:13px; letter-spacing:.34em; color:${b.accent};">${label}</p>
+      <div style="border-top:3px solid ${b.ink}; margin-top:12px;">
+        ${items.map((r, i) => row(r, i === items.length - 1)).join("")}
+      </div>`;
+    return shell(`background:${b.bg}; background-image:${noise(0.06)}; width:1200px; height:1200px; color:${b.ink}; padding:80px; display:flex;`, `
+    <div style="flex:1; border:1px solid ${b.ink}26; padding:46px 64px 40px; display:flex; flex-direction:column; overflow:hidden;">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <p class="mono" style="font-size:13px; opacity:.5;">SUNDRY COFFEE CO.</p>
+        <p class="mono" style="font-size:13px; opacity:.5;">HOUSE MENU — NO. 47</p>
       </div>
-      <p style="font-family:'Fraunces'; font-weight:600; font-size:58px; text-align:center; letter-spacing:.08em; margin-top:8px;">SUNDRY</p>
-      <p class="mono" style="font-size:13px; text-align:center; letter-spacing:.5em; margin-top:6px; opacity:.6;">ROASTED TUESDAYS</p>
-      <p class="mono" style="font-size:13px; letter-spacing:.34em; color:${b.accent}; border-top:4px solid ${b.ink}; margin-top:26px; padding-top:18px;">THE BEANS</p>
-      <div style="display:flex; flex-direction:column;">
-        ${[["Single origin — Huila", "Washed · honey &amp; stone fruit", "6.5"], ["House blend — Corner", "Comfort first · chocolate &amp; malt", "5.0"], ["Seasonal — Kayanza", "Bright · currant &amp; black tea", "7.0"]].map(([a, d, p]) => `
-          <div style="display:flex; justify-content:space-between; align-items:baseline; padding:17px 4px; border-bottom:2px solid ${b.ink}22;">
-            <div>
-              <p style="font-family:'Karla'; font-weight:700; font-size:28px;">${a}</p>
-              <p style="font-family:'Karla'; font-size:19px; opacity:.65; margin-top:5px;">${d}</p>
-            </div>
-            <p style="font-family:'Fraunces'; font-style:italic; font-size:34px; color:${b.accent};">${p}</p>
-          </div>`).join("")}
+      <div style="text-align:center; margin-top:28px;">
+        ${svg(b.mark, b.accent, 64)}
+        <p style="font-family:'Fraunces'; font-weight:600; font-size:56px; letter-spacing:.09em; margin-top:8px; line-height:1;">SUNDRY</p>
+        <p class="mono" style="font-size:12px; letter-spacing:.5em; margin-top:10px; opacity:.55;">ROASTED TUESDAYS</p>
       </div>
-      <p class="mono" style="font-size:13px; letter-spacing:.34em; color:${b.accent}; margin-top:24px;">AT THE COUNTER</p>
-      <div style="display:flex; flex-direction:column;">
-        ${[["Espresso · Long black", "Your usual, started already", "4.0"], ["Flat white · Batch filter", "Slow mornings encouraged", "4.5"], ["Sundry toastie", "Sourdough · aged cheddar &amp; pickle", "8.0"]].map(([a, d, p]) => `
-          <div style="display:flex; justify-content:space-between; align-items:baseline; padding:17px 4px; border-bottom:2px solid ${b.ink}22;">
-            <div>
-              <p style="font-family:'Karla'; font-weight:700; font-size:28px;">${a}</p>
-              <p style="font-family:'Karla'; font-size:19px; opacity:.65; margin-top:5px;">${d}</p>
-            </div>
-            <p style="font-family:'Fraunces'; font-style:italic; font-size:34px; color:${b.accent};">${p}</p>
-          </div>`).join("")}
+      <div style="margin-top:36px;">
+        ${section("THE BEANS", [["Single origin — Huila", "Washed · honey &amp; stone fruit", "6.5"], ["House blend — Corner", "Comfort first · chocolate &amp; malt", "5.0"], ["Seasonal — Kayanza", "Bright · currant &amp; black tea", "7.0"]])}
       </div>
-      <div style="flex:1;"></div>
-      <p class="mono" style="font-size:13px; text-align:center; letter-spacing:.4em; opacity:.55;">250G · WHOLE BEAN · BATCH 47 · KEEP YOUR CUP</p>
-    </div>`),
+      <div style="margin-top:32px;">
+        ${section("AT THE COUNTER", [["Espresso · Long black", "Your usual, started already", "4.0"], ["Flat white · Batch filter", "Slow mornings encouraged", "4.5"], ["Sundry toastie", "Sourdough · aged cheddar &amp; pickle", "8.0"]])}
+      </div>
+      <div style="flex:1; min-height:28px;"></div>
+      <p class="mono" style="font-size:12px; text-align:center; letter-spacing:.4em; opacity:.5;">250G · WHOLE BEAN · BATCH 47 · KEEP YOUR CUP</p>
+    </div>`);
+  },
 
   /* ASTER — brass engraving on olive + stationery spec */
   "aster-identity": (b) => shell(`background:${b.olive}; background-image:${noise(0.05)}; width:1200px; height:1200px; display:flex; align-items:center; justify-content:center;`, `

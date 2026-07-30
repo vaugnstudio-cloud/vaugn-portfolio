@@ -21,7 +21,14 @@ export const metadata: Metadata = {
 
 // Curated "selected" tiers — strongest work first, the rest under Explore more.
 const SELECTED_PRODUCT_IDS = ["averis-rcm-kit", "sop-quest"];
-const SELECTED_BRANDING_IDS = ["specialty-coffee-branding", "wellness-medspa-branding"];
+// Branding: the same four featured identities the homepage shows, so a
+// visitor arriving from /#branding sees the set they clicked through for.
+const SELECTED_BRANDING_IDS = [
+  "specialty-coffee-branding",
+  "boutique-hotel-branding",
+  "craft-beverage-branding",
+  "wellness-medspa-branding",
+];
 
 export default function WorkPage() {
   const selectedProducts = productWork.filter((p) => SELECTED_PRODUCT_IDS.includes(p.id));
