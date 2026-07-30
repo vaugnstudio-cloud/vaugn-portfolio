@@ -154,8 +154,9 @@ const boards = {
         <p class="mono" style="font-size:15px; opacity:.5;">EST. CORNER OF 5TH</p>
       </div>
     </div>`),
-  // House menu, printed full-bleed on the house stock — no orange frame,
-  // no floating card. Margins do the work so nothing crowds the trim.
+  // House menu on the terracotta band, stamped suns bleeding behind the
+  // card. The card is sized so the interior padding/rhythm is identical to
+  // the full-bleed version — the orange is a frame, never a squeeze.
   "sundry-application": (b) => {
     const row = ([a, d, p], last) => `
       <div style="display:flex; justify-content:space-between; align-items:baseline; gap:40px; padding:13px 0; ${last ? "" : `border-bottom:1px solid ${b.ink}1f;`}">
@@ -170,8 +171,14 @@ const boards = {
       <div style="border-top:3px solid ${b.ink}; margin-top:12px;">
         ${items.map((r, i) => row(r, i === items.length - 1)).join("")}
       </div>`;
-    return shell(`background:${b.bg}; background-image:${noise(0.06)}; width:1200px; height:1200px; color:${b.ink}; padding:80px; display:flex;`, `
-    <div style="flex:1; border:1px solid ${b.ink}26; padding:46px 64px 40px; display:flex; flex-direction:column; overflow:hidden;">
+    // NOTE: noise() returns url("data:…") — its double quote would close a
+    // style="…" attribute early and silently drop every later declaration
+    // (that bug ate this card's padding once). Keep it in a <style> rule.
+    return shell(`background:${b.accent}; background-image:${noise(0.08)}; width:1200px; height:1200px; color:${b.ink}; padding:96px; display:flex; position:relative;`, `
+    <style>.menu-card { background:${b.bg}; background-image:${noise(0.06)}; }</style>
+    <div style="position:absolute; top:20px; left:20px; opacity:.32;">${svg(b.mark, b.bg, 116)}</div>
+    <div style="position:absolute; bottom:20px; right:20px; opacity:.32; transform:rotate(14deg);">${svg(b.mark, b.bg, 96)}</div>
+    <div class="menu-card" style="flex:1; border-radius:8px; box-shadow:0 36px 80px rgba(30,15,5,.34); padding:46px 64px 40px; display:flex; flex-direction:column; overflow:hidden; position:relative;">
       <div style="display:flex; justify-content:space-between; align-items:center;">
         <p class="mono" style="font-size:13px; opacity:.5;">SUNDRY COFFEE CO.</p>
         <p class="mono" style="font-size:13px; opacity:.5;">HOUSE MENU — NO. 47</p>
