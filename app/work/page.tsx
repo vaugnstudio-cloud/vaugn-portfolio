@@ -67,8 +67,11 @@ export default function WorkPage() {
               the thinking, and the system behind each.
             </p>
           </FadeIn>
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {caseStudies.map((p, i) => (
+          <FadeIn className="mt-10">
+            <ProjectCard project={caseStudies[0]} variant="lead" />
+          </FadeIn>
+          <div className="mt-6 grid gap-6 md:grid-cols-2">
+            {caseStudies.slice(1).map((p, i) => (
               <FadeIn key={p.id} delay={i * 0.05}>
                 <ProjectCard project={p} />
               </FadeIn>

@@ -49,6 +49,11 @@ await new Promise((r) => server.listen(PORT, r));
 
 /* ── assets ─────────────────────────────────────────────────── */
 const IMAGES = {
+  tntCover: "/images/tnt/cover.jpg",
+  tntGuideMark: "/images/tnt/guide-mark.jpg",
+  tntHeadline: "/images/tnt/guide-headline-price.jpg",
+  tntV2: "/images/tnt/v2-company-4x5.jpg",
+  tntStories: "/images/tnt/stories-9x16-set.jpg",
   portrait: "/images/vaugn-photo.jpg",
   medsyncD: "/images/live/medsync-d-hero.jpg",
   medsyncM: "/images/live/medsync-m-hero.jpg",
@@ -256,6 +261,12 @@ pages.push(page(`
       </div>
     </div>
   </div>`));
+
+/* 03 — Tacos 'N' Tequilas */
+pages.push(page(`
+  ${header("01 — Client work", "Tacos 'N' Tequilas", ["Agency work · 2026", "Hospitality", "Brand system · Campaign · Motion"])}
+  ${body("For a Melbourne Mexican kitchen and bar, through Your SocialChef: a one-page brand visual guide that settled two conflicting brand documents, a nine-tile Instagram grid, and the Sunday Birria Night campaign — three variations, three formats each, plus animated stories. Every image is the venue&rsquo;s own photography; nothing generated.")}
+  ${media("1.45fr 1fr", `${frame("tntCover", { fit: "contain", pos: "center" })}<div style="display:flex; flex-direction:column; gap:18px; min-height:0;">${shot("tntGuideMark")}${shot("tntHeadline")}</div>`, 22)}`));
 
 /* 03 — MedSync */
 pages.push(page(`

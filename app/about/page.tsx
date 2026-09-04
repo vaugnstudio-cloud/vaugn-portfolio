@@ -9,6 +9,8 @@ import {
   LINKEDIN_LABEL,
   INTRO_VIDEO_SRC,
   CV_URL,
+  PORTFOLIO_PDF_URL,
+  HIRING_FACTS,
 } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -49,7 +51,7 @@ const EXPERIENCE = [
   {
     period: "2023 — Present",
     title: "Your SocialChef — Brand & Web Designer",
-    body: "Brand and web creative across 20+ concurrent client accounts spanning healthcare, hospitality, retail, and professional services. Campaigns, social template systems, Figma web design to build-ready specs, short-form video.",
+    body: "Brand and web creative across 20+ concurrent client accounts spanning healthcare, hospitality, retail, and professional services. Campaigns, brand visual guides, social template systems, Figma web design to build-ready specs, short-form video — most recently the Tacos 'N' Tequilas brand guide, grid, and Sunday Birria Night campaign.",
   },
   {
     period: "2022 — Present",
@@ -78,6 +80,13 @@ export default function AboutPage() {
               Download CV (PDF)
             </a>
             <a
+              href={PORTFOLIO_PDF_URL}
+              download
+              className="rounded-full border border-line px-7 py-3.5 text-ink2 transition-colors hover:border-ink2 hover:text-ink"
+            >
+              Portfolio PDF
+            </a>
+            <a
               href={LINKEDIN_URL}
               target="_blank"
               rel="noopener noreferrer"
@@ -86,6 +95,20 @@ export default function AboutPage() {
               LinkedIn
             </a>
           </div>
+        </FadeIn>
+
+        {/* Hiring snapshot — the facts a recruiter scans for first */}
+        <FadeIn delay={0.12}>
+          <dl className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-5">
+            {HIRING_FACTS.map((f) => (
+              <div key={f.label} className="bg-surface px-5 py-4">
+                <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-dim">
+                  {f.label}
+                </dt>
+                <dd className="mt-1.5 text-sm leading-snug text-ink">{f.value}</dd>
+              </div>
+            ))}
+          </dl>
         </FadeIn>
 
         <div className="mt-16 grid gap-12 lg:grid-cols-[2fr_3fr]">

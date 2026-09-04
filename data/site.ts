@@ -34,8 +34,21 @@ export const PORTRAIT_SRC: string | undefined = "/images/vaugn-photo.jpg";
 // (1. Projects/Resume Archive/Vaugn Almeida Resume 2026), copied to public/.
 export const CV_URL = "/cv.pdf";
 
+// Portfolio deck for applications that ask for a file upload
+// (scripts/portfolio-pdf.mjs → public/portfolio.pdf).
+export const PORTFOLIO_PDF_URL = "/portfolio.pdf";
+
 // Hire-first availability line — hero badge, footer, contact.
 export const AVAILABILITY = "Open to senior roles · select client projects";
+
+// The facts a hiring manager scans for before reading anything else.
+export const HIRING_FACTS = [
+  { label: "Role", value: "Senior Brand & Web Designer" },
+  { label: "Engagement", value: "Full-time or long-term contract · remote" },
+  { label: "Based", value: "Manila, GMT+8 · overlaps AU, US-West mornings and EU afternoons" },
+  { label: "Tools", value: "Figma · Framer · Webflow · Adobe CC · After Effects" },
+  { label: "Start", value: "Flexible — currently in a remote agency role" },
+] as const;
 
 // Real numbers only — no invented metrics.
 // "9" products = Denial Defense + 5 website kits (Averis, Lumière, Éclat,

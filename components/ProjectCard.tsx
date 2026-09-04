@@ -50,7 +50,59 @@ const PROVENANCE: Record<Project["type"], string> = {
   "graphic-design": "Studio system",
 };
 
-export default function ProjectCard({ project }: { project: Project }) {
+export default function ProjectCard({
+  project,
+  variant = "grid",
+}: {
+  project: Project;
+  /** "lead" = full-width feature card: big image left, story right. */
+  variant?: "grid" | "lead";
+}) {
+  if (variant === "lead") {
+    return (
+      <Link href={`/work/${project.id}`} className="block">
+        <motion.article
+          whileHover={{ y: -4 }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+          className="group grid overflow-hidden rounded-2xl border border-line bg-surface md:grid-cols-[3fr_2fr]"
+        >
+          <div className="relative aspect-[16/10] w-full overflow-hidden bg-raised md:aspect-auto md:min-h-[460px]">
+            <Cover project={project} />
+            <span className="absolute left-4 top-4 rounded-full bg-bg/80 px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-dim backdrop-blur">
+              {project.provenance ?? PROVENANCE[project.type]}
+            </span>
+            <span className="absolute right-4 top-4 rounded-full bg-accent px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-accent-ink">
+              Latest · {project.year}
+            </span>
+          </div>
+          <div className="flex flex-col justify-between p-8 sm:p-10">
+            <div>
+              <p className="font-mono text-[11px] font-medium uppercase tracking-wider text-accent">
+                {project.category.join(" · ")}
+              </p>
+              <h3 className="display mt-4 text-3xl text-ink sm:text-4xl">{project.title}</h3>
+              <p className="mt-2 text-sm text-dim">{project.client}</p>
+              <p className="mt-5 leading-relaxed text-ink2">{project.headline}</p>
+              <ul className="mt-6 flex flex-wrap gap-2">
+                {project.deliverables.slice(0, 4).map((d) => (
+                  <li
+                    key={d}
+                    className="rounded-full border border-line px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-ink2"
+                  >
+                    {d}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <p className="mt-8 font-mono text-[11px] font-medium uppercase tracking-wider text-ink transition-colors group-hover:text-accent">
+              {BADGE[project.type]} →
+            </p>
+          </div>
+        </motion.article>
+      </Link>
+    );
+  }
+
   return (
     <Link href={`/work/${project.id}`} className="block h-full">
       <motion.article

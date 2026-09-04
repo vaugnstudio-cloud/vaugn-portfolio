@@ -6,10 +6,12 @@ import Testimonials from "@/components/Testimonials";
 import CTABand from "@/components/CTABand";
 import MotionSection from "@/components/MotionSection";
 import { featuredProjects, featuredBranding, productWork } from "@/data/projects";
-import { STATS, CV_URL, AVAILABILITY, CAL_LINK } from "@/data/site";
+import { STATS, CV_URL, AVAILABILITY, CAL_LINK, PORTFOLIO_PDF_URL } from "@/data/site";
 
 export default function Home() {
   const featuredProducts = productWork.filter((p) => p.featured).slice(0, 4);
+  // Latest client work leads as a full-width card; the rest fill a 2×2 grid.
+  const [leadProject, ...restProjects] = featuredProjects;
 
   return (
     <>
@@ -34,11 +36,11 @@ export default function Home() {
         </FadeIn>
         <FadeIn delay={0.16}>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink2">
-            I design and build for healthcare, hospitality, and other
-            trust-critical businesses — 20+ concurrent agency accounts, live
-            client sites in Framer and Webflow, and healthcare fluency from
-            inside US revenue-cycle operations. One accountable designer,
-            brand to build.
+            Brand systems, campaigns, and websites for healthcare, hospitality,
+            and other trust-critical businesses — three years across 20+
+            concurrent accounts at an Australian agency, live client sites in
+            Framer and Webflow, and healthcare fluency from inside US
+            revenue-cycle operations. One accountable designer, brand to build.
           </p>
         </FadeIn>
         <FadeIn delay={0.24}>
@@ -57,6 +59,13 @@ export default function Home() {
               Download CV
             </a>
             <a
+              href={PORTFOLIO_PDF_URL}
+              download
+              className="rounded-full border border-line px-7 py-3.5 text-ink2 transition-colors hover:border-ink2 hover:text-ink"
+            >
+              Portfolio PDF
+            </a>
+            <a
               href={`https://cal.com/${CAL_LINK}`}
               target="_blank"
               rel="noopener noreferrer"
@@ -68,57 +77,8 @@ export default function Home() {
         </FadeIn>
       </section>
 
-      {/* 2 · Proof strip — real numbers only */}
-      <section className="border-y border-line bg-surface">
-        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-px lg:grid-cols-4">
-          {STATS.map((s) => (
-            <div key={s.label} className="px-6 py-10">
-              <p className="font-display text-4xl text-ink">{s.value}</p>
-              <p className="mt-2 font-mono text-[11px] uppercase tracking-wider text-dim">
-                {s.label}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* 3 · Motion & video — the reel, up top */}
-      <section className="border-t border-line">
-        <div className="mx-auto max-w-6xl px-6 py-24">
-          <FadeIn>
-            <div className="flex items-baseline gap-4">
-              <p className="eyebrow">Motion &amp; video</p>
-              <span className="rounded-full border border-line px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-dim">
-                Short-form · F&amp;B
-              </span>
-            </div>
-            <h2 className="display mt-3 max-w-2xl text-4xl text-ink sm:text-5xl">
-              Appetite, <em>in motion</em>.
-            </h2>
-            <p className="mt-4 max-w-xl text-ink2">
-              Short-form appetite reels for hospitality feeds — art-directed
-              in-studio with AI-assisted production, built to the same
-              appetite-first standard as the poster work.
-            </p>
-          </FadeIn>
-          <div className="mt-12">
-            <MotionSection teaser />
-          </div>
-          <FadeIn>
-            <p className="mt-6">
-              <Link
-                href="/work#motion"
-                className="font-mono text-[11px] font-medium uppercase tracking-wider text-accent hover:underline"
-              >
-                All motion work →
-              </Link>
-            </p>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* 4 · Selected work — show, don't tell */}
-      <section className="mx-auto max-w-6xl px-6 py-24">
+      {/* 2 · Selected work — the work within one scroll, latest first */}
+      <section className="mx-auto max-w-6xl px-6 pb-24 pt-4">
         <FadeIn>
           <div className="flex items-end justify-between">
             <div>
@@ -135,8 +95,11 @@ export default function Home() {
             </Link>
           </div>
         </FadeIn>
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
-          {featuredProjects.map((p, i) => (
+        <FadeIn className="mt-12">
+          <ProjectCard project={leadProject} variant="lead" />
+        </FadeIn>
+        <div className="mt-6 grid gap-6 md:grid-cols-2">
+          {restProjects.map((p, i) => (
             <FadeIn key={p.id} delay={i * 0.06}>
               <ProjectCard project={p} />
             </FadeIn>
@@ -148,6 +111,55 @@ export default function Home() {
         >
           All work →
         </Link>
+      </section>
+
+      {/* 3 · Proof strip — real numbers only */}
+      <section className="border-y border-line bg-surface">
+        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-px lg:grid-cols-4">
+          {STATS.map((s) => (
+            <div key={s.label} className="px-6 py-10">
+              <p className="font-display text-4xl text-ink">{s.value}</p>
+              <p className="mt-2 font-mono text-[11px] uppercase tracking-wider text-dim">
+                {s.label}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 4 · Motion & video — client story first, then the studio reels */}
+      <section className="border-t border-line">
+        <div className="mx-auto max-w-6xl px-6 py-24">
+          <FadeIn>
+            <div className="flex items-baseline gap-4">
+              <p className="eyebrow">Motion &amp; video</p>
+              <span className="rounded-full border border-line px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-dim">
+                Short-form · F&amp;B
+              </span>
+            </div>
+            <h2 className="display mt-3 max-w-2xl text-4xl text-ink sm:text-5xl">
+              Appetite, <em>in motion</em>.
+            </h2>
+            <p className="mt-4 max-w-xl text-ink2">
+              A client campaign story built frame by frame from the venue&apos;s
+              own photography, alongside studio appetite reels for hospitality
+              feeds — art-directed in-studio with AI-assisted production.
+            </p>
+          </FadeIn>
+          <div className="mt-12">
+            <MotionSection teaser />
+          </div>
+          <FadeIn>
+            <p className="mt-6">
+              <Link
+                href="/work#motion"
+                className="font-mono text-[11px] font-medium uppercase tracking-wider text-accent hover:underline"
+              >
+                All motion work →
+              </Link>
+            </p>
+          </FadeIn>
+        </div>
       </section>
 
       {/* 5 · Products & systems — the senior differentiator */}

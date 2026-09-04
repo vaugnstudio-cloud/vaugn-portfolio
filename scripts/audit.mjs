@@ -9,7 +9,7 @@ const ROUTES = [
   "/insights/what-makes-patients-trust-a-clinic-website",
   "/insights/a-restaurant-brand-is-a-system-not-a-logo",
   "/insights/how-i-use-ai-without-letting-it-design",
-  "/work/medsync", "/work/ozmax-care", "/work/junk-sunshine-coast",
+  "/work/tacos-n-tequilas", "/work/medsync", "/work/ozmax-care", "/work/junk-sunshine-coast",
   "/work/your-socialchef", "/work/specialty-coffee-branding",
   "/work/boutique-hotel-branding", "/work/craft-beverage-branding",
   "/work/wellness-medspa-branding", "/work/dental-clinic-branding",

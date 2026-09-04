@@ -85,6 +85,86 @@ export interface Project {
 export const projects: Project[] = [
   // ══ TIER 1 — FULL CASE STUDIES ═══════════════════════════
   {
+    id: "tacos-n-tequilas",
+    type: "case-study",
+    provenance: "Agency work",
+    title: "Tacos 'N' Tequilas",
+    client: "Mexican Kitchen & Bar · Melbourne, Australia",
+    year: "2026",
+    category: ["HOSPITALITY", "BRAND SYSTEM", "CAMPAIGN", "MOTION"],
+    headline: "One brief, one brand world: a visual guide, a nine-tile grid, and a campaign that makes Sunday Mexican.",
+    description:
+      "Through Your SocialChef, for a multi-venue Mexican kitchen and bar in Melbourne: a one-page brand visual guide that settled two conflicting brand documents, a nine-tile Instagram grid, and the Sunday Birria Night campaign in three variations, three formats each, plus animated stories. Built entirely from the venue's own photography — nothing generated.",
+    deliverables: [
+      "One-page brand visual guide",
+      "Nine-tile Instagram grid",
+      "Campaign · 3 variations × 4:5, 1:1, 9:16",
+      "Animated 9:16 stories",
+      "Layered PSDs + hand-back document",
+    ],
+    coverImage: "/images/tnt/cover.jpg",
+    featured: true,
+    caseStudy: {
+      problem:
+        "The agency brief was titled \"Make the World, Not the Ad\": sell the hour, not the plate. The offer was simple — Sunday Birria Night, one venue, $15 for two or $20 for three — but the inputs were not. The client's brand PDF and the team's brief disagreed on both typeface and palette; the photo library had a hundred frames but no exterior, no wide room, and no sharp shot of the mural; and ten creatives already approved by other designers set a visual language the new work had to sit beside without copying.",
+      role: [
+        "Sole designer on the brief — strategy, system, and every artwork",
+        "Brand visual guide — the one page that resolves the document conflicts",
+        "Instagram grid — nine tiles, each with its beat, two proofs, and distinctive asset",
+        "Sunday Birria Night campaign — three variations, three formats, animated stories",
+        "Hand-back document for the creative lead — reasoning beside every piece, conflicts flagged, nothing hidden",
+      ],
+      strategy:
+        "Build the world first, then the ad. A one-page guide fixed the mark, the seven colours, two typefaces, the headline treatment, the price treatment, the motion vocabulary, and the things that are never done — so every later piece could be judged against something. The campaign then gives three different reasons to come (the craving, the company, the room), each carried by a real frame and two proofs of place. Copy stays ritual — \"Every Sunday\", never \"tonight\" — because paid media outlives the night it was posted.",
+      designSystem: {
+        body: "The guide is the deliverable that made the rest fast. It adopts the client's four core colours and labels the three support neutrals as extended; it carries the approved posters' headline treatment — gold Lilita One with a hard red offset — onto the brief's licensed faces; and it writes down the crop system, so a 1:1 is a literal centre crop of the 4:5 and a 9:16 keeps type out of the top and bottom safe zones. Every conflict between the two source documents is a labelled post-back, not a silent guess.",
+        images: [
+          { src: "/images/tnt/guide-hero.jpg", label: "The Brand World — one-page visual guide, opening", aspect: "wide" },
+          { src: "/images/tnt/guide-mark.jpg", label: "01 The mark — four grounds, how it is used, what is never done", aspect: "wide" },
+          { src: "/images/tnt/guide-colour-type.jpg", label: "02 Colour · 03 Type — core vs extended, two faces with two jobs", aspect: "wide" },
+          { src: "/images/tnt/guide-headline-price.jpg", label: "03B Headline treatment · 03C Price — carried from the approved set", aspect: "wide" },
+        ],
+      },
+      execution: [
+        {
+          heading: "Three reasons to come",
+          body: "Craving, company, room. Each variation leads with a different real frame — the birria itself, two guests mid-cheers, the bar after dark — and the type does one job: the offer, the day, the venue, the next step. The 1:1 tiles are the 4:5s centre-cropped, so every poster was composed with its essentials inside the shared safe zone from the first draft.",
+          images: [
+            { src: "/images/tnt/v1-craving-4x5.jpg", label: "V1 Craving · 4:5 — the birria, the plate, the red venue band", aspect: "tall" },
+            { src: "/images/tnt/v2-company-4x5.jpg", label: "V2 Company · 4:5 — two guests, gold and paper slabs", aspect: "tall" },
+            { src: "/images/tnt/v1-craving-1x1.jpg", label: "V1 · 1:1 — a literal centre crop of the 4:5", aspect: "square" },
+            { src: "/images/tnt/v3-room-1x1.jpg", label: "V3 Room · 1:1 — the bar after dark, yellow ground", aspect: "square" },
+          ],
+        },
+        {
+          heading: "Nine tiles that read as a place",
+          body: "The grid alternates full-frame photography with the campaign tiles so the profile reads like a room with a heartbeat, not a brand doing homework. Every tile is labelled with its beat — arrive, pour, share, taste, stay — and the two proofs it carries, so the agency can keep the rhythm going after hand-back.",
+          images: [
+            { src: "/images/tnt/grid-wide.jpg", label: "The nine-tile grid, mocked in place", aspect: "wide" },
+          ],
+        },
+        {
+          heading: "Stories, and the motion vocabulary",
+          body: "Three 9:16 stories, ten seconds each: a wordless appetite opener, the kicker pops, the headline pops with a bounce, one gold glow sweep, the band slides up, the type builds, and the calavera closes. The same vocabulary as the approved stories, written down in the guide so the next designer can match it. The V1 story plays in the Motion section of this site.",
+          images: [
+            { src: "/images/tnt/stories-9x16-set.jpg", label: "The three 9:16 stories — type kept out of the top and bottom safe zones", aspect: "wide" },
+            { src: "/images/tnt/guide-motion.jpg", label: "03D Motion — the ten-second beat sheet", aspect: "wide" },
+          ],
+        },
+        {
+          heading: "The hand-back",
+          body: "Agency work is judged on how easily someone else can pick it up. The hand-back document puts the reasoning beside every piece — beat, proofs, distinctive asset, frame number — and lists every conflict found in the inputs before anything else, each resolved with a stated assumption the creative lead can overturn.",
+          images: [
+            { src: "/images/tnt/handback-top.jpg", label: "Hand-back document — post-back items before anything else", aspect: "wide" },
+          ],
+        },
+      ],
+      outcome: {
+        body: "Delivered to Your SocialChef in September 2026 as three client-ready packages — guide, grid, and campaign — with layered PSDs, 1× and 2× exports, story masters, and the hand-back document. Every image is a frame from the venue's own shoot; nothing was generated.",
+      },
+    },
+  },
+  {
     id: "medsync",
     type: "case-study",
     title: "MedSync",

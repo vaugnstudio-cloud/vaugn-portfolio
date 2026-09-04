@@ -10,6 +10,8 @@ import {
   RESPONSE_PROMISE,
   CV_URL,
   AVAILABILITY,
+  PORTFOLIO_PDF_URL,
+  HIRING_FACTS,
 } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -47,9 +49,19 @@ export default function ContactPage() {
                 The short version, ready to send on
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-ink2">
-                One-page CV, the portfolio you&apos;re on, and a calendar —
-                everything a hiring decision needs.
+                CV, a portfolio deck for upload forms, the site you&apos;re on,
+                and a calendar — everything a hiring decision needs.
               </p>
+              <dl className="mt-5 grid gap-2 text-sm">
+                {HIRING_FACTS.slice(0, 3).map((f) => (
+                  <div key={f.label} className="flex gap-3">
+                    <dt className="w-24 flex-none font-mono text-[10px] uppercase tracking-[0.18em] text-dim pt-1">
+                      {f.label}
+                    </dt>
+                    <dd className="text-ink2">{f.value}</dd>
+                  </div>
+                ))}
+              </dl>
               <div className="mt-6 flex flex-wrap gap-3">
                 <a
                   href={CV_URL}
@@ -57,6 +69,13 @@ export default function ContactPage() {
                   className="inline-block rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-ink transition-transform hover:scale-[1.02]"
                 >
                   Download CV
+                </a>
+                <a
+                  href={PORTFOLIO_PDF_URL}
+                  download
+                  className="inline-block rounded-full border border-line px-6 py-3 text-sm text-ink2 transition-colors hover:border-ink2 hover:text-ink"
+                >
+                  Portfolio PDF
                 </a>
                 <a
                   href={LINKEDIN_URL}
