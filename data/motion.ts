@@ -13,12 +13,11 @@ export interface MotionItem {
 
 export const motionItems: MotionItem[] = [
   {
-    id: "tnt-birria-story",
-    title: "Sunday Birria Night — story",
-    kind: "Client campaign story · Tacos 'N' Tequilas",
+    id: "reel-steak",
+    title: "Cast-iron ribeye",
+    kind: "F&B appetite reel",
     aspect: "reel",
-    src: "/videos/tnt-birria-story.mp4",
-    poster: "/images/tnt/story-poster.jpg",
+    src: "/videos/reel-steak.mp4",
   },
   {
     id: "augellos-reel",
@@ -43,13 +42,6 @@ export const motionItems: MotionItem[] = [
     aspect: "reel",
     src: "/videos/tnt-follower-story.mp4",
     poster: "/images/recent/tnt-follower-story-poster.jpg",
-  },
-  {
-    id: "reel-steak",
-    title: "Cast-iron ribeye",
-    kind: "F&B appetite reel",
-    aspect: "reel",
-    src: "/videos/reel-steak.mp4",
   },
   {
     id: "reel-burger",

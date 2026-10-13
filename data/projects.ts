@@ -214,7 +214,7 @@ export const projects: Project[] = [
         },
         {
           heading: "Stories, and the motion vocabulary",
-          body: "Three 9:16 stories, ten seconds each: a wordless appetite opener, the kicker pops, the headline pops with a bounce, one gold glow sweep, the band slides up, the type builds, and the calavera closes. The same vocabulary as the approved stories, written down in the guide so the next designer can match it. The V1 story plays in the Motion section of this site.",
+          body: "Three 9:16 stories, ten seconds each: a wordless appetite opener, the kicker pops, the headline pops with a bounce, one gold glow sweep, the band slides up, the type builds, and the calavera closes. The same vocabulary as the approved stories, written down in the guide so the next designer can match it.",
           images: [
             { src: "/images/tnt/stories-9x16-set.jpg", label: "The three 9:16 stories — type kept out of the top and bottom safe zones", aspect: "wide" },
             { src: "/images/tnt/guide-motion.jpg", label: "03D Motion — the ten-second beat sheet", aspect: "wide" },

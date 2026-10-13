@@ -141,9 +141,9 @@ export default function Home() {
               Appetite, <em>in motion</em>.
             </h2>
             <p className="mt-4 max-w-xl text-ink2">
-              Animated stories and reels for client venues, built from their
-              own photography and timed to the platform. Studio appetite reels
-              follow on the Work page.
+              A studio appetite reel alongside animated stories and reels built
+              for client venues from their own photography. Studio reels are
+              art-directed in-studio with AI-assisted production.
             </p>
           </FadeIn>
           <div className="mt-12">
