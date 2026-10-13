@@ -35,6 +35,8 @@ export default function WorkPage() {
   const moreProducts = productWork.filter((p) => !SELECTED_PRODUCT_IDS.includes(p.id));
   const selectedBranding = branding.filter((p) => SELECTED_BRANDING_IDS.includes(p.id));
   const moreBranding = branding.filter((p) => !SELECTED_BRANDING_IDS.includes(p.id));
+  // One lead card when the remainder pairs evenly, two when it wouldn't.
+  const leadCount = (caseStudies.length - 1) % 2 === 0 ? 1 : 2;
 
   return (
     <>
@@ -67,11 +69,14 @@ export default function WorkPage() {
               the thinking, and the system behind each.
             </p>
           </FadeIn>
-          <FadeIn className="mt-10">
-            <ProjectCard project={caseStudies[0]} variant="lead" />
-          </FadeIn>
+          {/* The newest work leads full-width; the rest fill an even 2-col grid. */}
+          {caseStudies.slice(0, leadCount).map((p, i) => (
+            <FadeIn key={p.id} className={i === 0 ? "mt-10" : "mt-6"}>
+              <ProjectCard project={p} variant="lead" latest={i === 0} />
+            </FadeIn>
+          ))}
           <div className="mt-6 grid gap-6 md:grid-cols-2">
-            {caseStudies.slice(1).map((p, i) => (
+            {caseStudies.slice(leadCount).map((p, i) => (
               <FadeIn key={p.id} delay={i * 0.05}>
                 <ProjectCard project={p} />
               </FadeIn>
@@ -243,8 +248,10 @@ export default function WorkPage() {
                 </span>
               </div>
               <p className="mt-2 max-w-lg text-sm text-ink2">
-                Short-form appetite reels for hospitality feeds —
-                art-directed in-studio with AI-assisted production.
+                Animated stories and reels for client venues, built from
+                their own photography, then studio appetite reels for
+                hospitality feeds, art-directed in-studio with AI-assisted
+                production.
               </p>
             </FadeIn>
             <div className="mt-8">

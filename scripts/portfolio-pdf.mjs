@@ -49,6 +49,22 @@ await new Promise((r) => server.listen(PORT, r));
 
 /* ── assets ─────────────────────────────────────────────────── */
 const IMAGES = {
+  augCover: "/images/augellos/cover.jpg",
+  augCarousel: "/images/augellos/carousel-strip.jpg",
+  augPmax: "/images/augellos/pmax-matrix.jpg",
+  rKumarsAfl: "/images/recent/kumars-afl.jpg",
+  rNavratri: "/images/recent/kumars-navratri.jpg",
+  rRenzos: "/images/recent/renzos-pasta.jpg",
+  rVictorias: "/images/recent/victorias-point-cook.jpg",
+  rHill: "/images/recent/the-hill-seniors-lunch.jpg",
+  rSincero: "/images/recent/sincero-christmas.jpg",
+  rGccoQr: "/images/recent/gcco-a3-qr.jpg",
+  rJunkCoastal: "/images/recent/junk-coastal-makewaves.jpg",
+  rKumarsOct: "/images/recent/kumars-october.jpg",
+  rRenzosCocktail: "/images/recent/renzos-cocktail.jpg",
+  rSp: "/images/recent/sp-fathers-day.jpg",
+  rGccoBurger: "/images/recent/gcco-burger.jpg",
+  rAuz: "/images/recent/auz-review.jpg",
   tntCover: "/images/tnt/cover.jpg",
   tntGuideMark: "/images/tnt/guide-mark.jpg",
   tntHeadline: "/images/tnt/guide-headline-price.jpg",
@@ -262,6 +278,12 @@ pages.push(page(`
     </div>
   </div>`));
 
+/* 03 — Augello's */
+pages.push(page(`
+  ${header("01 — Client work", "Augello&rsquo;s", ["Agency work · 2026", "Hospitality", "Social · Paid · Web"])}
+  ${body("For an Italian restaurant in Balwyn, through Your SocialChef: a 22-piece social set built around a seven-slide callout carousel, 33 Google Performance Max creatives cut from the venue&rsquo;s own shoot, and the What&rsquo;s On page for the new website, designed for desktop and mobile.")}
+  ${media("1.3fr 1fr", `${frame("augCover", { fit: "contain", pos: "center" })}<div style="display:flex; flex-direction:column; gap:18px; min-height:0;">${shot("augCarousel")}${shot("augPmax")}</div>`, 22)}`));
+
 /* 03 — Tacos 'N' Tequilas */
 pages.push(page(`
   ${header("01 — Client work", "Tacos 'N' Tequilas", ["Agency work · 2026", "Hospitality", "Brand system · Campaign · Motion"])}
@@ -296,6 +318,18 @@ pages.push(page(`
      ["inbloomD", "inbloomMid", "InBloom Therapy", "Counselling · AU"],
      ["feedmeD", "feedmeMid", "FeedMe Group", "Food-truck events · AU"]]
       .map(([a, b, t, s]) => card(`${shot(a)}${shot(b)}`, t, s)).join(""))}`));
+
+/* 06b — the recent roster */
+pages.push(page(`
+  ${header("02 — Agency creative", "September and October 2026", ["Agency work", "Your SocialChef", "9 clients shown"])}
+  ${body("A recent slice of the roster, each piece set in that client&rsquo;s own type and colour: game-day and festival posters, restaurant content, a franchise recruitment set, a seniors lunch, Christmas tables, a Father&rsquo;s Day push, an A3 order-by-QR print poster and a customer review poster.")}
+  <div style="display:grid; grid-template-columns:repeat(6, 196px); gap:18px 22px; margin-top:30px;">
+    ${[["rKumarsAfl", "Kumar&rsquo;s Sweets"], ["rNavratri", "Kumar&rsquo;s Kitchen"], ["rRenzos", "Renzo&rsquo;s Bar"], ["rRenzosCocktail", "Renzo&rsquo;s Bar"], ["rVictorias", "Victoria&rsquo;s Pizza"], ["rHill", "The Hill"],
+        ["rSincero", "Sincero"], ["rSp", "SP"], ["rGccoQr", "General Chicken Co."], ["rGccoBurger", "General Chicken Co."], ["rKumarsOct", "Kumar&rsquo;s Sweets"], ["rAuz", "AUZ Cleaning"]]
+      .map(([k, t]) => `<div style="display:flex; flex-direction:column; gap:7px;">
+        <div style="width:196px; height:245px; border-radius:8px; overflow:hidden; border:1px solid #2A2521;">${img(k, "cover", "center")}</div>
+        <p style="font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:.14em; text-transform:uppercase; color:#8C8279;">${t}</p></div>`).join("")}
+  </div>`));
 
 /* 07 — agency campaign creative */
 pages.push(page(`

@@ -51,7 +51,7 @@ const EXPERIENCE = [
   {
     period: "2023 — Present",
     title: "Your SocialChef — Brand & Web Designer",
-    body: "Brand and web creative across 20+ concurrent client accounts spanning healthcare, hospitality, retail, and professional services. Campaigns, brand visual guides, social template systems, Figma web design to build-ready specs, short-form video — most recently the Tacos 'N' Tequilas brand guide, grid, and Sunday Birria Night campaign.",
+    body: "Brand and web creative across 20+ concurrent client accounts spanning healthcare, hospitality, retail, and professional services. Campaigns, brand visual guides, social template systems, Figma web design to build-ready specs, short-form video. Recent work: the Tacos 'N' Tequilas brand guide and campaign, and Augello's organic social, Google Performance Max set and What's On web page.",
   },
   {
     period: "2022 — Present",

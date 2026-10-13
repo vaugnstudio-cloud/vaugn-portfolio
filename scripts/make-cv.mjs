@@ -20,7 +20,7 @@ const EXPERIENCE = [
     lede: "Primary brand and web designer at an Australian marketing agency — creative output across 20+ concurrent client accounts spanning hospitality, healthcare, retail, and professional services.",
     bullets: [
       "Own creative delivery across 20+ concurrent accounts: campaigns, ads, carousels, story systems, short-form video, and print/digital collateral, weekly, under agency deadlines.",
-      "Built the Tacos 'N' Tequilas brand visual guide, nine-tile Instagram grid, and Sunday Birria Night campaign (Sep 2026) — three variations × three formats, animated stories, layered PSDs, and a hand-back document that resolved two conflicting brand sources.",
+      "Recent (Sep–Oct 2026): the Tacos 'N' Tequilas brand visual guide, grid and campaign; Augello's 22-piece social set, 33 Google Performance Max creatives and the What's On web page; plus monthly content for JUNK, Kumar's, Renzo's, Victoria's Pizza and more.",
       "Designed website mockups and UI layouts in Figma for agency clients including Junk Sunshine Coast and ACEF Enterprises, handed over as build-ready specs; sites live today.",
       "Built repeatable brand frameworks — content template systems, identity rulebooks, campaign structures — so the agency grew its client intake without a proportional increase in design hours.",
       "Integrated AI tooling into daily production (Adobe Firefly, Photoshop Generative AI, Magnific, Higgsfield, ChatGPT, Claude) for exploration, versioning, and upscaling; direction and final craft stay hand-made.",
@@ -32,7 +32,7 @@ const EXPERIENCE = [
     dates: "Mar 2022 – Present",
     lede: "Identity, websites, and marketing systems for healthcare, hospitality, and growth businesses — designed and built end to end.",
     bullets: [
-      "Shipped complete brand-to-website engagements: MedSync Mental Health (live Framer site for a California psychiatry clinic), Ozmax Care (Australian NDIS provider), InBloom Therapy, Mekong Merchant.",
+      "Shipped complete brand-to-website engagements: MedSync Mental Health (live Framer site for a California psychiatry clinic, three update rounds in 2026), Ozmax Care, InBloom Therapy.",
       "Designed, built, and launched a self-initiated product line in 2026 — five niche website kits (Averis, Lumière, Éclat, Maison, Esprit) and three working apps (Studio OS, SOP Quest, Outreach Cockpit) — design system to production PWA, solo.",
     ],
   },
@@ -65,6 +65,7 @@ const EXPERIENCE = [
 ];
 
 const PROJECTS = [
+  ["Augello's", "Social · Google P-Max · What's On web page", "Agency · Melbourne · 2026"],
   ["Tacos 'N' Tequilas", "Brand visual guide · grid · campaign · motion", "Agency · Melbourne · 2026"],
   ["MedSync Mental Health", "Brand & Framer website, live", "Client · California · 2025"],
   ["Ozmax Care", "Brand identity, guide & website", "Agency · Melbourne · 2026"],
@@ -246,7 +247,6 @@ const html = `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
         <div class="edu"><p class="t">Portfolio</p><p class="d">vaugn-portfolio.vercel.app</p></div>
         <div class="edu"><p class="t">Live client sites</p><p class="d">medsyncmentalhealth.com · ozmaxcare.com.au · junksunshinecoast.com.au · yoursocialchef.com</p></div>
         <div class="edu"><p class="t">LinkedIn</p><p class="d">linkedin.com/in/vaugn-almeida</p></div>
-        <div class="edu"><p class="t">References</p><p class="d">Available on request</p></div>
       </div>
     </aside>
   </div>

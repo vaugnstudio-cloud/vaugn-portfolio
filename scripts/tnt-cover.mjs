@@ -22,7 +22,6 @@ img{position:absolute;display:block;box-shadow:0 30px 60px rgba(0,0,0,.35),0 4px
 .logo{position:absolute;right:96px;bottom:58px;width:64px}
 </style><body>
 <img class="grid" src="${grid}"><img class="v1" src="${v1}"><img class="v3" src="${v3}">
-<div class="tag">Tacos 'N' Tequilas · Sunday Birria Night · brand guide, grid &amp; campaign</div>
 <img class="logo" src="${logo}" style="box-shadow:none;border-radius:0">
 <div class="pic"></div></body>`;
 const browser = await chromium.launch();

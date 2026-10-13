@@ -53,8 +53,11 @@ const PROVENANCE: Record<Project["type"], string> = {
 export default function ProjectCard({
   project,
   variant = "grid",
+  latest = false,
 }: {
   project: Project;
+  /** Shows the "Latest" chip — only the single newest project gets it. */
+  latest?: boolean;
   /** "lead" = full-width feature card: big image left, story right. */
   variant?: "grid" | "lead";
 }) {
@@ -71,9 +74,9 @@ export default function ProjectCard({
             <span className="absolute left-4 top-4 rounded-full bg-bg/80 px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-dim backdrop-blur">
               {project.provenance ?? PROVENANCE[project.type]}
             </span>
-            <span className="absolute right-4 top-4 rounded-full bg-accent px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-accent-ink">
+            {latest && (<span className="absolute right-4 top-4 rounded-full bg-accent px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-accent-ink">
               Latest · {project.year}
-            </span>
+            </span>)}
           </div>
           <div className="flex flex-col justify-between p-8 sm:p-10">
             <div>

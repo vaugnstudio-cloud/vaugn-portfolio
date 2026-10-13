@@ -85,6 +85,75 @@ export interface Project {
 export const projects: Project[] = [
   // ══ TIER 1 — FULL CASE STUDIES ═══════════════════════════
   {
+    id: "augellos",
+    type: "case-study",
+    provenance: "Agency work",
+    title: "Augello's",
+    client: "Italian Restaurant & Pizzeria · Balwyn, Melbourne",
+    year: "2026",
+    category: ["HOSPITALITY", "SOCIAL", "PAID MEDIA", "WEB DESIGN"],
+    headline: "One Italian restaurant, three channels: a social campaign, a Google ad system, and the website's What's On page.",
+    description:
+      "Through Your SocialChef, for Augello's in Balwyn: a 22-piece organic social set built around a seven-slide callout carousel, 33 Google Performance Max creatives cut from the venue's own shoot, and the What's On page for the restaurant's new website, designed for desktop and mobile.",
+    deliverables: [
+      "Organic social · 22 creatives",
+      "Seven-slide callout carousel",
+      "Google P-Max · 33 creatives",
+      "What's On page · desktop + mobile",
+      "Animated stories + reel",
+    ],
+    coverImage: "/images/augellos/cover.jpg",
+    featured: true,
+    caseStudy: {
+      problem:
+        "Augello's had a strong photo shoot and three places it needed to work at once: an Instagram feed that had to feel native rather than like advertising, a Google Performance Max campaign that needed every headline in three ratios, and a new website that needed a page for what changes week to week. Each channel has its own rules, and the restaurant had to look like one place across all of them. The brand files never arrived, so the type, the red and a usable wordmark had to be recovered from approved work.",
+      role: [
+        "Sole designer on all three briefs, through Your SocialChef",
+        "Brand recovery — display type and red matched from approved artwork, the wordmark keyed from a photo of the shop sign",
+        "Organic social — carousel, posters, Google posts, animated stories and a reel",
+        "Google P-Max — 11 headlines in three ratios, every crop cut from the full-resolution originals",
+        "What's On page — structure, design and a responsive build for the agency's web team",
+      ],
+      strategy:
+        "Let each channel do its own job and keep one voice across them. The feed uses a format people stop for: a carousel that opens like a public callout to last night's table and ends on a reveal. The ads stay calm and clear, one dish, one line, one action. The web page answers the question a regular actually has, which is what's on this week, and gives each special its own card so the kitchen can change it without a designer.",
+      designSystem: {
+        body: "Two related systems, on purpose. Social and ads share the restaurant's existing look, a light italic display face with one red word and a thin red rule, so a paid impression and an organic post read as the same place. The website follows the approved site design instead: a warm cream ground, a serif display and a deeper red. The carousel is the clearest expression of the social side, white type plates stacked over unretouched photography, one beat per slide.",
+        images: [
+          { src: "/images/augellos/carousel-strip.jpg", label: "The seven-slide callout carousel, in reading order", aspect: "wide" },
+        ],
+      },
+      execution: [
+        {
+          heading: "Posters, stories and a reel",
+          body: "The singles drop the plates and use a lower-third: a sans line, an italic line with one red word, and the rule. Each was delivered at 4:5, as a Google post and as an animated story, with layered PSDs and live text so the agency can change a dish or a date in minutes. The reel plays in the Motion section of this site.",
+          images: [
+            { src: "/images/augellos/organic-pasta.jpg", label: "Vertical poster · 4:5", aspect: "tall" },
+            { src: "/images/augellos/photo-edit.jpg", label: "Photo edit · delivered at 4000 × 5000", aspect: "tall" },
+          ],
+        },
+        {
+          heading: "Google Performance Max",
+          body: "Eleven headlines, each in landscape, square and portrait. The brief suggested resizing the squares and portraits out of the landscape files, which would have meant upscaling. Every ratio was cut from the full-resolution originals instead, so all 33 files are clean downscales, and crops were placed by measuring where the dish and the wall sign actually sit rather than centring them.",
+          images: [
+            { src: "/images/augellos/pmax-matrix.jpg", label: "Two of the eleven headlines, across all three ratios", aspect: "wide" },
+          ],
+        },
+        {
+          heading: "The What's On page",
+          body: "Built for the restaurant's new website on the approved site design: a hero, three weekly specials as cards, a ticketed Long Italian Lunch, and Special Nights as photo tiles. On mobile the specials become a swipe carousel and a sticky bar keeps Book and Order one tap away. Delivered as a responsive build with desktop and mobile previews.",
+          images: [
+            { src: "/images/augellos/web-hero.jpg", label: "Desktop · hero", aspect: "wide" },
+            { src: "/images/augellos/web-devices.jpg", label: "Weekly specials · desktop and mobile", aspect: "wide" },
+            { src: "/images/augellos/web-nights.jpg", label: "Desktop · Special Nights", aspect: "wide" },
+          ],
+        },
+      ],
+      outcome: {
+        body: "Delivered in September 2026: 22 organic creatives, 33 Performance Max creatives and the What's On page, all with editable source files. Photography is the venue's own August shoot, with a few frames composited or extended using AI-assisted tools and finished in Photoshop.",
+      },
+    },
+  },
+  {
     id: "tacos-n-tequilas",
     type: "case-study",
     provenance: "Agency work",
@@ -152,6 +221,16 @@ export const projects: Project[] = [
           ],
         },
         {
+          heading: "After the launch",
+          body: "The guide kept paying off. A follower campaign sets the brand's cream panel against the venue's photography, with one hero word in chilli red: three posters, three animated stories and a Google post, each saying one thing about the place. The animated story plays in the Motion section of this site.",
+          images: [
+            { src: "/images/tnt/follower-1.jpg", label: "Follower campaign · Modern Mexican, made by hand", aspect: "tall" },
+            { src: "/images/tnt/follower-2.jpg", label: "Follower campaign · The margarita is the whole point", aspect: "tall" },
+            { src: "/images/tnt/follower-3.jpg", label: "Follower campaign · Tacos worth the trip", aspect: "tall" },
+            { src: "/images/tnt/follower-google.jpg", label: "Follower campaign · Google post", aspect: "tall" },
+          ],
+        },
+        {
           heading: "The hand-back",
           body: "Agency work is judged on how easily someone else can pick it up. The hand-back document puts the reasoning beside every piece — beat, proofs, distinctive asset, frame number — and lists every conflict found in the inputs before anything else, each resolved with a stated assumption the creative lead can overturn.",
           images: [
@@ -160,7 +239,7 @@ export const projects: Project[] = [
         },
       ],
       outcome: {
-        body: "Delivered to Your SocialChef in September 2026 as three client-ready packages — guide, grid, and campaign — with layered PSDs, 1× and 2× exports, story masters, and the hand-back document. Every image is a frame from the venue's own shoot; nothing was generated.",
+        body: "Delivered to Your SocialChef in September 2026 as three client-ready packages — guide, grid, and campaign — with layered PSDs, 1× and 2× exports, story masters, and the hand-back document. Every image is a frame from the venue's own shoot; nothing was generated. The account has kept going since: a follower campaign, a new-website announcement and Instagram highlight covers, all built on the same guide.",
       },
     },
   },
@@ -211,7 +290,7 @@ export const projects: Project[] = [
         },
       ],
       outcome: {
-        body: "Delivered, launched, and live — and the relationship is ongoing: the clinic can update content through the CMS, and MedSync still comes back to me for site updates and new side projects.",
+        body: "Delivered, launched, and live — and the relationship is ongoing: the clinic updates content through the CMS, and MedSync has come back for three update rounds in 2026 so far, plus new side projects.",
         liveUrl: "https://medsyncmentalhealth.com/",
       },
     },
@@ -235,7 +314,7 @@ export const projects: Project[] = [
       "Website homepage",
     ],
     coverImage: "/images/ozmax-cover.png",
-    featured: true,
+    featured: false, // shown on /work; homepage keeps a lead card + 2×2 grid
     url: "https://ozmaxcare.com.au/",
     caseStudy: {
       problem:
@@ -330,9 +409,28 @@ export const projects: Project[] = [
             { src: "/images/ysc/junk-maroochydore.jpg", label: "Maroochydore opening — Easter weekend push", aspect: "tall" },
           ],
         },
+        {
+          heading: "Coastalscape: one event, every channel",
+          body: "A textured art workshop at the Sippy Downs venue, sold through feed posts, a story, the website's What's On banner and pop-up, and an email header. One look across every size, with the date, time and booking step always in the same order so nobody has to hunt for them. The artwork imagery was art-directed in-studio with AI-assisted production.",
+          images: [
+            { src: "/images/recent/junk-coastal-channels.jpg", label: "Coastalscape across feed, story, website and email", aspect: "wide" },
+            { src: "/images/recent/junk-coastal-makewaves.jpg", label: "Feed · Make Waves", aspect: "tall" },
+            { src: "/images/recent/junk-coastal-artbites.jpg", label: "Feed · Art. Bites. Good Vibes.", aspect: "tall" },
+          ],
+        },
+        {
+          heading: "Menus, dish stories and email",
+          body: "The everyday work that keeps a venue busy: a gluten-free menu rebuilt from a Canva file into a print-ready PDF with editable text, dish posters for the September menu, and the Christmas functions email in the venue's email format.",
+          images: [
+            { src: "/images/recent/junk-gf-menu.jpg", label: "Gluten-free menu · print-ready PDF", aspect: "tall" },
+            { src: "/images/recent/junk-christmas-email.jpg", label: "Christmas functions email · header", aspect: "tall" },
+            { src: "/images/recent/junk-beef-tataki.jpg", label: "September menu · Beef Tataki", aspect: "tall" },
+            { src: "/images/recent/junk-pina-colada.jpg", label: "September menu · Piña Colada", aspect: "tall" },
+          ],
+        },
       ],
       outcome: {
-        body: "Live across both Sippy Downs and Maroochydore venues, with the social system still running as an ongoing retainer since 2023.",
+        body: "Live across both Sippy Downs and Maroochydore venues, with the social system still running as an ongoing retainer since 2023 — most recently an event campaign, two menus, dish stories and the Christmas functions email.",
         liveUrl: "https://junksunshinecoast.com.au/",
       },
     },
@@ -398,6 +496,24 @@ export const projects: Project[] = [
             { src: "/images/ysc/ysc-pizza-type.jpg", label: "YSC workshop — typographic poster", aspect: "square" },
             { src: "/images/ysc/kitsch-qr.jpg", label: "Kitsch — QR ordering poster", aspect: "tall" },
             { src: "/images/ysc/mothers-day-statue.jpg", label: "Mother's Day — art-direction study", aspect: "tall" },
+          ],
+        },
+        {
+          heading: "September and October 2026",
+          body: "A recent slice of the roster, all delivered in the last two months: game-day and festival posters for two Indian sweets brands, Italian restaurant content, a pizza franchise recruitment set, a seniors lunch, Christmas tables, a printed A3 order-by-QR poster, a customer review poster for a cleaning company, and a Father's Day booking push. Each one is set in that client's own type and colour. Most use the client's own photography; where a shoot didn't cover a shot, imagery was extended or restaged with AI-assisted tools and art-directed in-studio.",
+          images: [
+            { src: "/images/recent/kumars-afl.jpg", label: "Kumar's Sweets — AFL game day", aspect: "tall" },
+            { src: "/images/recent/kumars-navratri.jpg", label: "Kumar's Indian Kitchen & Sweets — Navratri", aspect: "tall" },
+            { src: "/images/recent/renzos-pasta.jpg", label: "Renzo's Bar — build-your-pasta carousel", aspect: "tall" },
+            { src: "/images/recent/renzos-cocktail.jpg", label: "Renzo's Bar — cocktail hour", aspect: "tall" },
+            { src: "/images/recent/victorias-point-cook.jpg", label: "Victoria's Pizza 'N' Beyond — franchise recruitment", aspect: "tall" },
+            { src: "/images/recent/the-hill-seniors-lunch.jpg", label: "The Hill — seniors lunch", aspect: "tall" },
+            { src: "/images/recent/sincero-christmas.jpg", label: "Sincero — Christmas tables", aspect: "tall" },
+            { src: "/images/recent/sp-fathers-day.jpg", label: "SP — Father's Day bookings", aspect: "tall" },
+            { src: "/images/recent/gcco-a3-qr.jpg", label: "General Chicken Co. — A3 order-by-QR print poster", aspect: "tall" },
+            { src: "/images/recent/gcco-burger.jpg", label: "General Chicken Co. — triple cheeseburger", aspect: "tall" },
+            { src: "/images/recent/kumars-october.jpg", label: "Kumar's Sweets — October content", aspect: "tall" },
+            { src: "/images/recent/auz-review.jpg", label: "AUZ Professional Cleaning — customer review", aspect: "tall" },
           ],
         },
         {

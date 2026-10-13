@@ -96,7 +96,7 @@ export default function Home() {
           </div>
         </FadeIn>
         <FadeIn className="mt-12">
-          <ProjectCard project={leadProject} variant="lead" />
+          <ProjectCard project={leadProject} variant="lead" latest />
         </FadeIn>
         <div className="mt-6 grid gap-6 md:grid-cols-2">
           {restProjects.map((p, i) => (
@@ -141,9 +141,9 @@ export default function Home() {
               Appetite, <em>in motion</em>.
             </h2>
             <p className="mt-4 max-w-xl text-ink2">
-              A client campaign story built frame by frame from the venue&apos;s
-              own photography, alongside studio appetite reels for hospitality
-              feeds — art-directed in-studio with AI-assisted production.
+              Animated stories and reels for client venues, built from their
+              own photography and timed to the platform. Studio appetite reels
+              follow on the Work page.
             </p>
           </FadeIn>
           <div className="mt-12">
