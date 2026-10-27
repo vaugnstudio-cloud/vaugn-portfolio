@@ -28,7 +28,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 const titleDefault = "Vaugn Almeida — Senior Brand & Web Designer";
 const description =
-  "Senior brand & web designer for healthcare and hospitality. 5+ years, 20+ agency accounts, 7 live client sites — plus self-built products from design system to shipped PWA. Open to senior roles and select client projects.";
+  "Senior brand & web designer for healthcare and hospitality. Senior Graphic Designer and creative QA at an Australian agency, 5+ years, 20+ agency accounts, 7 live client sites — plus self-built products from design system to shipped PWA. Open to senior roles and select client projects.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

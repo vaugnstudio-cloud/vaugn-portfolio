@@ -49,7 +49,12 @@ const EXPERIENCE = [
     body: "Designed, built, and shipped a product line of my own: niche website kits (Averis, Lumière, Éclat, Maison, Esprit) and working apps (Studio OS, SOP Quest, Outreach Cockpit) — design system to production PWA, solo. With the Denial Defense System (2025), that's nine shipped products.",
   },
   {
-    period: "2023 — Present",
+    period: "Sep 2026 — Present",
+    title: "Your SocialChef — Senior Graphic Designer",
+    body: "Promoted in September 2026. Same 20+ client accounts, plus quality review of the design team's creatives before they reach clients: safe zones, real food against the shoot, AI artefacts in motion, offers and dates against the brief, brand, and the final file on the shared drive. Built the safe-zone templates the team now works to.",
+  },
+  {
+    period: "2023 — 2026",
     title: "Your SocialChef — Brand & Web Designer",
     body: "Brand and web creative across 20+ concurrent client accounts spanning healthcare, hospitality, retail, and professional services. Campaigns, brand visual guides, social template systems, Figma web design to build-ready specs, short-form video. Recent work: the Tacos 'N' Tequilas brand guide and campaign, and Augello's organic social, Google Performance Max set and What's On web page.",
   },
@@ -133,11 +138,13 @@ export default function AboutPage() {
                 months of onboarding most designers need.
               </p>
               <p>
-                Since 2023 I&apos;ve been the brand &amp; web designer at Your
-                SocialChef, an Australian agency, handling creative across 20+
-                concurrent client accounts — which taught me the unglamorous
-                senior skills: prioritising, systematising, and keeping twenty
-                visual languages distinct under weekly deadlines.
+                Since 2023 I&apos;ve worked at Your SocialChef, an Australian
+                agency, handling creative across 20+ concurrent client
+                accounts — which taught me the unglamorous senior skills:
+                prioritising, systematising, and keeping twenty visual
+                languages distinct under weekly deadlines. In September 2026 I
+                was promoted to Senior Graphic Designer, and I now also review
+                the other designers&apos; work before it reaches a client.
               </p>
               <p>
                 I work as one accountable person from strategy to shipped

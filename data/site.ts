@@ -43,11 +43,11 @@ export const AVAILABILITY = "Open to senior roles · select client projects";
 
 // The facts a hiring manager scans for before reading anything else.
 export const HIRING_FACTS = [
-  { label: "Role", value: "Senior Brand & Web Designer" },
+  { label: "Looking for", value: "Senior Brand & Web Designer role" },
   { label: "Engagement", value: "Full-time or long-term contract · remote" },
-  { label: "Based", value: "Manila, GMT+8 · overlaps AU, US-West mornings and EU afternoons" },
+  { label: "Based", value: "Greater Manila Area, GMT+8 · overlaps AU, US-West mornings and EU afternoons" },
   { label: "Tools", value: "Figma · Framer · Webflow · Adobe CC · After Effects" },
-  { label: "Start", value: "Flexible — currently in a remote agency role" },
+  { label: "Now", value: "Senior Graphic Designer and creative QA at an Australian agency" },
 ] as const;
 
 // Real numbers only — no invented metrics.

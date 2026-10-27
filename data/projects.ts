@@ -443,10 +443,11 @@ export const projects: Project[] = [
     client: "Marketing Agency · Australia",
     year: "2023–Present",
     category: ["AGENCY", "BRAND DESIGN", "WEB DESIGN"],
-    headline: "Brand and web creative across 20+ concurrent accounts.",
+    headline: "Senior Graphic Designer and creative QA across 20+ concurrent accounts.",
     description:
-      "In-house creative for Your SocialChef — brand campaigns, social media systems, Figma web mockups, and short-form video across 20+ concurrent client accounts spanning healthcare, hospitality, retail, and professional services.",
+      "Senior Graphic Designer at Your SocialChef since September 2026, promoted from Brand & Web Designer. Brand campaigns, social media systems, Figma web mockups and short-form video across 20+ concurrent client accounts, and quality review of the design team's work before it reaches clients.",
     deliverables: [
+      "Creative QA for the design team",
       "Instagram carousel series",
       "Agency website contribution",
       "Brand campaign creative",
@@ -459,7 +460,8 @@ export const projects: Project[] = [
       problem:
         "An agency serving 20+ concurrent accounts lives or dies on throughput without quality drift. Every client — a clinic, a restaurant, a retailer — needs work that looks like it came from a dedicated designer, delivered on an agency calendar.",
       role: [
-        "Brand designer, in-house — 2023 to present",
+        "Senior Graphic Designer since September 2026, promoted from Brand & Web Designer (February 2023 to September 2026)",
+        "Creative QA — I review my co-workers' creatives before they go to clients, and built the safe-zone templates and checks the team works to",
         "Sole designer on most accounts; strategy and scheduling in collaboration with the agency team",
         "Social media systems & template libraries — built and maintained by me",
         "Web design in Figma, handed to the agency's team as build-ready specs",
@@ -499,8 +501,15 @@ export const projects: Project[] = [
           ],
         },
         {
+          heading: "Creative QA for the team",
+          body: "Since the promotion, part of the job is catching problems before a client does. I review the other designers' creatives against a short list of named checks: type clear of the platform UI, real dishes that still match the shoot, no AI steam or smoke on plated food in motion, prices and dates word for word against the brief, the client's own brand, and the final file on the shared drive matching the fixed one. Findings go to the account manager and project manager as a short list, with a fix for each, so the designer can act on it straight away. The safe-zone templates below are the ones I built for the team after a missed issue went live.",
+          images: [
+            { src: "/images/recent/qa-toolkit.jpg", label: "Safe-zone templates for every format, and the six checks every creative passes", aspect: "wide" },
+          ],
+        },
+        {
           heading: "September and October 2026",
-          body: "A recent slice of the roster, all delivered in the last two months: game-day and festival posters for two Indian sweets brands, Italian restaurant content, a pizza franchise recruitment set, a seniors lunch, Christmas tables, a printed A3 order-by-QR poster, a customer review poster for a cleaning company, and a Father's Day booking push. Each one is set in that client's own type and colour. Most use the client's own photography; where a shoot didn't cover a shot, imagery was extended or restaged with AI-assisted tools and art-directed in-studio.",
+          body: "A recent slice of the roster, all delivered in the last two months: game-day, Dussehra and Navratri posters for two Indian sweets brands, a thali lunch launch, Italian restaurant content, Melbourne Cup campaigns for a pizza group and an Asian fusion restaurant, Halloween for a chicken shop, Christmas functions for a new trattoria client, a pizza franchise recruitment set, two lunch campaigns, Christmas tables, a printed A3 order-by-QR poster, a customer review poster and a Father's Day booking push. Each one is set in that client's own type and colour. Most use the client's own photography; where a shoot didn't cover a shot, imagery was extended or restaged with AI-assisted tools and art-directed in-studio.",
           images: [
             { src: "/images/recent/kumars-afl.jpg", label: "Kumar's Sweets — AFL game day", aspect: "tall" },
             { src: "/images/recent/kumars-navratri.jpg", label: "Kumar's Indian Kitchen & Sweets — Navratri", aspect: "tall" },
@@ -514,6 +523,14 @@ export const projects: Project[] = [
             { src: "/images/recent/gcco-burger.jpg", label: "General Chicken Co. — triple cheeseburger", aspect: "tall" },
             { src: "/images/recent/kumars-october.jpg", label: "Kumar's Sweets — October content", aspect: "tall" },
             { src: "/images/recent/auz-review.jpg", label: "AUZ Professional Cleaning — customer review", aspect: "tall" },
+            { src: "/images/recent/kumars-dussehra.jpg", label: "Kumar's Sweets — Dussehra", aspect: "tall" },
+            { src: "/images/recent/kumars-thali.jpg", label: "Kumar's Indian Kitchen & Sweets — thali lunch launch", aspect: "tall" },
+            { src: "/images/recent/junk-melbourne-cup-1.jpg", label: "JUNK — Melbourne Cup catering", aspect: "tall" },
+            { src: "/images/recent/junk-melbourne-cup-2.jpg", label: "JUNK — Melbourne Cup catering, gather the crew", aspect: "tall" },
+            { src: "/images/recent/victorias-melbourne-cup.jpg", label: "Victoria's Pizza 'N' Beyond — Melbourne Cup", aspect: "tall" },
+            { src: "/images/recent/gcco-halloween.jpg", label: "General Chicken Co. — Halloween", aspect: "tall" },
+            { src: "/images/recent/lilianas-christmas.jpg", label: "Liliana's Trattoria — Christmas parties", aspect: "tall" },
+            { src: "/images/recent/the-hill-lunch.jpg", label: "The Hill — lunch at The Hill", aspect: "tall" },
           ],
         },
         {
@@ -528,7 +545,7 @@ export const projects: Project[] = [
         },
       ],
       outcome: {
-        body: "Ongoing since 2023 — more than three years inside the same agency, with client accounts and the agency's own site carrying this work today. The template systems built here are documented in the Social Media Systems study.",
+        body: "Ongoing since 2023 — more than three years inside the same agency, promoted to Senior Graphic Designer in September 2026, with client accounts and the agency's own site carrying this work today. The template systems built here are documented in the Social Media Systems study.",
         liveUrl: "https://yoursocialchef.com/",
       },
     },

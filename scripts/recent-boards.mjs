@@ -29,7 +29,45 @@ const browser = (src, x, y, w, url) =>
 const phone = (src, x, y, w, h) =>
   `<div class="phone shadow" style="left:${x}px;top:${y}px;width:${w}px"><div class="notch"></div><div class="screen" style="height:${h}px"><img src="${src}"></div></div>`;
 
+const b64png = (p) => `data:image/png;base64,${fs.readFileSync(p).toString("base64")}`;
+
+// QA tooling: the safe-zone overlays built for the design team, on a neutral
+// canvas so the red no-go zones read, beside the named checks every creative
+// passes before it reaches a client. No co-worker artwork is shown.
+const qaCard = (file, label, w, h) => `<figure style="margin:0">
+  <div class="shadow" style="width:${w}px;height:${h}px;border-radius:6px;overflow:hidden;background:repeating-linear-gradient(135deg,#DAD5CD 0 14px,#D2CCC3 14px 28px)">
+    <img src="${b64png(`${A}/${file}`)}" style="width:100%;height:100%;display:block"></div>
+  <figcaption class="mono" style="margin-top:12px;font-size:11px;color:#B8AEA4">${label}</figcaption></figure>`;
+const QA_CHECKS = [
+  ["Safe zones", "Type clear of the platform UI on every format"],
+  ["Real food", "Dish pixels match the shoot, no AI re-render that reads as different"],
+  ["Motion", "No AI steam or smoke on plated food, checked frame by frame"],
+  ["Copy & offer", "Prices, dates and venue match the brief word for word"],
+  ["Brand", "The client's own type, colour and logo placement"],
+  ["Delivery", "The file on the shared drive is the fixed file, checked by hash"],
+];
+
 const boards = {
+  "recent/qa-toolkit.jpg": `<body style="background:#151311">
+    <p class="mono" style="position:absolute;left:70px;top:96px;color:#F0662A">Creative QA · team tooling</p>
+    <div style="position:absolute;left:70px;top:150px;display:flex;gap:24px;align-items:flex-end">
+      ${qaCard("qa-ig-story-1080x1920.png", "Story 9:16", 336, 597)}
+      ${qaCard("qa-ig-reel-1080x1920.png", "Reel 9:16", 336, 597)}
+      <div style="display:flex;flex-direction:column;gap:22px">
+        ${qaCard("qa-ig-feed-4x5-1080x1350.png", "Feed 4:5", 270, 338)}
+        ${qaCard("qa-google-post-1200x900.png", "Google post 4:3", 270, 203)}
+      </div>
+    </div>
+    <div style="position:absolute;left:1130px;top:150px;width:400px">
+      <p style="font-family:Fraunces,serif;font-size:34px;line-height:1.12;color:#F2EFE7">Six checks before anything reaches a client.</p>
+      <div style="margin-top:30px;border-top:1px solid #34302B">
+        ${QA_CHECKS.map(([k, v], i) => `<div style="display:grid;grid-template-columns:42px 1fr;gap:6px;padding:15px 0;border-bottom:1px solid #34302B">
+          <span class="mono" style="color:#F0662A;font-size:12px;padding-top:3px">0${i + 1}</span>
+          <div><p style="font-weight:600;font-size:16px;color:#F2EFE7">${k}</p><p style="font-size:14px;line-height:1.45;color:#B8AEA4;margin-top:3px">${v}</p></div></div>`).join("")}
+      </div>
+    </div>
+  </body>`,
+
   // Augello's — the card cover: web page, phone, a carousel slide
   "augellos/cover.jpg": `<body style="background:#1C1813">
     <div style="position:absolute;inset:0;background:radial-gradient(90% 70% at 30% 20%,rgba(178,58,43,.28),transparent 65%)"></div>

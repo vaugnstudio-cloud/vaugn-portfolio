@@ -61,6 +61,11 @@ const IMAGES = {
   rGccoQr: "/images/recent/gcco-a3-qr.jpg",
   rJunkCoastal: "/images/recent/junk-coastal-makewaves.jpg",
   rKumarsOct: "/images/recent/kumars-october.jpg",
+  rDussehra: "/images/recent/kumars-dussehra.jpg",
+  rLilianas: "/images/recent/lilianas-christmas.jpg",
+  rJunkCup: "/images/recent/junk-melbourne-cup-2.jpg",
+  rGccoHalloween: "/images/recent/gcco-halloween.jpg",
+  qaToolkit: "/images/recent/qa-toolkit.jpg",
   rRenzosCocktail: "/images/recent/renzos-cocktail.jpg",
   rSp: "/images/recent/sp-fathers-day.jpg",
   rGccoBurger: "/images/recent/gcco-burger.jpg",
@@ -253,7 +258,7 @@ pages.push(page(`
       <span>vaugn-portfolio.vercel.app</span>
       <span>vaugn.studio@gmail.com</span>
       <span>linkedin.com/in/vaugn-almeida</span>
-      <span>Metro Manila · Remote</span>
+      <span>Greater Manila Area · Remote</span>
     </div>
   </div>`));
 
@@ -263,7 +268,7 @@ pages.push(page(`
   <div style="display:grid; grid-template-columns:1.15fr 1fr; gap:56px; margin-top:38px; flex:1;">
     <div>
       <p style="font-family:'Inter',sans-serif; font-size:18px; line-height:1.62; color:#D6CFC7;">I&rsquo;m a brand &amp; web designer working remotely with international clients across healthcare, hospitality, and growth businesses. My route in is unusual: I worked inside US healthcare revenue-cycle operations — claims, denials, payer follow-up — so clinics and billing firms skip the months of onboarding most designers need.</p>
-      <p style="font-family:'Inter',sans-serif; font-size:18px; line-height:1.62; color:#D6CFC7; margin-top:18px;">Since 2023 I&rsquo;ve been the brand &amp; web designer at Your SocialChef, an Australian agency, handling creative across 20+ concurrent accounts — which taught me the unglamorous senior skills: prioritising, systematising, and keeping twenty visual languages distinct under weekly deadlines.</p>
+      <p style="font-family:'Inter',sans-serif; font-size:18px; line-height:1.62; color:#D6CFC7; margin-top:18px;">Since 2023 I&rsquo;ve worked at Your SocialChef, an Australian agency, across 20+ concurrent accounts. In September 2026 I was promoted to Senior Graphic Designer, and I now review the design team&rsquo;s work before it reaches clients, on top of my own accounts.</p>
       <p style="font-family:'Inter',sans-serif; font-size:18px; line-height:1.62; color:#D6CFC7; margin-top:18px;">Alongside client work I designed, built, and shipped a product line of my own — five niche website kits and four working apps, design system to production.</p>
     </div>
     <div style="display:flex; flex-direction:column; gap:14px;">
@@ -322,14 +327,20 @@ pages.push(page(`
 /* 06b — the recent roster */
 pages.push(page(`
   ${header("02 — Agency creative", "September and October 2026", ["Agency work", "Your SocialChef", "9 clients shown"])}
-  ${body("A recent slice of the roster, each piece set in that client&rsquo;s own type and colour: game-day and festival posters, restaurant content, a franchise recruitment set, a seniors lunch, Christmas tables, a Father&rsquo;s Day push, an A3 order-by-QR print poster and a customer review poster.")}
+  ${body("A recent slice of the roster, each piece set in that client&rsquo;s own type and colour: game-day and festival posters, restaurant content, a franchise recruitment set, a seniors lunch, Christmas tables and Christmas functions, Halloween, Melbourne Cup catering and an A3 order-by-QR print poster.")}
   <div style="display:grid; grid-template-columns:repeat(6, 196px); gap:18px 22px; margin-top:30px;">
     ${[["rKumarsAfl", "Kumar&rsquo;s Sweets"], ["rNavratri", "Kumar&rsquo;s Kitchen"], ["rRenzos", "Renzo&rsquo;s Bar"], ["rRenzosCocktail", "Renzo&rsquo;s Bar"], ["rVictorias", "Victoria&rsquo;s Pizza"], ["rHill", "The Hill"],
-        ["rSincero", "Sincero"], ["rSp", "SP"], ["rGccoQr", "General Chicken Co."], ["rGccoBurger", "General Chicken Co."], ["rKumarsOct", "Kumar&rsquo;s Sweets"], ["rAuz", "AUZ Cleaning"]]
+        ["rSincero", "Sincero"], ["rLilianas", "Liliana&rsquo;s Trattoria"], ["rGccoQr", "General Chicken Co."], ["rGccoHalloween", "General Chicken Co."], ["rDussehra", "Kumar&rsquo;s Sweets"], ["rJunkCup", "JUNK"]]
       .map(([k, t]) => `<div style="display:flex; flex-direction:column; gap:7px;">
         <div style="width:196px; height:245px; border-radius:8px; overflow:hidden; border:1px solid #2A2521;">${img(k, "cover", "center")}</div>
         <p style="font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:.14em; text-transform:uppercase; color:#8C8279;">${t}</p></div>`).join("")}
   </div>`));
+
+/* 06c — creative QA */
+pages.push(page(`
+  ${header("02 — Agency creative", "Creative QA for the team", ["Senior Graphic Designer", "Your SocialChef", "Since Sep 2026"])}
+  ${body("Promoted to Senior Graphic Designer in September 2026. On top of my own accounts, I review the other designers&rsquo; creatives before they reach clients, against six named checks, and report each finding with its fix to the account and project managers. These are the safe-zone templates I built for the team.")}
+  ${media("1fr", shot("qaToolkit"), 22)}`));
 
 /* 07 — agency campaign creative */
 pages.push(page(`
@@ -406,7 +417,7 @@ pages.push(page(`
     <div style="display:flex; gap:56px; margin-top:56px; font-family:'Inter',sans-serif; font-size:17px; color:#D6CFC7;">
       <div><p style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:#8C8279;">Email</p><p style="margin-top:8px;">vaugn.studio@gmail.com</p></div>
       <div><p style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:#8C8279;">LinkedIn</p><p style="margin-top:8px;">linkedin.com/in/vaugn-almeida</p></div>
-      <div><p style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:#8C8279;">Based</p><p style="margin-top:8px;">Metro Manila · Remote worldwide</p></div>
+      <div><p style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:#8C8279;">Based</p><p style="margin-top:8px;">Greater Manila Area · Remote worldwide</p></div>
       <div><p style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:#8C8279;">Reply time</p><p style="margin-top:8px;">Within 24–48 hours</p></div>
     </div>
   </div>`));

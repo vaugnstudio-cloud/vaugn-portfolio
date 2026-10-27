@@ -14,16 +14,16 @@ const INK = "#1A1816", INK2 = "#4A4541", DIM = "#8A837C", LINE = "#E3DED6", ACCE
 
 const EXPERIENCE = [
   {
-    role: "Brand & Web Designer",
+    role: "Senior Graphic Designer",
     org: "Your SocialChef · Victoria, Australia (Remote)",
-    dates: "Feb 2023 – Present",
-    lede: "Primary brand and web designer at an Australian marketing agency — creative output across 20+ concurrent client accounts spanning hospitality, healthcare, retail, and professional services.",
+    dates: "Sep 2026 – Present",
+    lede: "Promoted from Brand & Web Designer (Feb 2023 – Sep 2026). Creative across 20+ concurrent client accounts in hospitality, healthcare, retail and professional services, plus quality review of the design team's work.",
     bullets: [
+      "Review co-workers' creatives before client delivery against named checks: safe zones, real food against the shoot, AI artefacts in motion, offers and dates against the brief, brand, and the final file on the shared drive. Built the team's safe-zone templates.",
       "Own creative delivery across 20+ concurrent accounts: campaigns, ads, carousels, story systems, short-form video, and print/digital collateral, weekly, under agency deadlines.",
-      "Recent (Sep–Oct 2026): the Tacos 'N' Tequilas brand visual guide, grid and campaign; Augello's 22-piece social set, 33 Google Performance Max creatives and the What's On web page; plus monthly content for JUNK, Kumar's, Renzo's, Victoria's Pizza and more.",
+      "Recent (Sep–Oct 2026): the Tacos 'N' Tequilas brand visual guide and campaign; Augello's 22-piece social set, 33 Google Performance Max creatives and What's On page; monthly content for JUNK, Kumar's, Renzo's, Victoria's, Liliana's and more.",
       "Designed website mockups and UI layouts in Figma for agency clients including Junk Sunshine Coast and ACEF Enterprises, handed over as build-ready specs; sites live today.",
       "Built repeatable brand frameworks — content template systems, identity rulebooks, campaign structures — so the agency grew its client intake without a proportional increase in design hours.",
-      "Integrated AI tooling into daily production (Adobe Firefly, Photoshop Generative AI, Magnific, Higgsfield, ChatGPT, Claude) for exploration, versioning, and upscaling; direction and final craft stay hand-made.",
     ],
   },
   {
@@ -164,11 +164,11 @@ const html = `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
     <div>
       <h1 class="display">Vaugn Jasper Almeida<span>.</span></h1>
       <p class="mono role">Senior Brand &amp; Web Designer · Remote</p>
-      <p class="tag">Healthcare-fluent · agency-trained on 20+ concurrent accounts · ships own products</p>
+      <p class="tag">Senior Graphic Designer at an Australian agency · healthcare-fluent · ships own products</p>
     </div>
     <div class="contact">
       <div><b>vaugn.studio@gmail.com</b></div>
-      <div>+63 909 203 0913 · Manila, Philippines (GMT+8)</div>
+      <div>+63 909 203 0913 · Greater Manila Area, PH (GMT+8)</div>
       <div>vaugn-portfolio.vercel.app</div>
       <div>linkedin.com/in/vaugn-almeida</div>
     </div>

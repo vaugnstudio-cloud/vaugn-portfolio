@@ -37,8 +37,9 @@ export default function Home() {
         <FadeIn delay={0.16}>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink2">
             Brand systems, campaigns, and websites for healthcare, hospitality,
-            and other trust-critical businesses — three years across 20+
-            concurrent accounts at an Australian agency, live client sites in
+            and other trust-critical businesses — Senior Graphic Designer and
+            creative QA at an Australian agency across 20+ concurrent
+            accounts, live client sites in
             Framer and Webflow, and healthcare fluency from inside US
             revenue-cycle operations. One accountable designer, brand to build.
           </p>
@@ -243,8 +244,9 @@ export default function Home() {
             </h2>
             <p className="mt-6 leading-relaxed text-ink2">
               I&apos;m Vaugn Jasper Almeida — a brand &amp; web designer with
-              5+ years in design, including 3+ years handling 20+ concurrent
-              accounts at an Australian agency, real healthcare experience
+              5+ years in design, including 3+ years across 20+ concurrent
+              accounts at an Australian agency, where I&apos;m now Senior
+              Graphic Designer and review the team&apos;s work, real healthcare experience
               from inside US medical billing — and a shipped product line of
               my own.
             </p>

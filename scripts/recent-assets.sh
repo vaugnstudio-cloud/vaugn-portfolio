@@ -85,3 +85,18 @@ echo "assets done"
 # ── added in pass 2 ──────────────────────────────────────────
 poster "$A/Poster-Stories/Vertical Photo Edit 6.jpg" "$OUT/augellos/photo-edit.jpg"
 poster "$T/Follower Campaign/Google Poster 3 v2.jpg" "$OUT/tnt/follower-google.jpg" "#FBEED0"
+
+# ── October 2026 roster additions (pass 3) ──────────────────
+poster "Kumar's Sweets/Dussehra/Vertical Poster.jpg" "$OUT/recent/kumars-dussehra.jpg"
+poster "Kumar's Indian Kitchen & sweets/EL02 Thali Ads/Vertical Poster 1.jpg" "$OUT/recent/kumars-thali.jpg"
+poster "Victoria's/Melbourne Cup/v1/Vertical Poster 1.jpg" "$OUT/recent/victorias-melbourne-cup.jpg"
+poster "Junk/Melbourne Cup Catering/v2/A. Posters/Vertical Poster 1.jpg" "$OUT/recent/junk-melbourne-cup-1.jpg"
+poster "Junk/Melbourne Cup Catering/v2/A. Posters/Vertical Poster 2.jpg" "$OUT/recent/junk-melbourne-cup-2.jpg"
+poster "GCCO/Halloween/Vertical Poster.jpg" "$OUT/recent/gcco-halloween.jpg"
+poster "Liliana's/Liliana's - Christmas Parties and EOY Functions/A. Posters/Vertical Poster 1.jpg" "$OUT/recent/lilianas-christmas.jpg"
+poster "The Hill/Batch 3 The Lunch/Vertical Poster 1.jpg" "$OUT/recent/the-hill-lunch.jpg"
+# QA safe-zone templates (Vaugn's own team tooling) → board sources
+Q="The Hill/Batch 1 QA/Safe Zone Templates"
+for t in ig-story-1080x1920 ig-feed-4x5-1080x1350 google-post-1200x900 ig-reel-1080x1920; do
+  cp "$Y/$Q/$t-overlay.png" "scripts/assets/recent/qa-$t.png"
+done
