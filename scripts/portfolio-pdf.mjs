@@ -50,7 +50,7 @@ await new Promise((r) => server.listen(PORT, r));
 /* ── assets ─────────────────────────────────────────────────── */
 const IMAGES = {
   augCover: "/images/augellos/cover.jpg",
-  augCarousel: "/images/augellos/carousel-strip.jpg",
+  augCarousel: "/images/augellos/pinned-strip.jpg",
   augPmax: "/images/augellos/pmax-matrix.jpg",
   rKumarsAfl: "/images/recent/kumars-afl.jpg",
   rNavratri: "/images/recent/kumars-navratri.jpg",
@@ -286,7 +286,7 @@ pages.push(page(`
 /* 03 — Augello's */
 pages.push(page(`
   ${header("01 — Client work", "Augello&rsquo;s", ["Agency work · 2026", "Hospitality", "Social · Paid · Web"])}
-  ${body("For an Italian restaurant in Balwyn, through Your SocialChef: a 22-piece social set built around a seven-slide callout carousel, 33 Google Performance Max creatives cut from the venue&rsquo;s own shoot, and the What&rsquo;s On page for the new website, designed for desktop and mobile.")}
+  ${body("For an Italian restaurant in Balwyn, through Your SocialChef: a pinned-post series of signature dishes, 33 Google Performance Max creatives cut from the venue&rsquo;s own shoot, and the What&rsquo;s On page for the new website, designed for desktop and mobile.")}
   ${media("1.3fr 1fr", `${frame("augCover", { fit: "contain", pos: "center" })}<div style="display:flex; flex-direction:column; gap:18px; min-height:0;">${shot("augCarousel")}${shot("augPmax")}</div>`, 22)}`));
 
 /* 03 — Tacos 'N' Tequilas */

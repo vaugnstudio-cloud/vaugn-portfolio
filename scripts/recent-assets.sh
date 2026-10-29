@@ -100,3 +100,7 @@ Q="The Hill/Batch 1 QA/Safe Zone Templates"
 for t in ig-story-1080x1920 ig-feed-4x5-1080x1350 google-post-1200x900 ig-reel-1080x1920; do
   cp "$Y/$Q/$t-overlay.png" "scripts/assets/recent/qa-$t.png"
 done
+
+# ── pass 4: Augello's pinned-post series replaces the organic posters ──
+for n in 1 2 3 4 5 6; do ffmpeg -v error -y -i "$Y/Augello's/Pinned Post 2/Vertical Poster $n.jpg" -vf "scale=1080:1350" -q:v 4 "$OUT/augellos/pinned-$n.jpg"; done
+ffmpeg -v error -y -i "$Y/Augello's/Pinned Post 1/Vertical Poster 4.jpg" -vf "scale=1080:1350" -q:v 4 "$OUT/augellos/pinned-7.jpg"

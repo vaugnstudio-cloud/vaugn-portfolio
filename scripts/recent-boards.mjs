@@ -73,19 +73,19 @@ const boards = {
     <div style="position:absolute;inset:0;background:radial-gradient(90% 70% at 30% 20%,rgba(178,58,43,.28),transparent 65%)"></div>
     ${browser(b64(`${A}/aug-desktop-top.jpg`), 80, 120, 980, "augellos.com.au/whats-on")}
     ${phone(b64(`${A}/aug-mobile-top.jpg`), 930, 330, 250, 530)}
-    <img class="card shadow" src="${b64(`${I}/augellos/carousel-3.jpg`)}" style="left:1230px;top:150px;width:300px;height:375px">
-    <img class="card shadow" src="${b64(`${I}/augellos/organic-pasta.jpg`)}" style="left:1270px;top:560px;width:240px;height:300px">
+    <img class="card shadow" src="${b64(`${I}/augellos/pinned-2.jpg`)}" style="left:1230px;top:150px;width:300px;height:375px">
+    <img class="card shadow" src="${b64(`${I}/augellos/pinned-5.jpg`)}" style="left:1270px;top:560px;width:240px;height:300px">
   </body>`,
 
-  // Augello's — the whole seven-slide carousel, read in order
-  "augellos/carousel-strip.jpg": `<body style="background:#F6F1E6">
+  // Augello's — the pinned-post series, read as a profile grid
+  "augellos/pinned-strip.jpg": `<body style="background:#EDEAE6">
     <div style="position:absolute;left:118px;top:56px;display:grid;grid-template-columns:repeat(4,318px);grid-auto-rows:398px;gap:34px 28px">
       <div style="display:flex;flex-direction:column;justify-content:center;padding-right:18px">
-        <p class="mono" style="color:#B23A2B">Carousel · 7 slides</p>
-        <p style="font-family:Fraunces,serif;font-size:40px;line-height:1.08;color:#241F1A;margin-top:18px">A callout,<br>then the <em style="color:#B23A2B">reveal</em>.</p>
-        <p style="font-size:15px;line-height:1.55;color:#6E6354;margin-top:16px">White type plates stacked over the venue's own photography, one beat per slide.</p>
+        <p class="mono" style="color:#B23A2B">Pinned posts</p>
+        <p style="font-family:Fraunces,serif;font-size:40px;line-height:1.08;color:#241F1A;margin-top:18px">One dish,<br>one <em style="color:#B23A2B">surface</em>.</p>
+        <p style="font-size:15px;line-height:1.55;color:#6E6354;margin-top:16px">The first posts a new visitor sees on the profile: each signature dish on the same stone ground, named in one italic line with one red word.</p>
       </div>
-      ${[1, 2, 3, 4, 5, 6, 7].map((n) => `<img class="shadow" src="${b64(`${I}/augellos/carousel-${n}.jpg`)}" style="width:318px;height:398px;object-fit:cover;border-radius:6px;display:block">`).join("")}
+      ${[1, 2, 3, 4, 5, 6, 7].map((n) => `<img class="shadow" src="${b64(`${I}/augellos/pinned-${n}.jpg`)}" style="width:318px;height:398px;object-fit:cover;border-radius:6px;display:block">`).join("")}
     </div>
   </body>`,
 

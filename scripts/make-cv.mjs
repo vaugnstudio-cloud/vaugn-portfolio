@@ -21,7 +21,7 @@ const EXPERIENCE = [
     bullets: [
       "Review co-workers' creatives before client delivery against named checks: safe zones, real food against the shoot, AI artefacts in motion, offers and dates against the brief, brand, and the final file on the shared drive. Built the team's safe-zone templates.",
       "Own creative delivery across 20+ concurrent accounts: campaigns, ads, carousels, story systems, short-form video, and print/digital collateral, weekly, under agency deadlines.",
-      "Recent (Sep–Oct 2026): the Tacos 'N' Tequilas brand visual guide and campaign; Augello's 22-piece social set, 33 Google Performance Max creatives and What's On page; monthly content for JUNK, Kumar's, Renzo's, Victoria's, Liliana's and more.",
+      "Recent (Sep–Oct 2026): the Tacos 'N' Tequilas brand visual guide and campaign; Augello's pinned-post series, 33 Google Performance Max creatives and What's On page; monthly content for JUNK, Kumar's, Renzo's, Victoria's, Liliana's and more.",
       "Designed website mockups and UI layouts in Figma for agency clients including Junk Sunshine Coast and ACEF Enterprises, handed over as build-ready specs; sites live today.",
       "Built repeatable brand frameworks — content template systems, identity rulebooks, campaign structures — so the agency grew its client intake without a proportional increase in design hours.",
     ],

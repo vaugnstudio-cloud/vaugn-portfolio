@@ -94,10 +94,10 @@ export const projects: Project[] = [
     category: ["HOSPITALITY", "SOCIAL", "PAID MEDIA", "WEB DESIGN"],
     headline: "One Italian restaurant, three channels: a social campaign, a Google ad system, and the website's What's On page.",
     description:
-      "Through Your SocialChef, for Augello's in Balwyn: a 22-piece organic social set built around a seven-slide callout carousel, 33 Google Performance Max creatives cut from the venue's own shoot, and the What's On page for the restaurant's new website, designed for desktop and mobile.",
+      "Through Your SocialChef, for Augello's in Balwyn: a pinned-post series that sets the profile's first impression, 33 Google Performance Max creatives cut from the venue's own shoot, and the What's On page for the restaurant's new website, designed for desktop and mobile.",
     deliverables: [
-      "Organic social · 22 creatives",
-      "Seven-slide callout carousel",
+      "Pinned-post series · 14 posters",
+      "Signature-dish posters",
       "Google P-Max · 33 creatives",
       "What's On page · desktop + mobile",
       "Animated stories + reel",
@@ -110,25 +110,27 @@ export const projects: Project[] = [
       role: [
         "Sole designer on all three briefs, through Your SocialChef",
         "Brand recovery — display type and red matched from approved artwork, the wordmark keyed from a photo of the shop sign",
-        "Organic social — carousel, posters, Google posts, animated stories and a reel",
+        "Pinned posts — the profile's first impression: venue, people and one signature dish per poster",
         "Google P-Max — 11 headlines in three ratios, every crop cut from the full-resolution originals",
         "What's On page — structure, design and a responsive build for the agency's web team",
       ],
       strategy:
-        "Let each channel do its own job and keep one voice across them. The feed uses a format people stop for: a carousel that opens like a public callout to last night's table and ends on a reveal. The ads stay calm and clear, one dish, one line, one action. The web page answers the question a regular actually has, which is what's on this week, and gives each special its own card so the kitchen can change it without a designer.",
+        "Let each channel do its own job and keep one voice across them. The pinned posts are the first thing a new visitor sees on the profile, so each one does a single thing: show the room, the people, or one signature dish, set on the same stone surface so the grid reads as one place. The ads stay calm and clear, one dish, one line, one action. The web page answers the question a regular actually has, which is what's on this week, and gives each special its own card so the kitchen can change it without a designer.",
       designSystem: {
-        body: "Two related systems, on purpose. Social and ads share the restaurant's existing look, a light italic display face with one red word and a thin red rule, so a paid impression and an organic post read as the same place. The website follows the approved site design instead: a warm cream ground, a serif display and a deeper red. The carousel is the clearest expression of the social side, white type plates stacked over unretouched photography, one beat per slide.",
+        body: "Two related systems, on purpose. Social and ads share the restaurant's existing look, a light italic display face with one red word on a quiet stone ground, so a paid impression and an organic post read as the same place. The website follows the approved site design instead: a warm cream ground, a serif display and a deeper red. The pinned-post series is the clearest expression of the social side: one dish per poster, the same surface, the same light, the same type.",
         images: [
-          { src: "/images/augellos/carousel-strip.jpg", label: "The seven-slide callout carousel, in reading order", aspect: "wide" },
+          { src: "/images/augellos/pinned-strip.jpg", label: "The pinned-post series — one dish, one surface, one voice", aspect: "wide" },
         ],
       },
       execution: [
         {
-          heading: "Posters, stories and a reel",
-          body: "The singles drop the plates and use a lower-third: a sans line, an italic line with one red word, and the rule. Each was delivered at 4:5, as a Google post and as an animated story, with layered PSDs and live text so the agency can change a dish or a date in minutes. The reel plays in the Motion section of this site.",
+          heading: "Signature dishes",
+          body: "Each signature dish gets its own poster: the dish named in the italic display face with one red word, a short line underneath, and the plate doing the rest. Delivered at 4:5 with layered PSDs and live text, so the agency can swap a dish or a line in minutes. The reel plays in the Motion section of this site.",
           images: [
-            { src: "/images/augellos/organic-pasta.jpg", label: "Vertical poster · 4:5", aspect: "tall" },
-            { src: "/images/augellos/photo-edit.jpg", label: "Photo edit · delivered at 4000 × 5000", aspect: "tall" },
+            { src: "/images/augellos/pinned-2.jpg", label: "Hot Smoked Salmon Pizza", aspect: "tall" },
+            { src: "/images/augellos/pinned-3.jpg", label: "Sand Crab Lasagne", aspect: "tall" },
+            { src: "/images/augellos/pinned-4.jpg", label: "Spaghetti Marinara", aspect: "tall" },
+            { src: "/images/augellos/pinned-5.jpg", label: "Sticky Date Pudding", aspect: "tall" },
           ],
         },
         {
@@ -149,7 +151,7 @@ export const projects: Project[] = [
         },
       ],
       outcome: {
-        body: "Delivered in September 2026: 22 organic creatives, 33 Performance Max creatives and the What's On page, all with editable source files. Photography is the venue's own August shoot, with a few frames composited or extended using AI-assisted tools and finished in Photoshop.",
+        body: "Delivered between August and September 2026: the pinned-post series, 33 Performance Max creatives and the What's On page, all with editable source files. Photography is the venue's own shoots, with a few frames composited or extended using AI-assisted tools and finished in Photoshop.",
       },
     },
   },
