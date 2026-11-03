@@ -26,7 +26,7 @@ export default function EmailCapture() {
   }
 
   if (status === "done") {
-    return <p className="mt-4 text-sm text-accent">Checklist on its way — check your inbox.</p>;
+    return <p className="mt-4 text-sm text-accent">Checklist on its way. Check your inbox.</p>;
   }
 
   return (
@@ -53,7 +53,7 @@ export default function EmailCapture() {
         </button>
       </div>
       {status === "error" && (
-        <p className="mt-2 text-xs text-dim">Something went wrong — try again.</p>
+        <p className="mt-2 text-xs text-dim">Something went wrong. Please try again.</p>
       )}
     </form>
   );

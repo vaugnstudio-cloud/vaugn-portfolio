@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { EMAIL, gmailCompose, FORMSPREE_ID } from "@/data/site";
+import { EMAIL, mailto, FORMSPREE_ID } from "@/data/site";
 
 const NEED_OPTIONS = [
   "Hiring / role opportunity",
@@ -13,11 +13,11 @@ const NEED_OPTIONS = [
 ] as const;
 
 const BUDGET_OPTIONS = [
-  "Not sure yet / N-A",
-  "Under $2k",
-  "$2–5k",
-  "$5–10k",
-  "$10k+",
+  "Not sure yet",
+  "Under USD 2,000",
+  "USD 2,000 to 5,000",
+  "USD 5,000 to 10,000",
+  "Over USD 10,000",
 ] as const;
 
 export default function ContactForm() {
@@ -28,21 +28,21 @@ export default function ContactForm() {
     const form = e.currentTarget;
     const data = new FormData(form);
 
-    // No Formspree configured → the form still works: it opens Gmail compose
-    // pre-filled with everything typed. Swaps to real in-page submissions the
+    // No Formspree configured: the form still works by opening the visitor's
+    // mail app with everything typed. Swaps to in-page submissions the
     // moment a Formspree id is set.
     if (!FORMSPREE_ID) {
-      const subject = `Enquiry — ${data.get("need") ?? "new conversation"}`;
+      const subject = `Enquiry: ${data.get("need") ?? "new conversation"}`;
       const body = [
         `Name: ${data.get("name") ?? ""}`,
         `Email: ${data.get("email") ?? ""}`,
         `Company/practice: ${data.get("company") ?? ""}`,
         `Need: ${data.get("need") ?? ""}`,
-        `Budget (client projects): ${data.get("budget") ?? "—"}`,
+        `Budget (client projects): ${data.get("budget") ?? "not given"}`,
         "",
         `${data.get("message") ?? ""}`,
       ].join("\n");
-      window.open(gmailCompose(subject, body), "_blank", "noopener");
+      window.location.href = mailto(subject, body);
       setStatus("done");
       return;
     }
@@ -65,12 +65,12 @@ export default function ContactForm() {
     return (
       <div role="status" className="rounded-2xl border border-line bg-surface p-10 text-center">
         <p className="font-display text-2xl text-ink">
-          {FORMSPREE_ID ? "Got it — thank you." : "Your email is ready."}
+          {FORMSPREE_ID ? "Got it, thank you." : "Your email is ready."}
         </p>
         <p className="mt-3 text-ink2">
           {FORMSPREE_ID
-            ? "I'll reply within 24–48 hours with honest thoughts and a clear next step."
-            : `Gmail just opened in a new tab with everything pre-filled — hit send and I'll reply within 24–48 hours. (Nothing opened? Email me directly at ${EMAIL}.)`}
+            ? "I usually reply within two working days, with a clear next step."
+            : `Your mail app should have opened with everything filled in. Press send and I usually reply within two working days. Nothing opened? Email me directly at ${EMAIL}.`}
         </p>
       </div>
     );
@@ -118,7 +118,7 @@ export default function ContactForm() {
           </select>
         </div>
         <div>
-          <label htmlFor="cf-budget" className="eyebrow">Budget (client projects)</label>
+          <label htmlFor="cf-budget" className="eyebrow">Budget in USD (client projects)</label>
           <select id="cf-budget" name="budget" defaultValue="" className={`mt-2 ${field}`}>
             <option value="" disabled>Select one (optional)</option>
             {BUDGET_OPTIONS.map((o) => (
@@ -151,13 +151,11 @@ export default function ContactForm() {
       {status === "error" && (
         <p role="alert" className="text-sm text-ink2">
           {FORMSPREE_ID
-            ? "Something went wrong — please try again, or "
-            : "The form isn't connected yet — "}
+            ? "Something went wrong. Please try again, or "
+            : "The form is not connected yet. "}
           email me directly at{" "}
           <a
-            href={gmailCompose("Project enquiry")}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={mailto("Project enquiry")}
             className="text-accent underline"
           >
             {EMAIL}

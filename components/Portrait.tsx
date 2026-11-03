@@ -19,7 +19,7 @@ export default function Portrait({ className = "" }: { className?: string }) {
       {showPhoto ? (
         <Image
           src={PORTRAIT_SRC!}
-          alt="Vaugn Jasper Almeida — portrait"
+          alt="Vaugn Jasper Almeida: portrait"
           fill
           sizes="(max-width: 1024px) 100vw, 480px"
           className="object-cover"
@@ -28,8 +28,8 @@ export default function Portrait({ className = "" }: { className?: string }) {
       ) : (
         <div className="flex h-full w-full flex-col items-center justify-center gap-2">
           <span className="font-display text-2xl italic text-ink2">Vaugn</span>
-          <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-dim">
-            portrait — coming
+          <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-dim">
+            portrait, coming
           </span>
         </div>
       )}

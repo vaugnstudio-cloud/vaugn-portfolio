@@ -7,7 +7,7 @@ import { insights } from "@/data/insights";
 export const metadata: Metadata = {
   title: "Insights",
   description:
-    "Short, honest notes from real practice — on healthcare trust, hospitality brand systems, and AI-assisted design workflows.",
+    "Short, honest notes from real practice, on healthcare trust, hospitality brand systems, and AI-assisted design workflows.",
   alternates: { canonical: "/insights" },
 };
 
@@ -20,14 +20,14 @@ const dateFmt = new Intl.DateTimeFormat("en-AU", {
 export default function InsightsPage() {
   return (
     <>
-      <section className="mx-auto max-w-6xl px-6 pb-28 pt-16 sm:pt-24">
+      <section className="mx-auto max-w-[1240px] px-5 sm:px-8 pb-28 pt-16 sm:pt-24">
         <FadeIn>
           <p className="eyebrow">Insights</p>
           <h1 className="display mt-3 max-w-3xl text-5xl text-ink sm:text-6xl">
             Notes from <em>real practice</em>.
           </h1>
           <p className="mt-6 max-w-xl text-lg text-ink2">
-            Short reads on what actually makes trust-critical brands work — no
+            Short reads on what actually makes trust-critical brands work, no
             theory, no filler.
           </p>
         </FadeIn>
@@ -60,7 +60,7 @@ export default function InsightsPage() {
 
         <FadeIn>
           <p className="mt-8 text-sm text-dim">
-            More notes are written as the work teaches them —{" "}
+            More notes are written as the work teaches them, {" "}
             {dateFmt.format(new Date(insights[0].date))}.
           </p>
         </FadeIn>

@@ -1,25 +1,23 @@
 import Link from "next/link";
 import {
   EMAIL,
-  gmailCompose,
+  mailto,
   LINKEDIN_URL,
   LINKEDIN_LABEL,
-  FORMSPREE_ID,
   CV_URL,
+  PORTFOLIO_PDF_URL,
   AVAILABILITY,
 } from "@/data/site";
-import EmailCapture from "@/components/EmailCapture";
 
 const NAV = [
   { href: "/work", label: "Work" },
-  { href: "/services", label: "Services" },
   { href: "/about", label: "About" },
+  { href: "/services", label: "Services" },
   { href: "/contact", label: "Contact" },
 ] as const;
 
-const NICHES = [
+const MORE = [
   { href: "/healthcare", label: "For healthcare" },
-  { href: "/hospitality", label: "For hospitality" },
   { href: "/resources", label: "Resources" },
   { href: "/insights", label: "Insights" },
 ] as const;
@@ -27,31 +25,25 @@ const NICHES = [
 export default function Footer() {
   return (
     <footer className="border-t border-line bg-surface">
-      <div className="mx-auto max-w-6xl px-6 py-14">
+      <div className="mx-auto max-w-[1240px] px-5 py-14 sm:px-8">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-2">
-            <p className="font-display text-2xl text-ink">
-              Vaugn<span className="text-accent">.</span>
+            <p className="font-display text-2xl font-semibold tracking-tight text-ink">
+              Vaugn Almeida<span className="text-accent">.</span>
             </p>
             <p className="mt-2 max-w-xs text-sm leading-relaxed text-ink2">
-              Senior brand &amp; web designer — healthcare &amp; hospitality. I
-              design, build, and ship: client sites, brand systems, and my own
-              products.
+              Senior Brand &amp; Web Designer. Campaigns, brand guides and
+              websites.
             </p>
-            <span className="mt-4 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-dim">
-              <span className="h-2 w-2 rounded-full bg-accent" />
+            <span className="mt-4 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.12em] text-dim">
+              <span className="h-2 w-2 rounded-full bg-accent" aria-hidden />
               {AVAILABILITY}
             </span>
           </div>
 
           <div className="flex flex-col gap-2 text-sm">
             <p className="eyebrow mb-2">Explore</p>
-            {NAV.map((l) => (
-              <Link key={l.href} href={l.href} className="text-ink2 transition-colors hover:text-ink">
-                {l.label}
-              </Link>
-            ))}
-            {NICHES.map((l) => (
+            {[...NAV, ...MORE].map((l) => (
               <Link key={l.href} href={l.href} className="text-ink2 transition-colors hover:text-ink">
                 {l.label}
               </Link>
@@ -60,12 +52,7 @@ export default function Footer() {
 
           <div className="flex flex-col gap-2 text-sm">
             <p className="eyebrow mb-2">Contact</p>
-            <a
-              href={gmailCompose()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-ink2 transition-colors hover:text-ink"
-            >
+            <a href={mailto()} className="text-ink2 transition-colors hover:text-ink">
               {EMAIL}
             </a>
             <a
@@ -76,20 +63,19 @@ export default function Footer() {
             >
               {LINKEDIN_LABEL}
             </a>
-            <a
-              href={CV_URL}
-              download
-              className="text-ink2 transition-colors hover:text-ink"
-            >
+            <a href={CV_URL} download className="text-ink2 transition-colors hover:text-ink">
               CV (PDF)
             </a>
-            {FORMSPREE_ID && <EmailCapture />}
+            <a href={PORTFOLIO_PDF_URL} download className="text-ink2 transition-colors hover:text-ink">
+              Portfolio (PDF)
+            </a>
           </div>
         </div>
 
-        <p className="mt-12 border-t border-line pt-6 text-xs text-dim">
-          © {new Date().getFullYear()} Vaugn Jasper Almeida. All work shown was
-          created by me; agency projects credited where applicable.
+        <p className="mt-12 border-t border-line pt-6 text-xs leading-relaxed text-dim">
+          © {new Date().getFullYear()} Vaugn Jasper Almeida. Agency work is
+          credited to Your SocialChef and shown as my own part of each project.
+          Client brands, logos and photography belong to their owners.
         </p>
       </div>
     </footer>

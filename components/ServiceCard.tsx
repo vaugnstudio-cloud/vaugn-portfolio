@@ -17,7 +17,7 @@ export default function ServiceCard({
       }`}
     >
       {service.flagship && (
-        <span className="mb-4 w-fit rounded-full bg-accent px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-accent-ink">
+        <span className="mb-4 w-fit rounded-full bg-accent px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-accent-ink">
           Flagship
         </span>
       )}

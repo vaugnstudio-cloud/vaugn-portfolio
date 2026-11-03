@@ -4,7 +4,7 @@ import Portrait from "@/components/Portrait";
 import CTABand from "@/components/CTABand";
 import {
   EMAIL,
-  gmailCompose,
+  mailto,
   LINKEDIN_URL,
   LINKEDIN_LABEL,
   INTRO_VIDEO_SRC,
@@ -16,7 +16,7 @@ import {
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Brand & web designer — 5+ years in design including 3+ years in an Australian agency, healthcare fluency from inside US revenue-cycle operations, and a shipped product line.",
+    "Vaugn Almeida, Senior Brand & Web Designer. Senior Graphic Designer at Your SocialChef, with a background in US healthcare billing.",
   alternates: { canonical: "/about" },
 };
 
@@ -32,47 +32,52 @@ const TOOLS = {
     "Premiere Pro",
     "Lightroom",
   ],
-  "AI workflow": [
-    "Adobe Firefly",
-    "Photoshop Generative AI",
-    "Magnific AI",
-    "Higgsfield AI",
-    "ChatGPT",
-    "Claude",
-  ],
 } as const;
 
 const EXPERIENCE = [
   {
-    period: "2026 — Present",
-    title: "Vaugn Studio — Products",
-    body: "Designed, built, and shipped a product line of my own: niche website kits (Averis, Lumière, Éclat, Maison, Esprit) and working apps (Studio OS, SOP Quest, Outreach Cockpit) — design system to production PWA, solo. With the Denial Defense System (2025), that's nine shipped products.",
+    period: "Sep 2026 to now",
+    title: "Senior Graphic Designer, Your SocialChef",
+    body: "Promoted in September 2026. Design work for client brands, plus creative review of the team's work: text and offers, layout, readability, cropping, safe zones and brand consistency. Depending on the task I give correction notes or make the changes myself.",
   },
   {
-    period: "Sep 2026 — Present",
-    title: "Your SocialChef — Senior Graphic Designer",
-    body: "Promoted in September 2026. Same 20+ client accounts, plus quality review of the design team's creatives before they reach clients: safe zones, real food against the shoot, AI artefacts in motion, offers and dates against the brief, brand, and the final file on the shared drive. Built the safe-zone templates the team now works to.",
+    period: "Feb 2023 to Sep 2026",
+    title: "Brand & Web Designer, Your SocialChef",
+    body: "Campaigns, brand guides, social templates, menus, email headers, Figma web mockups and short video, across 20+ client accounts over several years. Mostly hospitality, plus healthcare and retail. Agency projects include Augello's, Tacos 'N' Tequilas, Ozmax Care, InBloom Therapy and Mekong Merchant.",
   },
   {
-    period: "2023 — 2026",
-    title: "Your SocialChef — Brand & Web Designer",
-    body: "Brand and web creative across 20+ concurrent client accounts spanning healthcare, hospitality, retail, and professional services. Campaigns, brand visual guides, social template systems, Figma web design to build-ready specs, short-form video. Recent work: the Tacos 'N' Tequilas brand guide and campaign, and Augello's pinned posts, Google Performance Max set and What's On web page.",
+    period: "Mar 2022 to now",
+    title: "Independent Brand & Web Designer",
+    body: "Direct client work, including the MedSync website: visual design, copy and the Framer build. In 2026 I also designed and built my own website kits and apps.",
   },
   {
-    period: "2022 — Present",
-    title: "Vaugn Studio — Independent Brand & Web Designer",
-    body: "Direct client work across healthcare, hospitality, and growth businesses since March 2022: MedSync, InBloom Therapy, FeedMe Group, and more — plus the Denial Defense System (2025), my first shipped product. Strategy to shipped site, end to end.",
+    period: "Mar 2024 to Nov 2025",
+    title: "Creative Designer (part time), ACEF Enterprises",
+    body: "Brochures, banners and social graphics for a US healthcare billing company.",
   },
+  {
+    period: "May 2023 to Dec 2025",
+    title: "Revenue Cycle Management Specialist, ChrisNGrace Inc.",
+    body: "Claims, denials and payer follow up in US healthcare billing. This is where my healthcare knowledge comes from.",
+  },
+] as const;
+
+const TRAINING = [
+  "HubSpot Social Media, completed in my own name",
+  "Google UX Design, completed through the agency account",
+  "DataCamp AI Fundamentals, completed through the agency account",
+  "Coursera HTML, CSS and JavaScript, completed through the agency account",
+  "Udemy Graphic Design Masterclass, completed through the agency account",
 ] as const;
 
 export default function AboutPage() {
   return (
     <>
-      <section className="mx-auto max-w-6xl px-6 pb-24 pt-16 sm:pt-24">
+      <section className="mx-auto max-w-[1240px] px-5 sm:px-8 pb-24 pt-16 sm:pt-24">
         <FadeIn>
           <p className="eyebrow">About</p>
           <h1 className="display mt-3 max-w-3xl text-5xl text-ink sm:text-6xl">
-            Design that earns trust isn&apos;t an accident. <em>It&apos;s a practice.</em>
+            Designer at an agency, with a background in <em>healthcare</em>.
           </h1>
         </FadeIn>
         <FadeIn delay={0.08}>
@@ -104,10 +109,10 @@ export default function AboutPage() {
 
         {/* Hiring snapshot — the facts a recruiter scans for first */}
         <FadeIn delay={0.12}>
-          <dl className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-5">
+          <dl className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
             {HIRING_FACTS.map((f) => (
               <div key={f.label} className="bg-surface px-5 py-4">
-                <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-dim">
+                <dt className="font-mono text-[11px] uppercase tracking-[0.2em] text-dim">
                   {f.label}
                 </dt>
                 <dd className="mt-1.5 text-sm leading-snug text-ink">{f.value}</dd>
@@ -124,40 +129,30 @@ export default function AboutPage() {
           <FadeIn delay={0.1}>
             <div className="flex flex-col gap-5 text-lg leading-relaxed text-ink2">
               <p>
-                I&apos;m Vaugn Jasper Almeida — a brand &amp; web designer
-                working remotely with international clients across healthcare,
-                hospitality, and growth-focused businesses.
+                I&apos;m Vaugn Jasper Almeida, a brand and web designer based in
+                the Greater Manila Area. I work remotely.
               </p>
               <p>
-                My path into design is uncommon: I worked inside US healthcare
-                revenue-cycle operations — claims, denials, payer follow-up —
-                before and alongside design work. That experience is
-                commercially useful in a way portfolios rarely are: I already
-                speak the language of clinics, billing firms, and
-                compliance-aware marketing, so healthcare clients skip the
-                months of onboarding most designers need.
+                I joined Your SocialChef, an Australian agency, in February
+                2023 as a Brand &amp; Web Designer. In September 2026 I was
+                promoted to Senior Graphic Designer. Alongside my own design
+                work, I now review creative work across the team.
               </p>
               <p>
-                Since 2023 I&apos;ve worked at Your SocialChef, an Australian
-                agency, handling creative across 20+ concurrent client
-                accounts — which taught me the unglamorous senior skills:
-                prioritising, systematising, and keeping twenty visual
-                languages distinct under weekly deadlines. In September 2026 I
-                was promoted to Senior Graphic Designer, and I now also review
-                the other designers&apos; work before it reaches a client.
+                Before and alongside design, I worked in US healthcare revenue
+                cycle operations: claims, denials and payer follow up. It means
+                I already know how clinics and billing teams talk, which helps
+                on healthcare projects.
               </p>
               <p>
-                I work as one accountable person from strategy to shipped
-                site — identity, web design, and the build itself in Framer or
-                Webflow, with clean handoff and a CMS the client can run
-                without me. AI-assisted production keeps repetitive work fast;
-                the thinking, direction, and craft stay human.
+                For direct clients I design and build websites in Framer. For
+                MedSync, a psychiatry clinic in California, I did the visual
+                design, the copy and the build. I use AI tools for some
+                production steps. The direction and the decisions are mine.
               </p>
               <p>
-                In 2026 I also shipped a full product line — website
-                kits and working apps, designed and built end to end. I&apos;m
-                open to senior remote roles in brand and web design, and I take
-                a small number of client projects alongside.
+                I&apos;m open to senior remote roles in brand and web design,
+                and I take on a small number of client projects alongside.
               </p>
             </div>
           </FadeIn>
@@ -203,7 +198,7 @@ export default function AboutPage() {
           <FadeIn>
             <p className="eyebrow">Tools</p>
           </FadeIn>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2">
+          <div className="mt-8 grid gap-6">
             {Object.entries(TOOLS).map(([group, tools]) => (
               <FadeIn key={group}>
                 <div className="rounded-2xl border border-line bg-surface p-8">
@@ -224,9 +219,7 @@ export default function AboutPage() {
           </div>
           <FadeIn>
             <p className="mt-6 max-w-2xl text-sm leading-relaxed text-dim">
-              On AI: it compresses production — versioning, resizing,
-              exploration — so more hours go to strategy and craft. Every
-              direction and final decision is mine.
+              Training: {TRAINING.join(". ")}.
             </p>
           </FadeIn>
         </div>
@@ -235,9 +228,7 @@ export default function AboutPage() {
         <FadeIn className="mt-16">
           <div className="flex flex-wrap gap-6 text-sm text-dim">
             <a
-              href={gmailCompose()}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={mailto()}
               className="transition-colors hover:text-ink"
             >
               {EMAIL}

@@ -7,7 +7,7 @@ export default function Testimonials() {
   if (approvedTestimonials.length === 0) return null;
 
   return (
-    <section className="mx-auto max-w-6xl px-6 py-24">
+    <section className="mx-auto max-w-[1240px] px-5 sm:px-8 py-24">
       <p className="eyebrow">What clients say</p>
       <div className="mt-8 grid gap-6 md:grid-cols-2">
         {approvedTestimonials.map((t) => (

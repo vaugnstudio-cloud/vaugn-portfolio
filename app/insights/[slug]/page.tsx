@@ -39,7 +39,7 @@ export default async function InsightPage({
 
   return (
     <>
-      <article className="mx-auto max-w-6xl px-6 pb-24 pt-16 sm:pt-24">
+      <article className="mx-auto max-w-[1240px] px-5 sm:px-8 pb-24 pt-16 sm:pt-24">
         <FadeIn>
           <p className="font-mono text-[11px] font-medium uppercase tracking-wider text-accent">
             {post.kicker} · {post.readMinutes} min read

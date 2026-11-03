@@ -9,24 +9,23 @@ import { services, faqs } from "@/data/services";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Select client engagements — brand + web launch packages, healthcare and hospitality specialties, Framer landing pages, and monthly retainers. Custom-quoted, fixed-price.",
+    "Select client projects: brand and website launches, healthcare websites, website care for small practices, Framer landing pages and monthly design support. Fixed quotes, written first.",
   alternates: { canonical: "/services" },
 };
 
 export default function ServicesPage() {
   return (
     <>
-      <section className="mx-auto max-w-6xl px-6 pb-24 pt-16 sm:pt-24">
+      <section className="mx-auto max-w-[1240px] px-5 sm:px-8 pb-24 pt-16 sm:pt-24">
         <FadeIn>
           <p className="eyebrow">Client services</p>
           <h1 className="display mt-3 max-w-3xl text-5xl text-ink sm:text-6xl">
             Also available for <em>select client projects</em>.
           </h1>
           <p className="mt-6 max-w-xl text-lg text-ink2">
-            I take a limited number of client engagements alongside senior-role
-            work. Every one is custom-quoted and fixed before it starts — one
-            proposal, tailored to your scope and market, that never changes
-            mid-project.
+            I take on a small number of projects alongside my agency role,
+            mainly for healthcare and service businesses. Every project gets a
+            written scope and a fixed price before any work starts.
           </p>
         </FadeIn>
 
@@ -65,7 +64,7 @@ export default function ServicesPage() {
 
         {/* Niche pointers */}
         <FadeIn className="mt-16">
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-4">
             <Link
               href="/healthcare"
               className="group rounded-2xl border border-line bg-surface p-8 transition-colors hover:bg-raised"
@@ -73,15 +72,6 @@ export default function ServicesPage() {
               <p className="eyebrow">In healthcare?</p>
               <p className="mt-3 font-display text-2xl text-ink group-hover:text-accent">
                 See how I design for patient trust →
-              </p>
-            </Link>
-            <Link
-              href="/hospitality"
-              className="group rounded-2xl border border-line bg-surface p-8 transition-colors hover:bg-raised"
-            >
-              <p className="eyebrow">Running a venue?</p>
-              <p className="mt-3 font-display text-2xl text-ink group-hover:text-accent">
-                See the hospitality marketing system →
               </p>
             </Link>
           </div>

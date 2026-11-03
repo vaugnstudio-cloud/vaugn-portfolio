@@ -4,19 +4,19 @@ import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import CTABand from "@/components/CTABand";
 import { products, STORE_URL, STORE_BANNER } from "@/data/products";
-import { gmailCompose } from "@/data/site";
+import { mailto } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Resources & Digital Products",
   description:
-    "Toolkits, templates, and marketing systems built from real client work — starting with the Denial Defense System for medical practices.",
+    "Toolkits, templates, and marketing systems built from real client work, starting with the Denial Defense System for medical practices.",
   alternates: { canonical: "/resources" },
 };
 
 export default function ResourcesPage() {
   return (
     <>
-      <section className="mx-auto max-w-6xl px-6 pb-24 pt-16 sm:pt-24">
+      <section className="mx-auto max-w-[1240px] px-5 sm:px-8 pb-24 pt-16 sm:pt-24">
         <FadeIn>
           <p className="eyebrow">Resources</p>
           <h1 className="display mt-3 max-w-3xl text-5xl text-ink sm:text-6xl">
@@ -24,11 +24,11 @@ export default function ResourcesPage() {
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink2">
             Templates, checklists, and marketing systems built from real client
-            work — not theory. Everything below is in production for launch.
+            work, not theory. Everything below is in production for launch.
           </p>
           <span className="mt-8 inline-flex items-center gap-2 rounded-full border border-line px-4 py-1.5 font-mono text-xs uppercase tracking-wider text-ink2">
             <span className="h-2 w-2 rounded-full bg-accent" />
-            First product is live — more in production
+            First product is live, more in production
           </span>
         </FadeIn>
 
@@ -37,11 +37,11 @@ export default function ResourcesPage() {
             <FadeIn key={p.id} delay={i * 0.05}>
               <article className="flex h-full flex-col rounded-2xl border border-line bg-surface p-8">
                 <div className="flex items-center justify-between gap-4">
-                  <span className="rounded-full border border-line px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-ink2">
+                  <span className="rounded-full border border-line px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-ink2">
                     {p.category}
                   </span>
                   <span
-                    className={`font-mono text-[10px] uppercase tracking-wider ${
+                    className={`font-mono text-[11px] uppercase tracking-wider ${
                       p.free ? "text-accent" : "text-dim"
                     }`}
                   >
@@ -53,7 +53,7 @@ export default function ResourcesPage() {
                   <div className="relative mt-6 aspect-[16/9] w-full overflow-hidden rounded-xl border border-line">
                     <Image
                       src={p.image}
-                      alt={`${p.name} — product artwork`}
+                      alt={`${p.name}: product artwork`}
                       fill
                       sizes="(max-width: 768px) 100vw, 560px"
                       className="object-cover"
@@ -62,7 +62,7 @@ export default function ResourcesPage() {
                 ) : (
                   <div className="mt-6 flex aspect-[16/9] w-full flex-col items-center justify-center gap-2 rounded-xl border border-dashed border-line bg-raised">
                     <span className="font-display text-xl italic text-ink2">{p.name}</span>
-                    <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-dim/70">
+                    <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-dim/70">
                       in production
                     </span>
                   </div>
@@ -81,7 +81,7 @@ export default function ResourcesPage() {
                         rel="noopener noreferrer"
                         className="inline-block rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-accent-ink transition-transform hover:scale-[1.02]"
                       >
-                        Get it — {p.price} →
+                        Get it, {p.price} →
                       </a>
                       {p.demoUrl && (
                         <a
@@ -116,7 +116,7 @@ export default function ResourcesPage() {
             <div className="relative aspect-video w-full">
               <Image
                 src={STORE_BANNER}
-                alt="Vaugn Studio on Gumroad — the systems I use for clients, packaged"
+                alt="Vaugn Studio on Gumroad: the systems I use for clients, packaged"
                 fill
                 sizes="(max-width: 1152px) 100vw, 1152px"
                 className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
@@ -131,12 +131,12 @@ export default function ResourcesPage() {
               Want to know when the next ones launch?
             </h2>
             <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-ink2">
-              Email me &ldquo;resources&rdquo; and you&apos;ll be first to know —
-              or just start a project and get the systems custom-built instead.
+              Email me &ldquo;resources&rdquo; and you&apos;ll be first to know.
+              Or start a project and get the systems built for you.
             </p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
               <a
-                href={gmailCompose("Resources launch list")}
+                href={mailto("Resources launch list")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-ink transition-transform hover:scale-[1.02]"

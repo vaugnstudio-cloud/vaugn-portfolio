@@ -1,34 +1,33 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
+import { Bricolage_Grotesque, Instrument_Sans, IBM_Plex_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { SITE_URL, EMAIL } from "@/data/site";
 
-// Display — editorial serif with true italics (2026 dark-editorial direction)
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
-  subsets: ["latin"],
-  style: ["normal", "italic"],
-});
-
-// Body — clean, readable, professional
-const inter = Inter({
-  variable: "--font-inter",
+// Display: grotesk with optical sizing (November 2026 "proof sheet" direction)
+const bricolage = Bricolage_Grotesque({
+  variable: "--font-bricolage",
   subsets: ["latin"],
 });
 
-// Monospace — eyebrow labels / tags
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains",
+// Body: clear and friendly at reading sizes
+const instrument = Instrument_Sans({
+  variable: "--font-instrument",
+  subsets: ["latin"],
+});
+
+// Monospace: captions, labels and numbers
+const plexMono = IBM_Plex_Mono({
+  variable: "--font-plex-mono",
   subsets: ["latin"],
   weight: ["400", "500"],
 });
 
-const titleDefault = "Vaugn Almeida — Senior Brand & Web Designer";
+const titleDefault = "Vaugn Almeida, Senior Brand & Web Designer";
 const description =
-  "Senior brand & web designer for healthcare and hospitality. Senior Graphic Designer and creative QA at an Australian agency, 5+ years, 20+ agency accounts, 7 live client sites — plus self-built products from design system to shipped PWA. Open to senior roles and select client projects.";
+  "Senior Brand & Web Designer. Senior Graphic Designer at Your SocialChef, an Australian agency, and designer of websites for direct clients in Framer. Campaign graphics, brand guides and websites. Open to senior roles and select client projects.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -95,14 +94,14 @@ export default function RootLayout({
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${fraunces.variable} ${inter.variable} ${jetbrainsMono.variable}`}
+      className={`${bricolage.variable} ${instrument.variable} ${plexMono.variable}`}
     >
       <body className="flex min-h-screen flex-col">
-        {/* Theme init before paint — dark is default, light persists via localStorage */}
+        {/* Theme init before paint: light is default, dark persists via localStorage */}
         <script
           dangerouslySetInnerHTML={{
             __html:
-              'try{if(localStorage.getItem("theme")==="light")document.documentElement.dataset.theme="light"}catch(e){}',
+              'try{if(localStorage.getItem("theme")==="dark")document.documentElement.dataset.theme="dark"}catch(e){}',
           }}
         />
         <script
@@ -123,7 +122,7 @@ export default function RootLayout({
         {/* Scroll-reveal driver — vanilla, runs without waiting for React
             hydration. Content stays visible if this never runs. The
             MutationObserver re-scans after client-side route changes, so
-            pages reached via <Link> navigation reveal too — not only full
+            pages reached via <Link> navigation reveal too, not only full
             page loads. */}
         <script
           dangerouslySetInnerHTML={{

@@ -15,7 +15,7 @@ import MotionSection from "@/components/MotionSection";
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "Client case studies, shipped products, branding, and graphic design across healthcare and hospitality — most with live sites you can visit.",
+    "Selected client cases first, then own products, concept studies and graphic design, each labelled for what it is.",
   alternates: { canonical: "/work" },
 };
 
@@ -40,16 +40,16 @@ export default function WorkPage() {
 
   return (
     <>
-      <section className="mx-auto max-w-6xl px-6 pb-28 pt-16 sm:pt-24">
+      <section className="mx-auto max-w-[1240px] px-5 sm:px-8 pb-28 pt-16 sm:pt-24">
         <FadeIn>
           <p className="eyebrow">Work</p>
           <h1 className="display mt-3 max-w-3xl text-5xl text-ink sm:text-6xl">
-            Selected work first. <em>Everything else below.</em>
+            Selected work first. <em>The full archive below.</em>
           </h1>
           <p className="mt-6 max-w-xl text-lg text-ink2">
-            Client case studies, shipped products, and brand systems — every
-            piece labelled for what it is, most with live links so you can see
-            the work in the wild.
+            Client and agency cases, my own products and concept studies.
+            Every piece is labelled for what it is, and agency work is
+            credited to Your SocialChef.
           </p>
         </FadeIn>
 
@@ -58,15 +58,15 @@ export default function WorkPage() {
           <FadeIn>
             <div className="flex items-baseline gap-4">
               <h2 className="font-display text-3xl text-ink">
-                Selected client case studies
+                Client and agency cases
               </h2>
               <span className="font-mono text-xs text-dim">
                 0{caseStudies.length}
               </span>
             </div>
             <p className="mt-2 max-w-lg text-sm text-ink2">
-              Real engagements, direct and through the agency — the problem,
-              the thinking, and the system behind each.
+              Direct client work and agency work through Your SocialChef,
+              with my part in each made clear.
             </p>
           </FadeIn>
           {/* The newest work leads full-width; the rest fill an even 2-col grid. */}
@@ -96,8 +96,8 @@ export default function WorkPage() {
               </span>
             </div>
             <p className="mt-2 max-w-lg text-sm text-ink2">
-              Self-initiated and shipped — real, running software I designed
-              and built end to end. More in Explore below.
+              My own products, designed and built end to end. Demo content
+              is sample data, not client results.
             </p>
           </FadeIn>
           <div className="mt-10 grid gap-6 md:grid-cols-2">
@@ -121,8 +121,8 @@ export default function WorkPage() {
               </span>
             </div>
             <p className="mt-2 max-w-lg text-sm text-ink2">
-              Concept studies — self-initiated identities for the niches I
-              serve, designed as complete systems and labelled as concepts.
+              Concept studies: my own identities for the niches I serve.
+              These are not paid client work.
             </p>
           </FadeIn>
           <div className="mt-10 grid gap-6 md:grid-cols-2">
@@ -176,12 +176,12 @@ export default function WorkPage() {
                 </span>
               </div>
               <p className="mt-2 max-w-lg text-sm text-ink2">
-                The kits are also packaged for sale —{" "}
+                More detail on the{" "}
                 <Link
                   href="/resources"
                   className="font-mono text-[11px] font-medium uppercase tracking-wider text-accent hover:underline"
                 >
-                  see Resources →
+                  Resources page →
                 </Link>
               </p>
             </FadeIn>
@@ -243,15 +243,14 @@ export default function WorkPage() {
                 <h3 className="font-display text-2xl text-ink">
                   Motion &amp; video
                 </h3>
-                <span className="rounded-full border border-line px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-dim">
-                  Short-form · F&amp;B
+                <span className="rounded-full border border-line px-3 py-1 font-mono text-[11px] uppercase tracking-[0.2em] text-dim">
+                  Short form · Food and drink
                 </span>
               </div>
               <p className="mt-2 max-w-lg text-sm text-ink2">
-                Animated stories and reels for client venues, built from
-                their own photography, then studio appetite reels for
-                hospitality feeds, art-directed in-studio with AI-assisted
-                production.
+                Animated stories for client venues first, made from their own
+                photography and shown without sound. Then studio appetite
+                reels, art directed by me and made with AI tools.
               </p>
             </FadeIn>
             <div className="mt-8">

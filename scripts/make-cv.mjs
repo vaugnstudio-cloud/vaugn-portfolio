@@ -1,272 +1,275 @@
-// Designed CV — same facts as the finalized 2026 résumé, set in the
-// portfolio's own type and colour so the PDF a recruiter downloads looks
-// like it came from the designer whose site they are on. Two A4 pages, real
-// text (ATS-readable), DOM order = reading order.
-//   node scripts/make-cv.mjs            → public/cv.pdf
-//   node scripts/make-cv.mjs out.pdf
+// CV in two versions from one set of facts (November 2026 rewrite):
+//   · designed: the portfolio's "proof sheet" type and colour, two A4 pages,
+//     for people reading it directly          → public/cv.pdf
+//   · plain: one column, standard headings, contact in the main text, for
+//     upload forms and screening software       → public/cv-plain.pdf
+// Facts follow the hub claims register: no "concurrent" accounts, no
+// unsupported results, agency projects credited to Your SocialChef, training
+// separated from the one personal certificate. No dash punctuation.
+//   node scripts/make-cv.mjs [outDir]
 // Run from PowerShell on this machine (Bash-launched browsers die silently).
 import { chromium } from "playwright";
 import fs from "node:fs";
+import path from "node:path";
 
-const OUT = process.argv[2] ?? "public/cv.pdf";
+const OUT_DIR = process.argv[2] ?? "public";
 
-const INK = "#1A1816", INK2 = "#4A4541", DIM = "#8A837C", LINE = "#E3DED6", ACCENT = "#E85D1F", PAPER = "#FFFFFF", SURFACE = "#F7F4EE";
+const INK = "#111110", INK2 = "#46453F", DIM = "#67655E", LINE = "#D6D4CB", ACCENT = "#2A3BD6", PAPER = "#FFFFFF", SURFACE = "#F2F1EC";
+
+const CONTACT = {
+  email: "vaugn.studio@gmail.com",
+  phone: "+63 909 203 0913",
+  place: "Greater Manila Area, Philippines (GMT+8)",
+  site: "vaugn-portfolio.vercel.app",
+  linkedin: "linkedin.com/in/vaugn-almeida",
+};
+
+const SUMMARY =
+  "Brand and web designer with 5+ years in design, now Senior Graphic Designer at Your SocialChef, an Australian marketing agency. I design campaigns, brand guides, social graphics and website layouts, and I review the design team's creative work for text, layout, safe zones and brand consistency. For direct clients I design, write and build websites in Framer. My background in US healthcare billing helps on healthcare projects. Open to a senior brand and web design role, remote, full time or long term contract.";
 
 const EXPERIENCE = [
   {
     role: "Senior Graphic Designer",
-    org: "Your SocialChef · Victoria, Australia (Remote)",
-    dates: "Sep 2026 – Present",
-    lede: "Promoted from Brand & Web Designer (Feb 2023 – Sep 2026). Creative across 20+ concurrent client accounts in hospitality, healthcare, retail and professional services, plus quality review of the design team's work.",
+    org: "Your SocialChef, Australian marketing agency (remote)",
+    dates: "Sep 2026 to now",
     bullets: [
-      "Review co-workers' creatives before client delivery against named checks: safe zones, real food against the shoot, AI artefacts in motion, offers and dates against the brief, brand, and the final file on the shared drive. Built the team's safe-zone templates.",
-      "Own creative delivery across 20+ concurrent accounts: campaigns, ads, carousels, story systems, short-form video, and print/digital collateral, weekly, under agency deadlines.",
-      "Recent (Sep–Oct 2026): the Tacos 'N' Tequilas brand visual guide and campaign; Augello's pinned-post series, 33 Google Performance Max creatives and What's On page; monthly content for JUNK, Kumar's, Renzo's, Victoria's, Liliana's and more.",
-      "Designed website mockups and UI layouts in Figma for agency clients including Junk Sunshine Coast and ACEF Enterprises, handed over as build-ready specs; sites live today.",
-      "Built repeatable brand frameworks — content template systems, identity rulebooks, campaign structures — so the agency grew its client intake without a proportional increase in design hours.",
+      "Design campaign graphics, social posts, animated stories, menus and email headers for client brands, each in the client's own type and colour.",
+      "Review creative work across the team: text and offer details against the brief, spacing, readability, cropping, safe zones and brand consistency. I give correction notes or make the changes myself, depending on the task.",
+      "Built safe zone templates and review checks for the formats the team produces.",
+      "Recent work: The Hill's Seniors Lunch and Lunch at The Hill campaigns, with posters, Google graphics and animated stories.",
+    ],
+  },
+  {
+    role: "Brand & Web Designer",
+    org: "Your SocialChef, Australian marketing agency (remote)",
+    dates: "Feb 2023 to Sep 2026",
+    bullets: [
+      "Worked across 20+ client accounts over several years, mostly Australian hospitality, plus healthcare and retail.",
+      "Augello's: pinned post series, Google ad graphics in three ratios and the What's On webpage design, which another person built.",
+      "Tacos 'N' Tequilas: a one page brand guide and campaign layouts within the venue's existing identity.",
+      "Agency projects also include Ozmax Care, InBloom Therapy, Junk Sunshine Coast and Mekong Merchant. Website layouts designed in Figma for the build team.",
     ],
   },
   {
     role: "Independent Brand & Web Designer",
-    org: "Vaugn Studio · Philippines (Remote)",
-    dates: "Mar 2022 – Present",
-    lede: "Identity, websites, and marketing systems for healthcare, hospitality, and growth businesses — designed and built end to end.",
+    org: "Direct clients (remote)",
+    dates: "Mar 2022 to now",
     bullets: [
-      "Shipped complete brand-to-website engagements: MedSync Mental Health (live Framer site for a California psychiatry clinic, three update rounds in 2026), Ozmax Care, InBloom Therapy.",
-      "Designed, built, and launched a self-initiated product line in 2026 — five niche website kits (Averis, Lumière, Éclat, Maison, Esprit) and three working apps (Studio OS, SOP Quest, Outreach Cockpit) — design system to production PWA, solo.",
+      "MedSync, a psychiatry clinic in California: visual design, website copy and the Framer build, with a supporting typography and colour palette. The client supplied the logo. The site is live.",
+      "Designed and built my own website kits and small web apps in 2026.",
     ],
   },
   {
-    role: "Creative Designer — Part-time",
-    org: "ACEF Enterprises · California, USA (Remote)",
-    dates: "Mar 2024 – Nov 2025",
-    bullets: [
-      "Developed a coordinated healthcare marketing suite — trifold brochures, roll-up banners, calling-card materials, social assets — for physician office managers and hospital administrators.",
-      "Translated revenue-cycle-management services into clear, benefit-led visual communication with strong hierarchy and healthcare credibility cues; production-ready across print and digital.",
-    ],
+    role: "Creative Designer (part time)",
+    org: "ACEF Enterprises, US healthcare billing (remote)",
+    dates: "Mar 2024 to Nov 2025",
+    bullets: ["Brochures, roll up banners, calling cards and social graphics explaining revenue cycle services to clinics."],
   },
   {
     role: "Revenue Cycle Management Specialist",
-    org: "ChrisNGrace Inc. · California, USA (Remote)",
-    dates: "May 2023 – Dec 2025",
-    bullets: [
-      "Supported revenue-cycle operations for physician clinics and allied-health providers: claim review, submission monitoring, denial follow-up, payer coordination — across Noridian Medicare, Office Ally, CollaborateMD, and Practice Fusion.",
-      "Identified recurring denial and documentation issues, reducing avoidable rework between clinical and billing teams — the inside view that now informs my healthcare design work.",
-    ],
+    org: "ChrisNGrace Inc., US healthcare billing (remote)",
+    dates: "May 2023 to Dec 2025",
+    bullets: ["Claim review, submission monitoring, denial follow up and payer coordination for physician clinics and allied health providers."],
   },
   {
     role: "Brand Designer",
-    org: "Lucia's Kitchen & Pomodoro Pizza · Manila, Philippines",
-    dates: "Feb 2021 – Dec 2022",
-    bullets: [
-      "Built complete visual identities for two F&B brands across menus, packaging, signage, social, and in-store materials; branded content and campaigns lifted Lucia's social engagement by roughly 80% and contributed to measurable in-store traffic growth.",
-    ],
+    org: "Lucia's Kitchen & Pomodoro Pizza, Manila",
+    dates: "Feb 2021 to Dec 2022",
+    bullets: ["Visual identities for two food brands across menus, packaging, signage and social media."],
   },
 ];
 
 const PROJECTS = [
-  ["Augello's", "Social · Google P-Max · What's On web page", "Agency · Melbourne · 2026"],
-  ["Tacos 'N' Tequilas", "Brand visual guide · grid · campaign · motion", "Agency · Melbourne · 2026"],
-  ["MedSync Mental Health", "Brand & Framer website, live", "Client · California · 2025"],
-  ["Ozmax Care", "Brand identity, guide & website", "Agency · Melbourne · 2026"],
-  ["Junk Sunshine Coast", "Brand, website & social system", "Agency · QLD · 2023–"],
-  ["ACEF Enterprises", "Healthcare brand & marketing suite", "Client · California · 2024–25"],
-  ["Product line", "5 website kits · 4 working apps", "Self-initiated · 2025–26"],
+  ["Augello's", "Campaign graphics and webpage design", "Agency work · 2026"],
+  ["MedSync", "Website design, copy and Framer build", "Direct client · 2025"],
+  ["The Hill", "Campaign graphics and animated stories", "Agency work · 2026"],
+  ["Tacos 'N' Tequilas", "Brand guide and campaign layouts", "Agency work · 2026"],
+  ["Your SocialChef", "Design production and creative review", "Employer · 2023 to now"],
 ];
 
 const SKILLS = [
-  ["Brand & campaign", "Identity systems · brand guides · campaign creative · social systems · print"],
-  ["Web & product", "Figma (UI/UX) · Framer · Webflow · HTML/CSS · design systems · responsive build"],
-  ["Adobe & motion", "Photoshop · Illustrator · InDesign · After Effects · Premiere Pro · Lightroom"],
-  ["AI-assisted production", "Firefly · Photoshop Generative AI · Magnific · Higgsfield · ChatGPT · Claude"],
-  ["Domain", "Healthcare & medical billing · marketing agencies · hospitality & F&B"],
+  ["Design", "Photoshop, Illustrator, InDesign, Figma, layered PSD files with live text, print files"],
+  ["Web", "Framer, Webflow, Figma web layouts, HTML and CSS"],
+  ["Motion", "After Effects, Premiere Pro, animated stories and reels"],
+  ["AI tools", "Photoshop Generative Fill, Firefly and ChatGPT for production steps"],
+  ["Industries", "Hospitality, healthcare and medical billing, marketing agencies"],
 ];
 
-const EDUCATION = [
-  ["BS Industrial Engineering", "Polytechnic University of the Philippines · 2020"],
-  ["Google UX Design Professional Certificate", "Google / Coursera · 2026"],
-  ["AI Fundamentals", "DataCamp · 2025"],
-  ["HTML, CSS & JavaScript for Web Developers", "Coursera · 2024"],
-  ["Graphic Design Masterclass", "Udemy · 2023"],
-  ["Social Media Marketing", "HubSpot Academy · 2022"],
-];
-
-const HOW = [
-  "Systems over one-offs: every account gets a rulebook — palette, type, layout skeletons, voice — so weekly batches ship without drift.",
-  "Honest hand-backs: reasoning next to every piece, conflicts in the inputs flagged before anything else, assumptions stated so a lead can overturn them.",
-  "Build-ready by default: Figma to clean specs, or the Framer/Webflow build itself with a CMS the client runs without me.",
+const EDUCATION = [["BS Industrial Engineering", "Polytechnic University of the Philippines, 2020"]];
+const CERTIFICATE = [["Social Media", "HubSpot Academy, certificate in my own name"]];
+const TRAINING = [
+  "Google UX Design",
+  "DataCamp AI Fundamentals",
+  "Coursera HTML, CSS and JavaScript",
+  "Udemy Graphic Design Masterclass",
 ];
 
 const esc = (t) => t.replace(/&/g, "&amp;").replace(/</g, "&lt;");
+const FONTS = `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..700&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">`;
 
-const html = `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+const job = (j) => `
+  <article class="job">
+    <div class="top"><h3>${esc(j.role)}</h3><span class="dates">${esc(j.dates)}</span></div>
+    <p class="org">${esc(j.org)}</p>
+    <ul>${j.bullets.map((b) => `<li>${esc(b)}</li>`).join("")}</ul>
+  </article>`;
+
+/* ── Designed version ───────────────────────────────────── */
+const designed = `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">${FONTS}
 <style>
   @page { size: A4; margin: 0; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html, body { background: ${PAPER}; color: ${INK}; font-family: 'Inter', system-ui, sans-serif; font-size: 9.6pt; line-height: 1.42; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  .page { width: 210mm; height: 297mm; padding: 16mm 16mm 14mm; position: relative; page-break-after: always; display: flex; flex-direction: column; overflow: hidden; }
+  html, body { background: ${PAPER}; color: ${INK}; font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 9.6pt; line-height: 1.45; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { width: 210mm; height: 297mm; padding: 15mm 16mm 13mm; display: flex; flex-direction: column; page-break-after: always; overflow: hidden; }
   .page:last-child { page-break-after: auto; }
-  .mono { font-family: 'JetBrains Mono', monospace; font-size: 7.4pt; letter-spacing: .18em; text-transform: uppercase; }
-  .display { font-family: 'Fraunces', serif; font-weight: 500; letter-spacing: -.01em; }
-  a { color: inherit; text-decoration: none; }
-  /* header */
-  .head { display: grid; grid-template-columns: 1fr auto; gap: 10mm; align-items: end; padding-bottom: 6mm; border-bottom: 1.5px solid ${INK}; }
-  .head h1 { font-size: 27pt; line-height: 1; }
+  .mono { font-family: 'IBM Plex Mono', monospace; font-size: 7.2pt; letter-spacing: .12em; text-transform: uppercase; }
+  .display { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; letter-spacing: -.03em; }
+  .head { display: grid; grid-template-columns: 1fr auto; gap: 10mm; align-items: end; padding-bottom: 5mm; border-bottom: 1.5px solid ${INK}; }
+  .head h1 { font-size: 30pt; line-height: .95; }
   .head h1 span { color: ${ACCENT}; }
   .head .role { color: ${ACCENT}; margin-top: 3mm; }
-  .head .tag { color: ${INK2}; margin-top: 2mm; font-size: 9.4pt; }
   .contact { text-align: right; color: ${INK2}; font-size: 8.6pt; line-height: 1.7; }
-  .contact b { color: ${INK}; font-weight: 500; }
-  /* layout */
-  .cols { display: grid; grid-template-columns: 1fr 58mm; gap: 9mm; margin-top: 6mm; flex: 1; }
-  section + section { margin-top: 5.5mm; }
+  .contact b { color: ${INK}; font-weight: 600; }
+  .cols { display: grid; grid-template-columns: 1fr 57mm; gap: 9mm; margin-top: 6mm; flex: 1; }
+  section + section { margin-top: 5mm; }
   h2 { display: flex; align-items: center; gap: 3mm; color: ${INK}; margin-bottom: 3mm; }
   h2::after { content: ""; flex: 1; height: 1px; background: ${LINE}; }
-  h2 .n { color: ${ACCENT}; }
   .summary { font-size: 9.8pt; line-height: 1.5; color: ${INK2}; }
-  .summary b { color: ${INK}; font-weight: 500; }
-  /* experience */
-  .job { margin-bottom: 4.2mm; page-break-inside: avoid; }
+  .job { margin-bottom: 4mm; page-break-inside: avoid; }
   .job .top { display: flex; justify-content: space-between; align-items: baseline; gap: 4mm; }
-  .job h3 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 12pt; line-height: 1.15; }
-  .job .dates { color: ${DIM}; white-space: nowrap; }
-  .job .org { color: ${INK2}; margin-top: .6mm; font-size: 9pt; }
-  .job .lede { color: ${INK2}; margin-top: 1.6mm; font-style: italic; font-size: 9pt; }
-  .job ul { margin-top: 1.8mm; padding-left: 0; list-style: none; }
-  .job li { position: relative; padding-left: 4mm; margin-top: 1.2mm; color: ${INK}; }
-  .job li::before { content: "—"; position: absolute; left: 0; color: ${ACCENT}; }
-  /* rail */
-  .rail .card { background: ${SURFACE}; border-radius: 3mm; padding: 4mm 4.2mm; }
+  .job h3 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: 11.6pt; letter-spacing: -.01em; }
+  .job .dates { font-family: 'IBM Plex Mono', monospace; font-size: 7.4pt; color: ${DIM}; white-space: nowrap; text-transform: uppercase; letter-spacing: .08em; }
+  .job .org { color: ${INK2}; margin-top: .4mm; font-size: 9pt; }
+  .job ul { margin-top: 1.6mm; list-style: none; }
+  .job li { position: relative; padding-left: 4mm; margin-top: 1.1mm; }
+  .job li::before { content: ""; position: absolute; left: .6mm; top: 1.9mm; width: 1.4mm; height: 1.4mm; border-radius: 50%; background: ${ACCENT}; }
+  .rail .card { background: ${SURFACE}; border-radius: 2mm; padding: 4mm 4.2mm; }
   .rail .card + .card { margin-top: 3.5mm; }
-  .rail h2 { margin-bottom: 2.6mm; }
   .rail h2::after { display: none; }
-  .skill { margin-top: 2.2mm; }
-  .skill .k { color: ${INK}; font-weight: 600; font-size: 8.8pt; }
-  .skill .v { color: ${INK2}; font-size: 8.6pt; line-height: 1.45; margin-top: .4mm; }
-  .proj { display: grid; grid-template-columns: 1fr; margin-top: 2.2mm; padding-top: 2.2mm; border-top: 1px solid ${LINE}; }
+  .proj { margin-top: 2.2mm; padding-top: 2.2mm; border-top: 1px solid ${LINE}; }
   .proj:first-of-type { border-top: 0; padding-top: 0; }
-  .proj .t { font-family: 'Fraunces', serif; font-weight: 500; font-size: 10.4pt; }
-  .proj .d { color: ${INK2}; font-size: 8.6pt; margin-top: .3mm; }
-  .proj .m { color: ${DIM}; margin-top: .8mm; font-size: 6.8pt; }
-  .edu { margin-top: 2mm; }
-  .edu .t { font-weight: 600; font-size: 8.8pt; }
-  .edu .d { color: ${INK2}; font-size: 8.4pt; }
-  .foot { margin-top: auto; padding-top: 4mm; border-top: 1px solid ${LINE}; display: flex; justify-content: space-between; color: ${DIM}; }
+  .proj .t { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: 10.4pt; }
+  .proj .d { color: ${INK2}; font-size: 8.6pt; }
+  .proj .m { color: ${DIM}; margin-top: .6mm; font-size: 6.8pt; }
+  .kv { margin-top: 2mm; }
+  .kv .t { font-weight: 600; font-size: 8.8pt; }
+  .kv .d { color: ${INK2}; font-size: 8.5pt; line-height: 1.45; }
   .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm; margin-top: 5mm; }
-  .fact { border: 1px solid ${LINE}; border-radius: 3mm; padding: 3mm 3.6mm; }
+  .fact { border: 1px solid ${LINE}; border-radius: 2mm; padding: 3mm 3.6mm; }
   .fact .k { color: ${DIM}; }
-  .fact .v { margin-top: 1mm; font-size: 9pt; color: ${INK}; line-height: 1.35; }
+  .fact .v { margin-top: 1mm; font-size: 9pt; line-height: 1.35; }
+  .foot { margin-top: auto; padding-top: 4mm; border-top: 1px solid ${LINE}; display: flex; justify-content: space-between; color: ${DIM}; }
 </style></head><body>
-
 <div class="page">
   <header class="head">
     <div>
-      <h1 class="display">Vaugn Jasper Almeida<span>.</span></h1>
+      <h1 class="display">Vaugn Jasper<br>Almeida<span>.</span></h1>
       <p class="mono role">Senior Brand &amp; Web Designer · Remote</p>
-      <p class="tag">Senior Graphic Designer at an Australian agency · healthcare-fluent · ships own products</p>
     </div>
     <div class="contact">
-      <div><b>vaugn.studio@gmail.com</b></div>
-      <div>+63 909 203 0913 · Greater Manila Area, PH (GMT+8)</div>
-      <div>vaugn-portfolio.vercel.app</div>
-      <div>linkedin.com/in/vaugn-almeida</div>
+      <div><b>${CONTACT.email}</b></div>
+      <div>${CONTACT.phone}</div>
+      <div>${CONTACT.place}</div>
+      <div>${CONTACT.site}</div>
+      <div>${CONTACT.linkedin}</div>
     </div>
   </header>
-
   <div class="facts">
-    <div class="fact"><p class="mono k">Looking for</p><p class="v">Senior brand &amp; web design role — full-time or long-term contract, remote</p></div>
-    <div class="fact"><p class="mono k">Hours</p><p class="v">Overlaps Australian business hours, US-West mornings, EU afternoons</p></div>
-    <div class="fact"><p class="mono k">Stack</p><p class="v">Figma · Framer · Webflow · Adobe CC · After Effects · AI-assisted production</p></div>
+    <div class="fact"><p class="mono k">Now</p><p class="v">Senior Graphic Designer, Your SocialChef, since September 2026</p></div>
+    <div class="fact"><p class="mono k">Looking for</p><p class="v">Senior brand and web design role, remote, full time or long term contract</p></div>
+    <div class="fact"><p class="mono k">Hours</p><p class="v">GMT+8. Overlaps Australian business hours and US West Coast mornings</p></div>
   </div>
-
   <div class="cols">
     <main>
-      <section>
-        <h2 class="mono"><span class="n">01</span> Profile</h2>
-        <p class="summary">Brand and web designer with <b>5+ years in design</b>, including <b>3+ years inside an Australian agency</b> running creative for 20+ concurrent accounts across hospitality, healthcare, retail, and professional services. I take a brand from strategy to shipped site — identity, campaign systems, web design, and the build itself in Framer or Webflow — as one accountable designer. Healthcare fluency comes from the inside: two years in US revenue-cycle operations means clinics and billing firms skip the onboarding most designers need. AI-assisted production compresses versioning and exploration; direction, taste, and final craft stay mine.</p>
-      </section>
-
-      <section>
-        <h2 class="mono"><span class="n">02</span> Experience</h2>
-        ${EXPERIENCE.slice(0, 1).map((j) => `
-        <article class="job">
-          <div class="top"><h3>${esc(j.role)}</h3><span class="mono dates">${esc(j.dates)}</span></div>
-          <p class="org">${esc(j.org)}</p>
-          ${j.lede ? `<p class="lede">${esc(j.lede)}</p>` : ""}
-          <ul>${j.bullets.map((b) => `<li>${esc(b)}</li>`).join("")}</ul>
-        </article>`).join("")}
-      </section>
-
+      <section><h2 class="mono">Summary</h2><p class="summary">${esc(SUMMARY.replace(/ Open to a senior.*$/, ""))}</p></section>
+      <section><h2 class="mono">Experience</h2>${EXPERIENCE.slice(0, 2).map(job).join("")}</section>
     </main>
-
     <aside class="rail">
       <div class="card">
-        <h2 class="mono"><span class="n">03</span> Selected work</h2>
+        <h2 class="mono">Selected work</h2>
         ${PROJECTS.map(([t, d, m]) => `<div class="proj"><p class="t">${esc(t)}</p><p class="d">${esc(d)}</p><p class="mono m">${esc(m)}</p></div>`).join("")}
+        <p class="kv d" style="margin-top:3mm">Full cases with my part in each: ${CONTACT.site}</p>
       </div>
     </aside>
   </div>
-
   <footer class="foot mono"><span>Vaugn Jasper Almeida · CV 2026</span><span>Page 1 of 2</span></footer>
 </div>
-
 <div class="page">
   <div class="cols" style="margin-top:0">
     <main>
-      <section>
-        <h2 class="mono"><span class="n">02</span> Experience, continued</h2>
-        ${EXPERIENCE.slice(1).map((j) => `
-        <article class="job">
-          <div class="top"><h3>${esc(j.role)}</h3><span class="mono dates">${esc(j.dates)}</span></div>
-          <p class="org">${esc(j.org)}</p>
-          ${j.lede ? `<p class="lede">${esc(j.lede)}</p>` : ""}
-          <ul>${j.bullets.map((b) => `<li>${esc(b)}</li>`).join("")}</ul>
-        </article>`).join("")}
-      </section>
-
-      <section>
-        <h2 class="mono"><span class="n">04</span> How I work</h2>
-        <ul style="list-style:none">
-          ${HOW.map((b) => `<li style="position:relative;padding-left:4mm;margin-top:1.4mm"><span style="position:absolute;left:0;color:${ACCENT}">—</span>${esc(b)}</li>`).join("")}
-        </ul>
-      </section>
+      <section><h2 class="mono">Experience, continued</h2>${EXPERIENCE.slice(2).map(job).join("")}</section>
     </main>
-
     <aside class="rail">
       <div class="card">
-        <h2 class="mono"><span class="n">05</span> Skills</h2>
-        ${SKILLS.map(([k, v]) => `<div class="skill"><p class="k">${esc(k)}</p><p class="v">${esc(v)}</p></div>`).join("")}
+        <h2 class="mono">Skills</h2>
+        ${SKILLS.map(([k, v]) => `<div class="kv"><p class="t">${esc(k)}</p><p class="d">${esc(v)}</p></div>`).join("")}
       </div>
       <div class="card">
-        <h2 class="mono"><span class="n">06</span> Education &amp; certifications</h2>
-        ${EDUCATION.map(([t, d]) => `<div class="edu"><p class="t">${esc(t)}</p><p class="d">${esc(d)}</p></div>`).join("")}
-      </div>
-      <div class="card">
-        <h2 class="mono"><span class="n">07</span> Links</h2>
-        <div class="edu"><p class="t">Portfolio</p><p class="d">vaugn-portfolio.vercel.app</p></div>
-        <div class="edu"><p class="t">Live client sites</p><p class="d">medsyncmentalhealth.com · ozmaxcare.com.au · junksunshinecoast.com.au · yoursocialchef.com</p></div>
-        <div class="edu"><p class="t">LinkedIn</p><p class="d">linkedin.com/in/vaugn-almeida</p></div>
+        <h2 class="mono">Education</h2>
+        ${EDUCATION.map(([t, d]) => `<div class="kv"><p class="t">${esc(t)}</p><p class="d">${esc(d)}</p></div>`).join("")}
+        <h2 class="mono" style="margin-top:4mm">Certificate</h2>
+        ${CERTIFICATE.map(([t, d]) => `<div class="kv"><p class="t">${esc(t)}</p><p class="d">${esc(d)}</p></div>`).join("")}
+        <h2 class="mono" style="margin-top:4mm">Training</h2>
+        <div class="kv"><p class="d">Completed through the agency account, without personal certificates:</p><p class="d" style="margin-top:1mm">${TRAINING.map(esc).join("<br>")}</p></div>
       </div>
     </aside>
   </div>
-  <footer class="foot mono"><span>vaugn.studio@gmail.com · +63 909 203 0913</span><span>Page 2 of 2</span></footer>
+  <footer class="foot mono"><span>${CONTACT.email} · ${CONTACT.phone}</span><span>Page 2 of 2</span></footer>
 </div>
+</body></html>`;
+
+/* ── Plain version: one column, reading order = DOM order ── */
+const plain = `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">${FONTS}
+<style>
+  @page { size: A4; margin: 16mm 18mm; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Instrument Sans', Arial, sans-serif; font-size: 10pt; line-height: 1.45; color: #111; }
+  h1 { font-size: 18pt; font-weight: 600; }
+  .sub { margin-top: 1mm; font-size: 10.5pt; }
+  .contact { margin-top: 2mm; font-size: 9.5pt; }
+  h2 { font-size: 11pt; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; border-bottom: 1px solid #999; padding-bottom: 1mm; margin: 5mm 0 2mm; }
+  h3 { font-size: 10.5pt; font-weight: 600; margin-top: 3mm; }
+  .meta { font-size: 9.5pt; }
+  ul { margin: 1mm 0 0 5mm; }
+  li { margin-top: .8mm; }
+  p + p { margin-top: 1mm; }
+</style></head><body>
+  <h1>Vaugn Jasper Almeida</h1>
+  <p class="sub">Senior Brand &amp; Web Designer</p>
+  <p class="contact">Email: ${CONTACT.email} | Phone: ${CONTACT.phone} | Location: ${CONTACT.place}<br>Portfolio: ${CONTACT.site} | LinkedIn: ${CONTACT.linkedin}</p>
+  <h2>Summary</h2>
+  <p>${esc(SUMMARY)}</p>
+  <h2>Experience</h2>
+  ${EXPERIENCE.map((j) => `<h3>${esc(j.role)}</h3><p class="meta">${esc(j.org)} | ${esc(j.dates)}</p><ul>${j.bullets.map((b) => `<li>${esc(b)}</li>`).join("")}</ul>`).join("")}
+  <h2>Skills</h2>
+  ${SKILLS.map(([k, v]) => `<p><b>${esc(k)}:</b> ${esc(v)}</p>`).join("")}
+  <h2>Education</h2>
+  ${EDUCATION.map(([t, d]) => `<p><b>${esc(t)}</b>, ${esc(d)}</p>`).join("")}
+  <h2>Certificate and training</h2>
+  <p>HubSpot Academy Social Media certificate, in my own name.</p>
+  <p>Training completed through the agency account, without personal certificates: ${TRAINING.join(", ")}.</p>
 </body></html>`;
 
 const browser = await chromium.launch();
 const page = await browser.newPage();
-await page.setContent(html, { waitUntil: "networkidle" });
-await page.evaluate(() => document.fonts.ready);
-await page.waitForTimeout(300);
-await page.pdf({ path: OUT, format: "A4", printBackground: true, preferCSSPageSize: true });
-// preview PNGs (outside public/) for a quick visual check
 const PREVIEW = process.env.CV_PREVIEW_DIR ?? "review-shots";
 fs.mkdirSync(PREVIEW, { recursive: true });
-await page.setViewportSize({ width: 794, height: 1123 });
-const pages = await page.$$(".page");
-for (let i = 0; i < pages.length; i++) {
-  await pages[i].screenshot({ path: `${PREVIEW}/cv-p${i + 1}.png`, type: "png" });
+fs.mkdirSync(OUT_DIR, { recursive: true });
+
+for (const [name, html] of [["cv", designed], ["cv-plain", plain]]) {
+  await page.setContent(html, { waitUntil: "networkidle" });
+  await page.evaluate(() => document.fonts.ready);
+  await page.waitForTimeout(300);
+  const out = path.join(OUT_DIR, `${name}.pdf`);
+  await page.pdf({ path: out, format: "A4", printBackground: true, preferCSSPageSize: true });
+  console.log(`wrote ${out} (${Math.round(fs.statSync(out).size / 1024)} KB)`);
+  if (name === "cv") {
+    await page.setViewportSize({ width: 794, height: 1123 });
+    const pages = await page.$$(".page");
+    for (let i = 0; i < pages.length; i++) await pages[i].screenshot({ path: `${PREVIEW}/cv-p${i + 1}.png` });
+    // overflow guard: content must fit inside each fixed A4 page
+    const over = await page.$$eval(".page", (ps) => ps.map((p) => p.scrollHeight - p.clientHeight));
+    console.log("page overflow px:", over.join(", "));
+  }
 }
 await browser.close();
-console.log(`wrote ${OUT} (${Math.round(fs.statSync(OUT).size / 1024)} KB)`);

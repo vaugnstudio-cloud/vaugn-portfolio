@@ -13,7 +13,7 @@ function Cover({ project }: { project: Project }) {
     return (
       <Image
         src={project.coverImage}
-        alt={`${project.title} — project cover`}
+        alt={`${project.title}, project cover`}
         fill
         sizes="(max-width: 768px) 100vw, 560px"
         className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
@@ -26,11 +26,17 @@ function Cover({ project }: { project: Project }) {
   return (
     <div className="flex h-full w-full flex-col items-center justify-center gap-3 bg-raised">
       <span className="font-display text-3xl italic text-ink2">{project.title}</span>
-      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-dim">
+      <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-dim">
         {project.category[0]}
       </span>
     </div>
   );
+}
+
+// Exact relationship wording on cards: direct clients say so.
+function label(project: Project): string {
+  const p = project.provenance ?? PROVENANCE[project.type];
+  return p === "Client work" && project.type === "case-study" ? "Direct client" : p;
 }
 
 const BADGE: Record<Project["type"], string> = {
@@ -71,10 +77,10 @@ export default function ProjectCard({
         >
           <div className="relative aspect-[16/10] w-full overflow-hidden bg-raised md:aspect-auto md:min-h-[460px]">
             <Cover project={project} />
-            <span className="absolute left-4 top-4 rounded-full bg-bg/80 px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-dim backdrop-blur">
-              {project.provenance ?? PROVENANCE[project.type]}
+            <span className="absolute left-4 top-4 rounded-full bg-bg/80 px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-dim backdrop-blur">
+              {label(project)}
             </span>
-            {latest && (<span className="absolute right-4 top-4 rounded-full bg-accent px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-accent-ink">
+            {latest && (<span className="absolute right-4 top-4 rounded-full bg-accent px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-accent-ink">
               Latest · {project.year}
             </span>)}
           </div>
@@ -90,7 +96,7 @@ export default function ProjectCard({
                 {project.deliverables.slice(0, 4).map((d) => (
                   <li
                     key={d}
-                    className="rounded-full border border-line px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-ink2"
+                    className="rounded-full border border-line px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-ink2"
                   >
                     {d}
                   </li>
@@ -115,10 +121,10 @@ export default function ProjectCard({
       >
         <div className="relative aspect-[16/10] w-full overflow-hidden bg-raised">
           <Cover project={project} />
-          <span className="absolute left-4 top-4 rounded-full bg-bg/80 px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-dim backdrop-blur">
-            {project.provenance ?? PROVENANCE[project.type]}
+          <span className="absolute left-4 top-4 rounded-full bg-bg/80 px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-dim backdrop-blur">
+            {label(project)}
           </span>
-          <span className="absolute right-4 top-4 rounded-full bg-bg/80 px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-ink backdrop-blur transition-colors group-hover:bg-accent group-hover:text-accent-ink">
+          <span className="absolute right-4 top-4 rounded-full bg-bg/80 px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-ink backdrop-blur transition-colors group-hover:bg-accent group-hover:text-accent-ink">
             {BADGE[project.type]} →
           </span>
         </div>

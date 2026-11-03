@@ -27,7 +27,7 @@ export default function NicheLanding({ niche }: { niche: Niche }) {
 
   return (
     <>
-      <section className="mx-auto max-w-6xl px-6 pb-24 pt-16 sm:pt-24">
+      <section className="mx-auto max-w-[1240px] px-5 sm:px-8 pb-24 pt-16 sm:pt-24">
         <FadeIn>
           <p className="eyebrow">For {niche.label.toLowerCase()}</p>
           <h1 className="display mt-3 max-w-3xl text-5xl text-ink sm:text-6xl">
