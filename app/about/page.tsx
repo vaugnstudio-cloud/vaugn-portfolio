@@ -139,10 +139,9 @@ export default function AboutPage() {
                 work, I now review creative work across the team.
               </p>
               <p>
-                Before and alongside design, I worked in US healthcare revenue
-                cycle operations: claims, denials and payer follow up. It means
-                I already know how clinics and billing teams talk, which helps
-                on healthcare projects.
+                I also worked in US healthcare billing, handling claims, denials
+                and payer follow up. It means I already know how clinics and
+                billing teams talk, which helps on healthcare projects.
               </p>
               <p>
                 For direct clients I design and build websites in Framer. For

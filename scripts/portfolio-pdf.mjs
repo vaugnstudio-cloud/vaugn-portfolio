@@ -86,6 +86,7 @@ const html = `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
   .slide:last-child { page-break-after: auto; }
   .mono { font-family: 'IBM Plex Mono', monospace; font-size: 15px; letter-spacing: .12em; text-transform: uppercase; color: #67655E; }
   .acc { color: #2A3BD6; }
+  a { color: inherit; text-decoration: none; }
   .display { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; letter-spacing: -.035em; line-height: .95; }
   img { display: block; border-radius: 8px; }
   .foot { position: absolute; left: 72px; right: 72px; bottom: 36px; display: flex; justify-content: space-between; border-top: 1px solid #D6D4CB; padding-top: 14px; }
@@ -113,14 +114,14 @@ const html = `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
   </div>
   <h1 class="display" style="font-size:210px;margin-top:150px">Vaugn<br>Almeida<span class="acc">.</span></h1>
   <p style="margin-top:44px;font-size:34px;max-width:1000px;line-height:1.25">I design campaigns, brand guides and websites.</p>
-  <div class="foot mono"><span>vaugn.studio@gmail.com</span><span>vaugn-portfolio.vercel.app</span><span>linkedin.com/in/vaugn-almeida</span></div>
+  <div class="foot mono"><a href="mailto:vaugn.studio@gmail.com">vaugn.studio@gmail.com</a><a href="https://vaugn-portfolio.vercel.app">vaugn-portfolio.vercel.app</a><a href="https://linkedin.com/in/vaugn-almeida">linkedin.com/in/vaugn-almeida</a></div>
 </section>
 
 <section class="slide" style="display:grid;grid-template-columns:1fr 1fr;gap:72px">
   <div style="border-top:2px solid #111110;padding-top:22px">
     <p class="mono">About</p>
     <h2 class="display" style="font-size:58px;margin-top:26px">Agency trained, with a background in <span class="acc">healthcare</span>.</h2>
-    <p style="margin-top:32px;font-size:21px;line-height:1.5;color:#46453F">I'm a Senior Graphic Designer at Your SocialChef, an Australian marketing agency. I design for client brands and review the team's creative work: text and offers, layout, safe zones and brand consistency. For direct clients I design, write and build websites in Framer. Before and alongside design, I worked in US healthcare billing.</p>
+    <p style="margin-top:32px;font-size:21px;line-height:1.5;color:#46453F">I'm a Senior Graphic Designer at Your SocialChef, an Australian marketing agency. I design for client brands and review the team's creative work: text and offers, layout, safe zones and brand consistency. For direct clients I design, write and build websites in Framer. I also worked in US healthcare billing, handling claims, denials and payer follow up.</p>
   </div>
   <div style="border-top:2px solid #111110;padding-top:22px">
     <p class="mono">Experience</p>
@@ -173,7 +174,7 @@ ${caseSlide("05", "Your SocialChef", "Marketing agency, Australia", "Employer ·
   </div>
   <div class="row c4" style="margin-top:34px;grid-template-columns:repeat(8,1fr);gap:14px">${["r1", "r2", "r3", "r4", "r5", "r6", "r7", "r8"].map((k) => img(k)).join("")}</div>
   <p style="margin-top:28px;font-size:19px;color:#46453F;max-width:1100px">Each piece is set in that client's own type and colour. Most use the client's own photography. Where a shoot did not cover a shot, the image was extended with AI tools and art directed by me.</p>
-  <div class="foot mono"><span>Kumar's · Renzo's · Liliana's · General Chicken Co. · Sincero · JUNK</span><span>vaugn-portfolio.vercel.app</span></div>
+  <div class="foot mono"><span>Kumar's · Renzo's · Liliana's · General Chicken Co. · Sincero · JUNK</span><a href="https://vaugn-portfolio.vercel.app">vaugn-portfolio.vercel.app</a></div>
 </section>
 
 <section class="slide">
@@ -189,9 +190,9 @@ ${caseSlide("05", "Your SocialChef", "Marketing agency, Australia", "Employer ·
 
 <section class="slide">
   <p class="mono">Contact</p>
-  <h2 class="display" style="font-size:96px;margin-top:150px">vaugn.studio@gmail.com</h2>
-  <p style="margin-top:36px;font-size:26px;color:#46453F">Full cases, with my part in each: vaugn-portfolio.vercel.app</p>
-  <div class="foot mono"><span>linkedin.com/in/vaugn-almeida</span><span>Greater Manila Area, GMT+8</span><span>Open to senior roles and select client projects</span></div>
+  <h2 class="display" style="font-size:96px;margin-top:150px"><a href="mailto:vaugn.studio@gmail.com">vaugn.studio@gmail.com</a></h2>
+  <p style="margin-top:36px;font-size:26px;color:#46453F">Full cases, with my part in each: <a href="https://vaugn-portfolio.vercel.app" style="color:#2A3BD6">vaugn-portfolio.vercel.app</a></p>
+  <div class="foot mono"><a href="https://linkedin.com/in/vaugn-almeida">linkedin.com/in/vaugn-almeida</a><span>Greater Manila Area, GMT+8</span><span>Open to senior roles and select client projects</span></div>
 </section>
 </body></html>`;
 

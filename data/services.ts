@@ -34,12 +34,12 @@ export const services: Service[] = [
   {
     id: "healthcare",
     name: "Healthcare Brand & Web",
-    forWho: "Clinics, therapy practices, dental & specialist clinics, med-spas, NDIS providers, health-tech, and billing/RCM firms that need to be trusted before they're tried.",
+    forWho: "Clinics, therapy practices, dental & specialist clinics, med spas, NDIS providers, health tech, and billing/RCM firms that need to be trusted before they're tried.",
     fromPrice: "Specialist engagement",
     includes: [
       "Everything in Brand + Web Launch",
-      "Compliance-aware content structure",
-      "Trust-first UX & patient-journey thinking",
+      "Compliance aware content structure",
+      "Trust first UX & patient journey thinking",
       "Credibility system: proof, credentials, reassurance",
     ],
     next: "Book a healthcare project call, I'll review your current presence first.",
@@ -64,15 +64,15 @@ export const services: Service[] = [
   {
     id: "framer-landing",
     name: "Framer Landing Page",
-    forWho: "Startups and campaigns that need one high-converting page, fast.",
-    fromPrice: "Fast-track build",
+    forWho: "Startups and campaigns that need one high converting page, fast.",
+    fromPrice: "Fast track build",
     includes: [
       "Copy structure",
       "Design & Framer build",
       "Basic SEO setup",
       "1 to 2 week turnaround",
     ],
-    next: "Send the brief: if it's a fit, we can start within the week.",
+    next: "Send the brief. If it's a fit and I have availability, I'll suggest a start date.",
     cta: "Launch a page",
   },
   {
@@ -118,7 +118,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "How does pricing work?",
-    a: "Every engagement is custom-quoted. After a short scoping call you receive one fixed-price proposal, tailored to your scope, timeline, and market, and it never changes mid-project. No hourly billing, no surprise line items.",
+    a: "Every engagement is custom quoted. After a short scoping call you receive one fixed price proposal, tailored to your scope, timeline, and market, and it never changes mid project. No hourly billing, no surprise line items.",
   },
 ];
 
@@ -136,7 +136,7 @@ export const processSteps = [
   {
     step: "03",
     name: "Build",
-    body: "Designed in Figma, built in Framer or Webflow. AI-assisted production keeps it fast without cutting corners.",
+    body: "Designed in Figma, built in Framer or Webflow. AI assisted production keeps it fast without cutting corners.",
   },
   {
     step: "04",

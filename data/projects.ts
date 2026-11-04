@@ -93,7 +93,7 @@ export interface Project {
   /** Honest provenance label shown on cards. Defaults by type (see
    *  PROVENANCE in ProjectCard); set explicitly where the default is wrong —
    *  e.g. agency-affiliated client work. */
-  provenance?: "Client work" | "Agency work" | "Employer work" | "Self-initiated product" | "Concept study" | "Studio system";
+  provenance?: "Client work" | "Agency work" | "Employer work" | "Website project" | "Self initiated product" | "Concept study" | "Studio system";
   category: string[];
   headline: string;
   description: string;
@@ -121,11 +121,11 @@ export const projects: Project[] = [
     client: "NDIS & Disability Support · Australia",
     year: "2026",
     category: ["HEALTHCARE", "BRAND DESIGN", "WEB DESIGN"],
-    headline: "A disability-care brand built to feel personal and dependable.",
+    headline: "A disability care brand built to feel personal and dependable.",
     description:
-      "Full brand identity for Ozmax Care, a Melbourne NDIS and disability-support provider, logo, colour palette, and typography, plus homepage website design built around its warm, trust-first “Empowering Every Ability” message.",
+      "Full brand identity for Ozmax Care, a Melbourne NDIS and disability support provider, logo, colour palette, and typography, plus homepage website design built around its warm, trust first “Empowering Every Ability” message.",
     deliverables: [
-      "Brand guide one-sheet",
+      "Brand guide one sheet",
       "Logo & identity",
       "Colour palette",
       "Typography system",
@@ -155,8 +155,8 @@ export const projects: Project[] = [
           heading: "Homepage design",
           body: "A homepage built around the questions families actually ask: what supports are offered, who is behind the service, and how to get started with a plan. Designed for clarity at every reading level, captured here from the live site.",
           images: [
-            { src: "/images/live/ozmax-m-hero.jpg", label: "Mobile: first screen", aspect: "tall" },
-            { src: "/images/live/ozmax-m-mid.jpg", label: "Mobile: supports", aspect: "tall" },
+            { src: "/images/live/ozmax-m-hero.jpg", label: "Mobile: first screen", aspect: "phone" },
+            { src: "/images/live/ozmax-m-mid.jpg", label: "Mobile: supports", aspect: "phone" },
             { src: "/images/live/ozmax-d-mid.jpg", label: "Desktop: services", aspect: "wide" },
             { src: "/images/ysc/ozmax-guide-logos.jpg", label: "Brand guide: logo variations", aspect: "wide" },
             { src: "/images/ysc/ozmax-guide-system.jpg", label: "Brand guide: palette & typography", aspect: "wide" },
@@ -182,7 +182,7 @@ export const projects: Project[] = [
     category: ["BRAND DESIGN", "WEB DESIGN", "SOCIAL MEDIA"],
     headline: "A bold brand and website built to match the food's energy.",
     description:
-      "Social media design, Figma website design, photo editing, and print collateral for Junk Sunshine Coast, a high-energy Australian food brand, live across its Sippy Downs and Maroochydore venues.",
+      "Social media design, Figma website design, photo editing, and print collateral for Junk Sunshine Coast, a high energy Australian food brand, live across its Sippy Downs and Maroochydore venues.",
     deliverables: [
       "Instagram story templates",
       "Promotional posters",
@@ -194,7 +194,7 @@ export const projects: Project[] = [
     url: "https://junksunshinecoast.com.au/",
     caseStudy: {
       problem:
-        "Junk's food is loud, fast, and fun, but keeping a brand that energetic consistent across two venues, a website, weekly social content, and in-venue print is where most hospitality brands fall apart. The work needed a system, not a stream of one-off graphics.",
+        "Junk's food is loud, fast, and fun, but keeping a brand that energetic consistent across two venues, a website, weekly social content, and in venue print is where most hospitality brands fall apart. The work needed a system, not a stream of one off graphics.",
       role: [
         "Ongoing creative: retainer via Your SocialChef, 2023 to present",
         "Social media system: templates, stories, campaign creative",
@@ -203,9 +203,9 @@ export const projects: Project[] = [
         "Print collateral: posters, promos",
       ],
       strategy:
-        "Build the energy into a repeatable system. A loud, confident visual language, bold type, saturated colour, appetite-first photography, engineered as templates and rules so every post, poster, and page hits the same note, week after week, without redesigning from scratch.",
+        "Build the energy into a repeatable system. A loud, confident visual language, bold type, saturated colour, appetite first photography, engineered as templates and rules so every post, poster, and page hits the same note, week after week, without redesigning from scratch.",
       designSystem: {
-        body: "High-contrast type, punchy colour, and a photography treatment (grading + enhancement) that makes the food the hero. The system is deliberately simple to execute at social-media speed.",
+        body: "High contrast type, punchy colour, and a photography treatment (grading + enhancement) that makes the food the hero. The system is deliberately simple to execute at social media speed.",
         images: [
           { src: "/images/live/junk-d-hero.jpg", label: "The live site: loud on arrival", aspect: "wide" },
         ],
@@ -215,13 +215,13 @@ export const projects: Project[] = [
           heading: "Built for the phone in the queue",
           body: "Most of Junk's traffic arrives from the feed, on a phone, hungry. The mobile experience carries the same energy as the socials, captured here from the live site.",
           images: [
-            { src: "/images/live/junk-m-hero.jpg", label: "Mobile: first screen", aspect: "tall" },
-            { src: "/images/live/junk-m-mid.jpg", label: "Mobile: what's on", aspect: "tall" },
+            { src: "/images/live/junk-m-hero.jpg", label: "Mobile: first screen", aspect: "phone" },
+            { src: "/images/live/junk-m-mid.jpg", label: "Mobile: what's on", aspect: "phone" },
           ],
         },
         {
           heading: "Website & print",
-          body: "Figma website design carrying the same energy to the web, plus in-venue posters and promotional print that tie the physical spaces to the feed.",
+          body: "Figma website design carrying the same energy to the web, plus in venue posters and promotional print that tie the physical spaces to the feed.",
           images: [
             { src: "/images/live/junk-d-mid.jpg", label: "Desktop: menus & promos", aspect: "wide" },
             { src: "/images/ysc/junk-bring-dad.jpg", label: "Father's Day campaign: bring Dad, we'll cover his meal", aspect: "tall" },
@@ -230,7 +230,7 @@ export const projects: Project[] = [
         },
         {
           heading: "Coastalscape: one event, every channel",
-          body: "A textured art workshop at the Sippy Downs venue, sold through feed posts, a story, the website's What's On banner and pop-up, and an email header. One look across every size, with the date, time and booking step always in the same order so nobody has to hunt for them. The artwork imagery was art-directed in-studio with AI-assisted production.",
+          body: "A textured art workshop at the Sippy Downs venue, sold through feed posts, a story, the website's What's On banner and pop up, and an email header. One look across every size, with the date, time and booking step always in the same order so nobody has to hunt for them. The artwork imagery was art directed in studio with AI assisted production.",
           images: [
             { src: "/images/recent/junk-coastal-channels.jpg", label: "Coastalscape across feed, story, website and email", aspect: "wide" },
             { src: "/images/recent/junk-coastal-makewaves.jpg", label: "Feed · Make Waves", aspect: "tall" },
@@ -239,9 +239,9 @@ export const projects: Project[] = [
         },
         {
           heading: "Menus, dish stories and email",
-          body: "The everyday work that keeps a venue busy: a gluten-free menu rebuilt from a Canva file into a print-ready PDF with editable text, dish posters for the September menu, and the Christmas functions email in the venue's email format.",
+          body: "The everyday work that keeps a venue busy: a gluten free menu rebuilt from a Canva file into a print ready PDF with editable text, dish posters for the September menu, and the Christmas functions email in the venue's email format.",
           images: [
-            { src: "/images/recent/junk-gf-menu.jpg", label: "Gluten-free menu · print-ready PDF", aspect: "tall" },
+            { src: "/images/recent/junk-gf-menu.jpg", label: "Gluten free menu · print ready PDF", aspect: "tall" },
             { src: "/images/recent/junk-christmas-email.jpg", label: "Christmas functions email · header", aspect: "tall" },
             { src: "/images/recent/junk-beef-tataki.jpg", label: "September menu · Beef Tataki", aspect: "tall" },
             { src: "/images/recent/junk-pina-colada.jpg", label: "September menu · Piña Colada", aspect: "tall" },
@@ -270,7 +270,7 @@ export const projects: Project[] = [
     category: ["BRANDING", "HOSPITALITY", "PACKAGING"],
     headline: "The corner that knows your order.",
     description:
-      "Concept identity for Sundry Coffee Co., a neighbourhood specialty roaster built on the ritual of slow mornings: a hand-stamped sun, letterpress warmth, and a brand that feels like your usual table.",
+      "Concept identity for Sundry Coffee Co., a neighbourhood specialty roaster built on the ritual of slow mornings: a hand stamped sun, letterpress warmth, and a brand that feels like your usual table.",
     deliverables: ["Identity system", "Packaging", "Signage & menus", "Print"],
     coverImage: "/images/branding/specialty-coffee-hero.jpg",
     featured: true,
@@ -282,7 +282,7 @@ export const projects: Project[] = [
         {
           kicker: "01: The Insight",
           heading: "Specialty coffee doesn't sell caffeine. It sells belonging.",
-          body: "Every third-wave café can pull a good shot. What regulars actually pay for is the ritual, the bell on the door, the order that's already started before they reach the counter. So Sundry was designed as a place first and a brand second: everything about it should feel local, handmade, and slightly imperfect on purpose.",
+          body: "Every third wave café can pull a good shot. What regulars actually pay for is the ritual, the bell on the door, the order that's already started before they reach the counter. So Sundry was designed as a place first and a brand second: everything about it should feel local, handmade, and slightly imperfect on purpose.",
           images: [
             { src: "/images/branding/specialty-coffee-hero.jpg", label: "The corner: storefront", aspect: "wide" },
           ],
@@ -318,7 +318,7 @@ export const projects: Project[] = [
     category: ["BRANDING", "HOSPITALITY", "IDENTITY"],
     headline: "Arrive a guest. Leave a regular.",
     description:
-      "Concept identity for Aster House, a heritage-modern boutique stay where the brand whispers: engraved brass, deep olive, and typography that behaves like good service.",
+      "Concept identity for Aster House, a heritage modern boutique stay where the brand whispers: engraved brass, deep olive, and typography that behaves like good service.",
     deliverables: ["Identity system", "Collateral", "Wayfinding", "Guest print"],
     coverImage: "/images/branding/boutique-hotel-hero.jpg",
     featured: true,
@@ -366,7 +366,7 @@ export const projects: Project[] = [
     category: ["BRANDING", "PACKAGING", "F&B"],
     headline: "Small batch. Big mouth.",
     description:
-      "Concept identity for Riptide Brew Works, a coastal craft label with zine energy: a wave roundel, cut-paper collage, and packaging that gets picked up before it gets read.",
+      "Concept identity for Riptide Brew Works, a coastal craft label with zine energy: a wave roundel, cut paper collage, and packaging that gets picked up before it gets read.",
     deliverables: ["Identity system", "Can & label design", "Stickers & merch", "Launch creative"],
     coverImage: "/images/branding/craft-beverage-hero.jpg",
     featured: true,
@@ -378,7 +378,7 @@ export const projects: Project[] = [
         {
           kicker: "01: The Insight",
           heading: "On a crowded shelf, the polite can dies first.",
-          body: "A craft beverage brand lives or dies in the three seconds a hand hovers over a fridge door. Riptide's answer is volume: hazard-bright tangerine against deep teal, a wave that reads at ten paces, and a voice that talks like your funniest friend at the beach. Loud isn't a style choice here, it's the survival strategy.",
+          body: "A craft beverage brand lives or dies in the three seconds a hand hovers over a fridge door. Riptide's answer is volume: hazard bright tangerine against deep teal, a wave that reads at ten paces, and a voice that talks like your funniest friend at the beach. Loud isn't a style choice here, it's the survival strategy.",
           images: [
             { src: "/images/branding/craft-beverage-hero.jpg", label: "Cooler full of cans: beach", aspect: "wide" },
           ],
@@ -386,7 +386,7 @@ export const projects: Project[] = [
         {
           kicker: "02: The Identity",
           heading: "A wave in a roundel, built like a sticker.",
-          body: "The mark is a double wave locked in a heavy ring, designed to work as a 30mm sticker before anything else, because that's how beverage brands actually travel. Archivo Black does the shouting; Space Grotesk handles the fine print. The whole system is cut-paper zine collage: tilted, taped, unbothered.",
+          body: "The mark is a double wave locked in a heavy ring, designed to work as a 30mm sticker before anything else, because that's how beverage brands actually travel. Archivo Black does the shouting; Space Grotesk handles the fine print. The whole system is cut paper zine collage: tilted, taped, unbothered.",
           images: [
             { src: "/images/branding/craft-beverage-identity.png", label: "Zine board: identity, loud", aspect: "square" },
             { src: "/images/branding/craft-beverage-application-v2.png", label: "Sticker sheet", aspect: "square" },
@@ -399,7 +399,7 @@ export const projects: Project[] = [
           images: [
             { src: "/images/branding/craft-beverage-world-1.jpg", label: "Can in hand: seawall", aspect: "tall" },
             { src: "/images/branding/craft-beverage-world-2.jpg", label: "Fridge lineup", aspect: "tall" },
-            { src: "/images/branding/craft-beverage-world-3.jpg", label: "Sticker-bombed cooler", aspect: "wide" },
+            { src: "/images/branding/craft-beverage-world-3.jpg", label: "Sticker bombed cooler", aspect: "wide" },
           ],
         },
       ],
@@ -408,25 +408,25 @@ export const projects: Project[] = [
   {
     id: "wellness-medspa-branding",
     type: "branding",
-    title: "Wellness & Med-Spa",
+    title: "Wellness & Med Spa",
     client: "Concept series · Branding",
     year: "2026",
     category: ["BRANDING", "HEALTHCARE", "WELLNESS"],
     headline: "Calm is a clinical outcome.",
     description:
-      "Concept identity for Selene Skin & Wellness, a med-spa brand at the exact point where dermatology meets ritual: a crescent that reads as a leaf, ivory and amber, arches instead of edges.",
+      "Concept identity for Selene Skin & Wellness, a med spa brand at the exact point where dermatology meets ritual: a crescent that reads as a leaf, ivory and amber, arches instead of edges.",
     deliverables: ["Identity system", "Treatment menus", "Interior cues", "Product suite"],
     coverImage: "/images/branding/wellness-medspa-hero.jpg",
     featured: true,
     gallery: {
       context:
-        "Selene is a concept study in holding two truths at once: patients want clinical results and spa care, and most med-spa brands are forced to pick a side. This identity refuses the choice.",
+        "Selene is a concept study in holding two truths at once: patients want clinical results and spa care, and most med spa brands are forced to pick a side. This identity refuses the choice.",
       tools: ["Illustrator", "InDesign", "Photoshop"],
       chapters: [
         {
           kicker: "01: The Insight",
           heading: "Patients don't want a hospital or a hotel. They want both.",
-          body: "Med-spa clients are making a medical decision in a hospitality mood. A brand that's too clinical scares them; too plush and they doubt the science. Selene is engineered for the midpoint: every element carries one trust signal and one comfort signal, never just one of the two.",
+          body: "Med spa clients are making a medical decision in a hospitality mood. A brand that's too clinical scares them; too plush and they doubt the science. Selene is engineered for the midpoint: every element carries one trust signal and one comfort signal, never just one of the two.",
           images: [
             { src: "/images/branding/wellness-medspa-hero.jpg", label: "Reception: the arch", aspect: "wide" },
           ],
@@ -443,7 +443,7 @@ export const projects: Project[] = [
         {
           kicker: "03: The World It Lives In",
           heading: "From reception wall to bathroom shelf.",
-          body: "The brand extends from architecture to amber glass: the arch repeats in doorways and product labels alike, so the visit and the take-home routine feel like one continuous ritual.",
+          body: "The brand extends from architecture to amber glass: the arch repeats in doorways and product labels alike, so the visit and the take home routine feel like one continuous ritual.",
           images: [
             { src: "/images/branding/wellness-medspa-world-1.jpg", label: "Product suite: amber glass", aspect: "tall" },
             { src: "/images/branding/wellness-medspa-world-2.jpg", label: "Robe & towel detail", aspect: "tall" },
@@ -468,13 +468,13 @@ export const projects: Project[] = [
     featured: false,
     gallery: {
       context:
-        "Arc is a concept study in de-escalation: most people arrive at a dental brand carrying low-grade dread. Every design decision here exists to take some of that weight off before the first hello.",
+        "Arc is a concept study in calm: most people arrive at a dental brand carrying low grade dread. Every design decision here exists to take some of that weight off before the first hello.",
       tools: ["Illustrator", "Figma", "InDesign"],
       chapters: [
         {
           kicker: "01: The Insight",
           heading: "Nobody is excited to see the dentist. Design for that.",
-          body: "Dental brands love to promise perfection, white-on-white smiles, laser everything. Arc starts somewhere quieter: the patient's nervous system. Rounded geometry instead of clinical edges, a calm mint instead of surgical blue, and a name you can say with your mouth open.",
+          body: "Dental brands love to promise perfection, white on white smiles, laser everything. Arc starts somewhere quieter: the patient's nervous system. Rounded geometry instead of clinical edges, a calm mint instead of surgical blue, and a name you can say with your mouth open.",
           images: [
             { src: "/images/branding/dental-clinic-hero.jpg", label: "The studio at dusk", aspect: "wide" },
           ],
@@ -516,7 +516,7 @@ export const projects: Project[] = [
     featured: false,
     gallery: {
       context:
-        "FORM is a concept study in identity-as-uniform: boutique fitness brands aren't really selling workouts, they're selling membership of a tribe. The brand has to look good on a wall and feel earned on a t-shirt.",
+        "FORM is a concept study in identity as uniform: boutique fitness brands aren't really selling workouts, they're selling membership of a tribe. The brand has to look good on a wall and feel earned on a shirt.",
       tools: ["Illustrator", "Photoshop"],
       chapters: [
         {
@@ -562,13 +562,13 @@ export const projects: Project[] = [
     category: ["SOCIAL MEDIA", "DESIGN SYSTEMS", "CONTENT DESIGN"],
     headline: "One architecture, twenty brands, zero drift, the system behind daily posting.",
     description:
-      "The design system distilled from social work across 20+ agency client accounts over several years: a nine-slot content architecture, an annotated conversion carousel, and the brand-skin matrix that lets one template serve wildly different voices.",
-    deliverables: ["Nine-slot content architecture", "Conversion carousel system", "Brand-skin matrix", "Voice & tone application"],
+      "The design system distilled from social work across 20+ agency client accounts over several years: a nine slot content architecture, an annotated conversion carousel, and the brand skin matrix that lets one template serve wildly different voices.",
+    deliverables: ["Nine slot content architecture", "Conversion carousel system", "Brand skin matrix", "Voice & tone application"],
     coverImage: "/images/gd/sms-feed-sundry.png",
     featured: false,
     gallery: {
       context:
-        "Consistency at posting speed is a system problem, not a talent problem. This is the studio's social architecture shown three ways: the bones (the framework itself), the skin (one concept brand wearing it, end to end), and the scale (four brands on the same skeleton, none of them sounding alike). Concept application, photography is AI-assisted and art-directed in-studio.",
+        "Consistency at posting speed is a system problem, not a talent problem. This is the studio's social architecture shown three ways: the bones (the framework itself), the skin (one concept brand wearing it, end to end), and the scale (four brands on the same skeleton, none of them sounding alike). Concept application, photography is AI assisted and art directed in studio.",
       tools: ["Figma", "Photoshop", "Illustrator", "Art direction"],
       chapters: [
         {
@@ -576,7 +576,7 @@ export const projects: Project[] = [
           heading: "Nine slots. Every post has a job.",
           body: "A feed isn't nine pretty squares, it's nine jobs: hook, proof, value, offer, engagement, and one CTA per cycle, never more. The framework decides what each post is for before anyone opens a design tool, which is why it survives contact with real deadlines.",
           images: [
-            { src: "/images/gd/social-system-grid.png", label: "The nine-slot architecture: every tile has a job", aspect: "wide" },
+            { src: "/images/gd/social-system-grid.png", label: "The nine slot architecture: every tile has a job", aspect: "wide" },
           ],
         },
         {
@@ -591,9 +591,9 @@ export const projects: Project[] = [
         {
           kicker: "03: The Scale",
           heading: "Four brands. Same bones. Different soul.",
-          body: "This is the test of a real system: swap the type, palette, and voice, never the architecture, and a coffee roaster, a brewery, a med-spa, and a gym can all post daily without drifting off-model. That is what keeps many accounts manageable at once.",
+          body: "This is the test of a real system: swap the type, palette, and voice, never the architecture, and a coffee roaster, a brewery, a med spa, and a gym can all post daily without drifting off model. That is what keeps many accounts manageable at once.",
           images: [
-            { src: "/images/gd/sms-brand-matrix.png", label: "The brand-skin matrix: one template, four voices", aspect: "wide" },
+            { src: "/images/gd/sms-brand-matrix.png", label: "The brand skin matrix: one template, four voices", aspect: "wide" },
             { src: "/images/gd/social-quote-template.png", label: "Quote template: the reshare layout", aspect: "square" },
             { src: "/images/gd/social-carousel-template.png", label: "Carousel frames: the swipe skeleton", aspect: "square" },
           ],
@@ -610,19 +610,19 @@ export const projects: Project[] = [
     category: ["SOCIAL MEDIA", "F&B", "CAMPAIGN DESIGN"],
     headline: "Appetite first, always: the content engine that fills tables.",
     description:
-      "The F&B content engine refined across live Australian venues: appetite-led menu drops with real photography, a three-story campaign arc that turns one dish into a weekly ritual, and the seven-day calendar that keeps a venue fed without a designer on call.",
-    deliverables: ["Menu-drop system", "Campaign arc: tease, drop, service", "Weekly specials system", "Seven-day content calendar"],
+      "The F&B content engine refined across live Australian venues: appetite led menu drops with real photography, a three story campaign arc that turns one dish into a weekly ritual, and the seven day calendar that keeps a venue fed without a designer on call.",
+    deliverables: ["Menu drop system", "Campaign arc: tease, drop, service", "Weekly specials system", "Seven day content calendar"],
     coverImage: "/images/gd/hosp-menu-drop.png",
     featured: false,
     gallery: {
       context:
-        "Nobody ever booked a table because of a layout, they booked because the food looked like that. The photography leads, the type serves, and every post has one job: get someone through the door this week. Concept application built on the studio's live-venue engine, photography is AI-assisted and art-directed in-studio; campaign shown for a concept venue.",
+        "Nobody ever booked a table because of a layout, they booked because the food looked like that. The photography leads, the type serves, and every post has one job: get someone through the door this week. Concept application built on the studio's live venue engine, photography is AI assisted and art directed in studio; campaign shown for a concept venue.",
       tools: ["Photoshop", "Figma", "Lightroom", "Art direction"],
       chapters: [
         {
           kicker: "01: Appetite First",
           heading: "The photo does the selling. The type gets out of the way.",
-          body: "The menu-drop system is built around one rule: nothing competes with the dish. Real photography sits full-bleed, the price is typographic jewellery, and the drop lands in three formats, feed, story, print, from one layout. Swap the dish, the date, and the shot; the drama is built in.",
+          body: "The menu drop system is built around one rule: nothing competes with the dish. Real photography sits full bleed, the price is typographic jewellery, and the drop lands in three formats, feed, story, print, from one layout. Swap the dish, the date, and the shot; the drama is built in.",
           images: [
             { src: "/images/gd/hosp-menu-drop.png", label: "Menu drop: feed, story & print from one system", aspect: "wide" },
             { src: "/images/gd/hosp-special-story.png", label: "Weekly special · 9:16: photo leads", aspect: "tall" },
@@ -632,7 +632,7 @@ export const projects: Project[] = [
         {
           kicker: "02: One Launch, One Arc",
           heading: "Birria Tuesday: tease, drop, last tables.",
-          body: "A dish launch isn't a post, it's a three-act story. The night before: anticipation. Drop day: one dish, one price, one rule. During service: scarcity you didn't have to invent, posted live from the pass. This is the arc that turns a Tuesday special into the reason Tuesday exists.",
+          body: "A dish launch isn't a post, it's a three act story. The night before: anticipation. Drop day: one dish, one price, one rule. During service: scarcity you didn't have to invent, posted live from the pass. This is the arc that turns a Tuesday special into the reason Tuesday exists.",
           images: [
             { src: "/images/gd/hsc-launch-set.png", label: "The campaign arc: tease · drop · service", aspect: "wide" },
           ],
@@ -642,7 +642,7 @@ export const projects: Project[] = [
           heading: "Seven slots, so the kitchen never wonders what to post.",
           body: "Rituals beat randomness. The calendar gives every day a job, menu hero Monday, the special midweek, events into the weekend, so the venue posts daily at service speed, and the feed reads like a place with a heartbeat instead of a brand doing homework.",
           images: [
-            { src: "/images/gd/hosp-calendar.png", label: "The seven-day engine", aspect: "wide" },
+            { src: "/images/gd/hosp-calendar.png", label: "The seven day engine", aspect: "wide" },
           ],
         },
       ],
@@ -658,7 +658,7 @@ export const projects: Project[] = [
     category: ["PRINT", "PUBLISHING", "ILLUSTRATION SYSTEMS"],
     headline: "A children's book universe, designed as a system.",
     description:
-      "Cover systems, interior spreads, and collateral for a children's story-and-colouring book series, one illustrated universe, engineered to scale across titles.",
+      "Cover systems, interior spreads, and collateral for a children's story and colouring book series, one illustrated universe, engineered to scale across titles.",
     deliverables: ["Cover system", "Interior page layouts", "Colouring editions", "Completion certificate"],
     coverImage: "/images/gd/print-cover-luna-story.jpg",
     featured: false,
@@ -685,8 +685,8 @@ export const projects: Project[] = [
     category: ["LOGO DESIGN", "IDENTITY", "BRAND DESIGN"],
     headline: "Six marks, six industries: the craft in isolation.",
     description:
-      "The logo suite from the studio's niche concept series: a stamped sun, an arch monogram, a wave roundel, a crescent-leaf, a smile arc, and twin stripes, each built for its industry.",
-    deliverables: ["Logo marks", "Wordmark lockups", "Construction systems", "One-colour versions"],
+      "The logo suite from the studio's niche concept series: a stamped sun, an arch monogram, a wave roundel, a crescent leaf, a smile arc, and twin stripes, each built for its industry.",
+    deliverables: ["Logo marks", "Wordmark lockups", "Construction systems", "One colour versions"],
     coverImage: "/images/gd/logo-marks-grid.png",
     featured: false,
     gallery: {
@@ -723,12 +723,12 @@ export const projects: Project[] = [
     url: "https://www.inbloomtherapy.com.au/",
     gallery: {
       context:
-        "A warm, calming identity and full website for a therapy practice, designed to reassure a mental-health audience from the first scroll. Live and serving clients.",
+        "A warm, calming identity and full website for a therapy practice, designed to reassure a mental health audience from the first scroll. Live and serving clients.",
       tools: ["Figma", "Illustrator", "Photoshop"],
       images: [
         { src: "/images/live/inbloom-d-hero.jpg", label: "Live site: home", aspect: "wide" },
-        { src: "/images/live/inbloom-m-hero.jpg", label: "Mobile: first screen", aspect: "tall" },
-        { src: "/images/live/inbloom-m-mid.jpg", label: "Mobile: services", aspect: "tall" },
+        { src: "/images/live/inbloom-m-hero.jpg", label: "Mobile: first screen", aspect: "phone" },
+        { src: "/images/live/inbloom-m-mid.jpg", label: "Mobile: services", aspect: "phone" },
         { src: "/images/live/inbloom-d-mid.jpg", label: "Desktop: approach", aspect: "wide" },
       ],
     },
@@ -744,10 +744,10 @@ export const projects: Project[] = [
     category: ["HEALTHCARE", "BRAND DESIGN", "PRINT"],
     headline: "Healthcare brand system built for clinical credibility.",
     description:
-      "A complete, trust-first marketing suite for a US healthcare billing firm, trifold brochures, roll-up banners, calling-card systems, and Instagram Stories.",
+      "A complete, trust first marketing suite for a US healthcare billing firm, trifold brochures, roll up banners, calling card systems, and Instagram Stories.",
     deliverables: [
       "Trifold brochure",
-      "Roll-up stand banner",
+      "Roll up stand banner",
       "Calling card template",
       "Instagram Stories",
     ],
@@ -755,7 +755,7 @@ export const projects: Project[] = [
     featured: false,
     gallery: {
       context:
-        "A complete marketing suite designed to read as credible to the people who sign off: physician office managers and hospital administrators. Print-first, with a social extension.",
+        "A complete marketing suite designed to read as credible to the people who sign off: physician office managers and hospital administrators. Print first, with a social extension.",
       tools: ["InDesign", "Illustrator", "Photoshop"],
       images: [
         { src: "/images/gd/acef-overview.png", label: "Engagement overview: the print suite", aspect: "wide" },
@@ -766,25 +766,26 @@ export const projects: Project[] = [
     id: "mekong-merchant",
     type: "project",
     provenance: "Agency work",
+    credit: "Agency work through Your SocialChef",
     title: "Mekong Merchant of Taste",
     client: "Restaurant · Australia",
     year: "2026",
     category: ["WEB DESIGN", "BRAND DESIGN", "ORDERING SYSTEM"],
     headline: "Restaurant brand, website, and online ordering: designed end to end.",
     description:
-      "Brand creative and full design for Mekong Merchant of Taste, both the website and its online ordering system, paired with the in-house build team at Your SocialChef.",
+      "Brand creative and full design for Mekong Merchant of Taste, both the website and its online ordering system, paired with the in house build team at Your SocialChef.",
     deliverables: ["Website design", "Ordering system UI", "Brand creative"],
     coverImage: "/images/mekong-cover.jpg",
     featured: false,
     url: "https://mekongmerchant.com.au/",
     gallery: {
       context:
-        "Appetite-led visuals with a clear, functional ordering flow, website and ordering system designed end to end, built with the in-house team at Your SocialChef.",
+        "Appetite led visuals with a clear, functional ordering flow, website and ordering system designed end to end, built with the in house team at Your SocialChef.",
       tools: ["Figma", "Photoshop"],
       images: [
         { src: "/images/live/mekong-d-hero.jpg", label: "Live site: home", aspect: "wide" },
-        { src: "/images/live/mekong-m-hero.jpg", label: "Mobile: first screen", aspect: "tall" },
-        { src: "/images/live/mekong-m-mid.jpg", label: "Mobile: menu & ordering", aspect: "tall" },
+        { src: "/images/live/mekong-m-hero.jpg", label: "Mobile: first screen", aspect: "phone" },
+        { src: "/images/live/mekong-m-mid.jpg", label: "Mobile: menu & ordering", aspect: "phone" },
         { src: "/images/live/mekong-d-mid.jpg", label: "Desktop: menu", aspect: "wide" },
       ],
     },
@@ -793,25 +794,26 @@ export const projects: Project[] = [
     id: "yassas",
     type: "project",
     provenance: "Agency work",
+    credit: "Agency work through Your SocialChef",
     title: "Yassas",
     client: "Hospitality · Australia",
     year: "2025 to 2026",
     category: ["WEB DESIGN", "BRAND DESIGN", "HOSPITALITY"],
     headline: "Full website and brand for a modern Greek venue.",
     description:
-      "End-to-end website page design and branding for Yassas, a contemporary Greek hospitality brand. Created with Your SocialChef.",
+      "End to end website page design and branding for Yassas, a contemporary Greek hospitality brand. Created with Your SocialChef.",
     deliverables: ["Website design", "Brand identity"],
     coverImage: "/images/yassas-cover.jpg",
     featured: false,
     url: "https://www.yassas.com.au/",
     gallery: {
       context:
-        "Bold, appetite-led visuals carried across the full site for a contemporary Greek venue. Created with Your SocialChef.",
+        "Bold, appetite led visuals carried across the full site for a contemporary Greek venue. Created with Your SocialChef.",
       tools: ["Figma", "Photoshop"],
       images: [
         { src: "/images/live/yassas-d-hero.jpg", label: "Live site: home", aspect: "wide" },
-        { src: "/images/live/yassas-m-hero.jpg", label: "Mobile: first screen", aspect: "tall" },
-        { src: "/images/live/yassas-m-mid.jpg", label: "Mobile: menu", aspect: "tall" },
+        { src: "/images/live/yassas-m-hero.jpg", label: "Mobile: first screen", aspect: "phone" },
+        { src: "/images/live/yassas-m-mid.jpg", label: "Mobile: menu", aspect: "phone" },
         { src: "/images/ysc/yassas-zorba.jpg", label: "Zorba Night: A1 event poster", aspect: "tall" },
         { src: "/images/ysc/yassas-greek-mothers.jpg", label: "Mother's Day: the Greek way", aspect: "tall" },
       ],
@@ -820,25 +822,27 @@ export const projects: Project[] = [
   {
     id: "feedme-group",
     type: "project",
+    // Relationship (direct or agency) not confirmed yet: neutral label.
+    provenance: "Website project",
     title: "FeedMe Group",
-    client: "Food-Truck Events · Australia",
+    client: "Food Truck Events · Australia",
     year: "2026",
     category: ["WEB DESIGN", "BRAND DESIGN", "EVENTS"],
-    headline: "Website for a food-truck event organiser.",
+    headline: "Website for a food truck event organiser.",
     description:
-      "Website page design for FeedMe Group, organisers of food-truck events, a landing experience built to showcase events and convert enquiries.",
+      "Website page design for FeedMe Group, organisers of food truck events, a landing experience built to showcase events and convert enquiries.",
     deliverables: ["Website design", "Brand creative"],
     coverImage: "/images/feedme-cover.jpg",
     featured: false,
     url: "https://feedmegroup.com.au/",
     gallery: {
       context:
-        "A landing experience built to showcase events and convert enquiries for a food-truck event organiser.",
+        "A landing experience built to showcase events and convert enquiries for a food truck event organiser.",
       tools: ["Figma", "Photoshop"],
       images: [
         { src: "/images/live/feedme-d-hero.jpg", label: "Live site: home", aspect: "wide" },
-        { src: "/images/live/feedme-m-hero.jpg", label: "Mobile: first screen", aspect: "tall" },
-        { src: "/images/live/feedme-m-mid.jpg", label: "Mobile: events", aspect: "tall" },
+        { src: "/images/live/feedme-m-hero.jpg", label: "Mobile: first screen", aspect: "phone" },
+        { src: "/images/live/feedme-m-mid.jpg", label: "Mobile: events", aspect: "phone" },
       ],
     },
   },
@@ -846,6 +850,7 @@ export const projects: Project[] = [
     id: "plumbyourway",
     type: "project",
     provenance: "Agency work",
+    credit: "Agency work through Your SocialChef",
     title: "PlumbYourWay",
     client: "Trades · Australia",
     year: "2026",
@@ -863,8 +868,8 @@ export const projects: Project[] = [
       tools: ["Figma", "Illustrator"],
       images: [
         { src: "/images/live/plumb-d-hero.jpg", label: "Live site: home", aspect: "wide" },
-        { src: "/images/live/plumb-m-hero.jpg", label: "Mobile: first screen", aspect: "tall" },
-        { src: "/images/live/plumb-m-mid.jpg", label: "Mobile: services", aspect: "tall" },
+        { src: "/images/live/plumb-m-hero.jpg", label: "Mobile: first screen", aspect: "phone" },
+        { src: "/images/live/plumb-m-mid.jpg", label: "Mobile: services", aspect: "phone" },
       ],
     },
   },
@@ -876,17 +881,17 @@ export const projects: Project[] = [
     id: "averis-rcm-kit",
     type: "product",
     title: "Averis: RCM Website Kit",
-    client: "Vaugn Studio · Self-initiated product",
+    client: "Vaugn Studio · Self initiated product",
     year: "2026",
     category: ["HEALTHCARE", "PRODUCT DESIGN", "WEB KIT"],
     headline:
-      "A revenue-cycle website system with a leakage calculator and a 14-slide pitch deck, designed, built, packaged.",
+      "A revenue cycle website system with a leakage calculator and a 14 slide pitch deck, designed, built, packaged.",
     description:
-      "A complete website kit for medical-billing and RCM companies, five pages, an interactive revenue-leakage calculator as the lead-gen hook, and a matching 14-slide pitch deck in HTML and native PowerPoint. Two full themes, no framework, no build step.",
+      "A complete website kit for medical billing and RCM companies, five pages, an interactive revenue leakage calculator as the lead gen hook, and a matching 14 slide pitch deck in HTML and native PowerPoint. Two full themes, no framework, no build step.",
     deliverables: [
-      "5-page website system",
-      "Revenue-leakage calculator",
-      "14-slide pitch deck (HTML + PPTX)",
+      "5 page website system",
+      "Revenue leakage calculator",
+      "14 slide pitch deck (HTML + PPTX)",
       "Two themes · design tokens",
     ],
     coverImage: "/images/products/averis-d-hero.jpg",
@@ -894,13 +899,13 @@ export const projects: Project[] = [
     featured: true,
     gallery: {
       context:
-        "Self-initiated product, demo content shown, not client work. Built from real revenue-cycle experience: I've worked inside RCM operations, so the kit speaks the industry's language instead of guessing at it.",
+        "Self initiated product, demo content shown, not client work. Built from real revenue cycle experience: I've worked inside RCM operations, so the kit speaks the industry's language instead of guessing at it.",
       tools: ["HTML/CSS/JS", "Design tokens", "SVG illustration", "PowerPoint"],
       chapters: [
         {
           kicker: "01: The Insight",
           heading: "Billing firms sell trust to sceptical clinics.",
-          body: "Medical-billing companies pitch physician practices that have been burned before, so the website has to read established, precise, and financially literate at first glance. Generic agency templates can't do that. Averis is designed around the one number a practice owner cares about: revenue they're leaking right now.",
+          body: "Medical billing companies pitch physician practices that have been burned before, so the website has to read established, precise, and financially literate at first glance. Generic agency templates can't do that. Averis is designed around the one number a practice owner cares about: revenue they're leaking right now.",
           images: [
             { src: "/images/products/averis-d-hero.jpg", label: "Home: Ledger Cream theme", aspect: "wide" },
           ],
@@ -908,19 +913,19 @@ export const projects: Project[] = [
         {
           kicker: "02: The System",
           heading: "A calculator that opens conversations, and a deck that closes them.",
-          body: "The interactive revenue-leakage calculator turns anonymous visitors into qualified conversations. Behind it: services, results, and contact pages built on one token system in two full themes, plus a 14-slide pitch deck shipped in both HTML and editable PowerPoint, the whole sales motion, not just a website.",
+          body: "The interactive revenue leakage calculator lets a visitor enter their claim volume and denial rate and see an estimate of lost revenue, then leads to a contact form. Behind it: services, results, and contact pages built on one token system in two full themes, plus a 14 slide pitch deck shipped in both HTML and editable PowerPoint, the whole sales motion, not just a website.",
           images: [
-            { src: "/images/products/averis-d-calc.jpg", label: "Revenue-leakage calculator", aspect: "wide" },
+            { src: "/images/products/averis-d-calc.jpg", label: "Revenue leakage calculator", aspect: "wide" },
             { src: "/images/products/averis-d-deck.jpg", label: "Pitch deck: slide system", aspect: "wide" },
           ],
         },
         {
           kicker: "03: What Ships",
-          heading: "Hand-drawn visuals, zero stock photos, zero dependencies.",
-          body: "Every visual is CSS and SVG drawn for the kit, nothing stock, nothing generated-looking. Pure HTML/CSS/JS with design tokens at the top of one stylesheet, so a buyer can rebrand the entire system in minutes and deploy it anywhere static files run.",
+          heading: "Hand drawn visuals, zero stock photos, zero dependencies.",
+          body: "Every visual is CSS and SVG drawn for the kit, nothing stock, nothing generated looking. Pure HTML/CSS/JS with design tokens at the top of one stylesheet, so a buyer can rebrand the entire system in minutes and deploy it anywhere static files run.",
           images: [
-            { src: "/images/products/averis-m-hero.jpg", label: "Mobile: first screen", aspect: "tall" },
-            { src: "/images/products/averis-m-services.jpg", label: "Mobile: services", aspect: "tall" },
+            { src: "/images/products/averis-m-hero.jpg", label: "Mobile: first screen", aspect: "phone" },
+            { src: "/images/products/averis-m-services.jpg", label: "Mobile: services", aspect: "phone" },
           ],
         },
       ],
@@ -929,17 +934,17 @@ export const projects: Project[] = [
   {
     id: "lumiere-kit",
     type: "product",
-    title: "Lumière: Med-Spa Lead-Gen Kit",
-    client: "Vaugn Studio · Self-initiated product",
+    title: "Lumière: Med Spa Lead Gen Kit",
+    client: "Vaugn Studio · Self initiated product",
     year: "2026",
     category: ["HEALTHCARE", "WEB KIT", "DESIGN SYSTEM"],
     headline:
-      "A 13-page med-spa lead-gen system in two themes, every page engineered to book consultations.",
+      "A 13 page med spa lead gen system in two themes, every page engineered to book consultations.",
     description:
-      "A complete website system for med spas and aesthetic clinics: landing page, four treatment deep-dives, results gallery with before/afters, pricing and memberships, a six-post blog, and the full supporting cast, in light and dark 'Quiet Luxe' themes.",
+      "A complete website system for med spas and aesthetic clinics: landing page, four treatment deep dives, results gallery with before/afters, pricing and memberships, a six post blog, and the full supporting cast, in light and dark 'Quiet Luxe' themes.",
     deliverables: [
-      "13-page website system",
-      "4 treatment deep-dive templates",
+      "13 page website system",
+      "4 treatment deep dive templates",
       "Before/after results gallery",
       "Light + dark themes",
     ],
@@ -948,13 +953,13 @@ export const projects: Project[] = [
     featured: true,
     gallery: {
       context:
-        "Self-initiated product, demo content shown, not client work. Designed for the aesthetics category, where the brand has to feel as premium as the treatment menu.",
+        "Self initiated product, demo content shown, not client work. Designed for the aesthetics category, where the brand has to feel as premium as the treatment menu.",
       tools: ["HTML/CSS/JS", "Design tokens", "Art direction"],
       chapters: [
         {
           kicker: "01: The Insight",
           heading: "Aesthetics clients buy the feeling before the treatment.",
-          body: "A med spa's website is the first treatment, if it doesn't feel calm, expensive, and safe, the consultation never gets booked. Lumière is built on restraint: generous space, quiet typography, photography-first layouts that let results speak.",
+          body: "A med spa's website is the first treatment, if it doesn't feel calm, expensive, and safe, the consultation never gets booked. Lumière is built on restraint: generous space, quiet typography, photography first layouts that let results speak.",
           images: [
             { src: "/images/products/lumiere-d-hero.jpg", label: "Landing: light theme", aspect: "wide" },
           ],
@@ -962,7 +967,7 @@ export const projects: Project[] = [
         {
           kicker: "02: The System",
           heading: "Thirteen pages, one design language, two moods.",
-          body: "Landing, services, four treatment deep-dives, results, pricing and memberships, blog, about, contact, every page shares one token system that flips between a daylight theme and the dark 'Quiet Luxe' variant without touching a layout.",
+          body: "Landing, services, four treatment deep dives, results, pricing and memberships, blog, about, contact, every page shares one token system that flips between a daylight theme and the dark 'Quiet Luxe' variant without touching a layout.",
           images: [
             { src: "/images/products/lumiere-d-mid.jpg", label: "Treatments: system pages", aspect: "wide" },
             { src: "/images/products/lumiere-d-dark.jpg", label: "Quiet Luxe: dark theme", aspect: "wide" },
@@ -970,11 +975,11 @@ export const projects: Project[] = [
         },
         {
           kicker: "03: What Ships",
-          heading: "Lead-gen wiring, ready for a real clinic.",
+          heading: "Lead gen wiring, ready for a real clinic.",
           body: "Consultation CTAs on every page, a before/after gallery structure that handles real patient photography, and mobile layouts treated as the primary surface, because that's where aesthetics clients actually browse.",
           images: [
-            { src: "/images/products/lumiere-m-hero.jpg", label: "Mobile: first screen", aspect: "tall" },
-            { src: "/images/products/lumiere-m-mid.jpg", label: "Mobile: treatments", aspect: "tall" },
+            { src: "/images/products/lumiere-m-hero.jpg", label: "Mobile: first screen", aspect: "phone" },
+            { src: "/images/products/lumiere-m-mid.jpg", label: "Mobile: treatments", aspect: "phone" },
           ],
         },
       ],
@@ -984,17 +989,17 @@ export const projects: Project[] = [
     id: "eclat-kit",
     type: "product",
     title: "Éclat: Dental Clinic Kit",
-    client: "Vaugn Studio · Self-initiated product",
+    client: "Vaugn Studio · Self initiated product",
     year: "2026",
     category: ["HEALTHCARE", "WEB KIT", "SEO"],
     headline:
-      "A dental-clinic website system with structured data, sitemap, and CRM playbooks built in.",
+      "A dental clinic website system with structured data, sitemap, and CRM playbooks built in.",
     description:
-      "A 13-page dental practice website system, general, cosmetic, aligner, and implant service deep-dives, a smile gallery with before/after sliders, pricing, and blog, shipped with JSON-LD Dentist schema, sitemap, robots, and CRM integration guides.",
+      "A 13 page dental practice website system, general, cosmetic, aligner, and implant service deep dives, a smile gallery with before/after sliders, pricing, and blog, shipped with Dentist structured data, sitemap, robots, and CRM integration guides.",
     deliverables: [
-      "13-page website system",
+      "13 page website system",
       "Smile gallery: before/after sliders",
-      "JSON-LD schema · sitemap · robots",
+      "Structured data · sitemap · robots",
       "CRM integration playbook",
     ],
     coverImage: "/images/products/eclat-d-hero.jpg",
@@ -1002,13 +1007,13 @@ export const projects: Project[] = [
     featured: false,
     gallery: {
       context:
-        "Self-initiated product, demo content shown, not client work. Built to the standard a real dental group would audit it against: structured data, UTM-tracked forms, and CRM-ready lead capture out of the box.",
-      tools: ["HTML/CSS/JS", "JSON-LD", "Design tokens"],
+        "Self initiated product, demo content shown, not client work. Gallery photos and patient wording in the demo are sample content. Built to the standard a real dental group would audit it against: structured data, UTM tracked forms, and CRM ready lead capture out of the box.",
+      tools: ["HTML/CSS/JS", "Structured data", "Design tokens"],
       chapters: [
         {
           kicker: "01: The Insight",
           heading: "Dental is won on credibility and found on Google.",
-          body: "Patients cross-shop dentists the way they cross-shop hotels, reviews, photos, prices. Éclat pairs a trust-first design language ('Porcelain Day' light, 'Midnight Studio' dark) with the technical SEO layer most clinic sites skip entirely.",
+          body: "Patients cross shop dentists the way they cross shop hotels, reviews, photos, prices. Éclat pairs a trust first design language ('Porcelain Day' light, 'Midnight Studio' dark) with the technical SEO layer most clinic sites skip entirely.",
           images: [
             { src: "/images/products/eclat-d-hero.jpg", label: "Home: Porcelain Day theme", aspect: "wide" },
           ],
@@ -1016,18 +1021,18 @@ export const projects: Project[] = [
         {
           kicker: "02: The System",
           heading: "Four service lines, one conversion architecture.",
-          body: "General & preventive, cosmetic, aligners, implants, each deep-dive follows the same evidence-first structure: what it is, what it costs, what the results look like, how to book. The smile gallery's before/after sliders do the persuading.",
+          body: "General & preventive, cosmetic, aligners, implants, each deep dive follows the same evidence first structure: what it is, what it costs, what the results look like, how to book. The smile gallery's before/after sliders do the persuading.",
           images: [
-            { src: "/images/products/eclat-d-mid.jpg", label: "Service deep-dive", aspect: "wide" },
+            { src: "/images/products/eclat-d-mid.jpg", label: "Service deep dive", aspect: "wide" },
           ],
         },
         {
           kicker: "03: What Ships",
           heading: "The unglamorous parts, done properly.",
-          body: "JSON-LD Dentist schema, sitemap.xml, robots.txt, UTM-tagged forms, and a written CRM integration guide, the kit ships the infrastructure a practice manager needs, not just the pixels.",
+          body: "Dentist structured data (schema markup), sitemap.xml, robots.txt, UTM tagged forms, and a written CRM integration guide, the kit ships the infrastructure a practice manager needs, not just the pixels.",
           images: [
-            { src: "/images/products/eclat-m-hero.jpg", label: "Mobile: first screen", aspect: "tall" },
-            { src: "/images/products/eclat-m-mid.jpg", label: "Mobile: smile gallery", aspect: "tall" },
+            { src: "/images/products/eclat-m-hero.jpg", label: "Mobile: first screen", aspect: "phone" },
+            { src: "/images/products/eclat-m-mid.jpg", label: "Mobile: before and after slider, sample images", aspect: "phone" },
           ],
         },
       ],
@@ -1037,15 +1042,15 @@ export const projects: Project[] = [
     id: "maison-kit",
     type: "product",
     title: "Maison: Real Estate Kit",
-    client: "Vaugn Studio · Self-initiated product",
+    client: "Vaugn Studio · Self initiated product",
     year: "2026",
     category: ["REAL ESTATE", "WEB KIT", "BRAND SYSTEM"],
     headline:
-      "A property-agency site system, listings, sell/buy funnels, and a brand that reads established.",
+      "A property agency site system, listings, sell/buy funnels, and a brand that reads established.",
     description:
-      "A website system for real-estate agents and brokerages: home with featured listings, a seller lead-gen funnel, listings and sold galleries, buyer journey, and blog, in 'Estate Ivory' and 'Estate Noir' themes, with CRM integration docs included.",
+      "A website system for real estate agents and brokerages: home with featured listings, a seller lead gen funnel, listings and sold galleries, buyer journey, and blog, in 'Estate Ivory' and 'Estate Noir' themes, with CRM integration docs included.",
     deliverables: [
-      "10-page website system",
+      "10 page website system",
       "Seller valuation lead funnel",
       "Listings · sold · staged galleries",
       "Two themes · CRM playbook",
@@ -1055,13 +1060,13 @@ export const projects: Project[] = [
     featured: false,
     gallery: {
       context:
-        "Self-initiated product, demo content shown, not client work. Real estate is a trust-and-taste category: Maison is designed so a two-person agency presents like an established firm.",
+        "Self initiated product, demo content shown, not client work. Real estate is a trust and taste category: Maison is designed so a two person agency presents like an established firm.",
       tools: ["HTML/CSS/JS", "Design tokens", "Art direction"],
       chapters: [
         {
           kicker: "01: The Insight",
           heading: "Sellers choose the agent whose brand looks like their price bracket.",
-          body: "A homeowner picking an agent is really asking: will this firm make my property look worth more? Maison answers with editorial listing layouts, a staged-to-sell gallery, and typography that borrows from property marketing at the top of the market.",
+          body: "A homeowner picking an agent is really asking: will this firm make my property look worth more? Maison answers with editorial listing layouts, a staged to sell gallery, and typography that borrows from property marketing at the top of the market.",
           images: [
             { src: "/images/products/maison-d-hero.jpg", label: "Home: Estate Ivory theme", aspect: "wide" },
           ],
@@ -1069,7 +1074,7 @@ export const projects: Project[] = [
         {
           kicker: "02: The System",
           heading: "Two funnels: sellers in, buyers through.",
-          body: "The seller valuation funnel is the money page: a low-friction 'what's my home worth' path that feeds the CRM. Around it, listings, sold results, and a buyer journey keep the site useful between campaigns.",
+          body: "The seller valuation funnel is the money page: a low friction 'what's my home worth' path that feeds the CRM. Around it, listings, sold results, and a buyer journey keep the site useful between campaigns.",
           images: [
             { src: "/images/products/maison-d-mid.jpg", label: "Listings: gallery system", aspect: "wide" },
           ],
@@ -1079,8 +1084,8 @@ export const projects: Project[] = [
           heading: "Ready to rebrand, ready to deploy.",
           body: "One token system, two full themes ('Estate Ivory' / 'Estate Noir'), sitemap and robots included, CRM integration documented. Static files, deployable anywhere in an afternoon.",
           images: [
-            { src: "/images/products/maison-m-hero.jpg", label: "Mobile: first screen", aspect: "tall" },
-            { src: "/images/products/maison-m-mid.jpg", label: "Mobile: listings", aspect: "tall" },
+            { src: "/images/products/maison-m-hero.jpg", label: "Mobile: first screen", aspect: "phone" },
+            { src: "/images/products/maison-m-mid.jpg", label: "Mobile: listings", aspect: "phone" },
           ],
         },
       ],
@@ -1090,31 +1095,31 @@ export const projects: Project[] = [
     id: "esprit-kit",
     type: "product",
     title: "Esprit: AI Agency Kit",
-    client: "Vaugn Studio · Self-initiated product",
+    client: "Vaugn Studio · Self initiated product",
     year: "2026",
     category: ["AI / SAAS", "WEB KIT", "DARK UI"],
     headline:
-      "A dark-first landing system for AI agencies: audit funnel included.",
+      "A dark first landing system for AI agencies: audit funnel included.",
     description:
-      "A conversion landing system for AI agencies and productized-service studios: hero, services, metric case-study cards with industry filters, team, pricing, FAQ, and an 'AI Audit' lead-magnet funnel. Dark-first 'Circuit Night' theme with a full light variant.",
+      "A conversion landing system for AI agencies and productized service studios: hero, services, metric case study cards with industry filters, team, pricing, FAQ, and an 'AI Audit' lead magnet funnel. Dark first 'Circuit Night' theme with a full light variant.",
     deliverables: [
-      "8-page landing system",
-      "AI-audit lead funnel",
-      "Case-study card system with filters",
-      "Dark-first + light themes",
+      "8 page landing system",
+      "AI audit lead funnel",
+      "Case study card system with filters",
+      "Dark first + light themes",
     ],
     coverImage: "/images/products/esprit-d-hero.jpg",
     url: "https://esprit-ai-kit-demo.netlify.app",
     featured: false,
     gallery: {
       context:
-        "Self-initiated product, demo content shown, not client work. Built for the AI-services category, where dark UI is the convention and credibility is proven with numbers, not adjectives.",
+        "Self initiated product, demo content shown, not client work. Built for the AI services category, where dark UI is the convention and credibility is proven with numbers, not adjectives.",
       tools: ["HTML/CSS/JS", "Design tokens", "Dark UI"],
       chapters: [
         {
           kicker: "01: The Insight",
           heading: "AI agencies sell certainty in a hype market.",
-          body: "Every AI agency claims transformation; buyers have stopped listening. Esprit leads with the category's visual convention, precise, dark, engineered, and backs it with metric-first case-study cards and a concrete first step: the AI audit.",
+          body: "Every AI agency claims transformation; buyers have stopped listening. Esprit leads with the category's visual convention, precise, dark, engineered, and backs it with metric first case study cards and a concrete first step: the AI audit.",
           images: [
             { src: "/images/products/esprit-d-hero.jpg", label: "Landing: Circuit Night theme", aspect: "wide" },
           ],
@@ -1124,16 +1129,16 @@ export const projects: Project[] = [
           heading: "An audit funnel, not a contact form.",
           body: "The lead magnet is productized: 'The AI Audit' has its own page, its own promise, and its own form, turning a vague 'get in touch' into a defined offer a founder can say yes to.",
           images: [
-            { src: "/images/products/esprit-d-mid.jpg", label: "AI-audit funnel page", aspect: "wide" },
+            { src: "/images/products/esprit-d-mid.jpg", label: "AI audit funnel page", aspect: "wide" },
           ],
         },
         {
           kicker: "03: What Ships",
           heading: "Filterable proof, themeable everything.",
-          body: "Case-study cards filter by industry, pricing is transparent, and the whole system runs on tokens, 'Circuit Night' dark by default with a complete 'Circuit Day' light variant for studios that want to break convention.",
+          body: "Case study cards filter by industry, pricing is transparent, and the whole system runs on tokens, 'Circuit Night' dark by default with a complete 'Circuit Day' light variant for studios that want to break convention.",
           images: [
-            { src: "/images/products/esprit-m-hero.jpg", label: "Mobile: first screen", aspect: "tall" },
-            { src: "/images/products/esprit-m-mid.jpg", label: "Mobile: case studies", aspect: "tall" },
+            { src: "/images/products/esprit-m-hero.jpg", label: "Mobile: first screen", aspect: "phone" },
+            { src: "/images/products/esprit-m-mid.jpg", label: "Mobile: case studies", aspect: "phone" },
           ],
         },
       ],
@@ -1143,16 +1148,16 @@ export const projects: Project[] = [
     id: "sop-quest",
     type: "product",
     title: "SOP Quest",
-    client: "Vaugn Studio · Self-initiated product",
+    client: "Vaugn Studio · Self initiated product",
     year: "2026",
     category: ["PRODUCT DESIGN", "PWA", "UX"],
     headline:
       "SOPs turned into a game, a gamified quest tracker, live as an installable PWA.",
     description:
-      "'The System', a gamified SOP and task tracker. Import a standard-operating-procedure document and it becomes quests with XP, hunter ranks, level-up moments, streaks, and a calendar Gate Map. Designed, built, and shipped as an installable offline-first PWA.",
+      "'The System', a gamified SOP and task tracker. Import a standard operating procedure document and it becomes quests with XP, hunter ranks, level up moments, streaks, and a calendar Gate Map. Designed, built, and shipped as an installable offline first PWA.",
     deliverables: [
       "Product concept & UX",
-      "Game-system design (XP · ranks · streaks)",
+      "Game system design (XP · ranks · streaks)",
       "Full UI design system",
       "PWA build: offline, installable",
     ],
@@ -1161,7 +1166,7 @@ export const projects: Project[] = [
     url: "https://the-system-vaugn.netlify.app",
     gallery: {
       context:
-        "Self-initiated product, live and installable today. The design problem: SOPs are the most important documents in a business and the least likely to be followed. The answer: make following them feel like progress.",
+        "Self initiated product, live and installable today. The design problem: SOPs are the most important documents in a business and the least likely to be followed. The answer: make following them feel like progress.",
       tools: ["UX design", "UI system", "Vanilla JS", "PWA"],
       chapters: [
         {
@@ -1175,7 +1180,7 @@ export const projects: Project[] = [
         {
           kicker: "02: The System",
           heading: "Import a document, get a game.",
-          body: "A markdown SOP parses into quests automatically. Completing steps earns XP; XP moves you through hunter ranks E to S; the Gate Map turns your calendar into territory. Level-ups get a cinematic moment, because finishing real work should feel like one.",
+          body: "A markdown SOP parses into quests automatically. Completing steps earns XP; XP moves you through hunter ranks E to S; the Gate Map turns your calendar into territory. Level ups get a cinematic moment, because finishing real work should feel like one.",
           images: [
             { src: "/images/products/sop-quest-d-mid.jpg", label: "Progression: ranks & gates", aspect: "wide" },
           ],
@@ -1183,10 +1188,10 @@ export const projects: Project[] = [
         {
           kicker: "03: What Ships",
           heading: "A real product, running in production.",
-          body: "Offline-first PWA with strict CSP, installable on any device, data stored locally. Designed, built, and deployed solo, visit the live app and install it.",
+          body: "Offline first PWA with strict CSP, installable on any device, data stored locally. Designed, built, and deployed solo, visit the live app and install it.",
           images: [
-            { src: "/images/products/sop-quest-m-hero.jpg", label: "Mobile: installed PWA", aspect: "tall" },
-            { src: "/images/products/sop-quest-m-mid.jpg", label: "Mobile: quest detail", aspect: "tall" },
+            { src: "/images/products/sop-quest-m-hero.jpg", label: "Mobile: installed PWA", aspect: "phone" },
+            { src: "/images/products/sop-quest-m-mid.jpg", label: "Mobile: quest detail", aspect: "phone" },
           ],
         },
       ],
@@ -1196,30 +1201,30 @@ export const projects: Project[] = [
     id: "studio-os",
     type: "product",
     title: "Studio OS",
-    client: "Vaugn Studio · Self-initiated product",
+    client: "Vaugn Studio · Self initiated product",
     year: "2026",
     category: ["PRODUCT DESIGN", "DASHBOARD", "CRM"],
     headline:
-      "A freelancer's business OS, 19-metric dashboard, full CRM, and a reports engine, no backend.",
+      "A freelancer's business OS, 19 metric dashboard, full CRM, and a reports engine, no backend.",
     description:
-      "A complete business operating system for freelancers: a 19-metric dashboard across finance, business, content, and health; a sales-pipeline CRM with 8 stages; and a reports engine with hand-rolled charts and a rule-based insights advisor. Local-first, three themes, white-label ready.",
+      "A complete business operating system for freelancers: a 19 metric dashboard across finance, business, content, and health; a sales pipeline CRM with 8 stages; and a reports engine with hand rolled charts and a rule based insights advisor. Local first, three themes, white label ready.",
     deliverables: [
       "Product design: dashboard · CRM · reports",
-      "Hand-rolled SVG chart system",
-      "Rule-based insights engine",
-      "PWA · white-label theming",
+      "Hand rolled SVG chart system",
+      "Rule based insights engine",
+      "PWA · white label theming",
     ],
     coverImage: "/images/products/studio-os-d-hero.jpg",
     featured: true,
     gallery: {
       context:
-        "Self-initiated product. I run my own business on the same engine every day, Studio OS is that personal dashboard, productized: guided tours, help center, sample-data mode, and Google Sheets sync included.",
+        "Self initiated product. I run my own business on the same engine every day, Studio OS is that personal dashboard, productized: guided tours, help center, sample data mode, and Google Sheets sync included.",
       tools: ["Product design", "Data visualization", "Vanilla JS", "PWA"],
       chapters: [
         {
           kicker: "01: The Insight",
           heading: "Freelancers fly blind between invoices.",
-          body: "Most independents track money in one app, leads in another, and everything else nowhere. Studio OS puts the whole business on one dark-premium surface, the 19 numbers that actually describe how the month is going.",
+          body: "Most independents track money in one app, leads in another, and everything else nowhere. Studio OS puts the whole business on one dark premium surface, the 19 numbers that actually describe how the month is going.",
           images: [
             { src: "/images/products/studio-os-d-hero.jpg", label: "Dashboard: 19 metrics", aspect: "wide" },
           ],
@@ -1227,7 +1232,7 @@ export const projects: Project[] = [
         {
           kicker: "02: The System",
           heading: "Dashboard, pipeline, reports: one design language.",
-          body: "A 19-field CRM moves leads through 8 stages; the reports engine draws its charts in hand-rolled SVG and reads the data back to you through a rule-based insights advisor. No backend, no accounts, everything lives in the browser.",
+          body: "A 19 field CRM moves leads through 8 stages; the reports engine draws its charts in hand rolled SVG and reads the data back to you through a rule based insights advisor. No backend, no accounts, everything lives in the browser.",
           images: [
             { src: "/images/products/studio-os-d-crm.jpg", label: "Pipeline CRM", aspect: "wide" },
             { src: "/images/products/studio-os-d-reports.jpg", label: "Reports & insights engine", aspect: "wide" },
@@ -1236,7 +1241,7 @@ export const projects: Project[] = [
         {
           kicker: "03: What Ships",
           heading: "Built to sell, built to rebrand.",
-          body: "White-label theming, guided onboarding tours, a help center, sample-data sandbox, and optional Google Sheets sync via a bundled Apps Script. Designed and engineered as a sellable product from the first commit.",
+          body: "White label theming, guided onboarding tours, a help center, sample data sandbox, and optional Google Sheets sync via a bundled Apps Script. Designed and engineered as a sellable product from the first commit.",
         },
       ],
     },
@@ -1245,33 +1250,33 @@ export const projects: Project[] = [
     id: "outreach-cockpit",
     type: "product",
     title: "Outreach Cockpit",
-    client: "Vaugn Studio · Self-initiated product",
+    client: "Vaugn Studio · Self initiated product",
     year: "2026",
     category: ["PRODUCT DESIGN", "CRM", "PWA"],
     headline:
-      "A local-first cold-outreach CRM, pipeline, insights engine, Sheets sync, designed and shipped solo.",
+      "A local first cold outreach CRM, pipeline, insights engine, Sheets sync, designed and shipped solo.",
     description:
-      "An internal tool I designed and built for my own client outreach: a multi-industry cold-outreach CRM with editable leads, one-tap Gmail and Instagram actions, a five-stage pipeline, follow-up scheduling, KPI tiles, and a rule-based insights advisor. In daily use.",
+      "An internal tool I designed and built for my own client outreach: a multi industry cold outreach CRM with editable leads, one tap Gmail and Instagram actions, a five stage pipeline, follow up scheduling, KPI tiles, and a rule based insights advisor. In daily use.",
     deliverables: [
       "Product & UX design",
-      "Pipeline + follow-up system",
-      "Rule-based insights advisor",
+      "Pipeline + follow up system",
+      "Rule based insights advisor",
       "PWA · Google Sheets sync",
     ],
     coverImage: "/images/products/outreach-cockpit-d-hero.jpg",
     featured: true,
     caseStudy: {
       problem:
-        "Cold outreach dies in spreadsheets. Rows don't tell you who to contact next, follow-ups slip, and every send means re-typing the same message into Gmail. I needed a tool that made the next action obvious and instant, and no off-the-shelf CRM was worth its overhead for a one-person studio.",
+        "Cold outreach dies in spreadsheets. Rows don't tell you who to contact next, follow ups slip, and every send means retyping the same message into Gmail. I needed a tool that made the next action obvious and instant, and no off the shelf CRM was worth its overhead for a one person studio.",
       role: [
         "Product strategy & UX: solo",
         "UI design system: solo",
         "Build & ship (vanilla JS PWA): solo",
       ],
       strategy:
-        "Design for the next five minutes, not the quarterly report. Every screen answers one question: who do I contact right now? Leads carry pre-filled Gmail and Instagram action links, the Due view surfaces slipping follow-ups, and a rule-based insights advisor reads the pipeline and says what to fix. Local-first by principle, outreach data is sensitive, so it never leaves the browser unless you sync it to your own Google Sheet.",
+        "Design for the next five minutes, not the quarterly report. Every screen answers one question: who do I contact right now? Leads carry prefilled Gmail and Instagram action links, the Due view surfaces slipping follow ups, and a rule based insights advisor reads the pipeline and says what to fix. Local first by principle, outreach data is sensitive, so it never leaves the browser unless you sync it to your own Google Sheet.",
       designSystem: {
-        body: "The same dark-premium design language as Studio OS, KPI tiles, stage chips, and an editable lead drawer, tuned for speed: everything is one tap from the pipeline. Shown here with sample data; the real pipeline stays private.",
+        body: "The same dark premium design language as Studio OS, KPI tiles, stage chips, and an editable lead drawer, tuned for speed: everything is one tap from the pipeline. Shown here with sample data; the real pipeline stays private.",
         images: [
           { src: "/images/products/outreach-cockpit-d-hero.jpg", label: "Cockpit: insights & KPIs (sample data)", aspect: "wide" },
         ],
@@ -1279,11 +1284,11 @@ export const projects: Project[] = [
       execution: [
         {
           heading: "The insights advisor",
-          body: "A rule engine watches the numbers, reply rates by industry, follow-up debt, stage bottlenecks, and turns them into plain-language advice. It's the difference between a database and a cockpit: the tool tells you where to point the plane.",
+          body: "A rule engine watches the numbers, reply rates by industry, follow up debt, stage bottlenecks, and turns them into plain language advice. It's the difference between a database and a cockpit: the tool tells you where to point the plane.",
           images: [
             { src: "/images/products/outreach-cockpit-d-insights.jpg", label: "Pipeline: lead cards (sample data)", aspect: "wide" },
-            { src: "/images/products/outreach-cockpit-m-hero.jpg", label: "Mobile: pipeline", aspect: "tall" },
-            { src: "/images/products/outreach-cockpit-m-mid.jpg", label: "Mobile: lead actions", aspect: "tall" },
+            { src: "/images/products/outreach-cockpit-m-hero.jpg", label: "Mobile: pipeline", aspect: "phone" },
+            { src: "/images/products/outreach-cockpit-m-mid.jpg", label: "Mobile: lead actions", aspect: "phone" },
           ],
         },
       ],
@@ -1297,15 +1302,15 @@ export const projects: Project[] = [
     id: "denial-defense",
     type: "product",
     title: "Denial Defense System",
-    client: "Vaugn Studio · Self-initiated product",
+    client: "Vaugn Studio · Self initiated product",
     year: "2025",
     category: ["HEALTHCARE", "PRODUCT DESIGN", "SOP TOOLKIT"],
     headline:
       "The first product I built: a medical billing SOP toolkit with a live demo.",
     description:
-      "A complete medical-billing SOP toolkit built from real revenue-cycle experience: 25 step-by-step SOPs, an interactive offline dashboard, denial and A/R trackers, and appeal letter templates. Designed, built and packaged, with a live public demo.",
+      "A complete medical billing SOP toolkit built from real revenue cycle experience: 25 step by step SOPs, an interactive offline dashboard, denial and A/R trackers, and appeal letter templates. Designed, built and packaged, with a live public demo.",
     deliverables: [
-      "25 revenue-cycle SOPs",
+      "25 revenue cycle SOPs",
       "Interactive offline dashboard",
       "Denial & A/R trackers",
       "Appeal letter templates",
@@ -1315,12 +1320,12 @@ export const projects: Project[] = [
     url: "https://denial-defense-demo.netlify.app",
     gallery: {
       context:
-        "Self-initiated product with a live demo. Built from 2.5 years inside US revenue-cycle operations, the SOPs are the playbook I ran, productized for billing teams that need process without hiring consultants.",
+        "Self initiated product with a live demo. Built from 2.5 years inside US revenue cycle operations, the SOPs are the playbook I ran, productized for billing teams that need process without hiring consultants.",
       tools: ["Product design", "HTML/CSS/JS", "Information design"],
       images: [
         { src: "/images/products/denial-defense-card.png", label: "The toolkit: product overview", aspect: "wide" },
         { src: "/images/products/dd-demo-home.png", label: "Dashboard: live demo", aspect: "wide" },
-        { src: "/images/products/dd-demo-sops.png", label: "SOP library: live demo", aspect: "wide" },
+        { src: "/images/products/dd-demo-sops.jpg", label: "Overview: live demo", aspect: "wide" },
       ],
     },
   },

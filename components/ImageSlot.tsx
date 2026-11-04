@@ -163,7 +163,7 @@ export default function ImageSlot({
         {asset.label}
       </span>
       <span className="h-px w-8 bg-line" aria-hidden />
-      <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-dim/60">
+      <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-dim">
         asset slot
       </span>
     </figure>

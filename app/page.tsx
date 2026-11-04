@@ -375,9 +375,9 @@ export default function Home() {
                 retail.
               </p>
               <p>
-                Before and alongside design, I worked in US healthcare revenue
-                cycle operations: claims, denials and payer follow up. It is
-                why healthcare clients are a good fit for me.
+                I also worked in US healthcare billing, handling claims,
+                denials and payer follow up. It is why healthcare clients are
+                a good fit for me.
               </p>
             </div>
             <ol className="mt-10 grid max-w-2xl border-t border-line">

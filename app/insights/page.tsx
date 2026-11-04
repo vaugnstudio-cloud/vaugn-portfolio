@@ -27,8 +27,8 @@ export default function InsightsPage() {
             Notes from <em>real practice</em>.
           </h1>
           <p className="mt-6 max-w-xl text-lg text-ink2">
-            Short reads on what actually makes trust-critical brands work, no
-            theory, no filler.
+            Short reads on what actually makes brands that depend on trust
+            work. No theory, no filler.
           </p>
         </FadeIn>
 

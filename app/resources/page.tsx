@@ -62,7 +62,7 @@ export default function ResourcesPage() {
                 ) : (
                   <div className="mt-6 flex aspect-[16/9] w-full flex-col items-center justify-center gap-2 rounded-xl border border-dashed border-line bg-raised">
                     <span className="font-display text-xl italic text-ink2">{p.name}</span>
-                    <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-dim/70">
+                    <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-dim">
                       in production
                     </span>
                   </div>

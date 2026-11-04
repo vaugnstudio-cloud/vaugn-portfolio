@@ -32,6 +32,12 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  // The old restaurant pitch page (Nov 2026: freelance avoids restaurant work
+  // that overlaps the agency role) sends visitors to the case archive. Not
+  // permanent, so the page can come back if the policy changes.
+  async redirects() {
+    return [{ source: "/hospitality", destination: "/work", permanent: false }];
+  },
   async headers() {
     return [
       {

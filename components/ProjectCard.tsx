@@ -51,7 +51,7 @@ const BADGE: Record<Project["type"], string> = {
 const PROVENANCE: Record<Project["type"], string> = {
   "case-study": "Client work",
   project: "Client work",
-  product: "Self-initiated product",
+  product: "Self initiated product",
   branding: "Concept study",
   "graphic-design": "Studio system",
 };

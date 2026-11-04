@@ -17,7 +17,7 @@ export const testimonials: Testimonial[] = [
   {
     // DRAFT — send to Your SocialChef leadership for sign-off
     quote:
-      "Vaugn carried the creative for 20+ of our client accounts at once, and every single one looked like it had its own dedicated designer. Fast, consistent, and completely dependable.",
+      "Vaugn has worked across more than 20 of our client accounts, and every one looked like it had its own dedicated designer. Fast, consistent, and completely dependable.",
     name: "",
     role: "Your SocialChef: leadership",
     project: "your-socialchef",

@@ -21,14 +21,14 @@ export const niches: Niche[] = [
     label: "Healthcare",
     metaTitle: "Healthcare Brand & Web Design",
     metaDescription:
-      "Brand identity and websites for clinics, therapy practices, dental clinics, med-spas, NDIS providers, and health businesses, designed to earn patient trust from the first glance.",
+      "Brand identity and websites for clinics, therapy practices, dental clinics, med spas, NDIS providers, and health businesses, designed to earn patient trust from the first glance.",
     headline: "Patients decide if they *trust* you before they read a word.",
     subheadline:
-      "Brand identity and websites for clinics, therapy practices, dental & specialist clinics, med-spas, NDIS providers, and health businesses, from a designer with real healthcare-industry experience, including medical billing and RCM.",
+      "Brand identity and websites for clinics, therapy practices, dental & specialist clinics, med spas, NDIS providers, and health businesses, from a designer with real healthcare industry experience, including medical billing and RCM.",
     pains: [
       {
         title: "Your website feels colder than your care",
-        body: "Healthcare sites default to sterile templates or stock-photo warmth. Neither earns trust. The design has to feel the way your waiting room should, calm, competent, human.",
+        body: "Healthcare sites default to sterile templates or stock photo warmth. Neither earns trust. The design has to feel the way your waiting room should, calm, competent, human.",
       },
       {
         title: "Credibility isn't optional in this industry",
@@ -36,7 +36,7 @@ export const niches: Niche[] = [
       },
       {
         title: "Generic designers don't speak healthcare",
-        body: "I've worked inside the industry, including US medical billing and RCM, so compliance-aware content, patient journeys, and clinical credibility aren't new concepts I learn on your project.",
+        body: "I've worked inside the industry, including US medical billing and RCM, so compliance aware content, patient journeys, and clinical credibility aren't new concepts I learn on your project.",
       },
     ],
     projectIds: [
@@ -51,15 +51,15 @@ export const niches: Niche[] = [
     faq: [
       {
         q: "Do you understand healthcare compliance constraints?",
-        a: "I design with compliance awareness, careful claims, privacy-conscious forms, accessible layouts, and flag anything that needs your compliance officer's review. Final regulatory sign-off always stays with you.",
+        a: "I design with compliance awareness, careful claims, privacy conscious forms, accessible layouts, and flag anything that needs your compliance officer's review. Final regulatory sign off always stays with you.",
       },
       {
         q: "Can you work with our existing brand?",
-        a: "Yes. Some healthcare projects are full identities, others are website-only builds on an existing brand. The package flexes either way.",
+        a: "Yes. Some healthcare projects are full identities, others are website only builds on an existing brand. The package flexes either way.",
       },
       {
         q: "What healthcare work have you actually shipped?",
-        a: "MedSync (mental health, live), Ozmax Care (NDIS), InBloom Therapy, and a full US healthcare-billing marketing suite for ACEF Enterprises. The case studies are on this site, most with live links you can visit.",
+        a: "MedSync (mental health, live), Ozmax Care (NDIS), InBloom Therapy, and a full US healthcare billing marketing suite for ACEF Enterprises. The case studies are on this site, most with live links you can visit.",
       },
     ],
   },
@@ -74,7 +74,7 @@ export const niches: Niche[] = [
       "Brand systems, websites with ordering, and social content engines for restaurants, cafés, boutique hotels, breweries, and venues. Built as systems that keep working week after week, proven across live Australian venues.",
     pains: [
       {
-        title: "One-off graphics don't feed a feed",
+        title: "One off graphics don't feed a feed",
         body: "A logo isn't a marketing system. Venues need weekly content, menu drops, event promos, and a website that takes orders, all speaking one visual language. I build the system, not just the pieces.",
       },
       {

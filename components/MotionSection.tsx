@@ -54,7 +54,7 @@ function MotionSlot({ item, showreel = false }: { item: MotionItem; showreel?: b
         {item.title}
       </span>
       <span className="h-px w-8 bg-line" aria-hidden />
-      <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-dim/60">
+      <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-dim">
         {item.kind} · in production
       </span>
     </figure>

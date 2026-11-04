@@ -104,6 +104,11 @@ const TRAINING = [
   "Udemy Graphic Design Masterclass",
 ];
 
+// Clickable links: Chrome turns <a href> into real PDF link annotations.
+const MAIL = `<a href="mailto:${CONTACT.email}">${CONTACT.email}</a>`;
+const SITE = `<a href="https://${CONTACT.site}">${CONTACT.site}</a>`;
+const LI = `<a href="https://${CONTACT.linkedin}">${CONTACT.linkedin}</a>`;
+
 const esc = (t) => t.replace(/&/g, "&amp;").replace(/</g, "&lt;");
 const FONTS = `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..700&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">`;
 
@@ -167,11 +172,11 @@ const designed = `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">${F
       <p class="mono role">Senior Brand &amp; Web Designer · Remote</p>
     </div>
     <div class="contact">
-      <div><b>${CONTACT.email}</b></div>
+      <div><b>${MAIL}</b></div>
       <div>${CONTACT.phone}</div>
       <div>${CONTACT.place}</div>
-      <div>${CONTACT.site}</div>
-      <div>${CONTACT.linkedin}</div>
+      <div>${SITE}</div>
+      <div>${LI}</div>
     </div>
   </header>
   <div class="facts">
@@ -188,7 +193,7 @@ const designed = `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">${F
       <div class="card">
         <h2 class="mono">Selected work</h2>
         ${PROJECTS.map(([t, d, m]) => `<div class="proj"><p class="t">${esc(t)}</p><p class="d">${esc(d)}</p><p class="mono m">${esc(m)}</p></div>`).join("")}
-        <p class="kv d" style="margin-top:3mm">Full cases with my part in each: ${CONTACT.site}</p>
+        <p class="kv d" style="margin-top:3mm">Full cases with my part in each: ${SITE}</p>
       </div>
     </aside>
   </div>
@@ -214,7 +219,7 @@ const designed = `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">${F
       </div>
     </aside>
   </div>
-  <footer class="foot mono"><span>${CONTACT.email} · ${CONTACT.phone}</span><span>Page 2 of 2</span></footer>
+  <footer class="foot mono"><span>${MAIL} · ${CONTACT.phone}</span><span>Page 2 of 2</span></footer>
 </div>
 </body></html>`;
 
@@ -223,7 +228,9 @@ const plain = `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">${FONT
 <style>
   @page { size: A4; margin: 16mm 18mm; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Instrument Sans', Arial, sans-serif; font-size: 10pt; line-height: 1.45; color: #111; }
+  /* Arial: a standard system font, so screening tools extract whole words */
+  body { font-family: Arial, Helvetica, sans-serif; font-size: 10pt; line-height: 1.45; color: #111; }
+  a { color: inherit; text-decoration: none; }
   h1 { font-size: 18pt; font-weight: 600; }
   .sub { margin-top: 1mm; font-size: 10.5pt; }
   .contact { margin-top: 2mm; font-size: 9.5pt; }
@@ -236,7 +243,7 @@ const plain = `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">${FONT
 </style></head><body>
   <h1>Vaugn Jasper Almeida</h1>
   <p class="sub">Senior Brand &amp; Web Designer</p>
-  <p class="contact">Email: ${CONTACT.email} | Phone: ${CONTACT.phone} | Location: ${CONTACT.place}<br>Portfolio: ${CONTACT.site} | LinkedIn: ${CONTACT.linkedin}</p>
+  <p class="contact">Email: ${MAIL} | Phone: ${CONTACT.phone} | Location: ${CONTACT.place}<br>Portfolio: ${SITE} | LinkedIn: ${LI}</p>
   <h2>Summary</h2>
   <p>${esc(SUMMARY)}</p>
   <h2>Experience</h2>

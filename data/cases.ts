@@ -200,7 +200,7 @@ export const selectedCases: Project[] = [
     },
     caseStudy: {
       problem:
-        "The Hill ran two lunch promotions: Seniors Lunch, Monday to Friday, and Lunch at The Hill. Each one needed posters, a Google graphic and vertical stories that work as one set.",
+        "I prepared designs for two lunch campaigns at The Hill: Seniors Lunch, Monday to Friday, and Lunch at The Hill. Each campaign needed posters, a Google graphic and vertical stories that work as one set.",
       role: [
         "Seniors Lunch: worked across the poster, Google and story formats",
         "Seniors Lunch: refined the title treatment so it matches across the campaign",

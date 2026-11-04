@@ -120,7 +120,7 @@ export default function ContactPage() {
               <div className="rounded-2xl border border-line bg-surface p-8">
                 <p className="eyebrow">Prefer to talk?</p>
                 <h2 className="mt-3 font-display text-2xl text-ink">
-                  Book a 15-minute intro call
+                  Book a 15 minute intro call
                 </h2>
                 <p className="mt-3 text-sm leading-relaxed text-ink2">
                   A short conversation about what you need and whether I&apos;m
@@ -139,7 +139,7 @@ export default function ContactPage() {
               <div className="rounded-2xl border border-dashed border-line bg-surface p-8">
                 <p className="eyebrow">Booking coming soon</p>
                 <p className="mt-3 text-sm leading-relaxed text-ink2">
-                  A 15-minute intro-call scheduler is on its way. Until then,
+                  A 15 minute intro call scheduler is on its way. Until then,
                   the form or email works just as fast.
                 </p>
               </div>

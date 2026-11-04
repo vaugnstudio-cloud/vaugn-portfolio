@@ -82,7 +82,7 @@ export default function ServicesPage() {
           <FadeIn>
             <p className="eyebrow">How we&apos;ll work together</p>
             <h2 className="display mt-3 max-w-2xl text-4xl text-ink sm:text-5xl">
-              A process built to <em>de-risk</em> hiring a solo designer.
+              A process built to make hiring a solo designer <em>low risk</em>.
             </h2>
           </FadeIn>
           <div className="mt-12">
