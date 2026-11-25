@@ -20,6 +20,7 @@ import {
   RESPONSE_PROMISE,
   mailto,
 } from "@/data/site";
+import { INDUSTRIES } from "@/data/business";
 
 // Literal class maps so Tailwind can see every class at build time.
 const SPAN: Record<NonNullable<ShowcaseImage["span"]>, string> = {
@@ -403,6 +404,51 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ═══ For business owners: teaser into /for-business ═══ */}
+      <section className="border-t border-line">
+        <div className="mx-auto max-w-[1240px] px-5 py-16 sm:px-8 lg:py-20">
+          <FadeIn>
+            <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
+              <div className="lg:col-span-7">
+                <p className="eyebrow">For business owners</p>
+                <h2 className="display mt-3 text-4xl text-ink sm:text-5xl">
+                  What can I do for <em>your business</em>?
+                </h2>
+                <p className="mt-4 max-w-xl text-lg leading-relaxed text-ink2">
+                  Websites, social media, posters, ads and branding. Pick your
+                  industry to see what I would make and how it helps.
+                </p>
+              </div>
+              <div className="lg:col-span-5 lg:text-right">
+                <Link
+                  href="/for-business"
+                  className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3.5 font-medium text-accent-ink transition-opacity hover:opacity-90"
+                >
+                  See what I can do <span aria-hidden>→</span>
+                </Link>
+              </div>
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.08}>
+            <div className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+              {INDUSTRIES.map((ind, i) => (
+                <Link
+                  key={ind.id}
+                  href={`/for-business#${ind.id}`}
+                  className="group flex items-baseline gap-3 bg-bg px-5 py-4 transition-colors hover:bg-surface"
+                >
+                  <span className="font-mono text-xs text-dim group-hover:text-accent">{pad(i + 1)}</span>
+                  <span className="font-display text-lg font-semibold tracking-tight text-ink group-hover:text-accent">
+                    {ind.short}
+                  </span>
+                  <span aria-hidden className="ml-auto text-dim transition-transform group-hover:translate-x-0.5 group-hover:text-accent">→</span>
+                </Link>
+              ))}
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* ═══ Two routes: hiring, or a project ═══ */}
       <section className="border-t border-line bg-surface">
         <div className="mx-auto grid max-w-[1240px] gap-px px-5 py-16 sm:px-8 lg:grid-cols-2 lg:py-20">
@@ -441,8 +487,8 @@ export default function Home() {
               in Framer, brand guides and campaign graphics.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Link href="/services" className="rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-bg hover:bg-accent hover:text-accent-ink">
-                See services
+              <Link href="/for-business" className="rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-bg hover:bg-accent hover:text-accent-ink">
+                What I can do for you
               </Link>
               <Link href="/contact" className="rounded-full border border-ink/70 px-5 py-2.5 text-sm font-medium text-ink hover:bg-ink hover:text-bg">
                 Tell me about it

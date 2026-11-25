@@ -106,7 +106,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "Who do you take projects from?",
-    a: "Mainly healthcare, allied health and therapy practices, plus other service businesses such as trades and professional services. Restaurant and hospitality work stays with my agency role.",
+    a: "Mainly healthcare, dental, wellness and therapy practices, plus gyms, restaurants and cafés, real estate, trades and professional services. See the For business page for what I make in each.",
   },
   {
     q: "You work with AI tools. Will my brand look AI generated?",

@@ -132,6 +132,23 @@ dialog.lightbox::backdrop {
   }
 }
 
+/* Panel swap on the For your business page (industry and service tabs). */
+@media (prefers-reduced-motion: no-preference) {
+  .swap-in {
+    animation: swap-in 0.38s ease-out both;
+  }
+  @keyframes swap-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
 /* Scroll reveal: enhancement only. Content is visible by default; the
    hidden state exists ONLY when JS is confirmed running (html.js, set by the
    inline observer script in layout.tsx) and motion is allowed. Elements

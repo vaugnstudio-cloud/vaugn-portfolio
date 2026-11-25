@@ -64,7 +64,16 @@ export default function ServicesPage() {
 
         {/* Niche pointers */}
         <FadeIn className="mt-16">
-          <div className="grid gap-4">
+          <div className="grid gap-4 md:grid-cols-2">
+            <Link
+              href="/for-business"
+              className="group rounded-2xl border border-line bg-surface p-8 transition-colors hover:bg-raised"
+            >
+              <p className="eyebrow">Business owner?</p>
+              <p className="mt-3 font-display text-2xl text-ink group-hover:text-accent">
+                See what I can do for your industry →
+              </p>
+            </Link>
             <Link
               href="/healthcare"
               className="group rounded-2xl border border-line bg-surface p-8 transition-colors hover:bg-raised"

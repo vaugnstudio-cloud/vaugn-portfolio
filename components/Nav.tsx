@@ -9,6 +9,7 @@ import { CV_URL } from "@/data/site";
 const LINKS = [
   { href: "/work", label: "Work" },
   { href: "/about", label: "About" },
+  { href: "/for-business", label: "For business" },
   { href: "/services", label: "Services" },
   { href: "/contact", label: "Contact" },
 ] as const;
