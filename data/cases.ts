@@ -383,6 +383,19 @@ export const selectedCases: Project[] = [
       ],
       execution: [
         {
+          heading: "Coffee N Chaos: free coffee week",
+          body: "A whole week of free coffee at Coffee N Chaos, a new café in Beveridge. One campaign across a feed poster, three stories and a reel, set in the café's own type and cup colours. When the dates were confirmed, I updated every piece and rebuilt the reel in After Effects with live text, so the copy stays easy to change.",
+          images: [
+            { src: "/images/cnc/vertical-poster.jpg", label: "Coffee N Chaos: feed poster, a whole week of free coffee", aspect: "tall" },
+            { src: "/images/cnc/story-1.jpg", label: "Coffee N Chaos: story, the week announced", aspect: "story" },
+            { src: "/images/cnc/story-3.jpg", label: "Coffee N Chaos: story, free coffee week starts today", aspect: "story" },
+            { src: "/images/cnc/story-2.jpg", label: "Coffee N Chaos: story, last day of free coffee", aspect: "story" },
+          ],
+          videos: [
+            { src: "/videos/cnc/reel.mp4", poster: "/images/cnc/reel-poster.jpg", label: "Coffee N Chaos: reel, the cups and the dates" },
+          ],
+        },
+        {
           heading: "Recent client work",
           body: "A slice of September and October 2026, each piece set in that client's own type and colour. Most use the client's own photography. Where a shoot did not cover a shot, the image was extended or restaged with AI tools and art directed by me.",
           images: [

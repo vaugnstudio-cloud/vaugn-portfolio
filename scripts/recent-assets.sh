@@ -104,3 +104,12 @@ done
 # ── pass 4: Augello's pinned-post series replaces the organic posters ──
 for n in 1 2 3 4 5 6; do ffmpeg -v error -y -i "$Y/Augello's/Pinned Post 2/Vertical Poster $n.jpg" -vf "scale=1080:1350" -q:v 4 "$OUT/augellos/pinned-$n.jpg"; done
 ffmpeg -v error -y -i "$Y/Augello's/Pinned Post 1/Vertical Poster 4.jpg" -vf "scale=1080:1350" -q:v 4 "$OUT/augellos/pinned-7.jpg"
+
+# ── Coffee N Chaos: free coffee week (Nov 2026) ─────────────
+C="$Y/Coffee N Chaos/Updates"
+mkdir -p "$OUT/cnc" "$VID/cnc"
+ffmpeg -v error -y -i "$C/Vertical Poster 1.jpg" -vf "scale=1080:1350" -q:v 4 "$OUT/cnc/vertical-poster.jpg"
+for n in 1 2 3; do ffmpeg -v error -y -i "$C/Story $n.jpg" -vf "scale=810:1440" -q:v 4 "$OUT/cnc/story-$n.jpg"; done
+# reel: silent 720p copy (music licence covers the client's channels, not a public portfolio)
+ffmpeg -v error -y -i "$C/Reel 1.mp4" -an -vf "scale=720:1280" -c:v libx264 -preset slow -crf 23 -pix_fmt yuv420p -movflags +faststart "$VID/cnc/reel.mp4"
+ffmpeg -v error -y -i "$C/Reel 1.mp4" -vf "select=eq(n\,150),scale=720:1280" -frames:v 1 -q:v 4 "$OUT/cnc/reel-poster.jpg"

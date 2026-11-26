@@ -65,6 +65,34 @@ function ImageGrid({ images }: { images: ImageAsset[] }) {
     else groups.push({ fam, items: [img] });
   }
 
+  // A single 4:5 poster followed by three 9:16 stories shares one row. The
+  // poster column is 1.422x a story column (1.778 / 1.25), so all four end
+  // at the same height and nothing is cropped.
+  if (
+    groups.length === 2 &&
+    groups[0].fam === "tile" &&
+    groups[0].items.length === 1 &&
+    groups[0].items[0].aspect === "tall" &&
+    groups[1].fam === "phone" &&
+    groups[1].items.length === 3 &&
+    groups[1].items.every((i) => i.aspect === "story")
+  ) {
+    const items = [...groups[0].items, ...groups[1].items];
+    return (
+      <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-[1.422fr_1fr_1fr_1fr]">
+        {items.map((img, i) => (
+          <div key={img.label} className={`min-w-0 ${i === 0 ? "col-span-2 sm:col-span-1" : ""}`}>
+            <ImageSlot
+              asset={img}
+              sizes={i === 0 ? "(max-width: 640px) 100vw, 400px" : "(max-width: 640px) 50vw, 280px"}
+            />
+            <p className="mt-2 text-[13px] leading-snug text-dim">{img.label}</p>
+          </div>
+        ))}
+      </div>
+    );
+  }
+
   return (
     <div className="mt-8 flex flex-col gap-6">
       {groups.map((g, gi) => {
