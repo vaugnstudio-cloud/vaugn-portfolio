@@ -1,4 +1,4 @@
-// Portfolio PDF (November 2026): an 11 page 16:9 deck in the site's "proof
+// Portfolio PDF (November 2026): a 12 page 16:9 deck in the site's "proof
 // sheet" style, for applications that ask for a file upload. Same facts and
 // credits as the site (data/cases.ts); the previous 18 page deck stays in git
 // history and in the hub as the archive.
@@ -40,6 +40,7 @@ const IMG = {
   qa: ["/images/recent/qa-toolkit.jpg", 1300],
   r1: ["/images/recent/kumars-navratri.jpg", 520], r2: ["/images/recent/renzos-cocktail.jpg", 520], r3: ["/images/recent/lilianas-christmas.jpg", 520], r4: ["/images/recent/gcco-halloween.jpg", 520],
   r5: ["/images/recent/sincero-christmas.jpg", 520], r6: ["/images/recent/kumars-thali.jpg", 520], r7: ["/images/recent/junk-melbourne-cup-1.jpg", 520], r8: ["/images/recent/gcco-a3-qr.jpg", 520],
+  cncP: ["/images/cnc/vertical-poster.jpg", 720], cncS1: ["/images/cnc/story-1.jpg", 520], cncS3: ["/images/cnc/story-3.jpg", 520], cncS2: ["/images/cnc/story-2.jpg", 520],
   ozmax: ["/images/live/ozmax-d-hero.jpg", 700], junk: ["/images/live/junk-d-hero.jpg", 700], inbloom: ["/images/live/inbloom-d-hero.jpg", 700],
 };
 
@@ -166,6 +167,16 @@ ${caseSlide("05", "Your SocialChef", "Marketing agency, Australia", "Employer ·
   "Design production and creative review across client accounts.",
   "I review creative work across the team for text and offers, spacing, readability, cropping, safe zones and brand. I give notes or make the corrections myself.",
   row(420, ["qa"]) + row(285, ["r1", "r2", "r3", "r4"]))}
+
+<section class="slide">
+  <div style="border-top:2px solid #111110;padding-top:22px;display:flex;justify-content:space-between;align-items:baseline">
+    <h2 class="display" style="font-size:56px">Coffee N Chaos: free coffee week</h2>
+    <p class="mono">Agency work · Your SocialChef · Nov 2026</p>
+  </div>
+  <p style="margin-top:18px;font-size:19px;color:#46453F;max-width:1180px">A whole week of free coffee for a new café in Beveridge. A feed poster, three stories and a reel, set in the café's own type and cup colours. The reel is an After Effects project with live text, so the copy stays easy to change.</p>
+  <div style="margin-top:30px">${row(560, ["cncP", "cncS1", "cncS3", "cncS2"])}</div>
+  <div class="foot mono"><span>Feed poster · stories · reel</span><a href="https://vaugn-portfolio.vercel.app/work/your-socialchef">See the reel on the site</a></div>
+</section>
 
 <section class="slide">
   <div style="border-top:2px solid #111110;padding-top:22px;display:flex;justify-content:space-between;align-items:baseline">

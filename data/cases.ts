@@ -365,9 +365,9 @@ export const selectedCases: Project[] = [
       part: "I design for client brands, and I review creative work across the team, giving notes or making the corrections myself.",
       formats: "Posters, stories, carousels, menus, email headers",
       images: [
+        { src: "/images/cnc/vertical-poster.jpg", label: "Coffee N Chaos: free coffee week", aspect: "tall", span: 2 },
         { src: "/images/recent/kumars-navratri.jpg", label: "Kumar's Indian Kitchen and Sweets: Navratri", aspect: "tall", span: 2 },
         { src: "/images/recent/renzos-cocktail.jpg", label: "Renzo's Bar: cocktail hour", aspect: "tall", span: 2 },
-        { src: "/images/recent/lilianas-christmas.jpg", label: "Liliana's Trattoria: Christmas parties", aspect: "tall", span: 2 },
         { src: "/images/recent/qa-toolkit.jpg", label: "Safe zone templates and the checks I review against", aspect: "wide", span: 6 },
       ],
     },

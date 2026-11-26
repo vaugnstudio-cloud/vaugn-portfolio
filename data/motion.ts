@@ -47,12 +47,12 @@ export const motionItems: MotionItem[] = [
     poster: "/images/recent/tnt-follower-story-poster.jpg",
   },
   {
-    id: "renzos-story",
-    title: "Renzo's Bar, animated story",
-    kind: "Client story · Renzo's Bar",
+    id: "cnc-reel",
+    title: "Coffee N Chaos, reel",
+    kind: "Client reel · Coffee N Chaos",
     aspect: "reel",
-    src: "/videos/renzos-story.mp4",
-    poster: "/images/recent/renzos-story-poster.jpg",
+    src: "/videos/cnc/reel.mp4",
+    poster: "/images/cnc/reel-poster.jpg",
   },
   {
     id: "reel-steak",
